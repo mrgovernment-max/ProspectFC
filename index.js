@@ -16,3 +16,18 @@ function CheckPlayerDetails(
   localStorage.setItem("Passists", JSON.stringify(Passists));
   window.location.href = "playerdetails.html";
 }
+
+function SearchPlayer() {
+  const searchValue = document.getElementById("search-bar").value.toLowerCase();
+  const playerList = document.getElementById("squad-cards");
+  const Playernames = playerList.getElementsByClassName("card");
+
+  for (let i = 0; i < Playernames.length; i++) {
+    const RealName = Playernames[i].getAttribute("data-name").toLowerCase();
+    if (RealName.includes(searchValue)) {
+      Playernames[i].style.display = "";
+    } else {
+      Playernames[i].style.display = "none";
+    }
+  }
+}
