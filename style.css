@@ -82,6 +82,14 @@ nav ul li a {
   nav ul li {
     margin: 2%;
   }
+
+  #hero {
+    background-image: url("images/mobile\ hero.jpg");
+  }
+  #hero::before {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
   #hero-text {
     margin-top: -25%;
   }
