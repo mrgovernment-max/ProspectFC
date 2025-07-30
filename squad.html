@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SQUAD</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="index.js"></script>
   </head>
   <body>
@@ -22,27 +24,38 @@
       </ul>
     </nav>
     <div id="search">
-      <input type="text" id="search-bar" />
+      <input type="text" id="search-bar" onkeyup="SearchPlayer()" />
     </div>
 
     <div class="squad-cards" id="squad-cards">
-      <div class="card" data-name="Emman">
+      <div class="card" data-aos="fade-up" data-name="HENRY BAMFORD">
         <img
           src="images/img.webp"
           alt="pic"
           onclick="CheckPlayerDetails(document.getElementById('name').innerHTML,'images/playerdetail.png',12,10,7,9,19)"
         />
-        <h2 id="name">DAWID JAREBOWSKI</h2>
+        <h2 id="name">HENRY BAMFORD</h2>
       </div>
-      <div class="card" data-name="Emman">
+      <div class="card" data-aos="fade-up" data-name="HENRY BAMFORD">
         <img
           src="images/img.webp"
           alt="pic"
           onclick="CheckPlayerDetails(document.getElementById('name').innerHTML,'images/kobbie.webp',66,25,15,20,19)"
         />
 
-        <h2>DAWID JAREBOWSKI</h2>
+        <h2>HENRY BAMFORD</h2>
       </div>
     </div>
+
+    <script>
+      AOS.init({
+        offset: 120, // distance in px before triggering animation
+        delay: 200, // delay in ms
+        duration: 1000, // animation duration in ms
+        easing: "ease-in-out", // animation timing function
+        once: true, // whether animation should happen only once
+        mirror: false, // whether elements animate out while scrolling past them
+      });
+    </script>
   </body>
 </html>
