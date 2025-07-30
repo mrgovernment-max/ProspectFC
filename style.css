@@ -81,7 +81,7 @@ nav ul li a {
 }
 
 #hero-text h2 {
-  font-size: 2.2em;
+  font-size: 2.7em;
   margin-bottom: 1em;
 }
 
@@ -148,6 +148,9 @@ nav ul li a {
 
   #hero-text {
     margin-top: -25%;
+  }
+  #hero-text h2 {
+    font-size: 2.2rem;
   }
 }
 
