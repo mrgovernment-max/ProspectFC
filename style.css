@@ -333,7 +333,7 @@ footer i {
   z-index: 200;
   flex-direction: column;
   gap: 1.5em;
-  background-color: black;
+  background-color: transparent;
   padding: 1.5em;
   width: 24%;
   margin-right: 10%;
@@ -388,5 +388,9 @@ footer i {
 
   .buy-btn {
     padding: 15%;
+  }
+
+  #Pstats {
+    background-color: black;
   }
 }
