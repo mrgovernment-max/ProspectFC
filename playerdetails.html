@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Player Details</title>
+  </head>
+  <nav>
+    <div id="logo">
+      <a href="index.html"><img src="images/logo.jpg" alt="propectfc" /></a>
+    </div>
+    <ul>
+      <li><a href="index.html"> HOME </a></li>
+      <li><a href="squad.html"> SQUAD </a></li>
+      <li><a href="#"> FIXTURE </a></li>
+      <li><a href="#"> NEWS </a></li>
+      <li><a href="#"> CONTACT </a></li>
+    </ul>
+  </nav>
+  <body>
+    <div
+      id="main"
+      style="
+        background-image: url('images/playerdetail.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      "
+      
+    >
+      <div id="Pdetails">
+        <div id="Pnumber"></div>
+        <span id="Pname"></span> 
+        <button class="buy-btn">Buy Shirt</button>
+      </div>
+
+
+      <div id="Pstats">
+        <div class="stat-box">
+          <p>Age</p>
+          <span id="Page"></span>
+        </div>
+      
+        <div class="stat-box">
+          <p>Appearances</p>
+          <span id="Papps"></span>
+        </div>
+      
+        <div class="stat-box">
+          <p>Goals</p>
+          <span id="Pgoals"></span>
+        </div>
+
+        <div class="stat-box">
+            <p>Assits</p>
+            <span id="Passists"></span>
+          </div>
+      </div>
+
+      <script>
+  // Get data from localStorage
+  const Pname = JSON.parse(localStorage.getItem('Pname'));
+  const Pimg1 = JSON.parse(localStorage.getItem('Pimg'));
+  const Pnumber = JSON.parse(localStorage.getItem('Pnumber'));
+  const Page = JSON.parse(localStorage.getItem('Page'));
+  const Papps = JSON.parse(localStorage.getItem('Papps'));
+  const Pgoals = JSON.parse(localStorage.getItem('Pgoals'));
+  const Passists = JSON.parse(localStorage.getItem('Passists'));
+  console.log(Passists)
+
+  // Set data into HTML elements
+  document.getElementById('Pname').innerHTML = Pname;
+  document.getElementById('Pnumber').innerHTML = Pnumber;
+  document.getElementById('Page').innerHTML = Page;
+  document.getElementById('Papps').innerHTML = Papps;
+  document.getElementById('Pgoals').innerHTML = Pgoals;
+  document.getElementById('Passists').innerHTML = Passists;
+  document.getElementById('main').style.backgroundImage = `url(${Pimg1})`;
+  console.log(Passists)
+
+
+      </script>
+      
+  </body>
+</html>
