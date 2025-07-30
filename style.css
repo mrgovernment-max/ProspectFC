@@ -187,10 +187,20 @@ footer i {
 }
 
 #search-bar {
-  width: auto;
-  padding: 2% 5%;
-  border-radius: 10%;
-  height: auto;
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 128, 0, 0.1); /* soft green glow */
+}
+
+#search-bar:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 12px rgba(40, 167, 69, 0.3); /* brighter glow on focus */
 }
 
 .squad-cards {
@@ -251,7 +261,7 @@ footer i {
     margin-top: -25%;
   }
   #hero-text p {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
   }
 
   .squad-cards {

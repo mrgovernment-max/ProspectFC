@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy a Jersey</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #182023;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+      }
+
+      .jersey-card {
+        background: #fff;
+        padding: 30px;
+        margin: auto;
+        margin-top: 5%;
+        display: flex;
+        border-radius: 15px;
+        box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+        width: 50%;
+        gap: 5%;
+        height: auto;
+        margin-bottom: 5%;
+      }
+
+      .jersey-card img {
+        width: 45%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .jersey-info {
+        margin-top: 20px;
+      }
+
+      .jersey-info h2 {
+        margin: 0;
+        font-size: 24px;
+        color: #333;
+      }
+
+      .jersey-info p {
+        color: #777;
+        margin: 5px 0 15px;
+      }
+
+      select,
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+      input[type="text"]::placeholder {
+        color: #aaa;
+      }
+
+      button {
+        background-color: #006400;
+        color: #fff;
+        padding: 12px;
+        width: 100%;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #008000;
+      }
+
+      .popup {
+        display: none;
+        text-align: center;
+        margin-top: 15px;
+        color: green;
+        font-weight: bold;
+      }
+
+      @media (max-width: 750px) {
+        .jersey-card {
+          display: grid;
+          width: 70%;
+        }
+
+        .jersey-card img {
+          width: 95%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div id="logo">
+        <a href="index.html"><img src="images/logo.jpg" alt="propectfc" /></a>
+      </div>
+      <ul>
+        <li><a href="index.html"> HOME </a></li>
+        <li><a href="squad.html"> SQUAD </a></li>
+        <li><a href="#"> FIXTURE </a></li>
+        <li><a href="#"> SPONSORS </a></li>
+        <li><a href="#"> CONTACT </a></li>
+      </ul>
+    </nav>
+
+    <div class="jersey-card">
+      <img src="images/mobile hero.jpg" alt="Jersey" />
+      <div class="jersey-info">
+        <h2>Prospect FC Jersey</h2>
+        <p>Official Home Kit 2025</p>
+        <label for="size">Size:</label>
+        <select id="size">
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+          <option>XL</option>
+        </select>
+
+        <label for="quantity" style="color: black">Quantity:</label>
+        <input type="number" id="quantity" value="1" min="1" max="10" />
+
+        <label for="customize" style="color: black"
+          >Customize (Name/Number):</label
+        >
+        <input type="text" id="customize" placeholder="e.g. EMMAN • 10" />
+
+        <p><strong>£39.99</strong></p>
+        <button onclick="addToCart()">Add to Cart</button>
+        <div class="popup" id="popup">✅ Jersey added to cart!</div>
+      </div>
+    </div>
+
+    <script>
+      function addToCart() {
+        const popup = document.getElementById("popup");
+        popup.style.display = "block";
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 2500);
+      }
+    </script>
+  </body>
+</html>
