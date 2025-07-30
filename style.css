@@ -32,6 +32,7 @@ nav ul li {
   display: inline;
   margin: 2%;
   font-size: x-large;
+  line-height: 4vh;
 }
 nav ul li a {
   text-decoration: none;
