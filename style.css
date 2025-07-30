@@ -1,12 +1,14 @@
 body {
   padding: 0;
   margin: 0;
+  background-color: blue;
 }
 
 #logo {
   background-color: blue;
   width: 8%;
-
+  animation-name: slidedown;
+  animation-duration: 1.6s;
   border-radius: 20%;
 }
 #logo img {
@@ -19,13 +21,14 @@ nav {
   padding: 1%;
   height: auto;
   width: 100%;
-
   background-color: blue;
 }
 
 nav ul {
   text-align: center;
   margin-top: -5%;
+  animation-name: slideright;
+  animation-duration: 1.6s;
 }
 
 nav ul li {
@@ -51,6 +54,8 @@ nav ul li a {
   background-repeat: no-repeat;
   height: 90vh;
   width: 100%;
+  animation: slideUp;
+  animation-duration: 1.5s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,15 +74,66 @@ nav ul li a {
 
 #hero-text {
   position: relative;
+  width: 60%;
   z-index: 2;
-  animation-name: slide;
-  animation-duration: 1.5s;
+  animation-name: slidedown;
+  animation-duration: 1.6s;
 }
 
-#hero-text p {
+#hero-text h2 {
   font-size: 1.2em;
   margin-bottom: 1em;
 }
+
+#hero-button {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  column-gap: 5vh;
+  row-gap: 5vh;
+}
+
+#hero-button button {
+  padding: 3%;
+  background-color: rgb(54, 54, 182);
+  border-style: hidden;
+  color: #ffffff;
+  border-radius: 10%;
+}
+
+#hero-button button:hover {
+  border-radius: 20%;
+  background-color: blue;
+  transition: 0.5s ease-in-out;
+}
+
+/*Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(200%);
+  }
+}
+
+@keyframes slidedown {
+  from {
+    transform: translatey(-200%);
+  }
+}
+
+@keyframes slideleft {
+  to {
+    transform: translatey(100%);
+  }
+}
+
+@keyframes slideright {
+  from {
+    transform: translateX(100%);
+  }
+}
+
 @media (max-width: 750px) {
   nav ul li {
     margin: 2%;
