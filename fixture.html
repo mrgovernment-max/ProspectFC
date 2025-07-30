@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixture Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div id="logo">
+        <a href="index.html"><img src="images/logo.jpg" alt="propectfc" /></a>
+      </div>
+      <ul>
+        <li><a href="index.html"> HOME </a></li>
+        <li><a href="squad.html"> SQUAD </a></li>
+        <li><a href="fixture.html"> FIXTURE </a></li>
+        <li><a href="#"> SPONSORS </a></li>
+        <li><a href="#"> CONTACT </a></li>
+      </ul>
+    </nav>
+
+    <section class="fixtures-section">
+      <h1 class="section-title">UPCOMMING FIXTURES</h1>
+
+      <div class="fixtures-container">
+        <div class="fixture-card" data-aos="fade-up">
+          <div class="teams">
+            <div class="team">
+              <img src="images/logo.jpg" alt="Team 1 Logo" />
+              <p>Prospect FC</p>
+            </div>
+            <span class="vs">VS</span>
+            <div class="team">
+              <img src="images/hype train.png" alt="Team 2 Logo" />
+              <p>Rising Stars</p>
+            </div>
+          </div>
+          <div class="fixture-details">
+            <p><strong>Date:</strong> August 5, 2025</p>
+            <p><strong>Time:</strong> 3:00 PM</p>
+            <p><strong>Location:</strong> Home Stadium</p>
+          </div>
+        </div>
+
+        <!-- Copy and change this card for more matches -->
+        <div class="fixture-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="teams">
+            <div class="team">
+              <img src="images/logo.jpg" alt="Team 3 Logo" />
+              <p>NextGen FC</p>
+            </div>
+            <span class="vs">VS</span>
+            <div class="team">
+              <img src="images/hype train.png" alt="Team 1 Logo" />
+              <p>Prospect FC</p>
+            </div>
+          </div>
+          <div class="fixture-details">
+            <p><strong>Date:</strong> August 12, 2025</p>
+            <p><strong>Time:</strong> 6:00 PM</p>
+            <p><strong>Location:</strong> Away Ground</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
