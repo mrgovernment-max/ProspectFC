@@ -333,7 +333,7 @@ footer i {
   z-index: 200;
   flex-direction: column;
   gap: 1.5em;
-  background-color: transparent;
+  background-color: black;
   padding: 1.5em;
   width: 24%;
   margin-right: 10%;
@@ -374,11 +374,19 @@ footer i {
 }
 
 /* Responsive: stack full width on small screens */
-@media (max-width: 768px) {
+@media (max-width: 750px) {
   #Pstats {
     width: 90%;
     margin: 2em auto;
     float: none;
     margin-top: 60vh;
+  }
+
+  #Pdetails {
+    font-size: x-large;
+  }
+
+  .buy-btn {
+    padding: 15%;
   }
 }
