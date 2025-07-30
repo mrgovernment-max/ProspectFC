@@ -281,13 +281,17 @@ footer i {
 
 #Pdetails {
   background-color: transparent;
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   width: 24%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
 
+#Pname,
+#Pnumber {
+  margin: 0 2%;
+}
 .buy-btn {
   background: linear-gradient(to right, #005eff, #003fbd);
   color: white;
