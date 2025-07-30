@@ -1,61 +1,88 @@
-body {
+/* Base */
+* {
+  margin: 0;
   padding: 0;
-  margin: 0;
-  background-color: rgb(0, 0, 0);
+  box-sizing: border-box;
 }
 
-#logo {
-  background-color: blue;
-  width: 8%;
-  animation-name: slidedown;
-  animation-duration: 1.6s;
-  border-radius: 20%;
-}
-#logo img {
-  width: 100%;
-  border-radius: 20%;
-}
-
-nav {
-  margin: 0;
-  padding: 1%;
-  height: auto;
-  width: 100%;
-  background-color: blue;
-}
-
-nav ul {
-  text-align: center;
-  margin-top: -5%;
-  animation-name: slideright;
-  animation-duration: 1.6s;
-}
-
-nav ul li {
-  display: inline;
-  margin: 2%;
-  font-size: x-large;
-  line-height: 4vh;
-}
-nav ul li a {
-  text-decoration: none;
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #000;
   color: white;
 }
 
-/*hero section*/
+/* Nav */
+nav {
+  background-image: linear-gradient(to right, #001f3f, #0040ff);
+  width: 100%;
+}
 
+nav {
+  margin: auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#logo {
+  width: 60px;
+  animation-name: slidedown;
+  animation-duration: 1.5s;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 10px #005eff;
+  border: 2px solid white;
+}
+
+#logo img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  animation-name: slideright;
+  animation-duration: 1.5s;
+  gap: 2em;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: white;
+  width: 0;
+  transition: 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Hero */
 #hero {
   position: relative;
-  text-align: center;
-  color: #ffffff;
-  background-image: url("./images/WhatsApp\ Image\ 2025-07-30\ at\ 12.32.32_66f634d0.jpg");
+  height: 90vh;
+  background-image: url("./images/WhatsApp Image 2025-07-30 at 12.32.32_66f634d0.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 90vh;
-  width: 100%;
-  animation: slideUp;
-  animation-duration: 1.5s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,47 +93,65 @@ nav ul li a {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
+  width: 100%;
   background: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
 
 #hero-text {
   position: relative;
-  width: 60%;
+  animation-name: slideUp;
+  animation-duration: 1.5s;
   z-index: 2;
-  animation-name: slidedown;
-  animation-duration: 1.6s;
+  text-align: center;
+  padding: 2em;
 }
 
 #hero-text h2 {
-  font-size: 2.7em;
-  margin-bottom: 1em;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5em;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 #hero-button {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  column-gap: 5vh;
-  row-gap: 5vh;
+  justify-content: center;
+  gap: 1.5em;
 }
 
 #hero-button button {
-  padding: 4%;
-  background-color: rgb(54, 54, 182);
-  border-style: hidden;
-  color: #ffffff;
-  border-radius: 10%;
+  background-color: #005eff;
+  color: white;
+  border: none;
+  padding: 0.8em 2em;
+  font-size: 1em;
+  animation-duration: 1.5s;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 #hero-button button:hover {
-  border-radius: 20%;
-  background-color: blue;
-  transition: 0.5s ease-in-out;
+  background-color: #003fbd;
+  box-shadow: 0 0 10px white;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  padding: 2em 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+footer i {
+  margin: 0.5em;
+  font-size: 2rem;
 }
 
 /*Animations */
@@ -139,6 +184,10 @@ nav ul li a {
     margin: 2%;
   }
 
+  nav ul {
+    gap: 0.5rem;
+  }
+
   #hero {
     background-image: url("images/mobile\ hero.jpg");
   }
@@ -152,18 +201,4 @@ nav ul li a {
   #hero-text h2 {
     font-size: 2.2rem;
   }
-}
-
-/* Footer */
-footer {
-  background-color: #111;
-  color: #ccc;
-  padding: 2em 0;
-  text-align: center;
-  font-size: 0.9em;
-}
-
-footer i {
-  font-size: calc(2rem + 2vh);
-  margin: 1rem;
 }
