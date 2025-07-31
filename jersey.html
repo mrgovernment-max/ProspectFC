@@ -249,16 +249,11 @@
         const kit = document.getElementById("kit-select").value;
         const number = parseInt(document.getElementById("quantity").value, 10);
         const customize = document.getElementById("customize").value.trim();
-        const img =
-          kit === "HOME KIT(Black and White)"
-            ? "images/home.jpg"
-            : "images/home kit.jpg";
 
         const order = [
           {
             size,
             price: 25,
-            img,
             kit,
             quantity: number,
             customize: customize === "" ? "no customize" : customize,
