@@ -626,6 +626,11 @@ footer i {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+.contact-info img {
+  border-radius: 50%;
+  border: 2px white solid;
+}
+
 .contact-info h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
