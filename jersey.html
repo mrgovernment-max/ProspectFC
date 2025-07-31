@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buy a Jersey</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
@@ -275,13 +277,16 @@
         }, 4500);
 
         try {
-          const response = await fetch("http://localhost:4242/Fcprospect", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ order }),
-          });
+          const response = await fetch(
+            "https://prospectfcstripe.onrender.com/Fcprospect",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ order }),
+            }
+          );
 
           const data = await response.json();
 
