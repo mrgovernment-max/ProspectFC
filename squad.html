@@ -36,25 +36,7 @@
       />
     </div>
 
-    <div class="squad-cards" id="squad-cards">
-      <div class="card" data-aos="fade-up" data-name="Kasper Sek">
-        <img
-          src="images/kasper.jpg"
-          alt="pic"
-          onclick="CheckPlayerDetails(document.getElementById('name').innerHTML,'images/kasper.png',12,10,7,9,19)"
-        />
-        <p id="name">Kasper Sek</p>
-      </div>
-      <div class="card" data-aos="fade-up" data-name="HENRY OWUSU">
-        <img
-          src="images/henry.jpg"
-          alt="pic"
-          onclick="CheckPlayerDetails(document.getElementById('namee').innerHTML,'images/henry2.png',3,25,15,20,19)"
-        />
-
-        <p id="namee">HENRY OWUSU</p>
-      </div>
-    </div>
+    <div class="squad-cards" id="squad-cards"></div>
 
     <footer>
       <p>&copy; 2025 PROSPECT FC ©</p>
@@ -81,6 +63,54 @@
     </footer>
 
     <script>
+      // Async function to fetch and loop through players
+      async function fetchAndDisplayPlayers() {
+        try {
+          const res = await fetch(
+            "https://prospectfc-api.onrender.com/players"
+          );
+          const players = await res.json();
+
+          const container = document.getElementById("squad-cards");
+
+          players.forEach((player, index) => {
+            // Create a card div
+            const card = document.createElement("div");
+            card.className = "card";
+            card.setAttribute("data-aos", "fade-up");
+            card.setAttribute("data-name", player.name);
+
+            // Create img element
+            const img = document.createElement("img");
+            img.src = player.p_img;
+            img.alt = "pic";
+
+            // Set onclick handler with player values
+            img.setAttribute(
+              "onclick",
+              `CheckPlayerDetails('${player.name}', '${player.bg_img}', ${player.p_number}, ${player.age}, ${player.appearances}, ${player.goals}, ${player.assists})`
+            );
+
+            // Create p tag for name
+            const p = document.createElement("p");
+            p.id = "player-name-" + index;
+            p.textContent = player.name;
+
+            // Append to card
+            card.appendChild(img);
+            card.appendChild(p);
+
+            // Append card to container
+            container.appendChild(card);
+          });
+        } catch (err) {
+          console.error("Error fetching player data:", err);
+        }
+      }
+
+      // Call the function on page load
+      fetchAndDisplayPlayers();
+
       AOS.init({
         offset: 120, // distance in px before triggering animation
         delay: 200, // delay in ms
