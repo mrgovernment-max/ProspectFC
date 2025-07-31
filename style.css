@@ -255,8 +255,6 @@ footer i {
 
   nav ul {
     gap: 0.5rem;
-    justify-content: end;
-    margin-top: -10%;
   }
 
   #logo img {
@@ -509,10 +507,16 @@ footer i {
 }
 
 .sponsor-card img {
-  width: 100px;
+  width: 15%;
+  border-radius: 50%;
   height: auto;
   margin-bottom: 15px;
   filter: drop-shadow(0 0 8px rgba(66, 135, 245, 0.5));
+}
+
+.sponsor-card img:hover {
+  border: 3px white solid;
+  transition: 0.5s ease-in-out;
 }
 
 .sponsor-card p {
@@ -645,4 +649,107 @@ footer i {
   font-size: 1rem;
   margin-bottom: 10px;
   color: #cce0f7;
+}
+
+/*SPONSOR DETAILS*/
+
+.sponsor-details-section {
+  padding: 5% 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.sponsor-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  background-color: #32b5e0;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  width: 90%;
+  flex-wrap: wrap;
+  transition: 0.3s ease;
+}
+
+.sponsor-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+}
+
+.sponsor-logo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+}
+
+.sponsor-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  min-width: 280px;
+}
+
+.sponsor-info h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.sponsor-info p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.sponsor-info strong {
+  color: #222;
+}
+
+.sponsor-socials a {
+  display: inline-block;
+  margin-right: 15px;
+  text-decoration: none;
+  border: 2px blue hidden;
+  padding: 2%;
+  background-color: #0040ff;
+  color: #9b9b9b;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.sponsor-socials a:hover {
+  text-decoration: none;
+  background-color: white;
+  color: blue;
+  transition: 0.5 ease-in-out;
+}
+
+/*Responsive Tweaks */
+@media (max-width: 750px) {
+  .sponsor-container {
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  .sponsor-logo {
+    margin-bottom: 20px;
+  }
+
+  .sponsor-info h2 {
+    text-align: center;
+  }
+
+  .sponsor-socials {
+    text-align: center;
+  }
 }

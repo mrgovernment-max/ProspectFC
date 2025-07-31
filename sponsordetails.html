@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponsor Details</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--Nav Section-->
+    <nav>
+      <div id="logo">
+        <a href="index.html"><img src="images/logo.jpg" alt="propectfc" /></a>
+      </div>
+      <ul>
+        <li><a href="index.html"> HOME </a></li>
+        <li><a href="squad.html"> SQUAD </a></li>
+        <li><a href="fixture.html"> FIXTURE </a></li>
+        <li><a href="sponsor.html"> SPONSORS </a></li>
+        <li><a href="contact.html"> CONTACT </a></li>
+      </ul>
+    </nav>
+    <section class="sponsor-details-section">
+      <div class="sponsor-container">
+        <div class="sponsor-logo">
+          <img id="sponsorLogo" src="" alt="Sponsor Logo" />
+        </div>
+
+        <div class="sponsor-info">
+          <h2 id="sponsorName"></h2>
+          <p id="sponsorDesc"></p>
+          <p><strong>Contact:</strong> <span id="sponsorContact"></span></p>
+          <div class="sponsor-socials">
+            <a id="sponsorinsta" href="#" target="_blank">Instagram </a> |
+            <a id="sponsorWebsite" href="#" target="_blank"> Website </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const sponsorData = JSON.parse(localStorage.getItem("selectedSponsor"));
+
+      if (sponsorData) {
+        document.getElementById("sponsorLogo").src = sponsorData.logo;
+        document.getElementById("sponsorName").textContent = sponsorData.name;
+        document.getElementById("sponsorDesc").textContent = sponsorData.desc;
+        document.getElementById("sponsorContact").textContent =
+          sponsorData.contact;
+        document.getElementById("sponsorinsta").href = sponsorData.instagram;
+        document.getElementById("sponsorWebsite").href = sponsorData.website;
+      } else {
+        // Handle error or fallback
+        document.querySelector(".sponsor-info").textContent =
+          "Sponsor details not found.";
+      }
+    </script>
+  </body>
+</html>

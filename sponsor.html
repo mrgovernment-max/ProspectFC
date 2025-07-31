@@ -28,21 +28,19 @@
       <h2 class="section-title">Our Proud Sponsors</h2>
 
       <div class="sponsor-grid">
-        <div class="sponsor-card">
-          <img src="images/sponor.jpg" alt="Sponsor 1" />
-          <p>Official Kit Sponsor</p>
-        </div>
-        <div class="sponsor-card">
-          <img src="images/sponor.jpg" alt="Sponsor 2" />
-          <p>Energy Partner</p>
-        </div>
-        <div class="sponsor-card">
-          <img src="images/sponor.jpg" alt="Sponsor 3" />
-          <p>Technology Sponsor</p>
-        </div>
-        <div class="sponsor-card">
-          <img src="images/sponor.jpg" alt="Sponsor 4" />
-          <p>Community Partner</p>
+        <!-- Example sponsor -->
+        <div
+          class="sponsor-card"
+          onclick="goToSponsorDetails({
+  logo: 'images/sponor.jpg',
+  name: 'FITCOOKIE',
+  desc: '🏋️‍♂️ Fueling your performance since 2007🌱 Natural ingredients | Science-backed results🚀 Join our community & reach your peak potential!',
+  contact: 'support@fitcookie.com',
+  website: 'https://www.FitCookie.co.uk',
+  instagram: 'https://www.instagram.com/fitcookieuk?utm_source=ig_web_button_share_sheet&igsh=NW1lZTY4bjRxNGQy'
+})"
+        >
+          <img src="images/sponor.jpg" alt="Nike Logo" />
         </div>
       </div>
 
@@ -77,5 +75,12 @@
         ><i class="fa-brands fa-tiktok" style="color: #74c0fc"></i
       ></a>
     </footer>
+
+    <script>
+      function goToSponsorDetails(sponsor) {
+        localStorage.setItem("selectedSponsor", JSON.stringify(sponsor));
+        window.location.href = "sponsordetails.html";
+      }
+    </script>
   </body>
 </html>
