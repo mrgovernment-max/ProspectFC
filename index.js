@@ -21,6 +21,9 @@ function SearchPlayer() {
   const searchValue = document.getElementById("search-bar").value.toLowerCase();
   const playerList = document.getElementById("squad-cards");
   const Playernames = playerList.getElementsByClassName("card");
+  for (let i = 0; i < Playernames.length; i++) {
+    Playernames[i].setAttribute("data-aos", "");
+  }
 
   for (let i = 0; i < Playernames.length; i++) {
     const RealName = Playernames[i].getAttribute("data-name").toLowerCase();
