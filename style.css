@@ -245,6 +245,10 @@ footer i {
     margin: 2%;
   }
 
+  #search-bar {
+    width: 60%;
+  }
+
   nav ul {
     gap: 0.5rem;
     justify-content: end;
