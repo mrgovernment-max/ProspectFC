@@ -183,6 +183,9 @@
             <img src="images/jersy.jpg" alt="Jersey 5" />
           </div>
           <div class="swiper-slide">
+            <img src="images/homehome.jpg" alt="Jersey 5" />
+          </div>
+          <div class="swiper-slide">
             <img src="images/jersey.jpg" alt="Jersey 6" />
           </div>
         </div>
@@ -203,8 +206,8 @@
 
         <label for="kit-select">Kit Type:</label>
         <select id="kit-select">
-          <option>HOME KIT</option>
-          <option>AWAY KIT</option>
+          <option>HOME KIT(Black and White)</option>
+          <option>AWAY KIT(Blue)</option>
         </select>
 
         <label for="quantity">Quantity:</label>
@@ -215,7 +218,7 @@
 
         <p><strong>£50 on sale for £25</strong></p>
 
-        <button onclick="addToCart()">Add to Cart</button>
+        <button onclick="PayForJersey()">Add to Cart</button>
         <div class="popup" id="popup"></div>
       </div>
     </div>
@@ -239,25 +242,28 @@
     </footer>
 
     <script>
-      function addToCart() {
+      async function PayForJersey() {
         const size = document.getElementById("size").value;
         const kit = document.getElementById("kit-select").value;
-        const number = document.getElementById("quantity").value;
+        const number = parseInt(document.getElementById("quantity").value, 10);
         const customize = document.getElementById("customize").value.trim();
+        const img =
+          kit === "HOME KIT(Black and White)"
+            ? "images/home.jpg"
+            : "images/home kit.jpg";
 
-        const order = {
-          size,
-          kit,
-          number,
-          customize,
-        };
+        const order = [
+          {
+            size,
+            price: 25,
+            img,
+            kit,
+            quantity: number,
+            customize: customize === "" ? "no customize" : customize,
+          },
+        ];
 
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cart.push(order);
-        //cart = [];
-        console.log(cart);
-        localStorage.setItem("cart", JSON.stringify(cart));
-
+        // Show popup as before
         const popup = document.getElementById("popup");
         popup.innerHTML =
           customize === ""
@@ -267,6 +273,31 @@
         setTimeout(() => {
           popup.style.display = "none";
         }, 4500);
+
+        try {
+          const response = await fetch("http://localhost:4242/Fcprospect", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ order }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            const stripe = Stripe(
+              "pk_live_51Rpsq2LRwcoOq8wgsLstZO5LcuIqjk7M54Kisklu5AbUHZfeC1r1RDaEA6bz7iq6eDxFiR7yqLGrx80PsGYmdqGt007D5oIJL3"
+            );
+            // Redirect to Stripe Checkout
+            await stripe.redirectToCheckout({ sessionId: data.id });
+          } else {
+            alert(data.error || "Failed to create Stripe session.");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          alert("Something went wrong, check console.");
+        }
       }
 
       new Swiper(".jersey-swiper", {
