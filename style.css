@@ -389,6 +389,10 @@ footer i {
     margin-top: 60vh;
   }
 
+  .stat-box p {
+    font-size: x-large;
+  }
+
   .sponsor-card img {
     width: 70%;
   }
@@ -399,10 +403,6 @@ footer i {
 
   .buy-btn {
     padding: 15%;
-  }
-
-  #Pstats {
-    background-color: black;
   }
 }
 
