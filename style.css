@@ -390,6 +390,10 @@ footer i {
     margin-top: 60vh;
   }
 
+  .sponsor-card img {
+    width: 70%;
+  }
+
   #Pdetails {
     font-size: x-large;
   }
@@ -556,6 +560,12 @@ footer i {
 
 .cta-button:hover {
   background: #3688e0;
+}
+
+@media (max-width: 750px) {
+  .sponsor-card img {
+    width: 50%;
+  }
 }
 
 /*CONTACT*/
