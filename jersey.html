@@ -60,9 +60,10 @@
         color: #00000000;
       }
 
-      .jersey-info p {
+      .jersey-info p,
+      #addPricing {
         color: #000000;
-        margin: 5px 0 15px;
+        margin: 5px 0 6px;
       }
 
       select,
@@ -210,10 +211,21 @@
         <label for="customize">Customize (Name/Number):</label>
         <input type="text" id="customize" placeholder="e.g. EMMAN • 10" />
 
-        <p><strong>£50 on sale for £25</strong></p>
+        <p id="pricing"><strong>£50 on sale for £25</strong></p>
+        <p id="addPricing"><strong></strong></p>
 
         <button onclick="PayForJersey()">PAY</button>
         <div class="popup" id="popup"></div>
+        <p
+          style="
+            color: red;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+              'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          "
+        >
+          A delivery fee of £2.99 will be charged. Orders can
+          <strong>ONLY</strong> be collected at Prospect Park
+        </p>
       </div>
     </div>
 
@@ -236,6 +248,19 @@
     </footer>
 
     <script>
+      function CustomizedJersey() {
+        const addPricing = document.getElementById("addPricing");
+        const custom = document.getElementById("customize");
+        custom.addEventListener("blur", () => {
+          addPricing.style.display = "none";
+        });
+        custom.addEventListener("focus", () => {
+          addPricing.style.display = " block";
+          addPricing.innerHTML = ` <br> £30 total for Cutomzing`;
+        });
+      }
+      CustomizedJersey();
+
       async function PayForJersey() {
         const size = document.getElementById("size").value;
         const kit = document.getElementById("kit-select").value;
@@ -248,7 +273,7 @@
         const order = [
           {
             size,
-            price: 25,
+            price: customize === "" ? 25 + 2.99 : 30 + 2.99,
             kit,
             img,
             quantity: number,
