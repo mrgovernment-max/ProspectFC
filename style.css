@@ -195,6 +195,7 @@ video {
 }
 
 #new p strong {
+  font-size: x-large;
   font-family: "Bebas Neue", sans-serif;
   color: #145592;
 }
