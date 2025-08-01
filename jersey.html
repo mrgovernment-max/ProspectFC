@@ -249,16 +249,22 @@
         const kit = document.getElementById("kit-select").value;
         const number = parseInt(document.getElementById("quantity").value, 10);
         const customize = document.getElementById("customize").value.trim();
-
+        const img =
+          kit === "HOME KIT(Black and White)"
+            ? "https://res.cloudinary.com/dazhskqcc/image/upload/v1754061263/home_q7mhme.jpg"
+            : "https://res.cloudinary.com/dazhskqcc/image/upload/v1754061296/mobile_hero_dufkug.jpg";
         const order = [
           {
             size,
             price: 25,
             kit,
+            img,
             quantity: number,
             customize: customize === "" ? "no customize" : customize,
           },
         ];
+
+        console.log(img);
 
         // Show popup as before
         const popup = document.getElementById("popup");
