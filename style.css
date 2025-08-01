@@ -140,6 +140,37 @@ nav ul li a:hover::after {
   transform: scale(1.05);
 }
 
+h1 {
+  text-align: center;
+  margin-top: 3%;
+}
+
+#highlights {
+  width: 100%;
+  display: flex;
+  padding: 5%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  gap: 2rem;
+}
+
+video {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
+#highlight {
+  width: 40%;
+  position: relative;
+  background-color: black;
+  height: 50vh;
+}
+
 /* Footer */
 footer {
   background-color: #111;
@@ -273,6 +304,17 @@ footer i {
   }
   #hero-text p {
     font-size: 1.6rem;
+  }
+
+  #highlights {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-bottom: 5%;
+  }
+
+  #highlight {
+    width: 95%;
   }
 
   .squad-cards {
