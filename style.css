@@ -586,7 +586,7 @@ footer i {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .sponsor-card {
@@ -605,7 +605,6 @@ footer i {
 }
 
 .sponsor-card img {
-  flex-basis: 80%;
   width: 50%;
   border-radius: 50%;
   border: 2px solid white;
@@ -652,16 +651,22 @@ footer i {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 750px) {
+@media (max-width: 730px) {
   .section-title {
     font-size: 2rem;
   }
 
   .sponsor-card img {
-    width: 70%;
+    width: 100%;
   }
-  .sponsor-grid {
+  .sponsor-flex {
+    display: grid;
     grid-template-columns: 1fr;
+    width: 100%;
+    justify-items: center;
+  }
+  .sponsor-card {
+    width: 90%;
   }
 }
 
