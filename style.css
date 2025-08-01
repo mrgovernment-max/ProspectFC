@@ -177,16 +177,26 @@ video {
 #new {
   width: 30%;
   position: relative;
-  height: 50vh;
+  height: 50%;
 }
 
 #new img {
-  width: 100%;
-  object-fit: contain;
-  height: 100%;
-  top: 10%;
-  right: 0;
-  position: absolute;
+  width: 60%;
+  height: auto;
+  top: 0;
+}
+
+#new p {
+  margin-top: 5%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+  line-height: 25px;
+}
+
+#new p strong {
+  font-family: "Bebas Neue", sans-serif;
+  color: #145592;
 }
 
 #highlight {
@@ -337,6 +347,10 @@ footer i {
     grid-template-columns: 1fr;
     justify-items: center;
     margin-bottom: 5%;
+  }
+
+  #new img {
+    height: auto;
   }
 
   #highlight,
