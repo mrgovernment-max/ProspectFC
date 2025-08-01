@@ -96,14 +96,6 @@
         background-color: #008000;
       }
 
-      .popup {
-        display: none;
-        text-align: center;
-        margin-top: 15px;
-        color: green;
-        font-weight: bold;
-      }
-
       nav {
         background-color: #000;
         padding: 10px;
@@ -220,7 +212,7 @@
 
         <p><strong>£50 on sale for £25</strong></p>
 
-        <button onclick="PayForJersey()">Add to Cart</button>
+        <button onclick="PayForJersey()">PAY</button>
         <div class="popup" id="popup"></div>
       </div>
     </div>
@@ -265,17 +257,6 @@
         ];
 
         console.log(img);
-
-        // Show popup as before
-        const popup = document.getElementById("popup");
-        popup.innerHTML =
-          customize === ""
-            ? ` ✅ ${number} ${size} ${kit} has been added to cart `
-            : ` ✅ ${number} ${size} ${kit} with ${customize} on it has been added to cart`;
-        popup.style.display = "block";
-        setTimeout(() => {
-          popup.style.display = "none";
-        }, 4500);
 
         try {
           const response = await fetch(
