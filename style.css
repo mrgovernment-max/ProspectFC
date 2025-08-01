@@ -105,7 +105,7 @@ nav ul li a:hover::after {
   animation-duration: 1.5s;
   z-index: 2;
   text-align: center;
-  padding: 2em;
+  padding: 0.5em;
 }
 
 #hero-text h2 {
@@ -160,6 +160,31 @@ video {
   object-fit: cover;
   height: 100%;
   top: 0;
+  right: 0;
+  position: absolute;
+}
+
+#news {
+  width: 100%;
+  display: flex;
+  padding: 5%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  gap: 2rem;
+}
+
+#new {
+  width: 30%;
+  position: relative;
+  height: 50vh;
+}
+
+#new img {
+  width: 100%;
+  object-fit: contain;
+  height: 100%;
+  top: 10%;
   right: 0;
   position: absolute;
 }
@@ -300,20 +325,22 @@ footer i {
   }
 
   #hero-text {
-    margin-top: -25%;
+    margin-top: -5%;
   }
   #hero-text p {
     font-size: 1.6rem;
   }
 
-  #highlights {
+  #highlights,
+  #news {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
     margin-bottom: 5%;
   }
 
-  #highlight {
+  #highlight,
+  #new {
     width: 95%;
   }
 
