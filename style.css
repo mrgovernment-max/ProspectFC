@@ -664,103 +664,107 @@ footer i {
 
 /*SPONSOR DETAILS*/
 
-.sponsor-details-section {
-  padding: 5% 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-}
-
-.sponsor-container {
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  background-color: #32b5e0;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  max-width: 1000px;
-  width: 90%;
-  flex-wrap: wrap;
-  transition: 0.3s ease;
-}
-
-.sponsor-logo {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 250px;
-}
-
-.sponsor-logo img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  border: 2px solid #ddd;
-}
-
-.sponsor-info {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  min-width: 280px;
-}
-
-.sponsor-info h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.sponsor-info p {
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.6;
-}
-
-.sponsor-info strong {
-  color: #222;
-}
-
-.sponsor-socials a {
-  display: inline-block;
-  margin-right: 15px;
-  text-decoration: none;
-  border: 2px blue hidden;
-  padding: 2%;
-  background-color: #0040ff;
-  color: #9b9b9b;
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 2rem 0 1rem;
   font-weight: bold;
-  border-radius: 10px;
 }
 
-.sponsor-socials a:hover {
+.sponsor-section {
+  padding: 2rem;
+}
+
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin-bottom: 3rem;
+}
+
+.sponsor-card {
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 2rem;
+  padding-bottom: 10vh;
+  margin-top: 5%;
+  width: 100%;
+  max-width: 200px;
+}
+
+.sponsor-card i {
+  font-size: 2.6rem;
+  margin-left: 10px;
+  margin-top: 5vh;
+}
+
+.sponsor-card img {
+  width: 100%;
+  animation: heartbeat 2s infinite;
+  height: auto;
+  object-fit: contain;
+}
+
+/* CTA */
+.sponsor-cta {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: transparent;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sponsor-cta h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.sponsor-cta p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background-color: #000;
+  color: #fff;
   text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
   background-color: white;
   color: blue;
-  transition: 0.5 ease-in-out;
 }
 
-/*Responsive Tweaks */
+/* Responsive Adjustments */
 @media (max-width: 750px) {
-  .sponsor-container {
-    flex-direction: column;
-    padding: 25px;
+  .section-title {
+    font-size: 2rem;
   }
+}
 
-  .sponsor-logo {
-    margin-bottom: 20px;
+/* Heartbeat Animation */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
   }
-
-  .sponsor-info h2 {
-    text-align: center;
+  14% {
+    transform: scale(1.3);
   }
-
-  .sponsor-socials {
-    text-align: center;
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.3);
+  }
+  70% {
+    transform: scale(1);
   }
 }
