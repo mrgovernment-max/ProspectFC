@@ -177,12 +177,14 @@ video {
 #new {
   width: 30%;
   position: relative;
+  text-align: center;
   height: 50%;
 }
 
 #new img {
   width: 60%;
   height: auto;
+  margin: auto;
   top: 0;
 }
 
