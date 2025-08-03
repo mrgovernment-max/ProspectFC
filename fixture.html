@@ -29,7 +29,7 @@
     </nav>
 
     <section class="fixtures-section">
-      <h1 class="section-title">UPCOMING FIXTURES</h1>
+      <h1 class="section-title">FIXTURES</h1>
       <h1 style="margin-bottom: 4%">
         <a
           target="_blank"
@@ -38,46 +38,7 @@
         >
       </h1>
 
-      <div class="fixtures-container">
-        <div class="fixture-card" data-aos="fade-up">
-          <div class="teams">
-            <div class="team">
-              <img src="images/logo.jpg" alt="Team 1 Logo" />
-              <p>Prospect FC</p>
-            </div>
-            <span class="vs">VS</span>
-            <div class="team">
-              <img src="images/hype train.png" alt="Team 2 Logo" />
-              <p>Rising Stars</p>
-            </div>
-          </div>
-          <div class="fixture-details">
-            <p><strong>Date:</strong> August 5, 2025</p>
-            <p><strong>Time:</strong> 3:00 PM</p>
-            <p><strong>Location:</strong> Home Stadium</p>
-          </div>
-        </div>
-
-        <!-- Copy and change this card for more matches -->
-        <div class="fixture-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="teams">
-            <div class="team">
-              <img src="images/logo.jpg" alt="Team 3 Logo" />
-              <p>NextGen FC</p>
-            </div>
-            <span class="vs">VS</span>
-            <div class="team">
-              <img src="images/hype train.png" alt="Team 1 Logo" />
-              <p>Prospect FC</p>
-            </div>
-          </div>
-          <div class="fixture-details">
-            <p><strong>Date:</strong> August 12, 2025</p>
-            <p><strong>Time:</strong> 6:00 PM</p>
-            <p><strong>Location:</strong> Away Ground</p>
-          </div>
-        </div>
-      </div>
+      <div class="fixtures-container"></div>
     </section>
 
     <footer>
@@ -107,6 +68,49 @@
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script>
+      FetchMatches();
+
+      async function FetchMatches() {
+        const res = await fetch("https://fixtures-api.onrender.com/fixtures");
+        const data = await res.json();
+
+        const fixtures_container = document.querySelector(
+          ".fixtures-container"
+        );
+
+        let fixtures = "";
+
+        data.forEach((element) => {
+          fixtures += `
+      <div class="fixture-card" data-aos="fade-up">
+        <div class="teams">
+          <div class="team">
+            <img src="${element.home_team_img}" alt="${element.home_team_name} logo" />
+            <p>${element.home_team_name}</p>
+            <div id="score">${element.home_score} </div>
+          </div>
+          <span class="vs">VS</span>
+          <div class="team">
+            <img src="${element.away_team_img}" alt="${element.away_team_name} logo" />
+            <p>${element.away_team_name}</p>
+            <div id="score"> ${element.away_score}</div>
+          </div>
+        </div>
+        <div class="fixture-details">
+         
+          <p><strong>Date:</strong> ${element.match_date}</p>
+          <p><strong>Time:</strong> ${element.match_time}</p>
+          <p><strong>Location:</strong> ${element.location}</p>
+          <button><a href=""> Highlights ↗ </a>  </button>
+          <button> <a href=""> Photos ↗ </a> </button>
+        </div>
+      </div>
+    `;
+        });
+
+        fixtures_container.innerHTML += fixtures;
+      }
+
       AOS.init();
     </script>
   </body>
