@@ -88,8 +88,9 @@
             // Set onclick handler with player values
             img.setAttribute(
               "onclick",
-              `CheckPlayerDetails('${player.name}', '${player.bg_img}', ${player.p_number}, ${player.age}, ${player.appearances}, ${player.goals}, ${player.assists})`
+              `CheckPlayerDetails('${player.name}', '${player.bg_img}', ${player.p_number}, ${player.age}, ${player.appearances}, ${player.goals}, ${player.assists},${player.MOTM},${player.POTM})`
             );
+            console.log(`${player.POTM},${player.MOTM}`);
 
             // Create p tag for name
             const p = document.createElement("p");

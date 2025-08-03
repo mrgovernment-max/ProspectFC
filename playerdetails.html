@@ -58,6 +58,14 @@
             <p>Assists</p>
             <span id="Passists"></span>
           </div>
+          <div class="stat-box">
+            <p>MOTM</p>
+            <span id="MOTM"></span>
+          </div>
+          <div class="stat-box">
+            <p>POTM</p>
+            <span id="POTM"></span>
+          </div>
       </div>
 
       
@@ -71,7 +79,11 @@
   const Papps = JSON.parse(localStorage.getItem('Papps'));
   const Pgoals = JSON.parse(localStorage.getItem('Pgoals'));
   const Passists = JSON.parse(localStorage.getItem('Passists'));
-  console.log(Passists)
+  const MOTM = JSON.parse(localStorage.getItem('MOTM'));
+  const POTM = JSON.parse(localStorage.getItem('POTM'));
+  console.log(MOTM,POTM)
+  
+
 
   // Set data into HTML elements
   document.getElementById('Pname').innerHTML = Pname;
@@ -80,9 +92,10 @@
   document.getElementById('Papps').innerHTML = Papps;
   document.getElementById('Pgoals').innerHTML = Pgoals;
   document.getElementById('Passists').innerHTML = Passists;
+  document.getElementById('MOTM').innerHTML = MOTM;
+  document.getElementById('POTM').innerHTML = POTM;
   document.getElementById('main').style.backgroundImage = `url(${Pimg1})`;
-  console.log(Passists)
-
+  
 
       </script>
       

@@ -5,7 +5,9 @@ function CheckPlayerDetails(
   Page,
   Papps,
   Pgoals,
-  Passists
+  Passists,
+  MOTM,
+  POTM
 ) {
   localStorage.setItem("Pname", JSON.stringify(Pname));
   localStorage.setItem("Pimg", JSON.stringify(Pimg1));
@@ -14,6 +16,8 @@ function CheckPlayerDetails(
   localStorage.setItem("Papps", JSON.stringify(Papps));
   localStorage.setItem("Pgoals", JSON.stringify(Pgoals));
   localStorage.setItem("Passists", JSON.stringify(Passists));
+  localStorage.setItem("MOTM", JSON.stringify(MOTM));
+  localStorage.setItem("POTM", JSON.stringify(POTM));
   window.location.href = "playerdetails.html";
 }
 
