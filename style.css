@@ -182,7 +182,16 @@ video {
 }
 
 #new img {
+  position: relative;
   width: 60%;
+  height: auto;
+  margin: auto;
+  top: 0;
+}
+
+#new video {
+  position: relative;
+  width: 100%;
   height: auto;
   margin: auto;
   top: 0;
