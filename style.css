@@ -39,7 +39,6 @@ nav {
 
 #logo img {
   width: 100%;
-  border-radius: 50%;
 }
 
 nav ul {
@@ -356,6 +355,10 @@ footer i {
 
   nav ul {
     gap: 0.5rem;
+  }
+
+  #logo {
+    height: 10%;
   }
 
   #logo img {
