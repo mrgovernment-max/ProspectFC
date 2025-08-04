@@ -199,6 +199,8 @@
           <option>Medium</option>
           <option>Large</option>
           <option>XL</option>
+          <option>XXL</option>
+          <option>XXXL</option>
         </select>
 
         <label for="kit-select">Kit Type:</label>
@@ -214,7 +216,6 @@
         <input type="text" id="customize" placeholder="e.g. EMMAN • 10" />
 
         <p id="pricing"><strong>£50 on sale for £25</strong></p>
-        <p id="addPricing"><strong> £30 total for Cutomzing</strong></p>
 
         <button onclick="PayForJersey()">PAY</button>
 
@@ -262,7 +263,7 @@
         const order = [
           {
             size,
-            price: customize === "" ? 25 + 3 : 30 + 3,
+            price: 25 + 3,
             kit,
             img,
             quantity: number,
