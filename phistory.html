@@ -124,11 +124,11 @@
           const row = document.createElement("tr");
           row.innerHTML = `
 
-          <td>${(count += 1)}.  ${player.player_name}</td>
-          <td>${player.games_played}</td>
-          <td>${player.goals}</td>
-          <td>${player.assists}</td>
-        `;
+            <td>${(count += 1)}.  ${player.player_name}</td>
+            <td>${player.games_played}</td>
+            <td>${player.goals}</td>
+            <td>${player.assists}</td>
+          `;
           tbody.appendChild(row);
         });
       } catch (err) {
@@ -153,11 +153,11 @@
         players.forEach((player) => {
           const row = document.createElement("tr");
           row.innerHTML = `
-          <td> ${(count += 1)}. ${player.player_name}</td>
-          <td>${player.games_played}</td>
-          <td>${player.goals}</td>
-          <td>${player.assists}</td>
-        `;
+            <td> ${(count += 1)}. ${player.player_name}</td>
+            <td>${player.games_played}</td>
+            <td>${player.goals}</td>
+            <td>${player.assists}</td>
+          `;
           tbody.appendChild(row);
         });
       } catch (err) {
@@ -178,14 +178,23 @@
 
         players.forEach((player, index) => {
           const row = document.createElement("tr");
+          let displayName = player.player_name;
+          if (index === 0) {
+            displayName += " 👑";
+          }
+          if (index === 1) {
+            displayName += " 🥈";
+          } else if (index === 2) {
+            displayName += " 🥉";
+          }
+
           row.innerHTML = `
-    <td> ${(count += 1)}. ${
-            index === 0 ? player.player_name + " 👑" : player.player_name
-          }</td>
-    <td>${player.games_played}</td>
-    <td>${player.goals}</td>
-    <td>${player.assists}</td>
-  `;
+      <td>${(count += 1)}. ${displayName}</td>
+      <td>${player.games_played}</td>
+      <td>${player.goals}</td>
+      <td>${player.assists}</td>
+    `;
+
           tbody.appendChild(row);
         });
       } catch (err) {
@@ -206,14 +215,23 @@
 
         players.forEach((player, index) => {
           const row = document.createElement("tr");
+          let displayName = player.player_name;
+          if (index === 0) {
+            displayName += " 👑";
+          }
+          if (index === 1) {
+            displayName += " 🥈";
+          } else if (index === 2) {
+            displayName += " 🥉";
+          }
+
           row.innerHTML = `
-    <td> ${(count += 1)}.  ${
-            index === 0 ? player.player_name + " 👑" : player.player_name
-          }</td>
-    <td>${player.games_played}</td>
-    <td>${player.goals}</td>
-    <td>${player.assists}</td>
-  `;
+      <td>${(count += 1)}. ${displayName}</td>
+      <td>${player.games_played}</td>
+      <td>${player.goals}</td>
+      <td>${player.assists}</td>
+    `;
+
           tbody.appendChild(row);
         });
       } catch (err) {
@@ -234,14 +252,24 @@
 
         players.forEach((player, index) => {
           const row = document.createElement("tr");
+
+          let displayName = player.player_name;
+          if (index === 0) {
+            displayName += " 👑";
+          }
+          if (index === 1) {
+            displayName += " 🥈";
+          } else if (index === 2) {
+            displayName += " 🥉";
+          }
+
           row.innerHTML = `
-    <td>  ${(count += 1)}.  ${
-            index === 0 ? player.player_name + " 👑" : player.player_name
-          }</td>
-    <td>${player.games_played}</td>
-    <td>${player.goals}</td>
-    <td>${player.assists}</td>
-  `;
+      <td>${(count += 1)}. ${displayName}</td>
+      <td>${player.games_played}</td>
+      <td>${player.goals}</td>
+      <td>${player.assists}</td>
+    `;
+
           tbody.appendChild(row);
         });
       } catch (err) {
