@@ -103,7 +103,7 @@ nav ul li a:hover::after {
 
   nav {
     flex-wrap: nowrap;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
   }
 }
