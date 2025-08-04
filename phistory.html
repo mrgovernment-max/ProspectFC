@@ -5,76 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Stats</title>
     <style>
-      /* Base */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      /* Nav */
-      nav {
-        background-image: linear-gradient(to right, #001f3f, #0040ff);
-        width: 100%;
-      }
-
-      nav {
-        margin: auto;
-        padding: 0 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        width: 100%;
-      }
-
-      #logo {
-        width: 60px;
-        animation-name: slidedown;
-        animation-duration: 1.5s;
-        border-radius: 50%;
-        overflow: hidden;
-        box-shadow: 0 0 10px #005eff;
-        border: 2px solid white;
-      }
-
-      #logo img {
-        width: 100%;
-      }
-
-      nav ul {
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        animation-name: slideright;
-        animation-duration: 1.5s;
-        gap: 2em;
-      }
-
-      nav ul li a {
-        text-decoration: none;
-        color: white;
-        font-size: 1.1rem;
-        font-weight: 600;
-        position: relative;
-      }
-
-      nav ul li a::after {
-        content: "";
-        display: block;
-        height: 2px;
-        background: white;
-        width: 0;
-        transition: 0.3s ease;
-        position: absolute;
-        bottom: -4px;
-        left: 0px;
-      }
-
-      nav ul li a:hover::after {
-        width: 100%;
-      }
-
       body {
         font-family: "Poppins", sans-serif;
         background-color: #0e0e0e;
@@ -148,19 +78,6 @@
     </style>
   </head>
   <body>
-    <nav>
-      <div id="logo">
-        <a href="index.html"><img src="images/logo.jpg" alt="propectfc" /></a>
-      </div>
-      <ul>
-        <li><a href="index.html"> HOME </a></li>
-        <li><a href="squad.html"> SQUAD </a></li>
-        <li><a href="phistory.html"> TEAM STATS </a></li>
-        <li><a href="fixture.html"> FIXTURES </a></li>
-        <li><a href="sponsor.html"> SPONSORS </a></li>
-        <li><a href="contact.html"> CONTACT </a></li>
-      </ul>
-    </nav>
     <h1>Prospect FC - Team Stats 2024/25</h1>
     <div class="filter-container">
       <h3>Filter by</h3>
