@@ -118,12 +118,13 @@
 
         const tbody = document.getElementById("team-stats-body");
         tbody.innerHTML = ""; // Clear old rows if any
+        let count = 0;
 
         players.forEach((player) => {
           const row = document.createElement("tr");
           row.innerHTML = `
 
-          <td>${player.player_name}</td>
+          <td>${(count += 1)}.  ${player.player_name}</td>
           <td>${player.games_played}</td>
           <td>${player.goals}</td>
           <td>${player.assists}</td>
@@ -147,11 +148,12 @@
 
         const tbody = document.getElementById("team-stats-body");
         tbody.innerHTML = ""; // Clear old rows if any
+        let count = 0;
 
         players.forEach((player) => {
           const row = document.createElement("tr");
           row.innerHTML = `
-          <td>${player.player_name}</td>
+          <td> ${(count += 1)}. ${player.player_name}</td>
           <td>${player.games_played}</td>
           <td>${player.goals}</td>
           <td>${player.assists}</td>
@@ -172,11 +174,14 @@
 
         const tbody = document.getElementById("team-stats-body");
         tbody.innerHTML = ""; // Clear old rows if any
+        let count = 0;
 
         players.forEach((player, index) => {
           const row = document.createElement("tr");
           row.innerHTML = `
-    <td>${index === 0 ? player.player_name + " 👑" : player.player_name}</td>
+    <td> ${(count += 1)}. ${
+            index === 0 ? player.player_name + " 👑" : player.player_name
+          }</td>
     <td>${player.games_played}</td>
     <td>${player.goals}</td>
     <td>${player.assists}</td>
@@ -197,11 +202,14 @@
 
         const tbody = document.getElementById("team-stats-body");
         tbody.innerHTML = ""; // Clear old rows if any
+        let count = 0;
 
         players.forEach((player, index) => {
           const row = document.createElement("tr");
           row.innerHTML = `
-    <td>${index === 0 ? player.player_name + " 👑" : player.player_name}</td>
+    <td> ${(count += 1)}.  ${
+            index === 0 ? player.player_name + " 👑" : player.player_name
+          }</td>
     <td>${player.games_played}</td>
     <td>${player.goals}</td>
     <td>${player.assists}</td>
@@ -222,11 +230,14 @@
 
         const tbody = document.getElementById("team-stats-body");
         tbody.innerHTML = ""; // Clear old rows if any
+        let count = 0;
 
         players.forEach((player, index) => {
           const row = document.createElement("tr");
           row.innerHTML = `
-    <td>${index === 0 ? player.player_name + " 👑" : player.player_name}</td>
+    <td>  ${(count += 1)}.  ${
+            index === 0 ? player.player_name + " 👑" : player.player_name
+          }</td>
     <td>${player.games_played}</td>
     <td>${player.goals}</td>
     <td>${player.assists}</td>
