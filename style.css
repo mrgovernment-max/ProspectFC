@@ -85,6 +85,7 @@ nav ul li a:hover::after {
 @media (max-width: 750px) {
   .menu-toggle {
     display: block;
+    font-size: xx-large;
   }
 
   nav ul {
