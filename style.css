@@ -33,8 +33,6 @@ nav {
   animation-duration: 1.5s;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 0 10px #005eff;
-  border: 2px solid white;
 }
 
 #logo img {
