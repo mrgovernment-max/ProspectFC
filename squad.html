@@ -65,13 +65,17 @@
     <script>
       // Async function to fetch and loop through players
       async function fetchAndDisplayPlayers() {
+        //dispaly msg if deploy delays
+        const container = document.getElementById("squad-cards");
+        container.innerHTML = `<p style="font-size: 1.5rem; color: azure">Loading Players....</p>`;
         try {
           const res = await fetch(
             "https://prospectfc-api.onrender.com/players"
           );
           const players = await res.json();
 
-          const container = document.getElementById("squad-cards");
+          //reset
+          container.innerHTML = "";
 
           players.forEach((player, index) => {
             // Create a card div

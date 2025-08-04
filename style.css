@@ -68,7 +68,7 @@ nav ul li a::after {
   transition: 0.3s ease;
   position: absolute;
   bottom: -4px;
-  left: 0;
+  left: 0px;
 }
 
 nav ul li a:hover::after {
@@ -306,6 +306,7 @@ footer i {
   height: auto;
   width: auto;
   display: flex;
+  text-align: center;
   flex-direction: row;
   flex-wrap: wrap;
 }
