@@ -16,7 +16,14 @@
       <div id="logo">
         <a href="index.html"><img src="images/logo.jpg" alt="propectfc" /></a>
       </div>
-      <ul>
+
+      <!-- Hamburger menu icon -->
+      <div class="menu-toggle" id="menu-toggle">
+        &#9776;
+        <!-- Unicode hamburger -->
+      </div>
+
+      <ul id="nav-links">
         <li><a href="index.html"> HOME </a></li>
         <li><a href="squad.html"> SQUAD </a></li>
         <li><a href="phistory.html"> TEAM STATS </a></li>
@@ -165,10 +172,12 @@
     </footer>
 
     <script>
-      function goToSponsorDetails(sponsor) {
-        localStorage.setItem("selectedSponsor", JSON.stringify(sponsor));
-        window.location.href = "sponsordetails.html";
-      }
+      const toggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
     </script>
   </body>
 </html>

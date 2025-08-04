@@ -74,6 +74,39 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 750px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 1em;
+    background-color: #001f3f;
+    padding: 1rem;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 /* Hero */
 #hero {
   position: relative;
@@ -358,7 +391,9 @@ footer i {
   }
 
   #logo {
+    margin: auto;
     height: 10%;
+    width: 30%;
   }
 
   #logo img {
