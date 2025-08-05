@@ -144,6 +144,7 @@
     window.onload = loadTeamStats;
 
     async function filterbyname() {
+      resetTableHeaders;
       try {
         const res = await fetch(
           "https://prospect-team-stats.onrender.com/filterbyname"
@@ -170,6 +171,7 @@
     }
 
     async function filterbygames() {
+      resetTableHeaders();
       try {
         const res = await fetch(
           "https://prospect-team-stats.onrender.com/filterbygames"
@@ -207,6 +209,7 @@
     }
 
     async function filterbygoals() {
+      resetTableHeaders();
       try {
         const res = await fetch(
           "https://prospect-team-stats.onrender.com/filterbygoals"
@@ -249,6 +252,7 @@
     }
 
     async function filterbyassists() {
+      resetTableHeaders();
       try {
         const res = await fetch(
           "https://prospect-team-stats.onrender.com/filterbyassists"
@@ -289,6 +293,12 @@
       } catch (err) {
         console.error("Error loading team stats:", err);
       }
+    }
+
+    function resetTableHeaders() {
+      match.textContent = "Matches";
+      goal.textContent = "Goals";
+      assist.textContent = "Assists";
     }
   </script>
 </html>
