@@ -191,7 +191,8 @@ h1 {
   margin-top: 3%;
 }
 
-#highlights {
+#highlights,
+#matchdays {
   width: 100%;
   display: flex;
   padding: 5%;
@@ -199,6 +200,15 @@ h1 {
   flex-wrap: wrap;
   height: auto;
   gap: 2rem;
+}
+#matchdays {
+  width: 100%;
+  display: flex;
+  padding: 2%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  gap: 1rem;
 }
 
 video {
@@ -278,13 +288,21 @@ video {
   transform: translateY(-2px);
 }
 
-#highlight {
+#highlight,
+#matchday {
   width: 40%;
   position: relative;
   background-color: black;
   height: 50vh;
 }
 
+#matchday {
+  width: 40%;
+  position: relative;
+  background-color: black;
+  height: 50vh;
+  padding: 2%;
+}
 /* Footer */
 footer {
   background-color: #111;
@@ -430,11 +448,19 @@ footer i {
   }
 
   #highlights,
-  #news {
+  #news,
+  #matchdays {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
     margin-bottom: 5%;
+  }
+
+  #matchdays {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-bottom: 2%;
   }
 
   #new img {
@@ -443,7 +469,8 @@ footer i {
   }
 
   #highlight,
-  #new {
+  #new,
+  #matchday {
     width: 95%;
   }
 
