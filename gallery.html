@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #gallery {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
+        margin-top: 5%;
+      }
+
+      #modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+      }
+
+      #modal img {
+        max-width: 90%;
+        max-height: 80%;
+      }
+
+      #groups {
+        padding: 2%;
+        background-color: red;
+      }
+
+      @media (max-width: 750px) {
+        #gallery {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+        #groups {
+          width: 95%;
+          text-align: center;
+        }
+        #groups img {
+          width: 90%;
+          margin-bottom: 2%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="gallery">
+      <div id="groups">
+        <h2>TRIALS</h2>
+        <img
+          src="images/WhatsApp Image 2025-07-30 at 12.32.32_66f634d0.jpg"
+          alt="Preview"
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/WhatsApp Image 2025-08-05 at 17.32.30_9eebe0ad.jpg"
+          alt="Preview"
+          width="200"
+          onclick="showModal(this.src)"
+        />
+
+        <img
+          src="images/WhatsApp Image 2025-08-05 at 17.32.30_dd871f24.jpg"
+          alt="Preview"
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/WhatsApp Image 2025-08-05 at 17.32.31_28cb1bc6.jpg"
+          alt="Preview"
+          width="200"
+          onclick="showModal(this.src)"
+        />
+      </div>
+      <img src="" alt="Preview" width="200" onclick="showModal(this.src)" />
+      <div id="modal" onclick="hideModal()">
+        <img id="modal-img" src="" />
+      </div>
+    </div>
+
+    <script>
+      function showModal(src) {
+        document.getElementById("modal-img").src = src;
+        document.getElementById("modal").style.display = "flex";
+      }
+
+      function hideModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
