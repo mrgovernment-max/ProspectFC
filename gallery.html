@@ -4,12 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Prospect FC (also known as Prospect Football Club or FC Prospect) is a competitive EBFL football team based in Reading. Stay updated with our fixtures, results, and club news."
+    />
+    <meta
+      name="keywords"
+      content="Prospect FC, Prospect Football Club, FC Prospect, Prospect Reading, EBFL Prospect, Reading football club, youth football Berkshire"
+    />
+    <meta name="keywords" content="official Prospect FC website" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
     <style>
       #gallery {
         display: flex;
         width: 100%;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 5%;
@@ -36,7 +46,9 @@
 
       #groups {
         padding: 2%;
-        background-color: red;
+      }
+      #groups img {
+        margin: 5px;
       }
 
       @media (max-width: 750px) {
@@ -56,11 +68,35 @@
     </style>
   </head>
   <body>
+    <nav>
+      <div id="logo">
+        <a href="index.html"
+          ><img
+            src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+            alt="propectfc"
+        /></a>
+      </div>
+
+      <!-- Hamburger menu icon -->
+      <div class="menu-toggle" id="menu-toggle">
+        &#9776;
+        <!-- Unicode hamburger -->
+      </div>
+
+      <ul id="nav-links">
+        <li><a href="index.html"> HOME </a></li>
+        <li><a href="squad.html"> SQUAD </a></li>
+        <li><a href="phistory.html"> TEAM STATS </a></li>
+        <li><a href="fixture.html"> FIXTURES </a></li>
+        <li><a href="sponsor.html"> SPONSORS </a></li>
+        <li><a href="contact.html"> CONTACT </a></li>
+      </ul>
+    </nav>
     <div id="gallery">
       <div id="groups">
         <h2>TRIALS</h2>
         <img
-          src="images/WhatsApp Image 2025-07-30 at 12.32.32_66f634d0.jpg"
+          src="images/WhatsApp Image 2025-08-05 at 17.32.31_e9bb7419.jpg"
           alt="Preview"
           width="200"
           onclick="showModal(this.src)"
@@ -84,13 +120,36 @@
           width="200"
           onclick="showModal(this.src)"
         />
-      </div>
-      <img src="" alt="Preview" width="200" onclick="showModal(this.src)" />
-      <div id="modal" onclick="hideModal()">
-        <img id="modal-img" src="" />
-      </div>
+     
+      <img
+        src="images/WhatsApp Image 2025-08-05 at 17.32.31_b384662f.jpg"
+        alt="Preview"
+        width="200"
+        onclick="showModal(this.src)"
+      />
+      <img
+        src="images/WhatsApp Image 2025-08-05 at 17.32.31_c40e5364.jpg"
+        alt="Preview"
+        width="200"
+        onclick="showModal(this.src)"
+      />
+      <img
+      src="images/WhatsApp Image 2025-08-05 at 17.32.31_85531d26.jpg"
+      alt="Preview"
+      width="200"
+      onclick="showModal(this.src)"
+    />
+    <img
+    src="images/WhatsApp Image 2025-08-05 at 17.32.32_c557d06a.jpg"
+    alt="Preview"
+    width="200"
+    onclick="showModal(this.src)"
+  />
     </div>
-
+    <!--reset-->
+    <div id="modal" onclick="hideModal()">
+      <img id="modal-img" src="" />
+    </div>
     <script>
       function showModal(src) {
         document.getElementById("modal-img").src = src;
@@ -100,6 +159,13 @@
       function hideModal() {
         document.getElementById("modal").style.display = "none";
       }
+
+      const toggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
     </script>
   </body>
 </html>
