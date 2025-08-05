@@ -155,6 +155,7 @@ nav ul li a:hover::after {
 
 #animate span {
   display: inline-block;
+  margin-right: 10px;
   animation: dance 1s infinite ease-in-out;
 }
 
