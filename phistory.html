@@ -96,10 +96,10 @@
     <table>
       <thead>
         <tr>
-          <th>Player Name</th>
-          <th>Matches</th>
-          <th>Goals</th>
-          <th>Assists</th>
+          <th id="names">Player Name</th>
+          <th id="match">Matches</th>
+          <th id="goal">Goals</th>
+          <th id="assist">Assists</th>
         </tr>
       </thead>
       <tbody id="team-stats-body">
@@ -109,6 +109,10 @@
   </body>
 
   <script>
+    const match = document.getElementById("match");
+    const goal = document.getElementById("goal");
+    const assist = document.getElementById("assist");
+
     async function loadTeamStats() {
       try {
         const res = await fetch(
@@ -209,6 +213,10 @@
         ); // or your API endpoint
         const players = await res.json();
 
+        goal.textContent = " Assists";
+        match.textContent = "Goals";
+        assist.textContent = "Matches";
+
         const tbody = document.getElementById("team-stats-body");
         tbody.innerHTML = ""; // Clear old rows if any
         let count = 0;
@@ -227,9 +235,10 @@
 
           row.innerHTML = `
       <td>${(count += 1)}. ${displayName}</td>
-      <td>${player.games_played}</td>
       <td>${player.goals}</td>
       <td>${player.assists}</td>
+      <td>${player.games_played}</td>
+      
     `;
 
           tbody.appendChild(row);
@@ -250,6 +259,9 @@
         tbody.innerHTML = ""; // Clear old rows if any
         let count = 0;
 
+        assist.textContent = "Matches";
+        match.textContent = "Assists";
+
         players.forEach((player, index) => {
           const row = document.createElement("tr");
 
@@ -265,9 +277,11 @@
 
           row.innerHTML = `
       <td>${(count += 1)}. ${displayName}</td>
-      <td>${player.games_played}</td>
-      <td>${player.goals}</td>
       <td>${player.assists}</td>
+      <td>${player.goals}</td>
+      <td>${player.games_played}</td>
+      
+     
     `;
 
           tbody.appendChild(row);
