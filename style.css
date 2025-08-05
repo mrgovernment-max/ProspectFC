@@ -460,7 +460,7 @@ footer i {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
   }
 
   #new img {
