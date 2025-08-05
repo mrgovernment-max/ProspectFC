@@ -3,14 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team Stats</title>
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        background-color: #0e0e0e;
-        color: #f2f2f2;
-      }
 
+    <title>Team Stats</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
       h1 {
         text-align: center;
         color: #00ffc3;
@@ -84,7 +80,33 @@
       }
     </style>
   </head>
+
   <body>
+    <nav>
+      <div id="logo">
+        <a href="index.html"
+          ><img
+            src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+            alt="propectfc"
+        /></a>
+      </div>
+
+      <!-- Hamburger menu icon -->
+      <div class="menu-toggle" id="menu-toggle">
+        &#9776;
+        <!-- Unicode hamburger -->
+      </div>
+
+      <ul id="nav-links">
+        <li><a href="index.html"> HOME </a></li>
+        <li><a href="squad.html"> SQUAD </a></li>
+        <li><a href="phistory.html"> TEAM STATS </a></li>
+        <li><a href="fixture.html"> FIXTURES </a></li>
+        <li><a href="sponsor.html"> SPONSORS </a></li>
+        <li><a href="contact.html"> CONTACT </a></li>
+      </ul>
+    </nav>
+
     <h1>Prospect FC - Team Stats 2024/25</h1>
     <div class="filter-container">
       <h3>Filter by</h3>
@@ -300,5 +322,12 @@
       goal.textContent = "Goals";
       assist.textContent = "Assists";
     }
+
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
   </script>
 </html>
