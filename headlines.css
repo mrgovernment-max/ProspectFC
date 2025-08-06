@@ -108,6 +108,20 @@ iframe {
   box-shadow: 0 4px 10px var(--shadow);
 }
 
+/* Footer */
+footer {
+  background-color: #111;
+  padding: 2em 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+footer i {
+  margin: 0.5em;
+  font-size: 2rem;
+}
+
 /* RESPONSIVE TWEAKS */
 @media (max-width: 768px) {
   h1 {
