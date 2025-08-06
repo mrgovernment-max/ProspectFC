@@ -54,7 +54,17 @@
         <li><a href="contact.html"> CONTACT </a></li>
       </ul>
     </nav>
+  
     <div id="search">
+
+      <select id="select-gallery">
+        <option >SORT</option>
+        <option value="Age">Age</option>
+        <option value="Position">Position</option>
+        <option value="namme"> Name</option>
+        
+      </select>
+
       <input
         type="text"
         id="search-bar"
@@ -62,6 +72,8 @@
         placeholder="SearchPlayer"
       />
     </div>
+
+  
 
     <div class="squad-cards" id="squad-cards"></div>
 
@@ -90,15 +102,16 @@
     </footer>
 
     <script>
+       let Url = "https://prospectfc-api.onrender.com/players"
       // Async function to fetch and loop through players
       async function fetchAndDisplayPlayers() {
+       
+        sortPlayers()
         //dispaly msg if deploy delays
         const container = document.getElementById("squad-cards");
         container.innerHTML = `<p style="font-size: 1.5rem; color: azure">Loading Players....</p>`;
         try {
-          const res = await fetch(
-            "https://prospectfc-api.onrender.com/players"
-          );
+          const res = await fetch(`${Url}`);
           const players = await res.json();
 
           //reset
@@ -121,7 +134,7 @@
               "onclick",
               `CheckPlayerDetails('${player.name}', '${player.bg_img}', ${player.p_number}, ${player.age}, ${player.appearances}, ${player.goals}, ${player.assists},${player.MOTM},${player.POTM})`
             );
-            console.log(`${player.POTM},${player.MOTM}`);
+            
 
             // Create p tag for name
             const p = document.createElement("p");
@@ -140,8 +153,7 @@
         }
       }
 
-      // Call the function on page load
-      fetchAndDisplayPlayers();
+ 
 
       AOS.init({
         offset: 120, // distance in px before triggering animation
@@ -158,6 +170,34 @@
       toggle.addEventListener("click", () => {
         navLinks.classList.toggle("active");
       });
+
+     function sortPlayers(){
+      const gallery = document.getElementById("select-gallery")
+      gallery.addEventListener("change", function(){
+        const galleryValue = this.value 
+      switch(galleryValue){
+        case "Age":
+          Url = "https://prospectfc-api.onrender.com/playersage"
+          fetchAndDisplayPlayers()
+          break;
+          case "Position":
+          Url = "https://prospectfc-api.onrender.com/playerspos"
+          fetchAndDisplayPlayers()
+          break;
+          case "namme":
+          Url = "https://prospectfc-api.onrender.com/playersname"
+          fetchAndDisplayPlayers()
+          break;
+          default:
+            Url = 'https://prospectfc-api.onrender.com/players'
+            fetchAndDisplayPlayers()
+      }
+      })
+     }
+
+     fetchAndDisplayPlayers()
+
+
     </script>
   </body>
 </html>
