@@ -1,0 +1,139 @@
+/* Root Theme Colors */
+:root {
+  --primary: #007bff;
+  --bg: #ffffff;
+  --dark: #0e0e0e;
+  --text: #1a1a1a;
+  --gray: #f0f0f0;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1 {
+  color: var(--dark);
+  text-align: center;
+  margin: 2rem auto 1rem;
+  font-size: 2rem;
+  border-bottom: 2px solid var(--primary);
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+#news,
+#matchdays,
+#highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#new,
+#matchday,
+#highlight {
+  background-color: var(--gray);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px var(--shadow);
+  overflow: hidden;
+  width: 320px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#new img,
+#new video,
+#highlight video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+#new p,
+#highlight p {
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+#new strong {
+  color: var(--primary);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+iframe {
+  border: none;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  #new,
+  #matchday,
+  #highlight {
+    width: 90%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  #news,
+  #matchdays,
+  #highlights {
+    padding: 1rem;
+  }
+}
+
+/* Utility */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
