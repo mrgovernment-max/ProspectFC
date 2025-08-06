@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png" alt="propectfc">
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+      alt="propectfc"
+    />
     <meta
       name="description"
       content=" Explore the official Prospect FC photo gallery featuring matchday action, team moments, player highlights, and behind-the-scenes photos from the East Berkshire Football League.Prospect FC (also known as Prospect Football Club or FC Prospect) is a competitive EBFL football team based in Reading. Stay updated with our fixtures, results, and club news."
@@ -13,18 +18,21 @@
       name="keywords"
       content=" Prospect FC gallery, Prospect Football Club photos, Prospect FC images, EBFL matchday photos, Reading football club pictures, Berkshire football gallery, Prospect FC match highlights, team photos Prospect FC, East Berkshire Football League pictures, football club images Reading, Prospect FC photo album, local football club pictures, matchday photography EBFL  Prospect FC, Prospect Football Club, FC Prospect, Prospect Reading, EBFL Prospect, Reading football club, youth football Berkshire"
     />
-   
-    <title>Prospect fc Gallery | Prospect fc Pictures | Matchday Gallery | Prospect FC | Pictires | England Loacl Teaam</title>
+
+    <title>
+      Prospect fc Gallery | Prospect fc Pictures | Matchday Gallery | Prospect
+      FC | Pictires | England Loacl Teaam
+    </title>
     <link rel="stylesheet" href="style.css" />
     <style>
       body {
         font-family: "Poppins", sans-serif;
-        background-color: #111; 
+        background-color: #111;
         color: #f2f2f2;
         margin: 0;
         padding: 0;
       }
-    
+
       #gallery {
         width: 100%;
         padding: 2rem;
@@ -32,14 +40,14 @@
         flex-direction: column;
         gap: 3rem;
       }
-    
+
       #groups {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
       }
-    
+
       #groups h2 {
         width: 100%;
         text-align: center;
@@ -47,7 +55,7 @@
         font-size: 1.8rem;
         margin-bottom: 1rem;
       }
-    
+
       #groups img {
         width: 220px;
         height: auto;
@@ -56,18 +64,17 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
       }
-    
+
       #groups img:hover {
         transform: scale(1.05);
         box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
       }
 
-      
-      .touch{ 
+      .touch {
         transform: scale(1.05);
         box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
       }
-    
+
       #modal {
         display: none;
         position: fixed;
@@ -80,31 +87,37 @@
         justify-content: center;
         align-items: center;
       }
-    
+
       #modal img {
         max-width: 95%;
         max-height: 90%;
         border-radius: 10px;
         box-shadow: 0 0 15px #fff;
       }
-    
+
+      select {
+        height: 50px;
+        width: 90px;
+        background-color: black;
+        color: #ffcc00;
+      }
+
       @media (max-width: 768px) {
         #groups img {
           width: 90%;
         }
-    
+
         #groups h2 {
           font-size: 1.4rem;
         }
       }
-    
+
       @media (min-width: 769px) and (max-width: 1024px) {
         #groups img {
           width: 45%;
         }
       }
     </style>
-    
   </head>
   <body>
     <nav>
@@ -133,9 +146,14 @@
       </ul>
     </nav>
     <div id="gallery">
-
-      <!--ETON WICK-->
-      <div id="groups">
+      <select id="select-gallery">
+        <option value="TRIALS">TRIALS</option>
+        <option value="ETON WICK">ETON WICK</option>
+        <option value="FINCHAMPSTEAD UNITED">FINCHAMPSTEAD UNITED</option>
+        <option value="WORKING VETS">WOKRING VETS</option>
+      </select>
+      <!--TRIALS-->
+      <div id="groups" style="display: flex" class="TRIALS">
         <h2>TRIALS</h2>
         <img
           src="images/WhatsApp Image 2025-08-05 at 17.32.31_e9bb7419.jpg"
@@ -162,355 +180,352 @@
           width="200"
           onclick="showModal(this.src)"
         />
-     
-      <img
-        src="images/WhatsApp Image 2025-08-05 at 17.32.31_b384662f.jpg"
-        alt="Prospect FC player Pictures "
-        width="200"
-        onclick="showModal(this.src)"
-      />
-      <img
-        src="images/WhatsApp Image 2025-08-05 at 17.32.31_c40e5364.jpg"
-        alt="Prospect FC player Pictures "
-        width="200"
-        onclick="showModal(this.src)"
-      />
-      <img
-      src="images/WhatsApp Image 2025-08-05 at 17.32.31_85531d26.jpg"
-      alt="Prospect FC player Pictures "
-      width="200"
-      onclick="showModal(this.src)"
-    />
-    <img
-    src="images/WhatsApp Image 2025-08-05 at 17.32.32_c557d06a.jpg"
-    alt="Prospect FC player Pictures "
-    width="200"
-    onclick="showModal(this.src)"
-  />
-  <img
-  src="images/WhatsApp Image 2025-08-05 at 17.32.32_48296e00.jpg"
-  alt="Prospect FC player Pictures "
-  width="200"
-  onclick="showModal(this.src)"
-/>
 
-<img
-src="images/WhatsApp Image 2025-08-05 at 17.32.32_1d7cdbbf.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
+        <img
+          src="images/WhatsApp Image 2025-08-05 at 17.32.31_b384662f.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/WhatsApp Image 2025-08-05 at 17.32.31_c40e5364.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/WhatsApp Image 2025-08-05 at 17.32.31_85531d26.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/WhatsApp Image 2025-08-05 at 17.32.32_c557d06a.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/WhatsApp Image 2025-08-05 at 17.32.32_48296e00.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
 
-<!--ETON WICK-->
-<div id="groups">
-  <h2>ETON WICK 12/05/2025</h2>
-
-
-
-<img
-src="images/et1.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et2.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et3.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et4.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et5.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et6.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et7.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et8.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et9.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et10.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et11.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et12.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et13.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et14.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et15.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/et16.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-    </div>
-
-    <!--FINCHAMPS-->
-
-    <div id="groups" >
-      <h2>Finchampstead United 14/07/2025</h2>
-      <img
-src="images/fin1.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin2.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin3.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin4.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin5.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin6.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin7.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin8.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin9.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin10.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin11.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin12.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin13.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin14.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin15.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin16.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin17.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/fin18.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-
-    </div>
-
-    <!--WORKING VETS-->
-
-    <div id="groups">
-      <h2>WOKRING VETS  14/02/2025</h2>
-      <img
-src="images/vet1.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/vet2.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/vet3.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/vet4.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/vet5.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/vet6.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/vet7.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/vet8.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/vet9.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/vet10.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/vet11.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/vet12.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/vet13.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-<img
-src="images/vet14.jpg"
-alt="Prospect FC player Pictures "
-width="200"
-onclick="showModal(this.src)"
-/>
-    </div>
-
+        <img
+          src="images/WhatsApp Image 2025-08-05 at 17.32.32_1d7cdbbf.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
       </div>
+
+      <!--ETON WICK-->
+      <div id="groups" style="display: none" class="ETON WICK">
+        <h2>ETON WICK 12/05/2025</h2>
+
+        <img
+          src="images/et1.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et2.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et3.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et4.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et5.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et6.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et7.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et8.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et9.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et10.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et11.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et12.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et13.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et14.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et15.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/et16.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+      </div>
+
+      <!--FINCHAMPS-->
+
+      <div id="groups" style="display: none" class="FINCHAMPSTEAD UNITED">
+        <h2>FINCHAMPSTEAD UNITED 14/07/2025</h2>
+        <img
+          src="images/fin1.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin2.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin3.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin4.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin5.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin6.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin7.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin8.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin9.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin10.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin11.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin12.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin13.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin14.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin15.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin16.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin17.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/fin18.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+      </div>
+
+      <!--WORKING VETS-->
+
+      <div id="groups" style="display: none" class="WORKING VETS">
+        <h2>WOKRING VETS 14/02/2025</h2>
+        <img
+          src="images/vet1.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/vet2.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/vet3.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/vet4.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/vet5.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/vet6.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/vet7.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/vet8.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/vet9.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/vet10.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/vet11.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/vet12.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/vet13.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+        <img
+          src="images/vet14.jpg"
+          alt="Prospect FC player Pictures "
+          width="200"
+          onclick="showModal(this.src)"
+        />
+      </div>
+    </div>
 
     <!--MAIN IMG VIEW-->
 
@@ -522,7 +537,6 @@ onclick="showModal(this.src)"
       function showModal(src) {
         document.getElementById("modal-img").src = src;
         document.getElementById("modal").style.display = "flex";
-      
       }
 
       function hideModal() {
@@ -536,23 +550,22 @@ onclick="showModal(this.src)"
         navLinks.classList.toggle("active");
       });
 
-      const imgs = document.getElementsByTagName('img');
+      const gallery = document.getElementById("select-gallery");
 
-for (let index = 0; index < imgs.length; index++) {
-  const element = imgs[index];
+      gallery.addEventListener("change", function () {
+        const galleryValue = this.value;
+        const divs = document.getElementsByTagName("div");
 
-  element.addEventListener("touchstart", (e) => {
-   
-    for (let i = 0; i < imgs.length; i++) {
-      imgs[i].classList.remove("touch");
-    }
-    
-    element.classList.add("touch");
-  });
-}
+        for (let i = 3; i < divs.length; i++) {
+          const element = divs[i];
 
-
-
+          if (element.className === galleryValue) {
+            element.style.display = "flex";
+          } else {
+            element.style.display = "none";
+          }
+        }
+      });
     </script>
   </body>
 </html>
