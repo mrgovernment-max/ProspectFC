@@ -365,7 +365,7 @@ footer i {
   box-shadow: 0 0 12px rgba(40, 167, 69, 0.3); /* brighter glow on focus */
 }
 
-select {
+#select-gallery {
   height: 50px;
   width: 90px;
   background-color: #081b33;
@@ -970,3 +970,4 @@ select {
     transform: scale(1);
   }
 }
+
