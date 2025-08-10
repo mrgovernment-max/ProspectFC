@@ -15,7 +15,7 @@ body {
 
 nav {
   background-image: linear-gradient(to right, #001f3f, #0040ff);
-  margin: auto;
+  margin: 0;
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
@@ -114,7 +114,7 @@ nav ul {
   animation: slideright 0.5s ease-in-out;
 }
 
-nav ul.active {
+.active {
   display: flex;
 }
 
