@@ -48,6 +48,30 @@
   <body>
     <!--Nav Section-->
     <nav>
+      <section class="header-socials">
+        <a
+          target="blamk"
+          href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
+          ><i class="fa-brands fa-facebook" style="color: #74c0fc"></i
+        ></a>
+        <a
+          target="_blank"
+          href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
+          ><i class="fa-brands fa-instagram" style="color: #74c0fc"></i
+        ></a>
+        <a
+          target="_blank"
+          href=" https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
+          ><i class="fa-brands fa-youtube" style="color: #74c0fc"></i
+        ></a>
+
+        <a
+          target="_blank"
+          href=" https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
+          ><i class="fa-brands fa-tiktok" style="color: #74c0fc"></i
+        ></a>
+      </section>
+
       <div id="logo">
         <a href="index.html"
           ><img
@@ -116,6 +140,17 @@
     </footer>
   </body>
   <script>
+    async function ContactFetch() {
+      const res = await fetch("contact.html");
+      const data = await res.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(data, "text/html");
+      const nav = doc.getElementById("menu-toggle");
+      console.log(nav);
+    }
+
+    ContactFetch();
+
     const toggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("nav-links");
 

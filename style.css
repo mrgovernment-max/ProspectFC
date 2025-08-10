@@ -12,12 +12,9 @@ body {
 }
 
 /* Nav */
-nav {
-  background-image: linear-gradient(to right, #001f3f, #0040ff);
-  width: 100%;
-}
 
 nav {
+  background-image: linear-gradient(to right, #001f3f, #0040ff);
   margin: auto;
   padding: 0 1.5rem;
   display: flex;
@@ -27,12 +24,32 @@ nav {
   width: 100%;
 }
 
+.header-socials {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 5px;
+  margin-left: -2%;
+}
+
+.header-socials i {
+  font-size: 2.2rem;
+}
+
+.header-socials a i {
+  margin-left: 7vh;
+}
+
 #logo {
-  width: 60px;
+  position: relative;
+  width: 100%;
+  margin-left: -19%;
+  max-width: 100px;
   animation-name: slidedown;
   animation-duration: 1.5s;
   border-radius: 50%;
-  overflow: hidden;
 }
 
 #logo img {
@@ -43,7 +60,6 @@ nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  animation-name: slideright;
   animation-duration: 1.5s;
   gap: 2em;
 }
@@ -62,62 +78,44 @@ nav ul li a::after {
   height: 2px;
   background: white;
   width: 0;
-  transition: 0.3s ease;
   position: absolute;
   bottom: -4px;
   left: 0px;
+  transition: width 0.5s ease;
 }
 
 nav ul li a:hover::after {
   width: 100%;
+  transition: width 0.5s ease;
 }
 
 .menu-toggle {
-  display: none;
-  font-size: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
   color: white;
-  cursor: pointer;
+  z-index: 9999;
 }
 
-@media (max-width: 750px) {
-  .menu-toggle {
-    display: block;
-    font-size: 2.5rem;
-    color: white;
-    z-index: 9999;
-  }
+nav ul {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20vw;
+  border-top-left-radius: 20px;
+  height: 100vh;
+  background-color: #001f3f;
+  z-index: 9998;
+  padding: 2rem;
+  animation: slideright 0.5s ease-in-out;
+}
 
-  nav ul {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2em;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #001f3f;
-    z-index: 9998;
-    padding: 2rem;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  nav ul {
-    transition: all 0.3s ease-in-out;
-  }
-
-  nav {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    position: relative;
-  }
+nav ul.active {
+  display: flex;
 }
 
 /* Hero */
@@ -131,6 +129,54 @@ nav ul li a:hover::after {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 750px) {
+  nav ul li {
+    margin: 2%;
+  }
+
+  #search-bar {
+    width: 60%;
+  }
+
+  nav ul {
+    gap: 0.5rem;
+    width: 100vw;
+  }
+
+  .header-socials {
+    display: none;
+  }
+
+  .header-socials a i {
+    font-size: 20px;
+  }
+
+  #logo {
+    margin: auto;
+    height: 10%;
+    border: hidden;
+    width: 30%;
+  }
+
+  #logo img {
+    margin-top: 5%;
+  }
+
+  #hero {
+    background-image: url("images/mobile\ hero.jpg");
+  }
+  #hero::before {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  #hero-text {
+    margin-top: -5%;
+  }
+  #hero-text p {
+    font-size: 1.6rem;
+  }
 }
 
 #hero::before {
@@ -419,44 +465,9 @@ footer i {
   transition: 0.5s ease-in-out;
 }
 
+/*RESPONSIVENESS*/
+
 @media (max-width: 750px) {
-  nav ul li {
-    margin: 2%;
-  }
-
-  #search-bar {
-    width: 60%;
-  }
-
-  nav ul {
-    gap: 0.5rem;
-  }
-
-  #logo {
-    margin: auto;
-    height: 10%;
-    border: hidden;
-    width: 30%;
-  }
-
-  #logo img {
-    margin-top: 5%;
-  }
-
-  #hero {
-    background-image: url("images/mobile\ hero.jpg");
-  }
-  #hero::before {
-    background: rgba(0, 0, 0, 0.5);
-  }
-
-  #hero-text {
-    margin-top: -5%;
-  }
-  #hero-text p {
-    font-size: 1.6rem;
-  }
-
   #highlights,
   #news,
   #matchdays {
