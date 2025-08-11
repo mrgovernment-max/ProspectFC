@@ -365,6 +365,20 @@ footer i {
   font-size: 2rem;
 }
 
+#aurthor {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: smaller;
+}
+
+footer p a {
+  text-decoration: none;
+}
+
+footer p a:hover {
+  color: wheat;
+  transition: 0.6s ease-in-out;
+}
+
 /*SQUAD*/
 #search {
   margin: auto;
