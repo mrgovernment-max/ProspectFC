@@ -984,3 +984,115 @@ footer p a:hover {
     transform: scale(1);
   }
 }
+
+/*Kits Page*/
+
+#kit-hero {
+  background-color: #a0b8d8;
+  width: 97%;
+  margin: auto;
+  height: auto;
+  display: flex;
+  gap: 1.7rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-bottom: 5%;
+}
+
+#kit-header {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  padding-top: 5%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: xx-large;
+}
+
+#kit-header:after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff6f;
+}
+
+#kit {
+  margin-top: 5%;
+  width: 100%;
+  max-width: 300px;
+  border: 2px solid white;
+  text-align: center;
+  height: 100%;
+  max-height: 500px;
+  border-radius: 2%;
+  padding: 20px;
+  box-shadow: 5px 6px 10px rgba(255, 255, 255, 0.3);
+}
+
+#kit:hover {
+  box-shadow: 7px 8px 15px rgba(255, 255, 255, 0.5);
+}
+
+#kit img {
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+}
+
+#kit img:hover {
+  transform: translateY(-9px);
+  transition: 0.5s ease-in-out;
+}
+
+#kit p {
+  margin-top: 5%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: larger;
+}
+
+#kit button {
+  margin-top: 10%;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.4s ease-in-out;
+}
+
+#kit button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  z-index: 0;
+  transition: left 0.4s ease-in-out;
+}
+
+#kit button:hover {
+  cursor: pointer;
+  padding: 15px 25px;
+  border-radius: 10px;
+  transform: translateY(-10px);
+  border-style: none;
+  transition: 0.5s ease-in-out;
+}
+
+#kit button:hover::before {
+  left: 0;
+}
+
+#kit button span {
+  position: relative;
+  z-index: 1;
+}
