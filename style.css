@@ -365,31 +365,6 @@ footer i {
   font-size: 2rem;
 }
 
-/*Animations */
-@keyframes slideUp {
-  from {
-    transform: translateY(200%);
-  }
-}
-
-@keyframes slidedown {
-  from {
-    transform: translatey(-200%);
-  }
-}
-
-@keyframes slideleft {
-  to {
-    transform: translatey(100%);
-  }
-}
-
-@keyframes slideright {
-  from {
-    transform: translateX(100%);
-  }
-}
-
 /*SQUAD*/
 #search {
   margin: auto;

@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="icon"
@@ -48,7 +50,7 @@
   <body>
     <!--Nav Section-->
     <nav>
-      <section class="header-socials">
+      <section class="header-socials" data-aos="fade-right">
         <a
           target="blamk"
           href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
@@ -72,7 +74,7 @@
         ></a>
       </section>
 
-      <div id="logo">
+      <div id="logo" data-aos="fade-down">
         <a href="index.html"
           ><img
             src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
@@ -81,7 +83,7 @@
       </div>
 
       <!-- Hamburger menu icon -->
-      <div class="menu-toggle" id="menu-toggle">
+      <div class="menu-toggle" id="menu-toggle" data-aos="fade-left">
         &#9776;
         <!-- Unicode hamburger -->
       </div>
@@ -100,7 +102,7 @@
     <!--hero-section-->
 
     <div id="hero">
-      <section id="hero-text">
+      <section id="hero-text" data-aos="fade-up">
         <h2>PROSPECT FC</h2>
 
         <section id="hero-button">
@@ -140,17 +142,14 @@
     </footer>
   </body>
   <script>
-    async function ContactFetch() {
-      const res = await fetch("contact.html");
-      const data = await res.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(data, "text/html");
-      const nav = doc.getElementById("menu-toggle");
-      console.log(nav);
-    }
-
-    ContactFetch();
-
+    AOS.init({
+      offset: 120, // distance in px before triggering animation
+      delay: 200, // delay in ms
+      duration: 1000, // animation duration in ms
+      easing: "ease-in-out", // animation timing function
+      once: false, // whether animation should happen only once
+      mirror: false, // whether elements animate out while scrolling past them
+    });
     const toggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("nav-links");
 

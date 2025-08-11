@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Buy Prospect FC Jerseys & Merchandise | Official Club Store | Reading
-    </title>
+
     <meta
       name="description"
       content="Shop official Prospect FC jerseys, training kits, and club merchandise. Get your football gear and represent Prospect FC | available in all sizes for fans and players. Shipping across Berkshire and the UK."
@@ -21,7 +21,10 @@
       href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
       alt="propectfc"
     />
-    <title>Buy a Jersey Prospect Fc | Prospect Jersey | Prospect Sales</title>
+    <title>
+      Buy a Jersey Prospect Fc | Prospect Jersey | Prospect Sales Buy Prospect
+      FC Jerseys & Merchandise | Official Club Store | Reading
+    </title>
     <link rel="stylesheet" href="style.css" />
     <meta name="keywords" content="official Prospect FC website" />
     <script src="https://js.stripe.com/v3/"></script>
@@ -154,7 +157,7 @@
   <body>
     <!--Nav Section-->
     <nav>
-      <section class="header-socials">
+      <section class="header-socials" data-aos="fade-right">
         <a
           target="blamk"
           href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
@@ -178,7 +181,7 @@
         ></a>
       </section>
 
-      <div id="logo">
+      <div id="logo" data-aos="fade-down">
         <a href="index.html"
           ><img
             src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
@@ -187,7 +190,7 @@
       </div>
 
       <!-- Hamburger menu icon -->
-      <div class="menu-toggle" id="menu-toggle">
+      <div class="menu-toggle" id="menu-toggle" data-aos="fade-left">
         &#9776;
         <!-- Unicode hamburger -->
       </div>
@@ -204,7 +207,8 @@
       </ul>
     </nav>
 
-    <div class="jersey-card">
+    <!--JERSEY-->
+    <div class="jersey-card" data-aos="flip-down">
       <div class="jersey-swiper swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -465,6 +469,15 @@
 
       toggle.addEventListener("click", () => {
         navLinks.classList.toggle("active");
+      });
+
+      AOS.init({
+        offset: 120, // distance in px before triggering animation
+        delay: 200, // delay in ms
+        duration: 1000, // animation duration in ms
+        easing: "ease-in-out", // animation timing function
+        once: false, // whether animation should happen only once
+        mirror: false, // whether elements animate out while scrolling past them
       });
     </script>
   </body>

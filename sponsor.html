@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png" alt="propectfc">
 <meta name="description" content="Meet the official sponsors and partners of Prospect FC, supporting our club and community in Reading, Berkshire. Learn how to become a sponsor and support grassroots football at Prospect Football Club.">
@@ -28,7 +30,7 @@
   <body>
    <!--Nav Section-->
    <nav>
-    <section class="header-socials">
+    <section class="header-socials" data-aos="fade-right">
       <a
         target="blamk"
         href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
@@ -52,7 +54,7 @@
       ></a>
     </section>
 
-    <div id="logo">
+    <div id="logo" data-aos="fade-down">
       <a href="index.html"
         ><img
           src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
@@ -61,7 +63,7 @@
     </div>
 
     <!-- Hamburger menu icon -->
-    <div class="menu-toggle" id="menu-toggle">
+    <div class="menu-toggle" id="menu-toggle" data-aos="fade-left">
       &#9776;
       <!-- Unicode hamburger -->
     </div>
@@ -83,7 +85,7 @@
       <div class="sponsor-flex">
         <!-- Example sponsor -->
         <!--MAKS-->
-        <div class="sponsor-card">
+        <div class="sponsor-card" data-aos="fade-right">
           <img src="images/maks.jpg" alt="Nike Logo" />
           <a
             target="_blank"
@@ -102,7 +104,7 @@
 
         <!--FITCOKKIE-->
 
-        <div class="sponsor-card">
+        <div class="sponsor-card" data-aos="fade-down">
           <img src="images/sponor.jpg" alt="Nike Logo" />
           <a
             target="_blank"
@@ -120,7 +122,7 @@
         </div>
 
         <!--MACLEE-->
-        <div class="sponsor-card">
+        <div class="sponsor-card" data-aos="fade-left">
           <img src="images/maclee.jpg" alt="Prospect Fc Sponsor Ebfl Berks Bucks Local Team Reading Teams" />
 
           <a
@@ -146,7 +148,7 @@
 
         <!--LIBRO-->
 
-        <div class="sponsor-card">
+        <div class="sponsor-card" data-aos="fade-right">
           <img src="images/libro.jpg" alt="Prospect Fc Sponsor Ebfl Berks Bucks Local Team Reading Teams" />
 
           <a
@@ -168,7 +170,7 @@
         </div>
 
         <!--AGNES-->
-        <div class="sponsor-card">
+        <div class="sponsor-card" data-aos="fade-up">
           <img src="images/agnes.jpg" alt="Prospect Fc Sponsor Ebfl Berks Bucks Local Team Reading Teams" />
           <a href="tel:7427674581"
             ><i class="fa-solid fa-phone-volume" style="color: #74c0fc"></i
@@ -178,13 +180,13 @@
         </div>
 
         <!--JM-->
-        <div class="sponsor-card">
+        <div class="sponsor-card" data-aos="fade-left">
           <img src="images/jm.jpg" alt="Prospect Fc Sponsor Ebfl Berks Bucks Local Team Reading Teams" />
           <p></p>
         </div>
       </div>
 
-      <div class="sponsor-cta">
+      <div class="sponsor-cta" data-aos="flip-up">
         <h3>Wanna Be a Sponsor?</h3>
         <p>Join our journey and put your brand where the action is.</p>
         <a href="contact.html" class="cta-button">Become a Sponsor</a>
@@ -222,6 +224,17 @@
 
       toggle.addEventListener("click", () => {
         navLinks.classList.toggle("active");
+      });
+
+
+      
+      AOS.init({
+        offset: 120, // distance in px before triggering animation
+        delay: 200, // delay in ms
+        duration: 1000, // animation duration in ms
+        easing: "ease-in-out", // animation timing function
+        once: false, // whether animation should happen only once
+        mirror: false, // whether elements animate out while scrolling past them
       });
     </script>
   </body>

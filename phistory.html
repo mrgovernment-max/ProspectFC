@@ -7,6 +7,8 @@
       src="https://kit.fontawesome.com/a47fc389f5.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       rel="icon"
       type="image/png"
@@ -122,7 +124,7 @@
   <body>
     <!--Nav Section-->
     <nav>
-      <section class="header-socials">
+      <section class="header-socials" data-aos="fade-right">
         <a
           target="blamk"
           href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
@@ -146,7 +148,7 @@
         ></a>
       </section>
 
-      <div id="logo">
+      <div id="logo" data-aos="fade-down">
         <a href="index.html"
           ><img
             src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
@@ -155,7 +157,7 @@
       </div>
 
       <!-- Hamburger menu icon -->
-      <div class="menu-toggle" id="menu-toggle">
+      <div class="menu-toggle" id="menu-toggle" data-aos="fade-left">
         &#9776;
         <!-- Unicode hamburger -->
       </div>
@@ -180,7 +182,7 @@
       <button onclick="filterbygoals()">Goals</button>
       <button onclick="filterbyassists()">Assists</button>
     </div>
-    <table>
+    <table data-aos="fade-down">
       <thead>
         <tr>
           <th id="names">Player Name</th>
@@ -417,6 +419,15 @@
 
     toggle.addEventListener("click", () => {
       navLinks.classList.toggle("active");
+    });
+
+    AOS.init({
+      offset: 120, // distance in px before triggering animation
+      delay: 200, // delay in ms
+      duration: 1000, // animation duration in ms
+      easing: "ease-in-out", // animation timing function
+      once: false, // whether animation should happen only once
+      mirror: false, // whether elements animate out while scrolling past them
     });
   </script>
 </html>
