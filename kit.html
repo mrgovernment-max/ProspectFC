@@ -88,13 +88,21 @@
           <img src="images/mobile hero.jpg" alt="" />
           <p>Purchase Official Away Kit</p>
           <p>£25.00</p>
-          <button><span>CHECKOUT</span></button>
+          <button
+            onclick="jerseyData('images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','Official AWAY Kit 2025')"
+          >
+            <span>CHECKOUT</span>
+          </button>
         </div>
         <div id="kit">
           <img src="images/homejersy.jpg" alt="" />
           <p>Purchase Official Home Kit</p>
           <p>£25.00</p>
-          <button><span>CHECKOUT</span></button>
+          <button
+            onclick="jerseyData('https://res.cloudinary.com/dazhskqcc/image/upload/v1754065745/homejersy_am4o5k.jpg','https://res.cloudinary.com/dazhskqcc/image/upload/v1754065745/homejersy_am4o5k.jpg','https://res.cloudinary.com/dazhskqcc/image/upload/v1754065745/homejersy_am4o5k.jpg','https://res.cloudinary.com/dazhskqcc/image/upload/v1754065745/homejersy_am4o5k.jpg','https://res.cloudinary.com/dazhskqcc/image/upload/v1754065745/homejersy_am4o5k.jpg','https://res.cloudinary.com/dazhskqcc/image/upload/v1754065745/homejersy_am4o5k.jpg','https://res.cloudinary.com/dazhskqcc/image/upload/v1754065745/homejersy_am4o5k.jpg','Official Home Kit 2025')"
+          >
+            <span>CHECKOUT</span>
+          </button>
         </div>
       </div>
     </div>
@@ -115,21 +123,7 @@
         ><i class="fa-brands fa-tiktok" style="color: #74c0fc"></i
       ></a>
     </footer>
-    <script>
-      const toggle = document.getElementById("menu-toggle");
-      const navLinks = document.getElementById("nav-links");
-
-      toggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
-      AOS.init({
-        offset: 120, // distance in px before triggering animation
-        delay: 200, // delay in ms
-        duration: 1000, // animation duration in ms
-        easing: "ease-in-out", // animation timing function
-        once: false, // whether animation should happen only once
-        mirror: false, // whether elements animate out while scrolling past them
-      });
-    </script>
   </body>
+
+  <script src="kit.js"></script>
 </html>
