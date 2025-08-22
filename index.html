@@ -182,6 +182,19 @@
     </footer>
   </body>
   <script>
+    const engageDiv = document.querySelector(".engage-o");
+    const buttons = engageDiv.querySelectorAll("button");
+
+    buttons.forEach((button) => {
+      button.addEventListener("mouseenter", () => {
+        engageDiv.style.animationPlayState = "paused";
+      });
+
+      button.addEventListener("mouseleave", () => {
+        engageDiv.style.animationPlayState = "running";
+      });
+    });
+
     AOS.init({
       offset: 120, // distance in px before triggering animation
       delay: 200, // delay in ms
