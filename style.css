@@ -253,7 +253,7 @@ nav ul {
   }
 
   #hero {
-    background-image: url("images/mobile\ hero.jpg");
+    background-image: url("images/mob.jpg");
   }
   #hero::before {
     background: rgba(0, 0, 0, 0.5);
