@@ -165,7 +165,9 @@ nav ul {
 .engage-o button {
   margin-top: 5%;
   margin-bottom: 5%;
-  padding: 15px 20px;
+  padding: 17px 35px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 20px;
   border-radius: 10px;
   background-color: rgb(25, 83, 181);
   color: white;
