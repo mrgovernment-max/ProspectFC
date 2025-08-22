@@ -215,58 +215,6 @@ nav ul {
   }
 }
 
-@media (max-width: 750px) {
-  nav ul li {
-    margin: 2%;
-  }
-
-  #search-bar {
-    width: 60%;
-  }
-
-  .engage-div {
-    margin-top: 15%;
-  }
-
-  nav ul {
-    gap: 0.5rem;
-    width: 100vw;
-  }
-
-  .header-socials {
-    display: none;
-  }
-
-  .header-socials a i {
-    font-size: 20px;
-  }
-
-  #logo {
-    margin: auto;
-    height: 10%;
-    border: hidden;
-    width: 30%;
-  }
-
-  #logo img {
-    margin-top: 5%;
-  }
-
-  #hero {
-    background-image: url("images/mob.jpg");
-  }
-  #hero::before {
-    background: rgba(0, 0, 0, 0.5);
-  }
-
-  #hero-text {
-    margin-top: -5%;
-  }
-  #hero-text p {
-    font-size: 1.6rem;
-  }
-}
-
 #hero::before {
   content: "";
   position: absolute;
@@ -274,7 +222,7 @@ nav ul {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
 
@@ -324,6 +272,59 @@ nav ul {
 h1 {
   text-align: center;
   margin-top: 3%;
+}
+
+@media (max-width: 750px) {
+  nav ul li {
+    margin: 2%;
+  }
+
+  #search-bar {
+    width: 60%;
+  }
+
+  .engage-div {
+    margin-top: 15%;
+  }
+
+  nav ul {
+    gap: 0.5rem;
+    width: 100vw;
+  }
+
+  .header-socials {
+    display: none;
+  }
+
+  .header-socials a i {
+    font-size: 20px;
+  }
+
+  #logo {
+    margin: auto;
+    height: 10%;
+    border: hidden;
+    width: 30%;
+  }
+
+  #logo img {
+    margin-top: 5%;
+  }
+
+  #hero {
+    height: 50vh;
+    background-image: url("images/mob.jpg");
+  }
+  #hero::before {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  #hero-text {
+    margin-top: -5%;
+  }
+  #hero-text p {
+    font-size: 1.6rem;
+  }
 }
 
 #highlights,
