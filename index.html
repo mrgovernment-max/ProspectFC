@@ -325,12 +325,62 @@ Order tickets and printed programmes below
           </ol>
         </section>
   
+        <!-- Newsletter Subscribe -->
+<div class="newsletter" role="region" aria-labelledby="newsletter-title">
+  <h2 id="newsletter-title">Subscribe to our newsletter</h2>
+
+  <form id="newsletter-form" action="https://prospect-form-backend.onrender.com/newsletter_subscribers" method="post" novalidate>
+    <div class="field">
+      <label for="nl-email">Email address</label>
+      <input
+        id="nl-email"
+        name="email"
+        type="email"
+        inputmode="email"
+        autocomplete="email"
+        placeholder="you@example.com"
+        required
+        aria-describedby="nl-help"
+      />
+      <small id="nl-help">We’ll only use this to send club updates.</small>
+    </div>
+
+    <!-- Honeypot (spam trap) — keep hidden -->
+    <div class="hp">
+      <label for="nl-website">Website</label>
+      <input id="nl-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <button id="nl-btn" type="submit" disabled>Subscribe</button>
+    <p class="fineprint">
+      By subscribing you agree to our <a href="/privacy">Privacy Policy</a>. Unsubscribe anytime.
+    </p>
+  </form>
+</div>
         
 
       </div>
     </footer>
   </body>
   <script>
+     (function () {
+    const form = document.getElementById('newsletter-form');
+    const email = document.getElementById('nl-email');
+    const btn = document.getElementById('nl-btn');
+    const hp = document.getElementById('nl-website');
+
+    // Enable button only when email is valid
+    email.addEventListener('input', () => {
+      btn.disabled = !email.validity.valid;
+    });
+
+    // Basic client-side guard for honeypot
+    form.addEventListener('submit', (e) => {
+      if (hp.value) { e.preventDefault(); return; } // bot likely
+      
+    });
+  })();
+
     const engageDiv = document.querySelector(".engage-o");
     const buttons = engageDiv.querySelectorAll("button");
 
