@@ -146,23 +146,31 @@ nav ul {
   justify-content: space-evenly;
 }
 
-.engage-o {
+.engage-o,
+.engage-f,
+.engage-t {
   width: 390px;
   max-width: 100%;
   height: auto;
   text-align: center;
   display: inline-block;
+}
+.engage-o {
   animation: moveUp 1.5s ease-in-out infinite;
 }
 
-.engage-o img {
+.engage-o img,
+.engage-t img,
+.engage-f img {
   width: 90%;
   border-radius: 20px;
   height: 100%;
   max-height: 400px;
 }
 
-.engage-o button {
+.engage-o button,
+.engage-t button,
+.engage-f button {
   margin-top: 5%;
   margin-bottom: 5%;
   padding: 17px 35px;
@@ -176,13 +184,17 @@ nav ul {
   transition: all 0.4s ease-in-out;
 }
 
-.engage-o button a {
+.engage-o button a,
+.engage-t button a,
+.engage-f button a {
   color: inherit;
   text-decoration: none;
   display: block;
 }
 
-.engage-o button:hover {
+.engage-o button:hover,
+.engage-f button:hover,
+.engage-t button:hover {
   background-color: white;
   color: rgb(25, 83, 181);
   transform: translateY(-3px);
@@ -190,23 +202,11 @@ nav ul {
 }
 
 .engage-t {
-  background-position: center;
-  background-size: cover;
-  border-radius: 20px;
-  width: 390px;
-  max-width: 100%;
-  height: 400px;
-  display: inline-block;
+  margin-top: 25%;
   animation: moveUp 1.5s ease-in-out infinite;
   animation-delay: 1s;
 }
 .engage-f {
-  background-position: center;
-  background-size: cover;
-  border-radius: 20px;
-  width: 390px;
-  max-width: 100%;
-  height: 400px;
   display: inline-block;
   animation: moveUp 1.5s ease-in-out infinite;
   animation-delay: 2s;
@@ -293,6 +293,10 @@ h1 {
 
   .engage-div {
     margin-top: 15%;
+  }
+
+  .engage-t {
+    margin-top: 0;
   }
 
   nav ul {
