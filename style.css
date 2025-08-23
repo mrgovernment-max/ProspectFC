@@ -533,12 +533,13 @@ footer {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: justify;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .footer-sec {
   padding: 20px;
   width: 100%;
+  background-color: red;
   max-width: 300px;
   color: rgba(255, 255, 255, 0.498);
   font-size: 0.75rem;
