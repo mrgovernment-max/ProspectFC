@@ -236,6 +236,10 @@ nav ul {
   position: relative;
 }
 
+.aboutt {
+  max-width: 600px;
+}
+
 .about::before,
 .aboutt::before {
   content: "";
