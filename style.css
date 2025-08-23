@@ -172,12 +172,21 @@ nav ul {
   background-color: rgb(25, 83, 181);
   color: white;
   border: none;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.engage-o button a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
 }
 
 .engage-o button:hover {
   background-color: white;
   color: rgb(25, 83, 181);
-  transition: 1s ease-in-out;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .engage-t {
