@@ -209,6 +209,60 @@ nav ul {
   animation-delay: 2s;
 }
 
+.about-team {
+  margin: 5% 0 5% 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.about,
+.aboutt {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  height: 400px;
+  max-height: 100%;
+  position: relative;
+}
+
+.about::before,
+.aboutt::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.about p,
+.aboutt p {
+  position: relative;
+  z-index: 2;
+  line-height: 30px;
+  margin-top: 30%;
+}
+
+.aboutt p {
+  position: relative;
+  z-index: 2;
+  line-height: 30px;
+  margin-top: 5%;
+}
+
 @keyframes moveUp {
   0% {
     transform: translateY(0);
