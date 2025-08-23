@@ -824,12 +824,28 @@ footer p a:hover {
 /*CONTACT*/
 
 .contact-section {
+  background-image: url("images/contact.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 6% 8%;
-  background: linear-gradient(to right, #061727, #102a43);
   color: #ffffff;
+  position: relative;
+}
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .contact-title {
+  position: relative;
+  z-index: 2;
   font-size: 2.8rem;
   text-align: center;
   margin-bottom: 10px;
@@ -838,13 +854,17 @@ footer p a:hover {
 }
 
 .contact-subtitle {
+  position: relative;
   text-align: center;
+  z-index: 2;
   font-size: 1rem;
   margin-bottom: 40px;
   color: #c7dfff;
 }
 
 .contact-container {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -864,7 +884,7 @@ footer p a:hover {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background-color: #1d3a5a;
+  background-color: rgba(69, 106, 224, 0.2);
   color: #fff;
   font-size: 1rem;
 }
@@ -891,7 +911,7 @@ footer p a:hover {
 
 .contact-info {
   flex: 1 1 40%;
-  background: #1a324d;
+  background-color: rgba(69, 106, 224, 0.2);
   border-radius: 12px;
   padding: 25px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
