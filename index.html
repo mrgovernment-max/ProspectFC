@@ -104,15 +104,6 @@
     <div id="hero">
       <section id="hero-text" data-aos="fade-up">
         <h2>PROSPECT FC</h2>
-
-        <section id="hero-button">
-          <a href="kit.html"> <button>Buy Jersey</button></a>
-          <a href="https://tktp.as/EDAYJK">
-            <button>BUY TICKET FOR SHOWCASE GAME 🔥</button></a
-          >
-
-          <a href="contact.html"><button>Join Us</button></a>
-        </section>
       </section>
     </div>
 
@@ -123,21 +114,16 @@
           margin-top: 5%;
           color: rgba(0, 0, 255, 0.61);
           font-size: 50px;
+          -webkit-text-stroke: 2px white;
         "
       >
-        BE PART OF PROSPECT FC
+        GET INVOLVED
       </h1>
 
       <div class="engage-div">
-        <div class="engage-o">
-          <img src="images/mobile hero.jpg" alt="prospect fc" />
-          <button>
-            <a href="kit.html"> Purchase Kit</a>
-          </button>
-        </div>
-
+        
         <div class="engage-t">
-          <img src="images/mobile hero.jpg" alt="prospect fc" />
+          <img src="images/showcase.jpg" alt="prospect fc" />
           <p style="font-family: sans-serif;margin-top: 5%;line-height: 30px;">
            <span style="color: blue;font-size: 20px; margin-bottom: 5%;font-family: fantasy;"> THE POLISH DERBY! </span>  <br>
 
@@ -149,6 +135,13 @@ Friday 26 September
 
 Order tickets and printed programmes below
           </p>
+          <button>
+            <a href="https://tktp.as/EDAYJK"> BUY TICKET </a>
+          </button>
+        </div>
+
+        <div class="engage-o">
+          <img src="images/mobile hero.jpg" alt="prospect fc" />
           <button>
             <a href="kit.html"> Purchase Kit</a>
           </button>
@@ -208,6 +201,32 @@ Order tickets and printed programmes below
 
       button.addEventListener("mouseleave", () => {
         engageDiv.style.animationPlayState = "running";
+      });
+    });
+
+    const engageDivv = document.querySelector(".engage-t");
+    const buttonss = engageDivv.querySelectorAll("button");
+
+    buttonss.forEach((button) => {
+      button.addEventListener("mouseenter", () => {
+        engageDivv.style.animationPlayState = "paused";
+      });
+
+      button.addEventListener("mouseleave", () => {
+        engageDivv.style.animationPlayState = "running";
+      });
+    });
+
+    const engageDivvv = document.querySelector(".engage-f");
+    const buttonsss = engageDivvv.querySelectorAll("button");
+
+    buttonsss.forEach((button) => {
+      button.addEventListener("mouseenter", () => {
+        engageDivvv.style.animationPlayState = "paused";
+      });
+
+      button.addEventListener("mouseleave", () => {
+        engageDivvv.style.animationPlayState = "running";
       });
     });
 

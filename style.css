@@ -172,7 +172,6 @@ nav ul {
 .engage-t button,
 .engage-f button {
   margin-top: 5%;
-  margin-bottom: 5%;
   padding: 17px 35px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 20px;
@@ -202,12 +201,10 @@ nav ul {
 }
 
 .engage-t {
-  margin-top: 25%;
   animation: moveUp 1.5s ease-in-out infinite;
   animation-delay: 1s;
 }
 .engage-f {
-  display: inline-block;
   animation: moveUp 1.5s ease-in-out infinite;
   animation-delay: 2s;
 }
@@ -245,7 +242,9 @@ nav ul {
 }
 
 #hero-text h2 {
-  font-size: 3rem;
+  font-size: 5rem;
+  -webkit-text-stroke: 3px blue;
+  -webkit-text-fill-color: transparent;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 1.5em;
@@ -333,6 +332,10 @@ h1 {
 
   #hero-text {
     margin-top: -5%;
+  }
+
+  #hero-text h2 {
+    font-size: 3rem;
   }
   #hero-text p {
     font-size: 1.6rem;
