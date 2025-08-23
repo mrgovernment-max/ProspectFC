@@ -122,7 +122,7 @@ nav ul {
 /* Hero */
 #hero {
   position: relative;
-  height: 100vh;
+  height: 75vh;
   background-image: url("./images/mhh.jpg");
   background-size: cover;
   background-position: center;
@@ -242,7 +242,7 @@ nav ul {
 }
 
 #hero-text h2 {
-  font-size: 5rem;
+  font-size: 5.6rem;
   -webkit-text-stroke: 3px blue;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
