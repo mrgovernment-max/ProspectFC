@@ -301,8 +301,8 @@ nav ul {
   flex: 0 0 auto;
   width: 350px;
   height: auto;
-  margin-right: 10px;
-  margin-left: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
   background: rgba(153, 153, 199, 0.132);
   color: white;
   position: relative;
