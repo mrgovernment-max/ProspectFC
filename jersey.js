@@ -12,6 +12,7 @@ async function PayForJersey() {
   const town = document.getElementById("town").value;
   const county = document.getElementById("county").value;
   const postcode = document.getElementById("postcode").value;
+  let pricetag = 25;
 
   if (
     mail === "" ||
@@ -31,7 +32,7 @@ async function PayForJersey() {
     const order = [
       {
         size,
-        price: loc === "Free Collection in Reading" ? 25 : 25 + 5,
+        price: loc === "Free Collection in Reading" ? pricetag : pricetag + 5,
         kit,
         img,
         quantity: number,
