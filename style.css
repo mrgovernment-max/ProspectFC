@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Poppins", sans-serif;
@@ -279,6 +282,43 @@ nav ul {
   }
 }
 
+.horizontal-scroll {
+  margin-bottom: 5%;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.item {
+  flex: 0 0 auto;
+  width: 350px;
+  height: auto;
+  margin-right: 10px;
+  margin-left: 20px;
+  background: rgba(153, 153, 199, 0.132);
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  border-radius: 12px;
+  padding: 10px;
+  box-sizing: border-box; /* makes padding fit inside */
+  overflow: hidden; /* prevents text from spilling outside */
+  word-wrap: break-word; /* break long words */
+  white-space: normal; /* allow multi-line wrapping */
+}
+
 #hero::before {
   content: "";
   position: absolute;
@@ -299,6 +339,35 @@ nav ul {
   z-index: 2;
   text-align: center;
   padding: 0.5em;
+}
+
+.item img {
+  width: 100%;
+  border: 20px;
+}
+
+.item p {
+  margin-top: 5%;
+  position: relative;
+}
+
+a.subscribe-btn {
+  margin-top: 5%;
+  display: inline-block;
+  padding: 10px 15px;
+  background: linear-gradient(90deg, #0040ff, #001f3f);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+a.subscribe-btn:hover {
+  background: linear-gradient(90deg, #001f3f, #0040ff);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 64, 255, 0.4);
 }
 
 #hero-text h2 {
@@ -344,6 +413,11 @@ h1 {
 @media (max-width: 750px) {
   nav ul li {
     margin: 2%;
+  }
+
+  .item {
+    width: 350px;
+    height: auto;
   }
 
   #search-bar {
@@ -520,7 +594,7 @@ video {
 }
 /* Footer */
 footer {
-  background-color: rgba(68, 68, 161, 0.11);
+  background-color: rgba(68, 68, 161, 0.201);
   padding: 2em 0;
   text-align: center;
   font-size: 0.9rem;
