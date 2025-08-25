@@ -21,7 +21,7 @@ async function PayForJersey() {
     houseNumber === "" ||
     street === "" ||
     town === "" ||
-    postcode === "" ||
+    postcode === ""
   ) {
     alert("Fill All  * Forms");
   } else {
