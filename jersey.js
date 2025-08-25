@@ -1,8 +1,8 @@
 async function PayForJersey() {
   const size = document.getElementById("size").value;
   const kit = document.getElementById("jersey-type").innerHTML;
-  const number = parseInt(document.getElementById("quantity").value, 10);
   const loc = document.getElementById("loc-select").value;
+  const number = parseInt(document.getElementById("quantity").value, 10);
   const mail = document.getElementById("mail").value;
   const contact = document.getElementById("contact").value;
   const customize = document.getElementById("customize").value.trim();
@@ -12,7 +12,6 @@ async function PayForJersey() {
   const town = document.getElementById("town").value;
   const county = document.getElementById("county").value;
   const postcode = document.getElementById("postcode").value;
-  let pricetag = 25;
 
   if (
     mail === "" ||
@@ -32,7 +31,6 @@ async function PayForJersey() {
     const order = [
       {
         size,
-        price: loc === "Free Collection in Reading" ? pricetag : pricetag + 5,
         kit,
         img,
         quantity: number,
