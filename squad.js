@@ -36,7 +36,7 @@ function SearchPlayer() {
   }
 }
 
-let Url = "https://prospectfc-api.onrender.com/players";
+let Url = "https://backendroutes-lcpt.onrender.com/players";
 // Async function to fetch and loop through players
 async function fetchAndDisplayPlayers() {
   sortPlayers();
@@ -107,19 +107,19 @@ function sortPlayers() {
     const galleryValue = this.value;
     switch (galleryValue) {
       case "Age":
-        Url = "https://prospectfc-api.onrender.com/playersage";
+        Url = "https://backendroutes-lcpt.onrender.com/playersage";
         fetchAndDisplayPlayers();
         break;
       case "Position":
-        Url = "https://prospectfc-api.onrender.com/playerspos";
+        Url = "https://backendroutes-lcpt.onrender.com/playerspos";
         fetchAndDisplayPlayers();
         break;
       case "namme":
-        Url = "https://prospectfc-api.onrender.com/playersname";
+        Url = "https://backendroutes-lcpt.onrender.com/playersname";
         fetchAndDisplayPlayers();
         break;
       default:
-        Url = "https://prospectfc-api.onrender.com/players";
+        Url = "https://backendroutes-lcpt.onrender.com/players";
         fetchAndDisplayPlayers();
     }
   });

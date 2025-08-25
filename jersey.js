@@ -50,7 +50,7 @@ async function PayForJersey() {
 
     try {
       const response = await fetch(
-        "https://prospectfcstripe.onrender.com/Fcprospect",
+        "https://backendroutes-lcpt.onrender.com/Fcprospect",
         {
           method: "POST",
           headers: {
@@ -91,7 +91,7 @@ async function Discounts() {
 
   try {
     const res = await fetch(
-      "https://prospect-form-backend.onrender.com/discount_codes",
+      "https://backendroutes-lcpt.onrender.com/discount_codes",
       {
         method: "POST",
         headers: {

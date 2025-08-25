@@ -233,7 +233,7 @@
     async function loadTeamStats() {
       try {
         const res = await fetch(
-          "https://prospect-team-stats.onrender.com/teamstats"
+          "https://backendroutes-lcpt.onrender.com/teamstats"
         ); // or your API endpoint
         const players = await res.json();
 
@@ -263,7 +263,7 @@
       resetTableHeaders;
       try {
         const res = await fetch(
-          "https://prospect-team-stats.onrender.com/filterbyname"
+          "https://backendroutes-lcpt.onrender.com/filterbyname"
         ); // or your API endpoint
         const players = await res.json();
 
@@ -290,7 +290,7 @@
       resetTableHeaders();
       try {
         const res = await fetch(
-          "https://prospect-team-stats.onrender.com/filterbygames"
+          "https://backendroutes-lcpt.onrender.com/filterbygames"
         ); // or your API endpoint
         const players = await res.json();
 
@@ -328,7 +328,7 @@
       resetTableHeaders();
       try {
         const res = await fetch(
-          "https://prospect-team-stats.onrender.com/filterbygoals"
+          "https://backendroutes-lcpt.onrender.com/filterbygoals"
         ); // or your API endpoint
         const players = await res.json();
 
@@ -371,7 +371,7 @@
       resetTableHeaders();
       try {
         const res = await fetch(
-          "https://prospect-team-stats.onrender.com/filterbyassists"
+          "https://backendroutes-lcpt.onrender.com/filterbyassists"
         ); // or your API endpoint
         const players = await res.json();
 
