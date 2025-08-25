@@ -1,8 +1,11 @@
 async function FetchMatches() {
+  let fixtures_container = document.querySelector(".fixtures-container");
+  fixtures_container.innerHTML = `<p style="font-size: 1.5rem; color: azure;text-align:center;">Loading Fixtures....</p>`;
+
   const res = await fetch("https://fixtures-api.onrender.com/fixtures");
   const data = await res.json();
 
-  const fixtures_container = document.querySelector(".fixtures-container");
+  fixtures_container.innerHTML = " ";
 
   let fixtures = "";
 

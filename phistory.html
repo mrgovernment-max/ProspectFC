@@ -227,6 +227,8 @@
     const match = document.getElementById("match");
     const goal = document.getElementById("goal");
     const assist = document.getElementById("assist");
+    const tbody = document.getElementById("team-stats-body");
+    tbody.innerHTML = `<p style="font-size: 1.5rem; color: azure; text-align:center;">Loading Stats....</p>`;
 
     async function loadTeamStats() {
       try {
@@ -235,7 +237,6 @@
         ); // or your API endpoint
         const players = await res.json();
 
-        const tbody = document.getElementById("team-stats-body");
         tbody.innerHTML = ""; // Clear old rows if any
         let count = 0;
 
