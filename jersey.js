@@ -21,7 +21,7 @@ async function PayForJersey() {
     houseNumber === "" ||
     street === "" ||
     town === "" ||
-    postcode === ""
+    postcode === "" ||
   ) {
     alert("Fill All  * Forms");
   } else {
@@ -39,6 +39,7 @@ async function PayForJersey() {
         customize: customize === "" ? "no customize" : customize,
         mail,
         postcode,
+        loc,
         contact,
         houseNumber,
         street,
