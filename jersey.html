@@ -349,6 +349,20 @@
           </option>
           <option value="Elsewhere">£5 Delivery Outside Reading</option>
         </select>
+        <label for="disCode"> Discount Code</label>
+        <input type="text" id="disCode" />
+
+        <button onclick="Discounts()" style="max-width: 200px">
+          Apply Code
+        </button>
+
+        <p id="discount-msg">
+          <span style="color: red">
+            Only apply code when ready to pay <br />
+            Refreshing or leaving the page after applying code will make code
+            Invalid.
+          </span>
+        </p>
 
         <p id="pricing">
           <strong> <del>£50</del> on sale for £25</strong>

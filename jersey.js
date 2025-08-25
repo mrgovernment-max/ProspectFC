@@ -33,6 +33,7 @@ async function PayForJersey() {
         size,
         kit,
         img,
+        discountVal,
         quantity: number,
         customize: customize === "" ? "no customize" : customize,
         mail,
@@ -74,6 +75,45 @@ async function PayForJersey() {
       console.error("Error:", error);
       alert("Something went wrong, check console.");
     }
+  }
+}
+
+let discountVal = 0;
+
+async function Discounts() {
+  const disCode = document.getElementById("disCode").value.trim();
+  const disMsg = document.getElementById("discount-msg");
+
+  if (!disCode) {
+    disMsg.innerHTML = `<span style="color: red">Enter a discount code</span>`;
+    return;
+  }
+
+  try {
+    const res = await fetch(
+      "https://prospect-form-backend.onrender.com/discount_codes",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ disCode }),
+      }
+    );
+
+    const data = await res.json();
+
+    if (res.ok) {
+      discountVal = +data.discountPercent;
+      const discount = 25 * (data.discountPercent / 100);
+      // const newPrice = 25 - discount;
+      disMsg.innerHTML = `<span style="color: green">${data.message} <br>  ${data.discountPercent}% was Discounted <br> You will now pay the price MINUS £${discount} </span> <br> <span  style="color: red"> DO NOT REFRESH OR LEAVE PAGE </span>`; // Code is valid and applied
+    } else {
+      disMsg.innerHTML = `<span style="color: red">${data.message}</span>`;
+    }
+  } catch (err) {
+    console.error("Error applying discount:", err);
+    disMsg.innerHTML = `<span style="color: red">Something went wrong.. try again</span>`;
   }
 }
 
