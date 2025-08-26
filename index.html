@@ -576,17 +576,19 @@
     document.getElementById(id).style.display = "block";
   }
 
+    // default open
+    showSection("league");
+
   // -- HIT THE PING ROUTE TO ATIVATE OTHER ROUTES --
 
   function pingBackend() {
     fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
   }
   pingBackend(); // call on load
-  setInterval(pingBackend, 1 * 60 * 1000); // every 5 mins
+  setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
 
 
-  // default open
-  showSection("league");
+
 
     AOS.init({
       offset: 120, // distance in px before triggering animation

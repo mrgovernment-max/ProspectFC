@@ -320,6 +320,12 @@
   </body>
 
   <script>
+    function pingBackend() {
+      fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+    }
+    pingBackend(); // call on load
+    setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
+
     (function () {
       const form = document.getElementById("newsletter-form");
       const email = document.getElementById("nl-email");

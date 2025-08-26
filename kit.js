@@ -1,3 +1,11 @@
+function pingBackend() {
+  fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+}
+pingBackend(); // call on load
+setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
+
+//send img urls to jersey page
+
 function jerseyData(...args) {
   const keys = [
     "img1",
@@ -10,11 +18,14 @@ function jerseyData(...args) {
     "kitType",
   ];
 
+  //store img urls into keys array --- imgs are passed through the ...args
   keys.forEach((key, index) => {
     localStorage.setItem(key, JSON.stringify(args[index]));
   });
   window.location.href = "jersey.html";
 }
+
+//nav
 
 const toggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");

@@ -1,4 +1,13 @@
+function pingBackend() {
+  fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+}
+pingBackend(); // call on load
+setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
+
+// --- pay for jerseys
+
 async function PayForJersey() {
+  //grab elements in DOM
   const size = document.getElementById("size").value;
   const kit = document.getElementById("jersey-type").innerHTML;
   const loc = document.getElementById("loc-select").value;
@@ -12,6 +21,8 @@ async function PayForJersey() {
   const town = document.getElementById("town").value;
   const county = document.getElementById("county").value;
   const postcode = document.getElementById("postcode").value;
+
+  // check if these sections are filled
 
   if (
     mail === "" ||
@@ -80,6 +91,7 @@ async function PayForJersey() {
 
 let discountVal = 0;
 
+// --- function to aplly discounts
 async function Discounts() {
   const disCode = document.getElementById("disCode").value.trim();
   const disMsg = document.getElementById("discount-msg");
@@ -104,9 +116,10 @@ async function Discounts() {
     const data = await res.json();
 
     if (res.ok) {
+      //calculate discount
       discountVal = +data.discountPercent;
       const discount = 25 * (data.discountPercent / 100);
-      // const newPrice = 25 - discount;
+
       disMsg.innerHTML = `<span style="color: green">${data.message} <br>  ${data.discountPercent}% was Discounted <br> You will now pay the price MINUS £${discount} </span> <br> <span  style="color: red"> DO NOT REFRESH OR LEAVE PAGE </span>`; // Code is valid and applied
     } else {
       disMsg.innerHTML = `<span style="color: red">${data.message}</span>`;
@@ -116,6 +129,8 @@ async function Discounts() {
     disMsg.innerHTML = `<span style="color: red">Something went wrong.. try again</span>`;
   }
 }
+
+// --- pass data from kit page
 
 function insertPassedData() {
   const keys = [
@@ -131,9 +146,13 @@ function insertPassedData() {
 
   let jerseyPassed = {};
 
+  //get img urls from local storage
+
   keys.forEach((key, index) => {
     jerseyPassed[index] = JSON.parse(localStorage.getItem(key));
   });
+
+  //pass urls to img on jersey page respectively from the jerseyPassed object
 
   document.getElementsByTagName("img")[1].src = jerseyPassed[0];
   document.getElementsByTagName("img")[2].src = jerseyPassed[1];
@@ -147,6 +166,8 @@ function insertPassedData() {
 
 window.onload = insertPassedData;
 
+//jersey swiper
+
 new Swiper(".jersey-swiper", {
   loop: true,
   pagination: {
@@ -154,6 +175,8 @@ new Swiper(".jersey-swiper", {
     clickable: true,
   },
 });
+
+//nav
 
 const toggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");

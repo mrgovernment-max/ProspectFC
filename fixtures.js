@@ -1,3 +1,5 @@
+// ---  DISPLAY FIXTURES FROM DB
+
 async function FetchMatches() {
   let fixtures_container = document.querySelector(".fixtures-container");
   fixtures_container.innerHTML = `<p style="font-size: 1.5rem; color: azure;text-align:center;">Loading Fixtures....</p>`;
@@ -41,6 +43,14 @@ async function FetchMatches() {
 }
 
 window.onload = FetchMatches;
+
+function pingBackend() {
+  fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+}
+pingBackend(); // call on load
+setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
+
+//Nav
 
 const toggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");

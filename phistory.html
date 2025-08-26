@@ -224,10 +224,20 @@
   </body>
 
   <script>
+    function pingBackend() {
+      fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+    }
+    pingBackend(); // call on load
+    setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
+
+    //GRAB ELEMENTS IN DOM
+
     const match = document.getElementById("match");
     const goal = document.getElementById("goal");
     const assist = document.getElementById("assist");
     const tbody = document.getElementById("team-stats-body");
+
+    //INCASE deploy delays
     tbody.innerHTML = `<p style="font-size: 1.5rem; color: azure; text-align:center;">Loading Stats....</p>`;
 
     async function loadTeamStats() {

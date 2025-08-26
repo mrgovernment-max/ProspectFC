@@ -1,3 +1,9 @@
+function pingBackend() {
+  fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+}
+pingBackend(); // call on load
+setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
+
 function CheckPlayerDetails(...args) {
   const keys = [
     "Pname",
@@ -11,6 +17,7 @@ function CheckPlayerDetails(...args) {
     "POTM",
   ];
 
+  //store player details passed from DOM into keys array from the ...args
   keys.forEach((key, i) => {
     localStorage.setItem(key, JSON.stringify(args[i]));
   });
@@ -18,13 +25,12 @@ function CheckPlayerDetails(...args) {
   window.location.href = "playerdetails.html";
 }
 
+//function to search player
+
 function SearchPlayer() {
   const searchValue = document.getElementById("search-bar").value.toLowerCase();
   const playerList = document.getElementById("squad-cards");
   const Playernames = playerList.getElementsByClassName("card");
-  for (let i = 0; i < Playernames.length; i++) {
-    Playernames[i].setAttribute("data-aos", "");
-  }
 
   for (let i = 0; i < Playernames.length; i++) {
     const RealName = Playernames[i].getAttribute("data-name").toLowerCase();
@@ -94,12 +100,15 @@ AOS.init({
   mirror: false, // whether elements animate out while scrolling past them
 });
 
+//nav
 const toggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 
 toggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
+
+//sort players by filter selected
 
 function sortPlayers() {
   const gallery = document.getElementById("select-gallery");

@@ -1,3 +1,9 @@
+function pingBackend() {
+  fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+}
+pingBackend(); // call on load
+setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
+
 // Get data from localStorage
 const Pname = JSON.parse(localStorage.getItem("Pname"));
 const Pimg1 = JSON.parse(localStorage.getItem("Pimg"));
@@ -20,6 +26,7 @@ document.getElementById("MOTM").innerHTML = MOTM;
 document.getElementById("POTM").innerHTML = POTM;
 document.getElementById("main").style.backgroundImage = `url(${Pimg1})`;
 
+//nav
 const toggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 

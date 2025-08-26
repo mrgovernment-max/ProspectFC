@@ -725,14 +725,17 @@
     </div>
 
     <script>
+      //---SHOW IMG WHEN CLICKED
       function showModal(src) {
         document.getElementById("modal-img").src = src;
         document.getElementById("modal").style.display = "flex";
       }
-
+      //--HIDE WHEN OTHER SIDES APART FROM THE IMG IS CLICKED
       function hideModal() {
         document.getElementById("modal").style.display = "none";
       }
+
+      //nav
 
       const toggle = document.getElementById("menu-toggle");
       const navLinks = document.getElementById("nav-links");
@@ -740,6 +743,8 @@
       toggle.addEventListener("click", () => {
         navLinks.classList.toggle("active");
       });
+
+      //SHOW DIV THAT IS SELECTED BY THE DROPDOWN
 
       const gallery = document.getElementById("select-gallery");
 
@@ -757,6 +762,12 @@
           }
         }
       });
+
+      function pingBackend() {
+        fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+      }
+      pingBackend(); // call on load
+      setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
 
       AOS.init({
         offset: 120, // distance in px before triggering animation
