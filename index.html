@@ -121,37 +121,47 @@
       >
         THE CLUB
       </h1>
+    
+      <!-- Inline Menu -->
+      <div class="inline-menu" style="text-align: center; margin: 20px 0;">
+        <button onclick="showSection('league')">League</button>
+        <button onclick="showSection('recorded')">Media</button>
+        <button onclick="showSection('cup')">Cup Games</button>
+        <button onclick="showSection('train')">Training</button>
+        <button onclick="showSection('family')">Family</button>
+      </div>
+    
+      <!-- Sections -->
       <div class="about-team">
         <div
-          class="about"
-          style="background-image: url('images/league.jpg'); max-width: 600px"
-          data-aos="fade-right"
+          id="league"
+          class="about section"
+          style="background-image: url('images/league.jpg'); "
         >
           <p>
             We play in the competitive EBFL league based in Reading. Every match
             is a chance to test our skills and push the team to new heights. We
             pride ourselves on teamwork, discipline, and representing Prospect
-            FC with pride. Join us, watch us, or be part of the journey — the
-            pitch is where it all happens
+            FC with pride.
           </p>
         </div>
-
+    
         <div
-          class="about"
+          id="recorded"
+          class="about section"
           style="background-image: url('images/recorded.jpg')"
-          data-aos="fade-right"
         >
           <p>
-            Games are Recorded Live and Pictures are also taking. Highlights and
+            Games are Recorded Live and Pictures are also taken. Highlights and
             Photos are posted on our socials <br />
-            -- website,Youtube and instagram --
+            -- Website, YouTube and Instagram --
           </p>
         </div>
-
+    
         <div
-          class="about"
+          id="cup"
+          class="about section"
           style="background-image: url('images/cup.jpeg')"
-          data-aos="fade-right"
         >
           <p
             style="
@@ -159,26 +169,26 @@
               -webkit-text-fill-color: transparent;
             "
           >
-            In adddition to League Games , Prospect Partakes in other
-            competiitve cup games
+            In addition to League Games, Prospect also partakes in other
+            competitive cup games.
           </p>
         </div>
-
+    
         <div
-          class="about"
-          style="background-image: url('images/train.jpg'); max-width: 600px"
-          data-aos="fade-left"
+          id="train"
+          class="about section"
+          style="background-image: url('images/train.jpg'); "
         >
           <p>
             We have two training sessions a week — Mondays and Thursdays at 7:00
             PM, with structured, high-quality sessions at Prospect Park.
           </p>
         </div>
-
+    
         <div
-          class="aboutt"
+          id="family"
+          class="about section"
           style="background-image: url('images/family.jpg')"
-          data-aos="fade-left"
         >
           <p>
             It’s not just about the pitch — it’s about being part of the family.
@@ -551,6 +561,21 @@
         engageDivvv.style.animationPlayState = "running";
       });
     });
+
+
+    //SHOW INLINE DIVS 
+    function showSection(id) {
+    // hide all
+    document.querySelectorAll(".section").forEach((sec) => {
+      sec.style.display = "none";
+    });
+
+    // show clicked one
+    document.getElementById(id).style.display = "block";
+  }
+
+  // default open
+  showSection("league");
 
     AOS.init({
       offset: 120, // distance in px before triggering animation
