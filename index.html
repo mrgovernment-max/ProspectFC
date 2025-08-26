@@ -523,6 +523,8 @@
       });
     })();
 
+    // --  ANIMATION FOR GET INVOLVED SECTION  --
+
     const engageDiv = document.querySelector(".engage-o");
     const buttons = engageDiv.querySelectorAll("button");
 
@@ -573,6 +575,15 @@
     // show clicked one
     document.getElementById(id).style.display = "block";
   }
+
+  // -- HIT THE PING ROUTE TO ATIVATE OTHER ROUTES --
+
+  function pingBackend() {
+    fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+  }
+  pingBackend(); // call on load
+  setInterval(pingBackend, 1 * 60 * 1000); // every 5 mins
+
 
   // default open
   showSection("league");
