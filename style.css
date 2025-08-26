@@ -240,7 +240,7 @@ nav ul {
 
 .inline-menu button:hover,
 .inline-menu button.active {
-  background: rgba(0, 0, 255, 0.7);
+  background: rgba(123, 123, 178, 0.589);
   border-color: rgba(0, 0, 255, 0.7);
 }
 
