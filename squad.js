@@ -33,6 +33,11 @@ function SearchPlayer() {
   const Playernames = playerList.getElementsByClassName("card");
 
   for (let i = 0; i < Playernames.length; i++) {
+    const element = Playernames[i];
+    element.setAttribute("data-aos", "");
+  }
+
+  for (let i = 0; i < Playernames.length; i++) {
     const RealName = Playernames[i].getAttribute("data-name").toLowerCase();
     if (RealName.includes(searchValue)) {
       Playernames[i].style.display = "";
