@@ -2,7 +2,7 @@
 
 async function FetchMatches() {
   let fixtures_container = document.querySelector(".fixtures-container");
-  fixtures_container.innerHTML = `<p style="font-size: 1.5rem; color: azure;text-align:center;">Loading Fixtures....</p>`;
+  fixtures_container.innerHTML = `<p style="font-size: 1.5rem; color: azure;text-align:center;">Loading Fixtures  refresh page....</p>`;
 
   const res = await fetch("https://backendroutes-lcpt.onrender.com/fixtures");
   const data = await res.json();

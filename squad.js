@@ -48,7 +48,7 @@ async function fetchAndDisplayPlayers() {
   sortPlayers();
   //dispaly msg if deploy delays
   const container = document.getElementById("squad-cards");
-  container.innerHTML = `<p style="font-size: 1.5rem; color: azure">Loading Players....</p>`;
+  container.innerHTML = `<p style="font-size: 1.5rem; color: azure">Loading Players refresh page ....</p>`;
   try {
     const res = await fetch(`${Url}`);
     const players = await res.json();
