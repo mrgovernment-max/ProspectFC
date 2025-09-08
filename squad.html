@@ -376,6 +376,7 @@
         // Apply current sort
         const sortBy = document.getElementById("sort-by").value;
         sortPlayers(sortBy, false);
+        displayPlayers(filteredPlayers);
       }
 
       // Sort players
@@ -402,15 +403,7 @@
             );
             break;
           default:
-            // Default sorting (keep original order)
-            filteredPlayers = [...allPlayers];
-            const searchTerm = document
-              .getElementById("search-input")
-              .value.toLowerCase();
-            const positionFilter =
-              document.getElementById("position-filter").value;
-            filterPlayers(searchTerm, positionFilter);
-            return;
+            break;
         }
 
         if (updateDisplay) {
@@ -428,6 +421,8 @@
 
       // Initialize the page
       fetchAndDisplayPlayers();
+
+      function searchPlayer() {}
     </script>
   </body>
 </html>
