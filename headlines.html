@@ -16,6 +16,58 @@
   <title>HEADLINES | PROSPECT FC | NEWS | EBFL LEAGUE</title>
 </head>
 <body>
+
+    <!-- Header & Navigation -->
+    <header>
+      <div class="container header-container">
+        <div class="logo" data-aos="fade-down">
+          <a href="index.html">
+            <img
+              src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+              alt="Prospect FC logo"
+            />
+          </a>
+        </div>
+
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="headlines.html">Headlines</a></li>
+          <li><a href="squad.html">Squad</a></li>
+          <li><a href="phistory.html">Team Stats</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="fixture.html">Fixtures</a></li>
+          <li><a href="sponsor.html">Sponsors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="social-icons">
+          <a
+            href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
+            target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
+            target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
+            target="_blank"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+        </div>
+      </div>
+    </header>
   
 <h1>HEADLINES </h1>
 
@@ -300,6 +352,15 @@
 </footer>
 
 <script>
+
+   // Mobile menu toggle
+   const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
       function pingBackend() {
       fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
     }

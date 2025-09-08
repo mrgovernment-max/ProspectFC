@@ -3,249 +3,825 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="canonical" href="https://prospectfc.com/sponsor">
-
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="canonical" href="https://prospectfc.com/sponsor" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png" alt="propectfc">
-<meta name="description" content="Meet the official sponsors and partners of Prospect FC, supporting our club and community in Reading, Berkshire. Learn how to become a sponsor and support grassroots football at Prospect Football Club.">
-<meta name="keywords" content="Prospect FC sponsors, Prospect Football Club partners, football club sponsorship Reading, support local football, grassroots football sponsors, East Berkshire Football League sponsors, Prospect FC sponsorship opportunities, football club community partners, sponsor Prospect FC, Berkshire football sponsorship">
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+      alt="Prospect FC logo"
+    />
+    <meta
+      name="description"
+      content="Meet the official sponsors and partners of Prospect FC, supporting our club and community in Reading, Berkshire. Learn how to become a sponsor and support grassroots football at Prospect Football Club."
+    />
+    <meta
+      name="keywords"
+      content="Prospect FC sponsors, Prospect Football Club partners, football club sponsorship Reading, support local football, grassroots football sponsors, East Berkshire Football League sponsors, Prospect FC sponsorship opportunities, football club community partners, sponsor Prospect FC, Berkshire football sponsorship"
+    />
+    <title>
+      Prospect FC Sponsors | Official Club Partners & Sponsorship Opportunities
+    </title>
 
-    <title>Prospect Fc Sponsors | Sponsor Prospect fc | Prospect FC Sponsors & Partners | Supporting Our Football Club | Reading</title>
-    <script
-      src="https://kit.fontawesome.com/a47fc389f5.js"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Stylesheets -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* CSS Reset & Variables */
+      :root {
+        --primary-blue: #0051ba;
+        --secondary-blue: #003a87;
+        --accent-gold: #ffd700;
+        --light-bg: #f8f9fa;
+        --dark-bg: #0a192f;
+        --text-light: #ffffff;
+        --text-dark: #333333;
+        --text-muted: #6c757d;
+        --transition: all 0.3s ease;
+        --border-radius: 8px;
+        --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--text-dark);
+        background-color: var(--light-bg);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary-blue);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.8rem;
+        background-color: var(--primary-blue);
+        color: var(--text-light);
+        border: none;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .btn:hover {
+        background-color: var(--secondary-blue);
+        transform: translateY(-3px);
+        box-shadow: var(--box-shadow-hover);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--primary-blue);
+        color: var(--primary-blue);
+      }
+
+      .btn-outline:hover {
+        background-color: var(--primary-blue);
+        color: var(--text-light);
+      }
+
+      /* Header & Navigation */
+      header {
+        background-color: var(--dark-bg);
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+      }
+
+      .logo img {
+        width: 100%;
+        height: auto;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        margin: 0 0.5rem;
+      }
+
+      .nav-menu a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+      }
+
+      .nav-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-icons a {
+        color: var(--text-light);
+        font-size: 1.2rem;
+        transition: var(--transition);
+      }
+
+      .social-icons a:hover {
+        color: var(--accent-gold);
+        transform: translateY(-3px);
+      }
+
+      .menu-toggle {
+        display: none;
+        color: var(--text-light);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      /* Sponsors Hero Section */
+      .sponsors-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png")
+            no-repeat center center/cover;
+        background-color: var(--dark-bg);
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--text-light);
+        padding: 2rem 0;
+      }
+
+      .sponsors-hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+
+      .sponsors-hero-content p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Sponsors Section */
+      .sponsors-section {
+        padding: 5rem 0;
+        background-color: var(--light-bg);
+      }
+
+      .sponsors-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2.5rem;
+        margin-bottom: 4rem;
+      }
+
+      .sponsor-card {
+        background-color: var(--text-light);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        text-align: center;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .sponsor-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--box-shadow-hover);
+      }
+
+      .sponsor-image {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: contain;
+        margin-bottom: 1.5rem;
+        border: 3px solid var(--primary-blue);
+        padding: 10px;
+        background-color: var(--text-light);
+      }
+
+      .sponsor-name {
+        font-size: 1.4rem;
+        color: var(--primary-blue);
+        margin-bottom: 1rem;
+      }
+
+      .sponsor-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .sponsor-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--primary-blue);
+        color: var(--text-light);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .sponsor-link:hover {
+        background-color: var(--secondary-blue);
+        transform: translateY(-3px);
+      }
+
+      /* CTA Section */
+      .sponsor-cta {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue) 0%,
+          var(--secondary-blue) 100%
+        );
+        padding: 4rem 2rem;
+        border-radius: var(--border-radius);
+        text-align: center;
+        color: var(--text-light);
+        margin-top: 3rem;
+      }
+
+      .sponsor-cta h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--accent-gold);
+      }
+
+      .sponsor-cta p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-button {
+        background-color: var(--accent-gold);
+        color: var(--text-dark);
+        font-weight: 700;
+        padding: 1rem 2.5rem;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: var(--transition);
+        display: inline-block;
+      }
+
+      .cta-button:hover {
+        background-color: var(--text-light);
+        transform: translateY(-3px);
+        box-shadow: var(--box-shadow-hover);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark-bg);
+        color: var(--text-light);
+        padding: 4rem 0 2rem;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-col h3 {
+        color: var(--accent-gold);
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-col h3:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: var(--accent-gold);
+      }
+
+      .footer-col p,
+      .footer-col li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-col ul {
+        list-style: none;
+      }
+
+      .footer-col a {
+        color: var(--text-light);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .footer-col a:hover {
+        color: var(--accent-gold);
+        padding-left: 5px;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          height: 100vh;
+          width: 70%;
+          background-color: var(--dark-bg);
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transition: var(--transition);
+          z-index: 999;
+        }
+
+        .nav-menu.active {
+          right: 0;
+        }
+
+        .menu-toggle {
+          display: block;
+          z-index: 1000;
+        }
+
+        .social-icons {
+          display: none;
+        }
+
+        .sponsors-hero-content h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .sponsors-hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .sponsors-hero-content p {
+          font-size: 1rem;
+        }
+
+        .sponsors-grid {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+
+        .sponsor-image {
+          width: 150px;
+          height: 150px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .sponsors-hero {
+          height: 40vh;
+        }
+
+        .sponsors-hero-content h1 {
+          font-size: 1.8rem;
+        }
+
+        .sponsors-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .sponsor-cta {
+          padding: 3rem 1.5rem;
+        }
+
+        .sponsor-cta h3 {
+          font-size: 1.6rem;
+        }
+      }
+    </style>
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXGWE19783"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-TXGWE19783');
-  </script>
-  </script>
   <body>
-   <!--Nav Section-->
-   <nav>
-    <section class="header-socials" data-aos="fade-right">
-      <a
-        target="blamk"
-        href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
-        ><i class="fa-brands fa-facebook" style="color: #74c0fc"></i
-      ></a>
-      <a
-        target="_blank"
-        href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
-        ><i class="fa-brands fa-instagram" style="color: #74c0fc"></i
-      ></a>
-      <a
-        target="_blank"
-        href=" https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
-        ><i class="fa-brands fa-youtube" style="color: #74c0fc"></i
-      ></a>
-
-      <a
-        target="_blank"
-        href=" https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
-        ><i class="fa-brands fa-tiktok" style="color: #74c0fc"></i
-      ></a>
-    </section>
-
-    <div id="logo" data-aos="fade-down">
-      <a href="index.html"
-        ><img
-          src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
-          alt="propectfc"
-      /></a>
-    </div>
-
-    <!-- Hamburger menu icon -->
-    <div class="menu-toggle" id="menu-toggle" data-aos="fade-left">
-      &#9776;
-      <!-- Unicode hamburger -->
-    </div>
-
-    <ul id="nav-links">
-      <li><a href="index.html"> HOME </a></li>
-      <li><a href="headlines.html"> HEADLINES </a></li>
-      <li><a href="squad.html"> SQUAD </a></li>
-      <li><a href="phistory.html"> TEAM STATS </a></li>
-      <li><a href="gallery.html"> GALLERY </a></li>
-      <li><a href="fixture.html"> FIXTURES </a></li>
-      <li><a href="sponsor.html"> SPONSORS </a></li>
-      <li><a href="contact.html"> CONTACT </a></li>
-    </ul>
-  </nav>
-    <section class="sponsor-section">
-      <h2 class="section-title">Our Proud Sponsors</h2>
-
-      <div class="sponsor-flex">
-        <!-- Example sponsor -->
-        <!--MAKS-->
-        <div class="sponsor-card" data-aos="fade-right">
-          <img src="images/maks.jpg" alt="Nike Logo" />
-          <a
-            target="_blank"
-            href="https://www.instagram.com/maksvehiclecentre?utm_source=ig_web_button_share_sheet&igsh=MXhkc2NwNzVmeWZmMw=="
-            ><i class="fa-brands fa-instagram" style="color: #74c0fc"></i
-          ></a>
-          <a
-            target="_blank"
-            href="https://www.facebook.com/share/1FDiMT2smc/?mibextid=wwXIfr"
-            ><i class="fa-brands fa-facebook" style="color: #74c0fc"></i
-          ></a>
-          <a href="mailto:info@MaksVehicleCenter.co.uk"
-            ><i class="fa-solid fa-envelope" style="color: #74c0fc"></i
-          ></a>
+    <!-- Header & Navigation -->
+    <header>
+      <div class="container header-container">
+        <div class="logo" data-aos="fade-down">
+          <a href="index.html">
+            <img
+              src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+              alt="Prospect FC logo"
+            />
+          </a>
         </div>
 
-        <!--FITCOKKIE-->
-
-        <div class="sponsor-card" data-aos="fade-down">
-          <img src="images/sponor.jpg" alt="Nike Logo" />
-          <a
-            target="_blank"
-            href="https://www.instagram.com/fitcookiereading?utm_source=ig_web_button_share_sheet&igsh=MXVhem5iazk3dXZiMw=="
-            ><i class="fa-brands fa-instagram" style="color: #74c0fc"></i
-          ></a>
-          <a
-            target="_blank"
-            href="https://www.facebook.com/share/12MrjmMxtky/?mibextid=wwXIfr"
-            ><i class="fa-brands fa-facebook" style="color: #74c0fc"></i
-          ></a>
-          <a target="_blank" href="https://fitcookie.co.uk/"
-            ><i class="fa-solid fa-globe" style="color: #74c0fc"></i
-          ></a>
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
         </div>
 
-        <!--MACLEE-->
-        <div class="sponsor-card" data-aos="fade-left">
-          <img src="images/maclee.jpg" alt="Prospect Fc Sponsor Ebfl Berks Bucks Local Team Reading Teams" />
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="headlines.html">Headlines</a></li>
+          <li><a href="squad.html">Squad</a></li>
+          <li><a href="phistory.html">Team Stats</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="fixture.html">Fixtures</a></li>
+          <li><a href="sponsor.html">Sponsors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
 
+        <div class="social-icons">
           <a
+            href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
             target="_blank"
-            href="https://www.instagram.com/maclee.designs?utm_source=ig_web_button_share_sheet&igsh=cnhqY2pyYnhtcDFq"
-            ><i class="fa-brands fa-instagram" style="color: #74c0fc"></i
-          ></a>
-          <a
-            target="_blank"
-            href="https://www.facebook.com/share/16fJgVNwBT/?mibextid=wwXIfr"
-            ><i class="fa-brands fa-facebook" style="color: #74c0fc"></i
-          ></a>
-          <a target="_blank" href="https://www.macleedesigns.co.uk/"
-            ><i class="fa-solid fa-globe" style="color: #74c0fc"></i
-          ></a>
-          <a href="tel:+447984590949"
-            ><i class="fa-solid fa-phone-volume" style="color: #74c0fc"></i
-          ></a>
-          <a href="mailto:office@macleedesigns.co.uk"
-            ><i class="fa-solid fa-envelope" style="color: #74c0fc"></i
-          ></a>
-        </div>
-
-        <!--LIBRO-->
-
-        <div class="sponsor-card" data-aos="fade-right">
-          <img src="images/libro.jpg" alt="Prospect Fc Sponsor Ebfl Berks Bucks Local Team Reading Teams" />
-
-          <a
-            target="_blank"
-            href="https://www.instagram.com/librotax?utm_source=ig_web_button_share_sheet&igsh=YTlheGgwcWhtY2Iw"
-            ><i class="fa-brands fa-instagram" style="color: #74c0fc"></i
+            ><i class="fab fa-facebook-f"></i
           ></a>
           <a
+            href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
             target="_blank"
-            href="https://www.facebook.com/share/15okQimZGU/?mibextid=wwXIfr"
-            ><i class="fa-brands fa-facebook" style="color: #74c0fc"></i
+            ><i class="fab fa-instagram"></i
           ></a>
-          <a href="tel:+447888678494"
-            ><i class="fa-solid fa-phone-volume" style="color: #74c0fc"></i
+          <a
+            href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
+            target="_blank"
+            ><i class="fab fa-youtube"></i
           ></a>
-          <a href="mailto:biuro@librotatax.co.uk"
-            ><i class="fa-solid fa-envelope" style="color: #74c0fc"></i
+          <a
+            href="https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
+            target="_blank"
+            ><i class="fab fa-tiktok"></i
           ></a>
-        </div>
-
-        <!--AGNES-->
-        <div class="sponsor-card" data-aos="fade-up">
-          <img src="images/agnes.jpg" alt="Prospect Fc Sponsor Ebfl Berks Bucks Local Team Reading Teams" />
-          <a href="tel:7427674581"
-            ><i class="fa-solid fa-phone-volume" style="color: #74c0fc"></i
-          ></a>
-
-          <p></p>
-        </div>
-
-        <!--JM-->
-        <div class="sponsor-card" data-aos="fade-left">
-          <img src="images/jm.jpg" alt="Prospect Fc Sponsor Ebfl Berks Bucks Local Team Reading Teams" />
-          <p></p>
         </div>
       </div>
+    </header>
 
-      <div class="sponsor-cta" data-aos="flip-up">
-        <h3>Wanna Be a Sponsor?</h3>
-        <p>Join our journey and put your brand where the action is.</p>
-        <a href="contact.html" class="cta-button">Become a Sponsor</a>
+    <!-- Sponsors Hero Section -->
+    <section class="sponsors-hero">
+      <div class="container sponsors-hero-content" data-aos="fade-up">
+        <h1>OUR SPONSORS & PARTNERS</h1>
+        <p>
+          Meet the businesses and organizations that support Prospect FC and
+          help make our success possible
+        </p>
       </div>
     </section>
 
+    <!-- Sponsors Section -->
+    <section class="sponsors-section">
+      <div class="container">
+        <h2 class="section-title">PROUDLY SUPPORTED BY</h2>
+
+        <div class="sponsors-grid">
+          <!-- MAKS Vehicle Centre -->
+          <div class="sponsor-card" data-aos="fade-right">
+            <img
+              src="images/maks.jpg"
+              alt="MAKS Vehicle Centre Logo"
+              class="sponsor-image"
+            />
+            <h3 class="sponsor-name">MAKS Vehicle Centre</h3>
+            <div class="sponsor-links">
+              <a
+                href="https://www.instagram.com/maksvehiclecentre?utm_source=ig_web_button_share_sheet&igsh=MXhkc2NwNzVmeWZmMw=="
+                target="_blank"
+                class="sponsor-link"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/share/1FDiMT2smc/?mibextid=wwXIfr"
+                target="_blank"
+                class="sponsor-link"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="mailto:info@MaksVehicleCenter.co.uk"
+                class="sponsor-link"
+              >
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Fit Cookie -->
+          <div class="sponsor-card" data-aos="fade-down">
+            <img
+              src="images/sponor.jpg"
+              alt="Fit Cookie Logo"
+              class="sponsor-image"
+            />
+            <h3 class="sponsor-name">Fit Cookie</h3>
+            <div class="sponsor-links">
+              <a
+                href="https://www.instagram.com/fitcookiereading?utm_source=ig_web_button_share_sheet&igsh=MXVhem5iazk3dXZiMw=="
+                target="_blank"
+                class="sponsor-link"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/share/12MrjmMxtky/?mibextid=wwXIfr"
+                target="_blank"
+                class="sponsor-link"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://fitcookie.co.uk/"
+                target="_blank"
+                class="sponsor-link"
+              >
+                <i class="fas fa-globe"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- MacLee Designs -->
+          <div class="sponsor-card" data-aos="fade-left">
+            <img
+              src="images/maclee.jpg"
+              alt="MacLee Designs Logo"
+              class="sponsor-image"
+            />
+            <h3 class="sponsor-name">MacLee Designs</h3>
+            <div class="sponsor-links">
+              <a
+                href="https://www.instagram.com/maclee.designs?utm_source=ig_web_button_share_sheet&igsh=cnhqY2pyYnhtcDFq"
+                target="_blank"
+                class="sponsor-link"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/share/16fJgVNwBT/?mibextid=wwXIfr"
+                target="_blank"
+                class="sponsor-link"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://www.macleedesigns.co.uk/"
+                target="_blank"
+                class="sponsor-link"
+              >
+                <i class="fas fa-globe"></i>
+              </a>
+              <a href="tel:+447984590949" class="sponsor-link">
+                <i class="fas fa-phone"></i>
+              </a>
+              <a href="mailto:office@macleedesigns.co.uk" class="sponsor-link">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Libro Tax -->
+          <div class="sponsor-card" data-aos="fade-right">
+            <img
+              src="images/libro.jpg"
+              alt="Libro Tax Logo"
+              class="sponsor-image"
+            />
+            <h3 class="sponsor-name">Libro Tax</h3>
+            <div class="sponsor-links">
+              <a
+                href="https://www.instagram.com/librotax?utm_source=ig_web_button_share_sheet&igsh=YTlheGgwcWhtY2Iw"
+                target="_blank"
+                class="sponsor-link"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/share/15okQimZGU/?mibextid=wwXIfr"
+                target="_blank"
+                class="sponsor-link"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="tel:+447888678494" class="sponsor-link">
+                <i class="fas fa-phone"></i>
+              </a>
+              <a href="mailto:biuro@librotatax.co.uk" class="sponsor-link">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Agnes -->
+          <div class="sponsor-card" data-aos="fade-up">
+            <img
+              src="images/agnes.jpg"
+              alt="Agnes Logo"
+              class="sponsor-image"
+            />
+            <h3 class="sponsor-name">Agnes</h3>
+            <div class="sponsor-links">
+              <a href="tel:7427674581" class="sponsor-link">
+                <i class="fas fa-phone"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- JM -->
+          <div class="sponsor-card" data-aos="fade-left">
+            <img src="images/jm.jpg" alt="JM Logo" class="sponsor-image" />
+            <h3 class="sponsor-name">JM</h3>
+          </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="sponsor-cta" data-aos="flip-up">
+          <h3>Want to Become a Sponsor?</h3>
+          <p>
+            Join our journey and put your brand where the action is. Support
+            grassroots football and connect with our community.
+          </p>
+          <a href="contact.html" class="cta-button">Become a Sponsor</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2025 PROSPECT FC ©</p>
-      <a
-        target="blamk"
-        href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
-        ><i class="fa-brands fa-facebook" style="color: #74c0fc"></i
-      ></a>
-      <a
-        target="_blank"
-        href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
-        ><i class="fa-brands fa-instagram" style="color: #74c0fc"></i
-      ></a>
-      <a
-        target="_blank"
-        href=" https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
-        ><i class="fa-brands fa-youtube" style="color: #74c0fc"></i
-      ></a>
+      <div class="container footer-container">
+        <div class="footer-col">
+          <h3>PROSPECT FC</h3>
+          <p>
+            Prospect Football Club is a grassroots 11-aside team situated in
+            Reading, England. We compete in Division One of the East Berkshire
+            Football League (EBFL).
+          </p>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
+              target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
+              target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
+              target="_blank"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
+        </div>
 
-      <a
-        target="_blank"
-        href=" https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
-        ><i class="fa-brands fa-tiktok" style="color: #74c0fc"></i
-      ></a>
+        <div class="footer-col">
+          <h3>QUICK LINKS</h3>
+          <ul>
+            <li><a href="headlines.html">Headlines</a></li>
+            <li><a href="squad.html">Squad</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="sponsor.html">Sponsors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>CLUB INFO</h3>
+          <ul>
+            <li>Training Days: Tues & Thurs</li>
+            <li>Training Time: 7:00pm</li>
+            <li>Location: Reading</li>
+            <li>Mail: prospectfc24@gmail.com</li>
+            <li>Contact: 07537883680</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>
+          &copy; 2025 PROSPECT FC. All rights reserved. | Website by
+          <a
+            href="https://www.instagram.com/_idonmindit?igsh=cGRsYWtscnhnNTNs&utm_source=qr"
+            target="_blank"
+            >Emman</a
+          >
+        </p>
+      </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-
-function pingBackend() {
-      fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
-    }
-    pingBackend(); // call on load
-    setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
-
-      //nav
-      const toggle = document.getElementById("menu-toggle");
-      const navLinks = document.getElementById("nav-links");
-
-      toggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
-
-
-      
+      // Initialize AOS
       AOS.init({
-        offset: 120, // distance in px before triggering animation
-        delay: 200, // delay in ms
-        duration: 1000, // animation duration in ms
-        easing: "ease-in-out", // animation timing function
-        once: false, // whether animation should happen only once
-        mirror: false, // whether elements animate out while scrolling past them
+        offset: 120,
+        delay: 200,
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
       });
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
+
+      // Backend ping function
+      function pingBackend() {
+        fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+      }
+      pingBackend(); // call on load
+      setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
     </script>
   </body>
 </html>

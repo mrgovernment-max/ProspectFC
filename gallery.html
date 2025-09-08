@@ -31,14 +31,177 @@
       Prospect fc Gallery | Prospect fc Pictures | Matchday Gallery | Prospect
       FC | Pictires | England Loacl Teaam
     </title>
-    <link rel="stylesheet" href="style.css" />
     <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        background-color: #111;
-        color: #f2f2f2;
+      /* CSS Reset & Variables */
+      :root {
+        --primary-blue: #0051ba;
+        --secondary-blue: #003a87;
+        --accent-gold: #ffd700;
+        --light-bg: #f8f9fa;
+        --dark-bg: #0a192f;
+        --text-light: #ffffff;
+        --text-dark: #333333;
+        --text-muted: #6c757d;
+        --transition: all 0.3s ease;
+        --border-radius: 8px;
+        --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--text-dark);
+        background-color: var(--light-bg);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary-blue);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.8rem;
+        background-color: var(--primary-blue);
+        color: var(--text-light);
+        border: none;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .btn:hover {
+        background-color: var(--secondary-blue);
+        transform: translateY(-3px);
+        box-shadow: var(--box-shadow-hover);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--primary-blue);
+        color: var(--primary-blue);
+      }
+
+      .btn-outline:hover {
+        background-color: var(--primary-blue);
+        color: var(--text-light);
+      }
+
+      /* Header & Navigation */
+      header {
+        background-color: var(--dark-bg);
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+      }
+
+      .logo img {
+        width: 100%;
+        height: auto;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        margin: 0 0.5rem;
+      }
+
+      .nav-menu a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+      }
+
+      .nav-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-icons a {
+        color: var(--text-light);
+        font-size: 1.2rem;
+        transition: var(--transition);
+      }
+
+      .social-icons a:hover {
+        color: var(--accent-gold);
+        transform: translateY(-3px);
+      }
+
+      .menu-toggle {
+        display: none;
+        color: var(--text-light);
+        font-size: 1.5rem;
+        cursor: pointer;
       }
 
       #gallery {
@@ -103,6 +266,14 @@
         box-shadow: 0 0 15px #fff;
       }
 
+      #select-gallery {
+        height: 50px;
+        width: 90px;
+        background-color: #081b33;
+        color: white;
+        text-align: center;
+        margin: 5%;
+      }
       select {
         height: 50px;
         width: 90px;
@@ -128,57 +299,57 @@
     </style>
   </head>
   <body>
-    <!--Nav Section-->
-    <nav>
-      <section class="header-socials" data-aos="fade-right">
-        <a
-          target="blamk"
-          href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
-          ><i class="fa-brands fa-facebook" style="color: #74c0fc"></i
-        ></a>
-        <a
-          target="_blank"
-          href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
-          ><i class="fa-brands fa-instagram" style="color: #74c0fc"></i
-        ></a>
-        <a
-          target="_blank"
-          href=" https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
-          ><i class="fa-brands fa-youtube" style="color: #74c0fc"></i
-        ></a>
+    <!-- Header & Navigation -->
+    <header>
+      <div class="container header-container">
+        <div class="logo" data-aos="fade-down">
+          <a href="index.html">
+            <img
+              src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+              alt="Prospect FC logo"
+            />
+          </a>
+        </div>
 
-        <a
-          target="_blank"
-          href=" https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
-          ><i class="fa-brands fa-tiktok" style="color: #74c0fc"></i
-        ></a>
-      </section>
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
 
-      <div id="logo" data-aos="fade-down">
-        <a href="index.html"
-          ><img
-            src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
-            alt="propectfc"
-        /></a>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="headlines.html">Headlines</a></li>
+          <li><a href="squad.html">Squad</a></li>
+          <li><a href="phistory.html">Team Stats</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="fixture.html">Fixtures</a></li>
+          <li><a href="sponsor.html">Sponsors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="social-icons">
+          <a
+            href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
+            target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
+            target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
+            target="_blank"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+        </div>
       </div>
-
-      <!-- Hamburger menu icon -->
-      <div class="menu-toggle" id="menu-toggle" data-aos="fade-left">
-        &#9776;
-        <!-- Unicode hamburger -->
-      </div>
-
-      <ul id="nav-links">
-        <li><a href="index.html"> HOME </a></li>
-        <li><a href="headlines.html"> HEADLINES </a></li>
-        <li><a href="squad.html"> SQUAD </a></li>
-        <li><a href="phistory.html"> TEAM STATS </a></li>
-        <li><a href="gallery.html"> GALLERY </a></li>
-        <li><a href="fixture.html"> FIXTURES </a></li>
-        <li><a href="sponsor.html"> SPONSORS </a></li>
-        <li><a href="contact.html"> CONTACT </a></li>
-      </ul>
-    </nav>
+    </header>
     <div id="gallery" data-aos="fade-up">
       <select id="select-gallery">
         <option value="TRIALS">TRIALS</option>
@@ -761,6 +932,15 @@
             element.style.display = "none";
           }
         }
+      });
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
       });
 
       function pingBackend() {

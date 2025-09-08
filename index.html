@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="canonical" href="https://prospectfc.com" />
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,597 +11,890 @@
       rel="icon"
       type="image/png"
       href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
-      alt="propectfc"
+      alt="Prospect FC logo"
     />
     <title>Prospect FC | Official Football Club in Reading | EBFL Team</title>
     <meta
       name="description"
-      content="Official website of Prospect FC  a competitive East Berkshire Football League club based in Reading, Berkshire. Discover our squad, player stats, fixtures & results, club news, youth academy & trials at Prospect Park."
+      content="Official website of Prospect FC, a competitive East Berkshire Football League club based in Reading, Berkshire. Discover our squad, player stats, fixtures & results, club news, youth academy & trials at Prospect Park."
     />
     <meta
       name="keywords"
       content="Prospect FC, Prospect Football Club, FC Prospect, Prospect Reading, Prospect Park Reading, EBFL Prospect FC, East Berkshire Football League, Prospect FC players, Prospect FC squad, football club Reading Berkshire, youth football Berkshire, Reading football team, local football club, football trials Reading, Prospect FC fixtures results, Prospect FC academy, East Berkshire clubs, FA Full Time Prospect, Berkshire club fixtures"
     />
     <meta name="author" content="Prospect FC" />
-    <title>
-      Prospect FC | Official Football Club Website - Reading, Berkshire |
-      Prospect FC | Reading, Berkshire | Official Football Club, Squad &
-      Fixtures
-    </title>
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/a47fc389f5.js"
-      crossorigin="anonymous"
-    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* CSS Reset & Variables */
+      :root {
+        --primary-blue: #0051ba;
+        --secondary-blue: #003a87;
+        --accent-gold: #ffd700;
+        --light-bg: #f8f9fa;
+        --dark-bg: #0a192f;
+        --text-light: #ffffff;
+        --text-dark: #333333;
+        --text-muted: #6c757d;
+        --transition: all 0.3s ease;
+        --border-radius: 8px;
+        --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--text-dark);
+        background-color: var(--light-bg);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary-blue);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.8rem;
+        background-color: var(--primary-blue);
+        color: var(--text-light);
+        border: none;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .btn:hover {
+        background-color: var(--secondary-blue);
+        transform: translateY(-3px);
+        box-shadow: var(--box-shadow-hover);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--primary-blue);
+        color: var(--primary-blue);
+      }
+
+      .btn-outline:hover {
+        background-color: var(--primary-blue);
+        color: var(--text-light);
+      }
+
+      /* Header & Navigation */
+      header {
+        background-color: var(--dark-bg);
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+      }
+
+      .logo img {
+        width: 100%;
+        height: auto;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        margin: 0 0.5rem;
+      }
+
+      .nav-menu a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+      }
+
+      .nav-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-icons a {
+        color: var(--text-light);
+        font-size: 1.2rem;
+        transition: var(--transition);
+      }
+
+      .social-icons a:hover {
+        color: var(--accent-gold);
+        transform: translateY(-3px);
+      }
+
+      .menu-toggle {
+        display: none;
+        color: var(--text-light);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("images/mob.jpg") no-repeat center center/cover;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--text-light);
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* About Club Section */
+      .about-club {
+        padding: 5rem 0;
+        background-color: var(--text-light);
+      }
+
+      .club-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .tab-btn {
+        padding: 0.8rem 1.5rem;
+        background: transparent;
+        border: none;
+        border-bottom: 3px solid transparent;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        margin: 0 0.5rem;
+      }
+
+      .tab-btn.active {
+        border-color: var(--primary-blue);
+        color: var(--primary-blue);
+      }
+
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+      }
+
+      .club-info-card {
+        background-color: var(--light-bg);
+        border-radius: var(--border-radius);
+        padding: 2rem;
+        box-shadow: var(--box-shadow);
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .club-info-card h3 {
+        color: var(--primary-blue);
+        margin-bottom: 1rem;
+      }
+
+      /* Get Involved Section */
+      .get-involved {
+        padding: 5rem 0;
+        background-color: var(--light-bg);
+      }
+
+      .involve-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .involve-card {
+        background-color: var(--text-light);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+      }
+
+      .involve-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--box-shadow-hover);
+      }
+
+      .involve-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 1.5rem;
+      }
+
+      .card-content h3 {
+        color: var(--primary-blue);
+        margin-bottom: 0.5rem;
+      }
+
+      /* News Section */
+      .news-section {
+        padding: 5rem 0;
+        background-color: var(--text-light);
+      }
+
+      .news-scroll {
+        display: flex;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        padding: 1rem 0;
+        gap: 1.5rem;
+      }
+
+      .news-item {
+        flex: 0 0 auto;
+        width: 300px;
+        background-color: var(--light-bg);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+      }
+
+      .news-item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .news-content {
+        padding: 1.5rem;
+      }
+
+      .news-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark-bg);
+        color: var(--text-light);
+        padding: 4rem 0 2rem;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-col h3 {
+        color: var(--accent-gold);
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-col h3:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: var(--accent-gold);
+      }
+
+      .footer-col p,
+      .footer-col li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-col ul {
+        list-style: none;
+      }
+
+      .footer-col a {
+        color: var(--text-light);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .footer-col a:hover {
+        color: var(--accent-gold);
+        padding-left: 5px;
+      }
+
+      .newsletter-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .newsletter-form input {
+        padding: 0.8rem;
+        border: none;
+        border-radius: var(--border-radius);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .hero-content h1 {
+          font-size: 2.8rem;
+        }
+
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          height: 100vh;
+          width: 70%;
+          background-color: var(--dark-bg);
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transition: var(--transition);
+          z-index: 999;
+        }
+
+        .nav-menu.active {
+          right: 0;
+        }
+
+        .menu-toggle {
+          display: flex;
+          gap: 20vh;
+          z-index: 1000;
+        }
+
+        .social-icons {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero-content p {
+          font-size: 1rem;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero {
+          height: 60vh;
+        }
+
+        .hero-content h1 {
+          font-size: 1.8rem;
+        }
+
+        .btn {
+          padding: 0.6rem 1.2rem;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-TXGWE19783"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-TXGWE19783");
-  </script>
   <body>
-    <!--Nav Section-->
-    <nav>
-      <section class="header-socials" data-aos="fade-right">
-        <a
-          target="blamk"
-          href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
-          ><i class="fa-brands fa-facebook" style="color: #74c0fc"></i
-        ></a>
-        <a
-          target="_blank"
-          href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
-          ><i class="fa-brands fa-instagram" style="color: #74c0fc"></i
-        ></a>
-        <a
-          target="_blank"
-          href=" https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
-          ><i class="fa-brands fa-youtube" style="color: #74c0fc"></i
-        ></a>
-
-        <a
-          target="_blank"
-          href=" https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
-          ><i class="fa-brands fa-tiktok" style="color: #74c0fc"></i
-        ></a>
-      </section>
-
-      <div id="logo" data-aos="fade-down">
-        <a href="index.html"
-          ><img
-            src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
-            alt="propectfc"
-        /></a>
-      </div>
-
-      <!-- Hamburger menu icon -->
-      <div class="menu-toggle" id="menu-toggle" data-aos="fade-left">
-        &#9776;
-        <!-- Unicode hamburger -->
-      </div>
-
-      <ul id="nav-links">
-        <li><a href="index.html"> HOME </a></li>
-        <li><a href="headlines.html"> HEADLINES </a></li>
-        <li><a href="squad.html"> SQUAD </a></li>
-        <li><a href="phistory.html"> TEAM STATS </a></li>
-        <li><a href="gallery.html"> GALLERY </a></li>
-        <li><a href="fixture.html"> FIXTURES </a></li>
-        <li><a href="sponsor.html"> SPONSORS </a></li>
-        <li><a href="contact.html"> CONTACT </a></li>
-      </ul>
-    </nav>
-    <!--hero-section-->
-
-    <div id="hero">
-      <section id="hero-text" data-aos="fade-up">
-        <h2>PROSPECT FC</h2>
-      </section>
-    </div>
-
-    <div>
-      <h1
-        style="
-          text-align: center;
-          margin-top: 5%;
-          color: rgba(0, 0, 255, 0.61);
-          font-size: 50px;
-          -webkit-text-stroke: 2px white;
-        "
-      >
-        THE CLUB
-      </h1>
-    
-      <!-- Inline Menu -->
-      <div class="inline-menu" style="text-align: center; margin: 20px 0;">
-        <button onclick="showSection('league')">League</button>
-        <button onclick="showSection('recorded')">Media</button>
-        <button onclick="showSection('cup')">Cup Games</button>
-        <button onclick="showSection('train')">Training</button>
-        <button onclick="showSection('family')">Collective</button>
-      </div>
-    
-      <!-- Sections -->
-      <div class="about-team">
-        <div 
-          id="league"
-          class="about section"
-          style="background-image: url('images/league.jpg'); "
-        >
-          <p>
-            We play in the competitive EBFL league based in Reading. Every match
-            is a chance to test our skills and push the team to new heights. We
-            pride ourselves on teamwork, discipline, and representing Prospect
-            FC with pride.
-          </p>
+    <!-- Header & Navigation -->
+    <header>
+      <div class="container header-container">
+        <div class="logo" data-aos="fade-down">
+          <a href="index.html">
+            <img
+              src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+              alt="Prospect FC logo"
+            />
+          </a>
         </div>
-    
-        <div
-          id="recorded"
-          class="about section"
-          style="background-image: url('images/recorded.jpg')"
-        >
-          <p>
-            Games are Recorded Live and Pictures are also taken. Highlights and
-            Photos are posted on our socials <br />
-            -- Website, YouTube and Instagram --
-          </p>
+
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
         </div>
-    
-        <div
-          id="cup"
-          class="about section"
-          style="background-image: url('images/cup.jpeg')"
-        >
-          <p
-            style="
-              -webkit-text-stroke: 0.5px white;
-              -webkit-text-fill-color: transparent;
-            "
-          >
-            In addition to League Games, Prospect also partakes in other 
-            competitive cup games.We play teams from other Divisions in and out of Reading
-          </p>
-        </div>
-    
-        <div
-          id="train"
-          class="about section"
-          style="background-image: url('images/train.jpg'); "
-        >
-          <p>
-            We have two training sessions a week — Mondays and Thursdays at 7:00
-            PM, with structured, high-quality sessions at Prospect Park.
-          </p>
-        </div>
-    
-        <div
-          id="family"
-          class="about section"
-          style="background-image: url('images/family.jpg')"
-        >
-          <p>
-            It’s not just about the pitch — it’s about being part of the family.
-            We take part in numerous events off the pitch, growing and bonding
-            together as one.
-          </p>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="headlines.html">Headlines</a></li>
+          <li><a href="squad.html">Squad</a></li>
+          <li><a href="phistory.html">Team Stats</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="fixture.html">Fixtures</a></li>
+          <li><a href="sponsor.html">Sponsors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="social-icons">
+          <a
+            href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
+            target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
+            target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
+            target="_blank"
+            ><i class="fab fa-tiktok"></i
+          ></a>
         </div>
       </div>
-    </div>
+    </header>
 
-    <div>
-      <h1
-        style="
-          text-align: center;
-          margin-top: 5%;
-          color: rgba(0, 0, 255, 0.61);
-          font-size: 50px;
-          -webkit-text-stroke: 2px white;
-        "
-      >
-        GET INVOLVED
-      </h1>
-
-      <div class="engage-div">
-        <div class="engage-t">
-          <img src="images/showcase.jpg" alt="prospect fc" />
-          <p style="font-family: sans-serif; margin-top: 5%; line-height: 30px">
-            <span
-              style="
-                color: blue;
-                font-size: 20px;
-                margin-bottom: 5%;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
-                  sans-serif;
-              "
-            >
-              THE POLISH DERBY!
-            </span>
-            <br />
-
-            EBFL Division One Prospect FC vs KS Gryf Friday 26 September 7:45pm
-            Kick Off @sloughtownfc - Arbour Park, Stoke Rd, Slough SL2 5AY, UK
-            Order tickets and printed programmes below
-          </p>
-          <button>
-            <a href="https://tktp.as/EDAYJK"> BUY TICKET </a>
-          </button>
-        </div>
-
-        <div class="engage-o">
-          <img src="images/mobile hero.jpg" alt="prospect fc" />
-
-          <p style="font-family: sans-serif; margin-top: 5%; line-height: 30px">
-            Wear the Jersey. Own the Moment.
-          </p>
-          <button>
-            <a href="kit.html"> Purchase Kit</a>
-          </button>
-        </div>
-
-        <div class="engage-f">
-          <img src="images/mmmmo.jpg" alt="prospect fc" />
-          <p style="font-family: sans-serif; margin-top: 5%; line-height: 30px">
-            <span
-              style="
-                color: blue;
-                font-size: 20px;
-                margin-bottom: 5%;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
-                  sans-serif;
-              "
-              >Ball With Prospect FC
-            </span>
-            <br />
-            Don’t just watch the game—play it with us.
-          </p>
-
-          <button>
-            <a href="contact.html">Join Prospect FC</a>
-          </button>
-        </div>
-
-        <div class="engage-t">
-          <img
-            src="https://t3.ftcdn.net/jpg/07/64/47/10/360_F_764471094_NfuAAmdZ7F9vrpv3YT5L4DadqCrpjsci.jpg"
-            alt="prospect fc"
-          />
-          <p style="font-family: sans-serif; margin-top: 5%; line-height: 30px">
-            <span
-              style="
-                color: blue;
-                font-size: 20px;
-                margin-bottom: 5%;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
-                  sans-serif;
-              "
-              >Back the Badge
-            </span>
-            <br />
-
-            Invest in the game. Invest in Prospect FC.
-          </p>
-
-          <button>
-            <a href="contact.html">Sponsor Prospect FC</a>
-          </button>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-content" data-aos="fade-up">
+        <h1>PROSPECT FOOTBALL CLUB</h1>
+        <p>
+          Competing in the East Berkshire Football League with passion,
+          dedication, and community spirit
+        </p>
+        <div class="hero-buttons">
+          <a href="fixture.html" class="btn">View Fixtures</a>
+          <a href="contact.html" class="btn btn-outline">Join Our Team</a>
         </div>
       </div>
+    </section>
 
-      <div>
-        <h1
-          style="
-            text-align: center;
-            margin: 5% 0 5% 0;
-            color: rgba(0, 0, 255, 0.61);
-            font-size: 50px;
-            -webkit-text-stroke: 2px white;
-          "
-        >
-           WEEKLY UPDATES →
-          
-        </h1>
-        <div class="horizontal-scroll">
-          <div class="item">
-            <img src="images/homepage.jpg" alt="showcase game prospect fc" />
-            <p style="font-family: sans-serif; margin-top: 5%; line-height: 30px">
-              Fc Prospect vs KS Gryf showcase game has been rescheduled to the
-              26th of September
+    <!-- About Club Section -->
+    <section class="about-club">
+      <div class="container">
+        <h2 class="section-title">THE CLUB</h2>
+
+        <div class="club-tabs">
+          <button class="tab-btn active" data-tab="league">League</button>
+          <button class="tab-btn" data-tab="media">Media</button>
+          <button class="tab-btn" data-tab="cup">Cup Games</button>
+          <button class="tab-btn" data-tab="training">Training</button>
+          <button class="tab-btn" data-tab="community">Community</button>
+        </div>
+
+        <div class="tab-content active" id="league">
+          <div class="club-info-card">
+            <h3>Competitive EBFL League</h3>
+            <p>
+              We play in the competitive EBFL league based in Reading. Every
+              match is a chance to test our skills and push the team to new
+              heights. We pride ourselves on teamwork, discipline, and
+              representing Prospect FC with pride.
             </p>
           </div>
+        </div>
 
-
-          <div class="item">
-            <img src="images/matchday.jpeg" alt="prospect fc" />
-            <p style="font-family: sans-serif; margin-top: 5%; line-height: 30px">
-              Fc Prospect Suffer Defeat in what could be thier Last freindly match before League action
+        <div class="tab-content" id="media">
+          <div class="club-info-card">
+            <h3>Professional Media Coverage</h3>
+            <p>
+              Games are Recorded Live and Pictures are also taken. Highlights
+              and Photos are posted on our socials — Website, YouTube and
+              Instagram.
             </p>
-        
+          </div>
         </div>
 
+        <div class="tab-content" id="cup">
+          <div class="club-info-card">
+            <h3>Cup Competitions</h3>
+            <p>
+              In addition to League Games, Prospect also partakes in other
+              competitive cup games. We play teams from other Divisions in and
+              out of Reading.
+            </p>
+          </div>
+        </div>
 
-        <div class="item">
-          <img src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png" alt="prospect fc" />
-          <p style="font-family: sans-serif; margin-top: 5%; line-height: 30px">
-            Clubs Newsletter in now active . Subscribe to be get updated with clubs latest Info <br>
-            <a class="subscribe-btn" href="#newsletter">Subscribe</a>
-          </p>
+        <div class="tab-content" id="training">
+          <div class="club-info-card">
+            <h3>Professional Training</h3>
+            <p>
+              We have two training sessions a week — Mondays and Thursdays at
+              7:00 PM, with structured, high-quality sessions at Prospect Park.
+            </p>
+          </div>
         </div>
-        <div class="item">
-          <img src="images/newplayers.jpg" alt="prospect fc" />
-          <p style="font-family: sans-serif; margin-top: 5%; line-height: 30px">
-            New Players are welcomed to the Club.Prospect Fc still open to sign new Players Before League Action <br>
-            <a class="subscribe-btn" href="contact.html">Join Prospect FC</a>
-          </p>
-        </div>
-        <div class="item">
-          <img src="images/newsign.jpg" alt="prospect fc" />
-          <p style="font-family: sans-serif; margin-top: 5%; line-height: 30px">
-             New signings  putting in the work ! Everyone is fighting to catch the coach’s eye and snag a spot in the first eleven.
-             <br>
-             <a class="subscribe-btn" href="headlines.html#signings">New Signings</a>
-             
-          </p>
+
+        <div class="tab-content" id="community">
+          <div class="club-info-card">
+            <h3>Club Community</h3>
+            <p>
+              It's not just about the pitch — it's about being part of the
+              family. We take part in numerous events off the pitch, growing and
+              bonding together as one.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
+    <!-- Get Involved Section -->
+    <section class="get-involved">
+      <div class="container">
+        <h2 class="section-title">GET INVOLVED</h2>
+
+        <div class="involve-cards">
+          <div class="involve-card" data-aos="fade-up">
+            <img src="images/showcase.jpg" alt="The Polish Derby" />
+            <div class="card-content">
+              <h3>THE POLISH DERBY</h3>
+              <p>
+                EBFL Division One Prospect FC vs KS Gryf. Friday 26 September
+                7:45pm Kick Off @sloughtownfc - Arbour Park.
+              </p>
+              <a href="https://tktp.as/EDAYJK" class="btn">Buy Tickets</a>
+            </div>
+          </div>
+
+          <div class="involve-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="images/mobile hero.jpg" alt="Prospect FC Kit" />
+            <div class="card-content">
+              <h3>OFFICIAL CLUB KIT</h3>
+              <p>
+                Wear the Jersey. Own the Moment. Show your support with our
+                official club merchandise.
+              </p>
+              <a href="kit.html" class="btn">Purchase Kit</a>
+            </div>
+          </div>
+
+          <div class="involve-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="images/mmmmo.jpg" alt="Join Prospect FC" />
+            <div class="card-content">
+              <h3>JOIN OUR TEAM</h3>
+              <p>
+                Don't just watch the game—play it with us. Trials are available
+                for dedicated players.
+              </p>
+              <a href="contact.html" class="btn">Join Prospect FC</a>
+            </div>
+          </div>
+
+          <div class="involve-card" data-aos="fade-up" data-aos-delay="300">
+            <img
+              src="https://t3.ftcdn.net/jpg/07/64/47/10/360_F_764471094_NfuAAmdZ7F9vrpv3YT5L4DadqCrpjsci.jpg"
+              alt="Sponsor Prospect FC"
+            />
+            <div class="card-content">
+              <h3>CLUB SPONSORSHIP</h3>
+              <p>
+                Invest in the game. Invest in Prospect FC. Become a sponsor and
+                support local football.
+              </p>
+              <a href="contact.html" class="btn">Sponsor Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+      <div class="container">
+        <h2 class="section-title">LATEST NEWS</h2>
+
+        <div class="news-scroll">
+          <div class="news-item" data-aos="fade-right">
+            <img src="images/homepage.jpg" alt="Showcase game" />
+            <div class="news-content">
+              <h3>Showcase Game Rescheduled</h3>
+              <p>
+                FC Prospect vs KS Gryf showcase game has been rescheduled to the
+                26th of September.
+              </p>
+            </div>
+          </div>
+
+          <div class="news-item" data-aos="fade-right" data-aos-delay="100">
+            <img src="images/matchday.jpeg" alt="Friendly match" />
+            <div class="news-content">
+              <h3>Pre-Season Friendly</h3>
+              <p>
+                FC Prospect Suffer Defeat in what could be their last friendly
+                match before League action.
+              </p>
+            </div>
+          </div>
+
+          <div class="news-item" data-aos="fade-right" data-aos-delay="200">
+            <img
+              src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+              alt="Newsletter"
+            />
+            <div class="news-content">
+              <h3>Club Newsletter</h3>
+              <p>
+                Club's Newsletter is now active. Subscribe to get updated with
+                club's latest info.
+              </p>
+              <a href="#newsletter" class="btn">Subscribe</a>
+            </div>
+          </div>
+
+          <div class="news-item" data-aos="fade-right" data-aos-delay="300">
+            <img src="images/newplayers.jpg" alt="New players" />
+            <div class="news-content">
+              <h3>New Signings</h3>
+              <p>
+                New Players are welcomed to the Club. Prospect FC still open to
+                sign new Players Before League Action.
+              </p>
+              <a href="contact.html" class="btn">Join Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      <div class="footer-container">
-        <section class="footer-sec">
-          <p>&copy; 2025 PROSPECT FC ©</p>
-          <a
-            target="blamk"
-            href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
-            ><i class="fa-brands fa-facebook" style="color: #74c0fc"></i
-          ></a>
-          <a
-            target="_blank"
-            href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
-            ><i class="fa-brands fa-instagram" style="color: #74c0fc"></i
-          ></a>
-          <a
-            target="_blank"
-            href=" https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
-            ><i class="fa-brands fa-youtube" style="color: #74c0fc"></i
-          ></a>
-
-          <a
-            target="_blank"
-            href=" https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
-            ><i class="fa-brands fa-tiktok" style="color: #74c0fc"></i
-          ></a>
-
-          <p id="author">
-            website built and managed with &#10084; by
-            <a
-              target="_blank"
-              href="https://www.instagram.com/_idonmindit?igsh=cGRsYWtscnhnNTNs&utm_source=qr"
-              >Emman
-            </a>
+      <div class="container footer-container">
+        <div class="footer-col">
+          <h3>PROSPECT FC</h3>
+          <p>
+            Prospect Football Club is a grassroots 11-aside team situated in
+            Reading, England. We compete in Division One of the East Berkshire
+            Football League (EBFL).
           </p>
-        </section>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
+              target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
+              target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
+              target="_blank"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
+        </div>
 
-        <section class="footer-sec">
-          <h2 style="text-align: center; color: white; margin-bottom: 5%">
-            PROSPECT FC
-          </h2>
-          Prospect Football Club is a grassroots 11-aside team situated in
-          Reading, England. We compete in Division One of the East Berkshire
-          Football League (EBFL)
-        </section>
+        <div class="footer-col">
+          <h3>QUICK LINKS</h3>
+          <ul>
+            <li><a href="headlines.html">Headlines</a></li>
+            <li><a href="squad.html">Squad</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="sponsor.html">Sponsors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
 
-        <section class="footer-sec" style="max-width: 143px">
-          <h2 style="text-align: center; color: white; margin-bottom: 5%">
-            Quick Links
-          </h2>
-          <ol class="quick-links" style="list-style: none">
-            <li><a href="headlines.html"> HEADLINES </a></li>
-            <li><a href="squad.html"> SQUAD </a></li>
-            <li><a href="gallery.html"> GALLERY </a></li>
-            <li><a href="sponsor.html"> SPONSORS </a></li>
-            <li><a href="contact.html"> CONTACT </a></li>
-          </ol>
-        </section>
-
-        <section class="footer-sec" style="max-width: 190px">
-          <h2 style="text-align: center; color: white; margin-bottom: 5%">
-            Special Mentions
-          </h2>
-          <ol class="quick-links" style="list-style: none">
-            <li style="text-decoration: underline">
-              <a
-                target="_blank"
-                href="https://www.instagram.com/jakub_j04?utm_source=ig_web_button_share_sheet&igsh=YWQwdmRyY2x3a24y"
-              >
-                Kuba.J (Media Manager / Owner)
-              </a>
-            </li>
-            <li><a href="#"> Tomasz.M (Club Coach) </a></li>
-            <li style="text-decoration: underline">
-              <a href="sponsor.html">Club Sponsors </a>
-            </li>
-            <li><a href="#"> Beloved Supporters </a></li>
-          </ol>
-        </section>
-
-        <section class="footer-sec" style="max-width: 210px">
-          <h2 style="text-align: center; color: white; margin-bottom: 5%">
-            Quick Infos
-          </h2>
-          <ol class="quick-links" style="list-style: none">
+        <div class="footer-col">
+          <h3>CLUB INFO</h3>
+          <ul>
             <li>Training Days: Tues & Thurs</li>
             <li>Training Time: 7:00pm</li>
-            <li>Location : Reading</li>
+            <li>Location: Reading</li>
             <li>Mail: prospectfc24@gmail.com</li>
             <li>Contact: 07537883680</li>
-          </ol>
-        </section>
+          </ul>
+        </div>
 
-        <!-- Newsletter Subscribe -->
-        <div
-        id="newsletter"
-          class="newsletter"
-          role="region"
-          aria-labelledby="newsletter-title"
-        >
-          <h2 id="newsletter-title">Subscribe to our newsletter</h2>
-
+        <div class="footer-col">
+          <h3>NEWSLETTER</h3>
+          <p>Subscribe to our newsletter for the latest updates and news.</p>
           <form
-            id="newsletter-form"
+            class="newsletter-form"
             action="https://backendroutes-lcpt.onrender.com/newsletter_subscribers"
+            id="newsletter-form"
             method="post"
-            novalidate
           >
-            <div class="field">
-              <label for="nl-email">Email address</label>
-              <input
-                id="nl-email"
-                name="email"
-                type="email"
-                inputmode="email"
-                autocomplete="email"
-                placeholder="you@example.com"
-                required
-                aria-describedby="nl-help"
-              />
-              <small id="nl-help"
-                >We’ll only use this to send club updates.</small
-              >
-            </div>
-
-            <!-- Honeypot (spam trap) — keep hidden -->
-            <div class="hp">
-              <label for="nl-website">Website</label>
-              <input
-                id="nl-website"
-                name="website"
-                type="text"
-                tabindex="-1"
-                autocomplete="off"
-              />
-            </div>
-
-            <button id="nl-btn" type="submit" disabled>Subscribe</button>
-            <p class="fineprint">
-              By subscribing you agree to our
-              <a href="privacy.html">Privacy Policy</a>. Unsubscribe anytime.
-            </p>
+            <input
+              name="email"
+              type="email"
+              placeholder="Your Email Address"
+              required
+            />
+            <button type="submit" class="btn">Subscribe</button>
           </form>
         </div>
       </div>
+
+      <div class="copyright">
+        <p>
+          &copy; 2025 PROSPECT FC. All rights reserved. | Website by
+          <a
+            href="https://www.instagram.com/_idonmindit?igsh=cGRsYWtscnhnNTNs&utm_source=qr"
+            target="_blank"
+            >Emman</a
+          >
+        </p>
+      </div>
     </footer>
+
+    <script>
+      // Initialize AOS
+      AOS.init({
+        offset: 120,
+        delay: 200,
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
+
+      // Tab functionality
+      const tabBtns = document.querySelectorAll(".tab-btn");
+
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active class from all buttons and content
+          tabBtns.forEach((b) => b.classList.remove("active"));
+          document
+            .querySelectorAll(".tab-content")
+            .forEach((content) => content.classList.remove("active"));
+
+          // Add active class to clicked button
+          btn.classList.add("active");
+
+          // Show corresponding content
+          const tabId = btn.getAttribute("data-tab");
+          document.getElementById(tabId).classList.add("active");
+        });
+      });
+
+      // Backend ping function
+      function pingBackend() {
+        fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+      }
+      pingBackend();
+      setInterval(pingBackend, 1 * 60 * 1000);
+    </script>
   </body>
-  <script>
-    (function () {
-      const form = document.getElementById("newsletter-form");
-      const email = document.getElementById("nl-email");
-      const btn = document.getElementById("nl-btn");
-      const hp = document.getElementById("nl-website");
-
-      // Enable button only when email is valid
-      email.addEventListener("input", () => {
-        btn.disabled = !email.validity.valid;
-      });
-
-      // Basic client-side guard for honeypot
-      form.addEventListener("submit", (e) => {
-        if (hp.value) {
-          e.preventDefault();
-          return;
-        } // bot likely
-      });
-    })();
-
-    // --  ANIMATION FOR GET INVOLVED SECTION  --
-
-    const engageDiv = document.querySelector(".engage-o");
-    const buttons = engageDiv.querySelectorAll("button");
-
-    buttons.forEach((button) => {
-      button.addEventListener("mouseenter", () => {
-        engageDiv.style.animationPlayState = "paused";
-      });
-
-      button.addEventListener("mouseleave", () => {
-        engageDiv.style.animationPlayState = "running";
-      });
-    });
-
-    const engageDivv = document.querySelector(".engage-t");
-    const buttonss = engageDivv.querySelectorAll("button");
-
-    buttonss.forEach((button) => {
-      button.addEventListener("mouseenter", () => {
-        engageDivv.style.animationPlayState = "paused";
-      });
-
-      button.addEventListener("mouseleave", () => {
-        engageDivv.style.animationPlayState = "running";
-      });
-    });
-
-    const engageDivvv = document.querySelector(".engage-f");
-    const buttonsss = engageDivvv.querySelectorAll("button");
-
-    buttonsss.forEach((button) => {
-      button.addEventListener("mouseenter", () => {
-        engageDivvv.style.animationPlayState = "paused";
-      });
-
-      button.addEventListener("mouseleave", () => {
-        engageDivvv.style.animationPlayState = "running";
-      });
-    });
-
-
-    //SHOW INLINE DIVS 
-    function showSection(id) {
-    // hide all
-    document.querySelectorAll(".section").forEach((sec) => {
-      sec.style.display = "none";
-    });
-
-    // show clicked one
-    document.getElementById(id).style.display = "block";
-  }
-
-    // default open
-    showSection("league");
-
-  // -- HIT THE PING ROUTE TO ATIVATE OTHER ROUTES --
-
-  function pingBackend() {
-    fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
-  }
-  pingBackend(); // call on load
-  setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
-
-
-
-
-    AOS.init({
-      offset: 120, // distance in px before triggering animation
-      delay: 200, // delay in ms
-      duration: 1000, // animation duration in ms
-      easing: "ease-in-out", // animation timing function
-      once: false, // whether animation should happen only once
-      mirror: false, // whether elements animate out while scrolling past them
-    });
-    const toggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
-
-    toggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  </script>
 </html>

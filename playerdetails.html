@@ -3,132 +3,658 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="canonical" href="https://prospectfc.com/playerdetails">
-
+    <link rel="canonical" href="https://prospectfc.com/playerdetails" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png" alt="propectfc">
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+      alt="Prospect FC logo"
+    />
     <script
-    src="https://kit.fontawesome.com/a47fc389f5.js"
-    crossorigin="anonymous"
-  ></script>
-    <link rel="stylesheet" href="style.css" />
-    <title>Player Details Prospect fc Prospect FC Player Details | Profiles, Stats & Bios | Reading, Berkshire </title>
+      src="https://kit.fontawesome.com/a47fc389f5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>
+      Player Details | Prospect FC Player Profiles | Reading, Berkshire
+    </title>
+
+    <style>
+      /* CSS Reset & Variables */
+      :root {
+        --primary-blue: #0051ba;
+        --secondary-blue: #003a87;
+        --accent-gold: #ffd700;
+        --light-bg: #f8f9fa;
+        --dark-bg: #0a192f;
+        --text-light: #ffffff;
+        --text-dark: #333333;
+        --text-muted: #6c757d;
+        --transition: all 0.3s ease;
+        --border-radius: 8px;
+        --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--text-dark);
+        background-color: var(--light-bg);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.8rem;
+        background-color: var(--primary-blue);
+        color: var(--text-light);
+        border: none;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .btn:hover {
+        background-color: var(--secondary-blue);
+        transform: translateY(-3px);
+        box-shadow: var(--box-shadow-hover);
+      }
+
+      /* Header & Navigation */
+      header {
+        background-color: var(--dark-bg);
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+      }
+
+      .logo img {
+        width: 100%;
+        height: auto;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        margin: 0 0.5rem;
+      }
+
+      .nav-menu a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+      }
+
+      .nav-menu a:hover,
+      .nav-menu a.active {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-icons a {
+        color: var(--text-light);
+        font-size: 1.2rem;
+        transition: var(--transition);
+      }
+
+      .social-icons a:hover {
+        color: var(--accent-gold);
+        transform: translateY(-3px);
+      }
+
+      .menu-toggle {
+        display: none;
+        color: var(--text-light);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Player Details Section */
+      .player-details {
+        padding: 3rem 0;
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0.9)
+          ),
+          var(--player-bg) no-repeat center center/cover;
+      }
+
+      .player-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+        align-items: start;
+      }
+
+      .player-image-section {
+        position: relative;
+      }
+
+      .player-main-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+      }
+
+      .player-jersey {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        background-color: var(--primary-blue);
+        color: var(--text-light);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        box-shadow: var(--box-shadow);
+        z-index: 10;
+      }
+
+      .player-info {
+        background-color: var(--text-light);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+      }
+
+      .player-name {
+        font-size: 2.5rem;
+        color: var(--primary-blue);
+        margin-bottom: 0.5rem;
+        border-bottom: 3px solid var(--accent-gold);
+        padding-bottom: 0.5rem;
+      }
+
+      .player-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .stat-card {
+        background-color: var(--light-bg);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        text-align: center;
+        transition: var(--transition);
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--box-shadow-hover);
+      }
+
+      .stat-value {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-blue);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .player-actions {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark-bg);
+        color: var(--text-light);
+        padding: 4rem 0 2rem;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-col h3 {
+        color: var(--accent-gold);
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-col h3:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: var(--accent-gold);
+      }
+
+      .footer-col p,
+      .footer-col li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-col ul {
+        list-style: none;
+      }
+
+      .footer-col a {
+        color: var(--text-light);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .footer-col a:hover {
+        color: var(--accent-gold);
+        padding-left: 5px;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          height: 100vh;
+          width: 70%;
+          background-color: var(--dark-bg);
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transition: var(--transition);
+          z-index: 999;
+        }
+
+        .nav-menu.active {
+          right: 0;
+        }
+
+        .menu-toggle {
+          display: block;
+          z-index: 1000;
+        }
+
+        .social-icons {
+          display: none;
+        }
+
+        .player-container {
+          grid-template-columns: 1fr;
+        }
+
+        .player-main-image {
+          height: 350px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .player-stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .player-name {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .player-stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .player-main-image {
+          height: 300px;
+        }
+
+        .player-actions {
+          flex-direction: column;
+        }
+
+        .player-jersey {
+          top: -15px;
+          right: -15px;
+          width: 50px;
+          height: 50px;
+          font-size: 1.5rem;
+        }
+      }
+
+      /* Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 0.8s ease forwards;
+      }
+    </style>
   </head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TXGWE19783"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TXGWE19783');
-</script>
-<body>
-    <!--Nav Section-->
-    <nav>
-      <section class="header-socials" data-aos="fade-right">
-        <a
-          target="blamk"
-          href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
-          ><i class="fa-brands fa-facebook" style="color: #74c0fc"></i
-        ></a>
-        <a
-          target="_blank"
-          href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
-          ><i class="fa-brands fa-instagram" style="color: #74c0fc"></i
-        ></a>
-        <a
-          target="_blank"
-          href=" https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
-          ><i class="fa-brands fa-youtube" style="color: #74c0fc"></i
-        ></a>
-
-        <a
-          target="_blank"
-          href=" https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
-          ><i class="fa-brands fa-tiktok" style="color: #74c0fc"></i
-        ></a>
-      </section>
-
-      <div id="logo" data-aos="fade-down">
-        <a href="index.html"
-          ><img
-            src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
-            alt="propectfc"
-        /></a>
-      </div>
-
-      <!-- Hamburger menu icon -->
-      <div class="menu-toggle" id="menu-toggle" data-aos="fade-left">
-        &#9776;
-        <!-- Unicode hamburger -->
-      </div>
-
-      <ul id="nav-links">
-        <li><a href="index.html"> HOME </a></li>
-        <li><a href="headlines.html"> HEADLINES </a></li>
-        <li><a href="squad.html"> SQUAD </a></li>
-        <li><a href="phistory.html"> TEAM STATS </a></li>
-        <li><a href="gallery.html"> GALLERY </a></li>
-        <li><a href="fixture.html"> FIXTURES </a></li>
-        <li><a href="sponsor.html"> SPONSORS </a></li>
-        <li><a href="contact.html"> CONTACT </a></li>
-      </ul>
-    </nav>
- 
-    <div
-      id="main"
-      style="
-        background-image: url('images/playerdetail.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        z-index: 500;
-      "
-      
-    >
-      <div id="Pdetails">
-        <div id="Pnumber"></div> 
-        <span id="Pname"></span><br>
-       <a href="kit.html"> <button class="buy-btn">Buy Jersey</button></a>
-      </div>
-
-
-      <div id="Pstats">
-        <div class="stat-box">
-          <p>Age</p>
-          <span id="Page"></span>
-        </div>
-      
-        <div class="stat-box">
-          <p>Apps</p>
-          <span id="Papps"></span>
-        </div>
-      
-        <div class="stat-box">
-          <p>Goals</p>
-          <span id="Pgoals"></span>
+  <body>
+    <!-- Header & Navigation -->
+    <header>
+      <div class="container header-container">
+        <div class="logo" data-aos="fade-down">
+          <a href="index.html">
+            <img
+              src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+              alt="Prospect FC logo"
+            />
+          </a>
         </div>
 
-        <div class="stat-box">
-            <p>Assists</p>
-            <span id="Passists"></span>
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="headlines.html">Headlines</a></li>
+          <li><a href="squad.html">Squad</a></li>
+          <li><a href="phistory.html">Team Stats</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="fixture.html">Fixtures</a></li>
+          <li><a href="sponsor.html">Sponsors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="social-icons">
+          <a
+            href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
+            target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
+            target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
+            target="_blank"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Player Details Section -->
+    <section class="player-details" id="player-details-section">
+      <div class="container player-container">
+        <div class="player-image-section fade-in">
+          <img
+            id="player-main-img"
+            class="player-main-image"
+            alt="Player Image"
+          />
+          <div id="player-jersey" class="player-jersey"></div>
+        </div>
+
+        <div class="player-info fade-in">
+          <h1 id="player-name" class="player-name"></h1>
+          <p id="player-age" class="player-age"></p>
+
+          <div class="player-stats-grid">
+            <div class="stat-card">
+              <div id="player-apps" class="stat-value">0</div>
+              <div class="stat-label">Appearances</div>
+            </div>
+
+            <div class="stat-card">
+              <div id="player-goals" class="stat-value">0</div>
+              <div class="stat-label">Goals</div>
+            </div>
+
+            <div class="stat-card">
+              <div id="player-assists" class="stat-value">0</div>
+              <div class="stat-label">Assists</div>
+            </div>
+
+            <div class="stat-card">
+              <div id="player-motm" class="stat-value">0</div>
+              <div class="stat-label">Man of the Match</div>
+            </div>
+
+            <div class="stat-card">
+              <div id="player-potm" class="stat-value">0</div>
+              <div class="stat-label">Player of the Month</div>
+            </div>
           </div>
-          <div class="stat-box">
-            <p>MOTM</p>
-            <span id="MOTM"></span>
+
+          <div class="player-actions">
+            <a href="kit.html" class="btn">Buy Jersey</a>
+            <a
+              href="squad.html"
+              class="btn"
+              style="
+                background-color: var(--accent-gold);
+                color: var(--text-dark);
+              "
+              >Back to Squad</a
+            >
           </div>
-          <div class="stat-box">
-            <p>POTM</p>
-            <span id="POTM"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-container">
+        <div class="footer-col">
+          <h3>PROSPECT FC</h3>
+          <p>
+            Prospect Football Club is a grassroots 11-aside team situated in
+            Reading, England. We compete in Division One of the East Berkshire
+            Football League (EBFL).
+          </p>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
+              target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
+              target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
+              target="_blank"
+              ><i class="fab fa-tiktok"></i
+            ></a>
           </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>QUICK LINKS</h3>
+          <ul>
+            <li><a href="headlines.html">Headlines</a></li>
+            <li><a href="squad.html">Squad</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="sponsor.html">Sponsors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>CLUB INFO</h3>
+          <ul>
+            <li>Training Days: Tues & Thurs</li>
+            <li>Training Time: 7:00pm</li>
+            <li>Location: Reading</li>
+            <li>Mail: prospectfc24@gmail.com</li>
+            <li>Contact: 07537883680</li>
+          </ul>
+        </div>
       </div>
 
-      
+      <div class="copyright">
+        <p>
+          &copy; 2025 PROSPECT FC. All rights reserved. | Website by
+          <a
+            href="https://www.instagram.com/_idonmindit?igsh=cGRsYWtscnhnNTNs&utm_source=qr"
+            target="_blank"
+            >Emman</a
+          >
+        </p>
+      </div>
+    </footer>
 
-      <script src="playerdetails.js"></script>
-      
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        offset: 120,
+        delay: 200,
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
+
+      // Backend ping function
+      function pingBackend() {
+        fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+      }
+      pingBackend(); // call on load
+      setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
+
+      // Get data from localStorage
+      const Pname = JSON.parse(localStorage.getItem("Pname") || '""');
+      const Pimg = JSON.parse(localStorage.getItem("Pimg") || '""');
+      const Pnumber = JSON.parse(localStorage.getItem("Pnumber") || "0");
+      const Page = JSON.parse(localStorage.getItem("Page") || "0");
+      const Papps = JSON.parse(localStorage.getItem("Papps") || "0");
+      const Pgoals = JSON.parse(localStorage.getItem("Pgoals") || "0");
+      const Passists = JSON.parse(localStorage.getItem("Passists") || "0");
+      const MOTM = JSON.parse(localStorage.getItem("MOTM") || "0");
+      const POTM = JSON.parse(localStorage.getItem("POTM") || "0");
+
+      // Set data into HTML elements
+      document.getElementById("player-name").textContent = Pname;
+      document.getElementById("player-jersey").textContent = Pnumber;
+      document.getElementById("player-age").textContent = `Age: ${Page}`;
+      document.getElementById("player-main-img").src = Pimg;
+      document.getElementById("player-apps").textContent = Papps;
+      document.getElementById("player-goals").textContent = Pgoals;
+      document.getElementById("player-assists").textContent = Passists;
+      document.getElementById("player-motm").textContent = MOTM;
+      document.getElementById("player-potm").textContent = POTM;
+
+      // Set background image with fallback
+      const playerDetailsSection = document.getElementById(
+        "player-details-section"
+      );
+      if (Pimg) {
+        playerDetailsSection.style.setProperty("--player-bg", `url(${Pimg})`);
+      }
+    </script>
   </body>
 </html>
