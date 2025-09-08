@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href="https://prospectfc.com/kit" />
-
     <script
       src="https://kit.fontawesome.com/a47fc389f5.js"
       crossorigin="anonymous"
@@ -14,7 +13,7 @@
       rel="icon"
       type="image/png"
       href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
-      alt="propectfc"
+      alt="Prospect FC logo"
     />
     <meta
       name="description"
@@ -26,123 +25,655 @@
     />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <title>
-      Buy a Jersey Prospect Fc | Prospect Jersey | Prospect Sales Buy Prospect
-      FC Jerseys & Merchandise | Official Club Store | Reading
-    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Prospect FC Store | Official Jerseys & Merchandise</title>
+
+    <style>
+      /* CSS Reset & Variables */
+      :root {
+        --primary-blue: #0051ba;
+        --secondary-blue: #003a87;
+        --accent-gold: #ffd700;
+        --light-bg: #f8f9fa;
+        --dark-bg: #0a192f;
+        --text-light: #ffffff;
+        --text-dark: #333333;
+        --text-muted: #6c757d;
+        --transition: all 0.3s ease;
+        --border-radius: 8px;
+        --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--text-dark);
+        background-color: var(--light-bg);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary-blue);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.8rem;
+        background-color: var(--primary-blue);
+        color: var(--text-light);
+        border: none;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .btn:hover {
+        background-color: var(--secondary-blue);
+        transform: translateY(-3px);
+        box-shadow: var(--box-shadow-hover);
+      }
+
+      /* Header & Navigation */
+      header {
+        background-color: var(--dark-bg);
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+      }
+
+      .logo img {
+        width: 100%;
+        height: auto;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-menu li {
+        margin: 0 0.5rem;
+      }
+
+      .nav-menu a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+      }
+
+      .nav-menu a:hover,
+      .nav-menu a.active {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-icons a {
+        color: var(--text-light);
+        font-size: 1.2rem;
+        transition: var(--transition);
+      }
+
+      .social-icons a:hover {
+        color: var(--accent-gold);
+        transform: translateY(-3px);
+      }
+
+      .menu-toggle {
+        display: none;
+        color: var(--text-light);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Store Hero Section */
+      .store-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png")
+            no-repeat center center/cover;
+        background-color: var(--dark-bg);
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--text-light);
+        padding: 2rem 0;
+      }
+
+      .store-hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+
+      .store-hero-content p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Store Section */
+      .store-section {
+        padding: 5rem 0;
+        background-color: var(--light-bg);
+      }
+
+      .kits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .kit-card {
+        background-color: var(--text-light);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        text-align: center;
+      }
+
+      .kit-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--box-shadow-hover);
+      }
+
+      .kit-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .kit-card:hover .kit-image {
+        transform: scale(1.05);
+      }
+
+      .kit-info {
+        padding: 1.5rem;
+      }
+
+      .kit-name {
+        font-size: 1.4rem;
+        color: var(--primary-blue);
+        margin-bottom: 0.5rem;
+      }
+
+      .kit-price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .original-price {
+        text-decoration: line-through;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+      }
+
+      .sale-price {
+        color: #e63946;
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+
+      .sale-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: #e63946;
+        color: var(--text-light);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .kit-card {
+        position: relative;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark-bg);
+        color: var(--text-light);
+        padding: 4rem 0 2rem;
+        margin-top: 3rem;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-col h3 {
+        color: var(--accent-gold);
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-col h3:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: var(--accent-gold);
+      }
+
+      .footer-col p,
+      .footer-col li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-col ul {
+        list-style: none;
+      }
+
+      .footer-col a {
+        color: var(--text-light);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .footer-col a:hover {
+        color: var(--accent-gold);
+        padding-left: 5px;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          height: 100vh;
+          width: 70%;
+          background-color: var(--dark-bg);
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transition: var(--transition);
+          z-index: 999;
+        }
+
+        .nav-menu.active {
+          right: 0;
+        }
+
+        .menu-toggle {
+          display: block;
+          z-index: 1000;
+        }
+
+        .social-icons {
+          display: none;
+        }
+
+        .store-hero-content h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .store-hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .store-hero-content p {
+          font-size: 1rem;
+        }
+
+        .kits-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .kit-image {
+          height: 250px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .store-hero {
+          height: 35vh;
+        }
+
+        .store-hero-content h1 {
+          font-size: 1.8rem;
+        }
+
+        .kit-info {
+          padding: 1rem;
+        }
+
+        .kit-name {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
   </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-TXGWE19783"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-TXGWE19783");
-  </script>
   <body>
-    <!--Nav Section-->
-    <nav>
-      <section class="header-socials" data-aos="fade-right">
-        <a
-          target="blamk"
-          href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
-          ><i class="fa-brands fa-facebook" style="color: #74c0fc"></i
-        ></a>
-        <a
-          target="_blank"
-          href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
-          ><i class="fa-brands fa-instagram" style="color: #74c0fc"></i
-        ></a>
-        <a
-          target="_blank"
-          href=" https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
-          ><i class="fa-brands fa-youtube" style="color: #74c0fc"></i
-        ></a>
-
-        <a
-          target="_blank"
-          href=" https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
-          ><i class="fa-brands fa-tiktok" style="color: #74c0fc"></i
-        ></a>
-      </section>
-
-      <div id="logo" data-aos="fade-down">
-        <a href="index.html"
-          ><img
-            src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
-            alt="propectfc"
-        /></a>
-      </div>
-
-      <!-- Hamburger menu icon -->
-      <div class="menu-toggle" id="menu-toggle" data-aos="fade-left">
-        &#9776;
-        <!-- Unicode hamburger -->
-      </div>
-
-      <ul id="nav-links">
-        <li><a href="index.html"> HOME </a></li>
-        <li><a href="headlines.html"> HEADLINES </a></li>
-        <li><a href="squad.html"> SQUAD </a></li>
-        <li><a href="phistory.html"> TEAM STATS </a></li>
-        <li><a href="gallery.html"> GALLERY </a></li>
-        <li><a href="fixture.html"> FIXTURES </a></li>
-        <li><a href="sponsor.html"> SPONSORS </a></li>
-        <li><a href="contact.html"> CONTACT </a></li>
-      </ul>
-    </nav>
-
-    <!--hero kit-->
-    <div style="background-color: #a0b8d8; top: 0; text-align: center">
-      <h2 id="kit-header">PURCHASE OFFICIAL KITS</h2>
-      <div id="kit-hero">
-        <div id="kit">
-          <img src="images/mobile hero.jpg" alt="" />
-          <p>Purchase Official Away Kit</p>
-          <p><del>£50</del> on sale for £25</p>
-          <button
-            onclick="jerseyData('images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','Official AWAY Kit 2025')"
-          >
-            <span>CHECKOUT</span>
-          </button>
+    <!-- Header & Navigation -->
+    <header>
+      <div class="container header-container">
+        <div class="logo" data-aos="fade-down">
+          <a href="index.html">
+            <img
+              src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+              alt="Prospect FC logo"
+            />
+          </a>
         </div>
-        <div id="kit">
-          <img src="images/homejersy.jpg" alt="" />
-          <p>Purchase Official Home Kit</p>
-          <p><del>£50</del> on sale for £25</p>
-          <button
-            onclick="jerseyData('images/home.jpg','images/homehome.jpg','images/homekit.jpg','images/jersy.jpg','images/jersey.jpg','images/home.jpg','https://res.cloudinary.com/dazhskqcc/image/upload/v1754065745/homejersy_am4o5k.jpg','Official Home Kit 2025')"
-          >
-            <span>CHECKOUT</span>
-          </button>
+
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="headlines.html">Headlines</a></li>
+          <li><a href="squad.html">Squad</a></li>
+          <li><a href="phistory.html">Team Stats</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="fixture.html">Fixtures</a></li>
+          <li><a href="sponsor.html">Sponsors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="social-icons">
+          <a
+            href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
+            target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
+            target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
+            target="_blank"
+            ><i class="fab fa-tiktok"></i
+          ></a>
         </div>
       </div>
-    </div>
-    <footer style="background-color: black">
-      <p>&copy; 2025 PROSPECT FC ©</p>
-      <a
-        target="_blank"
-        href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
-        ><i class="fa-brands fa-facebook" style="color: #74c0fc"></i
-      ></a>
-      <a target="_blank" href="https://www.instagram.com/prospect.fc"
-        ><i class="fa-brands fa-instagram" style="color: #74c0fc"></i
-      ></a>
-      <a target="_blank" href="https://youtube.com/@prospectfc"
-        ><i class="fa-brands fa-youtube" style="color: #74c0fc"></i
-      ></a>
-      <a target="_blank" href="https://www.tiktok.com/@prospect.fc"
-        ><i class="fa-brands fa-tiktok" style="color: #74c0fc"></i
-      ></a>
+    </header>
+
+    <!-- Store Hero Section -->
+    <section class="store-hero">
+      <div class="container store-hero-content" data-aos="fade-up">
+        <h1>OFFICIAL CLUB STORE</h1>
+        <p>Represent Prospect FC with our official jerseys and merchandise</p>
+      </div>
+    </section>
+
+    <!-- Store Section -->
+    <section class="store-section">
+      <div class="container">
+        <h2 class="section-title">2024/25 KITS</h2>
+
+        <div class="kits-grid">
+          <!-- Away Kit -->
+          <div class="kit-card" data-aos="fade-right">
+            <div class="sale-badge">SALE</div>
+            <img
+              src="images/mobile hero.jpg"
+              alt="Prospect FC Away Kit"
+              class="kit-image"
+            />
+            <div class="kit-info">
+              <h3 class="kit-name">Away Kit 2024/25</h3>
+              <div class="kit-price">
+                <span class="original-price">£50</span>
+                <span class="sale-price">£25</span>
+              </div>
+              <button
+                class="btn"
+                onclick="jerseyData('images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','images/mobile hero.jpg','Official AWAY Kit 2025')"
+              >
+                Buy Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Home Kit -->
+          <div class="kit-card" data-aos="fade-left">
+            <div class="sale-badge">SALE</div>
+            <img
+              src="images/homejersy.jpg"
+              alt="Prospect FC Home Kit"
+              class="kit-image"
+            />
+            <div class="kit-info">
+              <h3 class="kit-name">Home Kit 2024/25</h3>
+              <div class="kit-price">
+                <span class="original-price">£50</span>
+                <span class="sale-price">£25</span>
+              </div>
+              <button
+                class="btn"
+                onclick="jerseyData('images/home.jpg','images/homehome.jpg','images/homekit.jpg','images/jersy.jpg','images/jersey.jpg','images/home.jpg','https://res.cloudinary.com/dazhskqcc/image/upload/v1754065745/homejersy_am4o5k.jpg','Official Home Kit 2025')"
+              >
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem">
+          <p style="color: var(--text-muted); font-style: italic">
+            More merchandise coming soon! Check back for training wear,
+            accessories, and more.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-container">
+        <div class="footer-col">
+          <h3>PROSPECT FC</h3>
+          <p>
+            Prospect Football Club is a grassroots 11-aside team situated in
+            Reading, England. We compete in Division One of the East Berkshire
+            Football League (EBFL).
+          </p>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
+              target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
+              target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
+              target="_blank"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>QUICK LINKS</h3>
+          <ul>
+            <li><a href="headlines.html">Headlines</a></li>
+            <li><a href="squad.html">Squad</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="sponsor.html">Sponsors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>CLUB INFO</h3>
+          <ul>
+            <li>Training Days: Tues & Thurs</li>
+            <li>Training Time: 7:00pm</li>
+            <li>Location: Reading</li>
+            <li>Mail: prospectfc24@gmail.com</li>
+            <li>Contact: 07537883680</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>
+          &copy; 2025 PROSPECT FC. All rights reserved. | Website by
+          <a
+            href="https://www.instagram.com/_idonmindit?igsh=cGRsYWtscnhnNTNs&utm_source=qr"
+            target="_blank"
+            >Emman</a
+          >
+        </p>
+      </div>
     </footer>
-  </body>
 
-  <script src="kit.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        offset: 120,
+        delay: 200,
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
+
+      // Backend ping function
+      function pingBackend() {
+        fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+      }
+      pingBackend(); // call on load
+      setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
+
+      // Send img urls to jersey page
+      function jerseyData(...args) {
+        const keys = [
+          "img1",
+          "img2",
+          "img3",
+          "img4",
+          "img5",
+          "img6",
+          "img7",
+          "kitType",
+        ];
+
+        // Store img urls into keys array --- imgs are passed through the ...args
+        keys.forEach((key, index) => {
+          localStorage.setItem(key, JSON.stringify(args[index]));
+        });
+        window.location.href = "jersey.html";
+      }
+    </script>
+  </body>
 </html>
