@@ -297,8 +297,11 @@
           <div class="newsletter">
             <h3>NEWSLETTER</h3>
             <p>Subscribe for club updates</p>
-            <form class="newsletter-form">
+            <form class="newsletter-form" 
+            action="https://backendroutes-lcpt.onrender.com/newsletter_subscribers"
+             method="post">
               <input
+                name="email"
                 type="email"
                 class="newsletter-input"
                 placeholder="Your email"
@@ -355,17 +358,6 @@
         contactForm.addEventListener("submit", function (e) {
           // You can add form validation here if needed
           console.log("Form submitted");
-        });
-      }
-
-      // Newsletter form handling
-      const newsletterForm = document.querySelector(".newsletter-form");
-      if (newsletterForm) {
-        newsletterForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-          const email = this.querySelector('input[type="email"]').value;
-          alert(`Thank you for subscribing with: ${email}`);
-          this.reset();
         });
       }
     </script>
