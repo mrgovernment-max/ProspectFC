@@ -316,8 +316,9 @@ header {
 }
 
 .fixture-details button {
-  padding: 0.6rem 1.2rem;
+  padding: 20px 20px;
   border: none;
+  width: 50%;
   border-radius: 30px;
   background-color: var(--primary-blue);
   color: var(--light-text);
@@ -326,7 +327,12 @@ header {
   transition: var(--transition);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.3rem;
+}
+
+.fixture-details button a {
+  color: white;
 }
 
 .fixture-details button:hover {
@@ -510,7 +516,7 @@ footer a:hover {
   }
 
   .teams {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1.5rem;
   }
 
