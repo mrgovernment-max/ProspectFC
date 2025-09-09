@@ -45,7 +45,6 @@ h6 {
 
 .container {
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -203,7 +202,7 @@ header {
 
 .store-hero-content p {
   font-size: 1.2rem;
-  max-width: 700px;
+  width: 100%;
   margin: 0 auto;
 }
 
