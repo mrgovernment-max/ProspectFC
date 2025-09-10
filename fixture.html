@@ -196,7 +196,10 @@
             if (element.home_score !== null && element.away_score !== null) {
               status = "Completed";
               statusClass = "status-completed";
-            } else if (matchDate > currentDate) {
+            } else if (
+              element.home_score == null ||
+              element.away_score == null
+            ) {
               status = "Upcoming";
               statusClass = "status-upcoming";
             } else {
