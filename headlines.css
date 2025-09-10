@@ -361,7 +361,7 @@ footer i {
 }
 
 /* RESPONSIVE TWEAKS */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   h1 {
     font-size: 1.6rem;
   }
