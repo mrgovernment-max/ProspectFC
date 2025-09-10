@@ -221,6 +221,7 @@ h1 {
   justify-content: center;
   gap: 1.7rem;
   padding: 1.5rem;
+  width:100%;
   margin: auto;
 }
 
@@ -230,6 +231,7 @@ h1 {
   justify-content: center;
   gap: 2rem;
   padding: 1.5rem;
+  width:100%;
   margin: auto;
 }
 
