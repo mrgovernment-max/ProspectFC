@@ -53,6 +53,25 @@
       <i class="fas fa-spinner"></i>
       <p>Loading players...</p>
     </div>
+
+    <button onclick="shareBlog()">Share</button>
+
+    <script>
+      function shareBlog() {
+        if (navigator.share) {
+          navigator
+            .share({
+              title: "Prospect FC Blog",
+              text: "Check out this blog!",
+              url: window.location.href,
+            })
+            .catch((err) => console.log("Share failed:", err));
+        } else {
+          alert("Sharing not supported on this browser");
+        }
+      }
+    </script>
+
     <script>
       const arr = [1, 2, 3, 4];
       function disArray(...args) {
