@@ -114,9 +114,11 @@ header {
 }
 
 .nav-menu {
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   list-style: none;
-  align-items: center;
 }
 
 .nav-menu li {

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="blog.css" />
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header>
+      <div class="container header-container">
+        <div class="logo" data-aos="fade-down">
+          <a href="index.html">
+            <img
+              src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+              alt="Prospect FC logo"
+            />
+          </a>
+        </div>
+
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li id="headlines">
+            <a href="headlines.html">Headlines</a>
+            <div id="dropdown" class="dropdown"></div>
+          </li>
+          <li><a href="squad.html">Squad</a></li>
+          <li><a href="phistory.html">Team Stats</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="fixture.html">Fixtures</a></li>
+          <li><a href="sponsor.html">Sponsors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="social-icons">
+          <a
+            href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
+            target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
+            target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
+            target="_blank"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+        </div>
+      </div>
+    </header>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

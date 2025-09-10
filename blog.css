@@ -1,15 +1,3 @@
-/* Root Theme Colors */
-:root {
-  --primary: #007bff;
-  --bg: #ffffff;
-  --dark: #0e0e0e;
-  --text: #1a1a1a;
-  --gray: #f0f0f0;
-  --shadow: rgba(0, 0, 0, 0.1);
-  --blue-gradient: linear-gradient(to right, #001f3f, #0040ff);
-  --radius: 12px;
-  --transition: 0.3s ease;
-}
 /* CSS Reset & Variables */
 :root {
   --primary-blue: #0051ba;
@@ -138,6 +126,8 @@ header {
 
 .nav-menu {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   list-style: none;
 }
 
@@ -152,17 +142,10 @@ header {
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius);
   transition: var(--transition);
-}
-
-.nav-menu a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.nav-menu li a {
   position: relative;
 }
 
-.nav-menu li a::after {
+.nav-menu a::after {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -174,8 +157,33 @@ header {
   transition: 0.6s ease-in-out;
 }
 
-.nav-menu li a:hover::after {
+.nav-menu a:hover::after {
   width: 100%;
+}
+
+.nav-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#headlines {
+  position: relative;
+  z-index: 999;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  z-index: 90;
+}
+
+#headlines:hover .dropdown {
+  display: flex;
 }
 
 .social-icons {
@@ -201,167 +209,10 @@ header {
   cursor: pointer;
 }
 
-h1 {
-  color: var(--dark);
-  text-align: center;
-  margin: 2rem auto 1rem;
-  font-size: 2rem;
-  border-bottom: 2px solid var(--primary);
-  display: inline-block;
-  margin-left: 2%;
-  padding-bottom: 0.3rem;
-}
-
-#news,
-#matchdays,
-#highlights,
-#signings {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.7rem;
-  padding: 1.5rem;
-  width: 100%;
-  margin: auto;
-}
-
-#signings {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1.5rem;
-  width: 100%;
-  margin: auto;
-}
-
-#new,
-#matchday,
-#highlight {
-  background-color: var(--gray);
-  border-radius: 12px;
-  box-shadow: 0 4px 8px var(--shadow);
-  overflow: hidden;
-  width: 320px;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-#signing {
-  position: relative;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px var(--shadow);
-  overflow: hidden;
-  width: 320px;
-  max-width: 100%;
-  height: auto;
-  max-height: 360px;
-}
-
-.overlay {
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  overflow: hidden;
-  width: 100%;
-  height: 0;
-  transition: 0.5s ease;
-}
-
-#signing:hover .overlay {
-  bottom: 0;
-  height: 100%;
-}
-
-.text {
-  width: 90%;
-  text-align: center;
-  white-space: wrap;
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  overflow: hidden;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
-
-#signing img {
-  background-color: #ccc;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-#new img,
-#new video,
-#highlight video {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-#new p,
-#highlight p {
-  padding: 1rem;
-  font-size: 1rem;
-  color: var(--dark);
-}
-
-#new strong {
-  color: var(--primary);
-  font-weight: 700;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-button {
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  margin-top: 1rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-iframe {
-  border: none;
-  aspect-ratio: 16 / 9;
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px var(--shadow);
-}
-
-/* Footer */
-footer {
-  background-color: #111;
-  padding: 2em 0;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-footer i {
-  margin: 0.5em;
-  font-size: 2rem;
-}
-
-/* RESPONSIVE TWEAKS */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.6rem;
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 2.8rem;
   }
 
   .nav-menu {
@@ -369,7 +220,7 @@ footer i {
     top: 0;
     right: -100%;
     height: 100vh;
-    width: 70%;
+    width: 80%;
     background-color: var(--dark-bg);
     display: flex;
     gap: 5vh;
@@ -393,32 +244,4 @@ footer i {
   .social-icons {
     display: none;
   }
-
-  #new,
-  #matchday,
-  #highlight {
-    width: 90%;
-  }
-
-  button {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.3rem;
-  }
-
-  #news,
-  #matchdays,
-  #highlights {
-    padding: 1rem;
-  }
-}
-
-/* Utility */
-a {
-  color: var(--primary);
-  text-decoration: none;
 }
