@@ -325,7 +325,7 @@ header {
   color: var(--secondary-blue);
 }
 
-/* Responsive Design */
+/* Responsive Design*/
 @media (max-width: 992px) {
   .hero-content h1 {
     font-size: 2.8rem;
