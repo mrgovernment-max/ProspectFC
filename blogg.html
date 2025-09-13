@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Shareable Blog</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f5f7fa;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+        margin-bottom: 2rem;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        font-size: 2.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+
+      .blog-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+      }
+
+      .blog-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-image {
+        height: 180px;
+        overflow: hidden;
+      }
+
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .blog-card:hover .card-image img {
+        transform: scale(1.05);
+      }
+
+      .card-content {
+        padding: 20px;
+      }
+
+      .card-title {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        color: #2c3e50;
+      }
+
+      .card-excerpt {
+        color: #7f8c8d;
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+      }
+
+      .card-meta {
+        display: flex;
+        justify-content: space-between;
+        color: #95a5a6;
+        font-size: 0.85rem;
+        border-top: 1px solid #f1f1f1;
+        padding-top: 15px;
+      }
+
+      #blog-detail {
+        display: none;
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+
+      .detail-header {
+        margin-bottom: 25px;
+      }
+
+      .detail-title {
+        font-size: 2.2rem;
+        color: #2c3e50;
+        margin-bottom: 10px;
+      }
+
+      .detail-meta {
+        color: #95a5a6;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .detail-image {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 25px;
+      }
+
+      .detail-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #34495e;
+      }
+
+      .back-button {
+        display: inline-block;
+        background: #6e8efb;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        border: none;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+      }
+
+      .back-button:hover {
+        background: #5a7df9;
+      }
+
+      .share-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 30px;
+      }
+
+      .share-button {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background: #f1f5f9;
+        border: 1px solid #ddd;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .share-button:hover {
+        background: #e5e9f0;
+      }
+
+      .copy-link {
+        display: flex;
+        align-items: center;
+        background: #4a90e2;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .copy-link:hover {
+        background: #3a80d2;
+      }
+
+      .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #4caf50;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+      }
+
+      .notification.show {
+        transform: translateX(0);
+      }
+
+      @media (max-width: 768px) {
+        .blog-list {
+          grid-template-columns: 1fr;
+        }
+
+        .detail-title {
+          font-size: 1.8rem;
+        }
+
+        .share-buttons {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>My Shareable Blog</h1>
+        <p class="subtitle">
+          Click any post to read more and share with others
+        </p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div id="blog-list-container">
+        <div class="blog-list">
+          <!-- Blog posts will be generated here -->
+        </div>
+      </div>
+
+      <div id="blog-detail">
+        <!-- Detailed blog view will be shown here -->
+      </div>
+    </div>
+
+    <div class="notification" id="notification">Link copied to clipboard!</div>
+
+    <script>
+      // Sample blog data
+      const blogPosts = [
+        {
+          id: 1,
+          title: "Getting Started with React",
+          excerpt:
+            "Learn the basics of React and how to create your first component.",
+          content: `<p>React is a popular JavaScript library for building user interfaces. It was developed by Facebook and has gained widespread adoption in the web development community.</p>
+                       <p>In this tutorial, we'll cover the basics of React, including JSX, components, props, and state. By the end, you'll have a solid foundation to start building your own React applications.</p>
+                       <h3>Why React?</h3>
+                       <p>React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.</p>
+                       <p>Declarative views make your code more predictable and easier to debug. A component-based architecture lets you build encapsulated components that manage their own state, then compose them to make complex UIs.</p>`,
+          image:
+            "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+          date: "May 15, 2023",
+          author: "Jane Smith",
+          readTime: "5 min read",
+        },
+        {
+          id: 2,
+          title: "CSS Grid vs Flexbox",
+          excerpt:
+            "Understanding when to use CSS Grid and when to use Flexbox for layout.",
+          content: `<p>CSS Grid and Flexbox are both powerful layout systems in CSS, but they serve different purposes. Understanding when to use each is key to creating efficient, maintainable layouts.</p>
+                       <p>Flexbox is designed for one-dimensional layouts - either a row or a column. It's perfect for arranging items in a single direction and distributing space between them.</p>
+                       <p>CSS Grid, on the other hand, is designed for two-dimensional layouts - both rows and columns. It's ideal for creating complex page layouts where you need precise control over both dimensions.</p>
+                       <h3>When to Use Which?</h3>
+                       <p>Use Flexbox for components and small-scale layouts where you're primarily working in one dimension. Use CSS Grid for larger-scale layouts where you need control over both rows and columns.</p>
+                       <p>Many modern websites use a combination of both - Grid for the overall page layout and Flexbox for individual components within that layout.</p>`,
+          image:
+            "https://images.unsplash.com/photo-1643330683233-ff2ac89b002c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1128&q=80",
+          date: "June 3, 2023",
+          author: "Mike Johnson",
+          readTime: "7 min read",
+        },
+        {
+          id: 3,
+          title: "JavaScript ES6 Features",
+          excerpt:
+            "Explore the most useful features introduced in ECMAScript 2015.",
+          content: `<p>ECMAScript 2015, also known as ES6, introduced many new features that fundamentally changed how we write JavaScript. These features have become essential for modern JavaScript development.</p>
+                       <p>Some of the most important additions include arrow functions, template literals, destructuring assignments, let and const declarations, promises, and classes.</p>
+                       <h3>Arrow Functions</h3>
+                       <p>Arrow functions provide a more concise syntax for writing function expressions. They also lexically bind the 'this' value, which solves many common pain points with traditional functions.</p>
+                       <h3>Template Literals</h3>
+                       <p>Template literals allow for easier string interpolation and multi-line strings. Instead of concatenating strings with the + operator, you can use backticks and  to embed expressions.</p>
+                       <h3>Destructuring Assignment</h3>
+                       <p>The destructuring assignment syntax allows you to extract values from arrays or properties from objects into distinct variables. This can make your code much more readable and concise.</p>`,
+          image:
+            "https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80",
+          date: "June 18, 2023",
+          author: "Alex Chen",
+          readTime: "8 min read",
+        },
+        {
+          id: 4,
+          title: "Introduction to Node.js",
+          excerpt:
+            "Learn how to use JavaScript on the server side with Node.js.",
+          content: `<p>Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows developers to use JavaScript on the server side, enabling full-stack JavaScript development.</p>
+                       <p>One of Node.js's key features is its non-blocking, event-driven architecture, which makes it efficient and lightweight, perfect for data-intensive real-time applications that run across distributed devices.</p>
+                       <h3>Core Concepts</h3>
+                       <p>Node.js uses a single-threaded event loop model architecture. This means it can handle multiple concurrent clients without the need for multiple threads, reducing the overhead of thread context switching.</p>
+                       <p>The Node.js package ecosystem, npm, is the largest ecosystem of open source libraries in the world. This vast collection of packages makes it easy to add functionality to your Node.js applications without reinventing the wheel.</p>
+                       <h3>Getting Started</h3>
+                       <p>To start with Node.js, you'll need to install it on your machine. Then you can create a simple server with just a few lines of code. From there, you can explore frameworks like Express.js to build web applications and APIs.</p>`,
+          image:
+            "https://images.unsplash.com/photo-1599507593499-a3f7d7d97667?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80",
+          date: "July 5, 2023",
+          author: "Sarah Williams",
+          readTime: "6 min read",
+        },
+      ];
+
+      // Function to render blog list
+      function renderBlogList() {
+        const blogListContainer = document.querySelector(".blog-list");
+        blogListContainer.innerHTML = "";
+
+        blogPosts.forEach((post) => {
+          const blogCard = document.createElement("div");
+          blogCard.className = "blog-card";
+          blogCard.innerHTML = `
+                  <div class="card-image">
+                      <img src="${post.image}" alt="${post.title}">
+                  </div>
+                  <div class="card-content">
+                      <h3 class="card-title">${post.title}</h3>
+                      <p class="card-excerpt">${post.excerpt}</p>
+                      <div class="card-meta">
+                          <span>${post.date}</span>
+                          <span>${post.readTime}</span>
+                      </div>
+                  </div>
+              `;
+
+          blogCard.addEventListener("click", () => {
+            // Update URL with post ID
+            window.location.hash = `post-${post.id}`;
+            showBlogDetail(post.id);
+          });
+
+          blogListContainer.appendChild(blogCard);
+        });
+      }
+
+      // Function to show blog detail
+      function showBlogDetail(postId) {
+        const post = blogPosts.find((p) => p.id === postId);
+        const blogListContainer = document.getElementById(
+          "blog-list-container"
+        );
+        const blogDetailContainer = document.getElementById("blog-detail");
+
+        if (post) {
+          blogListContainer.style.display = "none";
+          blogDetailContainer.style.display = "block";
+
+          const currentUrl =
+            window.location.href.split("#")[0] + `#post-${post.id}`;
+
+          blogDetailContainer.innerHTML = `
+                  <button class="back-button" onclick="showBlogList()">← Back to Posts</button>
+                  <div class="detail-header">
+                      <h2 class="detail-title">${post.title}</h2>
+                      <div class="detail-meta">
+                          <span>By ${post.author} • ${post.date} • ${post.readTime}</span>
+                          <button class="copy-link" onclick="copyToClipboard('${currentUrl}')">
+                              📋 Copy Link
+                          </button>
+                      </div>
+                  </div>
+                  <img src="${post.image}" alt="${post.title}" class="detail-image">
+                  <div class="detail-content">
+                      ${post.content}
+                  </div>
+                  <div class="share-buttons">
+                      <button class="share-button" onclick="shareOnTwitter('${post.title}', '${currentUrl}')">
+                          🐦 Share on Twitter
+                      </button>
+                      <button class="share-button" onclick="shareOnFacebook('${currentUrl}')">
+                          📘 Share on Facebook
+                      </button>
+                  </div>
+              `;
+
+          // Scroll to top
+          window.scrollTo(0, 0);
+        }
+      }
+
+      // Function to show blog list
+      function showBlogList() {
+        const blogListContainer = document.getElementById(
+          "blog-list-container"
+        );
+        const blogDetailContainer = document.getElementById("blog-detail");
+
+        blogListContainer.style.display = "block";
+        blogDetailContainer.style.display = "none";
+
+        // Clear the hash from URL
+        history.replaceState(null, null, " ");
+      }
+
+      // Function to copy URL to clipboard
+      function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+          showNotification("Link copied to clipboard!");
+        });
+      }
+
+      // Function to show notification
+      function showNotification(message) {
+        const notification = document.getElementById("notification");
+        notification.textContent = message;
+        notification.classList.add("show");
+
+        setTimeout(() => {
+          notification.classList.remove("show");
+        }, 3000);
+      }
+
+      // Function to share on Twitter
+      function shareOnTwitter(title, url) {
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+          title
+        )}&url=${encodeURIComponent(url)}`;
+        window.open(twitterUrl, "_blank");
+      }
+
+      // Function to share on Facebook
+      function shareOnFacebook(url) {
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+          url
+        )}`;
+        window.open(facebookUrl, "_blank");
+      }
+
+      // Check URL on page load
+      function checkUrl() {
+        if (window.location.hash) {
+          const postId = parseInt(window.location.hash.replace("#post-", ""));
+          if (postId) {
+            showBlogDetail(postId);
+            return;
+          }
+        }
+        showBlogList();
+      }
+
+      // Initialize the page
+      document.addEventListener("DOMContentLoaded", () => {
+        renderBlogList();
+        checkUrl();
+
+        // Listen for hash changes
+        window.addEventListener("hashchange", checkUrl);
+      });
+    </script>
+  </body>
+</html>
