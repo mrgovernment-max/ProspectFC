@@ -428,6 +428,48 @@ h1 {
   z-index: 1000;
 }
 
+#loader,
+#error {
+  width: 40%;
+  height: 100px;
+  font-size: large;
+  margin: auto;
+  margin-top: 20%;
+  background-color: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+#error button {
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--dark-bg);
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+#error button:hover {
+  background-color: var(--primary-blue);
+}
+
+#loader i {
+  font-size: 3rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .notification.show {
   transform: translateX(0);
 }
