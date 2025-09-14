@@ -278,6 +278,15 @@
         // Listen for hash changes
         window.addEventListener("hashchange", checkUrl);
       });
+
+      // Mob menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
     </script>
   </body>
 </html>
