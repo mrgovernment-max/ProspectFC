@@ -198,11 +198,6 @@
       let blogPosts = [];
       let formattedDate = "";
 
-      async function renderBlogList() {
-        const res = await fetch(url);
-        blogPosts = await res.json();
-      }
-
       // Function to render blog list
       async function renderBlogList() {
         const blogListContainer = document.querySelector(".blog-list");
