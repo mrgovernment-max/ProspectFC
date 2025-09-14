@@ -395,7 +395,8 @@ h1 {
 }
 
 .share-button:hover {
-  background: #e5e9f0;
+  background: var(--dark-bg);
+  color: white;
 }
 
 .copy-link {

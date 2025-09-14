@@ -113,9 +113,6 @@
       async function renderBlogList() {
         const res = await fetch(url);
         blogPosts = await res.json();
-        console.log(blogPosts);
-
-        // rest of your rendering code...
       }
 
       // Function to render blog list
@@ -131,10 +128,8 @@
           blogListContainer.innerHTML = "";
 
           blogPosts.forEach((post) => {
-            // Convert post.date to a Date object
             const date = new Date(post.date);
 
-            // Options for formatting
             const options = {
               year: "numeric",
               month: "long",
