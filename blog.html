@@ -15,14 +15,14 @@
       href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
       alt="Prospect FC logo"
     />
-    <title>Prospect FC | BLOG PAGE | BLOG POST</title>
+    <title>Prospect FC | Articles PAGE | Articles POST</title>
     <meta
       name="description"
-      content="Official website of Prospect FC, Blog Page featuring clubs news and updates"
+      content="Official website of Prospect FC, Articles Page featuring clubs news and updates"
     />
     <meta
       name="keywords"
-      content="Official website of Prospect FC, Blog Page featuring clubs news and updates"
+      content="Official website of Prospect FC, Articles Page featuring clubs news and updates"
     />
     <meta name="author" content="Prospect FC" />
     <link
@@ -53,11 +53,11 @@
             <a href="headlines.html">Headlines </a>
             <div id="dropdown" class="dropdown">
               <ul>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.html">Articles</a></li>
               </ul>
             </div>
           </li>
-          <li class="mobile-blog"><a href="blog.html">Blog</a></li>
+          <li class="mobile-blog"><a href="blog.html">Articles</a></li>
           <li><a href="squad.html">Squad</a></li>
           <li><a href="phistory.html">Team Stats</a></li>
           <li><a href="gallery.html">Gallery</a></li>
@@ -208,7 +208,7 @@
         const blogListContainer = document.querySelector(".blog-list");
         const Container = document.getElementById("blog-list-container");
         try {
-          Container.innerHTML = `<div id="loader"> <i id="spin" class="fa-solid fa-arrows-spin"></i> <p>Loading Blog.. </p> </div>`;
+          Container.innerHTML = `<div id="loader"> <i id="spin" class="fa-solid fa-arrows-spin"></i> <p>Loading Articles...refresh page after 5 secs  </p> </div>`;
 
           const res = await fetch(url);
           blogPosts = await res.json();
@@ -258,7 +258,7 @@
           });
         } catch (err) {
           if (err) {
-            Container.innerHTML = `<div id ="error"> <p>Error Loading Blog </p> <button onclick="renderBlogList()"> Reload Blog </button> </div>`;
+            Container.innerHTML = `<div id ="error"> <p>Error Loading Blog </p> <button onclick="renderBlogList()"> Reload Articles </button> </div>`;
           }
         }
       }
@@ -279,7 +279,7 @@
             window.location.href.split("#")[0] + `#post-${post.id}`;
 
           blogDetailContainer.innerHTML = `
-                        <button class="back-button" onclick="showBlogList()">← Back to Posts</button>
+                        <button class="back-button" onclick="showBlogList()">← Back to Articles</button>
                         <div class="detail-header">
                             <h2 class="detail-title">${post.title}</h2>
                             <div class="detail-meta">
