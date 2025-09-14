@@ -431,7 +431,7 @@ h1 {
 
 #loader,
 #error {
-  width: 40%;
+  width: 100%;
   height: 100px;
   font-size: large;
   margin: auto;
