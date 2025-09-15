@@ -359,6 +359,50 @@ h1 {
   color: #34495e;
 }
 
+/* Blog Content Styling - Images & Videos */
+.detail-content img,
+.detail-content video {
+  display: block;
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.detail-content video {
+  max-height: 500px;
+}
+
+.detail-content figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.detail-content figcaption {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.detail-content iframe {
+  width: 100%;
+  min-height: 300px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: make images zoom slightly on hover */
+.detail-content img:hover,
+.detail-content video:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
 .back-button {
   display: inline-block;
   background: #6e8efb;
