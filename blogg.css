@@ -708,28 +708,3 @@ footer {
     font-size: 0.7rem;
   }
 }
-.match-report .article-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: flex-start;
-  margin-bottom: 2rem;
-}
-
-.match-report .article-flex img,
-.match-report .article-flex video {
-  flex: 1 1 350px;
-  max-width: 100%;
-  border-radius: 8px;
-}
-
-.match-report .article-text {
-  flex: 2 1 500px;
-}
-
-@media (max-width: 768px) {
-  .match-report .article-flex {
-    flex-direction: column;
-    text-align: center;
-  }
-}
