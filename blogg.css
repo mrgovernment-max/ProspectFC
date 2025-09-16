@@ -360,6 +360,7 @@ h1 {
 
 .detail-image {
   width: 100%;
+  max-width:500px;
   max-height: 400px;
   object-fit: cover;
   border-radius: 8px;
