@@ -708,3 +708,35 @@ footer {
     font-size: 0.7rem;
   }
 }
+
+.match-report .article-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.match-report .article-flex.reverse {
+  flex-direction: row-reverse;
+}
+
+.match-report .article-flex img,
+.match-report .article-flex video {
+  flex: 1 1 40%;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.match-report .article-text {
+  flex: 1 1 55%;
+}
+
+@media (max-width: 768px) {
+  .match-report .article-flex,
+  .match-report .article-flex.reverse {
+    flex-direction: column;
+    text-align: left;
+  }
+}
+
