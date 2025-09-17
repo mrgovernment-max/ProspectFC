@@ -112,6 +112,11 @@
     <section class="stats-filters">
       <div class="container">
         <div class="filter-container">
+          <select name="season" id="season">
+            <option value="season2">2025/26</option>
+            <option value="season1">2024/25</option>
+            <option value="alltime">ALL TIME</option>
+          </select>
           <button class="filter-btn active" onclick="filterbyname()">
             By Name
           </button>
@@ -253,6 +258,54 @@
       const assist = document.getElementById("assist");
       const tbody = document.getElementById("team-stats-body");
       const filterButtons = document.querySelectorAll(".filter-btn");
+      const season = document.getElementById("season");
+
+      // ✅ Declare URLs globally so they can be reused everywhere
+      let UrlforteamStats =
+        "https://backendroutes-lcpt.onrender.com/teamstatss";
+      let UrlforName = "https://backendroutes-lcpt.onrender.com/filterbynamee";
+      let UrlforGames =
+        "https://backendroutes-lcpt.onrender.com/filterbygamess";
+      let UrlforGoals =
+        "https://backendroutes-lcpt.onrender.com/filterbygoalss";
+      let UrlforAssists =
+        "https://backendroutes-lcpt.onrender.com/filterbyassists";
+
+      season.addEventListener("change", function () {
+        resetButtons();
+        const filterSeason = this.value;
+
+        if (filterSeason === "season1") {
+          UrlforteamStats = "https://backendroutes-lcpt.onrender.com/teamstats";
+          UrlforName = "https://backendroutes-lcpt.onrender.com/filterbyname";
+          UrlforGames = "https://backendroutes-lcpt.onrender.com/filterbygames";
+          UrlforGoals = "https://backendroutes-lcpt.onrender.com/filterbygoals";
+          UrlforAssists =
+            "https://backendroutes-lcpt.onrender.com/filterbyassists";
+        } else if (filterSeason === "season2") {
+          UrlforteamStats =
+            "https://backendroutes-lcpt.onrender.com/teamstatss";
+          UrlforName = "https://backendroutes-lcpt.onrender.com/filterbynamee";
+          UrlforGames =
+            "https://backendroutes-lcpt.onrender.com/filterbygamess";
+          UrlforGoals =
+            "https://backendroutes-lcpt.onrender.com/filterbygoalss";
+          UrlforAssists =
+            "https://backendroutes-lcpt.onrender.com/filterbyassistss";
+        } else if (filterSeason === "alltime") {
+          UrlforteamStats =
+            "https://backendroutes-lcpt.onrender.com/teamstatssalltime";
+          UrlforName =
+            "https://backendroutes-lcpt.onrender.com/filterbynameealltime";
+          UrlforGames =
+            "https://backendroutes-lcpt.onrender.com/filterbygamessalltime";
+          UrlforGoals =
+            "https://backendroutes-lcpt.onrender.com/filterbygoalssalltime";
+          UrlforAssists =
+            "https://backendroutes-lcpt.onrender.com/filterbyassistssalltime";
+        }
+        loadTeamStats();
+      });
 
       // Set active filter button
       function setActiveFilter(activeButton) {
@@ -265,9 +318,7 @@
         try {
           tbody.innerHTML = `<tr><td colspan="5" class="loading"><i class="fas fa-spinner"></i><p>Loading team stats...</p></td></tr>`;
 
-          const res = await fetch(
-            "https://backendroutes-lcpt.onrender.com/teamstats"
-          );
+          const res = await fetch(UrlforteamStats);
           const players = await res.json();
 
           displayPlayers(players, "name");
@@ -302,12 +353,14 @@
           }
 
           row.innerHTML = `
-            <td class="player-rank">${index + 1}</td>
-            <td class="player-name">${player.player_name}${medal}</td>
-            <td>${player.games_played}</td>
-            <td>${player.goals}</td>
-            <td>${player.assists}</td>
-          `;
+      <td class="player-rank">${index + 1}</td>
+      <td class="player-name">${player.player_name || player.name} ${medal}</td>
+      <td>${
+        player.games_played ?? player.appearances ?? player.total_matches
+      }</td>
+      <td>${player.goals ?? player.total_goals}</td>
+      <td>${player.assists ?? player.total_assists}</td>
+    `;
           tbody.appendChild(row);
         });
       }
@@ -317,9 +370,7 @@
         setActiveFilter(event.target);
         resetTableHeaders();
         try {
-          const res = await fetch(
-            "https://backendroutes-lcpt.onrender.com/filterbyname"
-          );
+          const res = await fetch(UrlforName);
           const players = await res.json();
           displayPlayers(players, "name");
         } catch (err) {
@@ -331,9 +382,7 @@
         setActiveFilter(event.target);
         resetTableHeaders();
         try {
-          const res = await fetch(
-            "https://backendroutes-lcpt.onrender.com/filterbygames"
-          );
+          const res = await fetch(UrlforGames);
           const players = await res.json();
           displayPlayers(players, "games");
         } catch (err) {
@@ -344,14 +393,9 @@
       async function filterbygoals() {
         setActiveFilter(event.target);
         resetTableHeaders();
-        goal.textContent = "Goals";
-        match.textContent = "Assists";
-        assist.textContent = "Matches";
 
         try {
-          const res = await fetch(
-            "https://backendroutes-lcpt.onrender.com/filterbygoals"
-          );
+          const res = await fetch(UrlforGoals);
           const players = await res.json();
           displayPlayers(players, "goals");
         } catch (err) {
@@ -362,13 +406,9 @@
       async function filterbyassists() {
         setActiveFilter(event.target);
         resetTableHeaders();
-        assist.textContent = "Matches";
-        match.textContent = "Assists";
 
         try {
-          const res = await fetch(
-            "https://backendroutes-lcpt.onrender.com/filterbyassists"
-          );
+          const res = await fetch(UrlforAssists);
           const players = await res.json();
           displayPlayers(players, "assists");
         } catch (err) {
@@ -380,6 +420,10 @@
         match.textContent = "Matches";
         goal.textContent = "Goals";
         assist.textContent = "Assists";
+      }
+
+      function resetButtons() {
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
       }
 
       // Run function on page load

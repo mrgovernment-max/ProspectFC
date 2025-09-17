@@ -235,7 +235,8 @@ header {
   flex-wrap: wrap;
 }
 
-.filter-btn {
+.filter-btn,
+#season {
   padding: 0.8rem 1.5rem;
   background-color: transparent;
   border: 2px solid var(--primary-blue);
