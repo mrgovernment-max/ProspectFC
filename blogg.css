@@ -46,7 +46,6 @@ h6 {
 
 .container {
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -361,6 +360,7 @@ h1 {
 
 .detail-image {
   width: 100%;
+  max-width:1200px;
   max-height: 400px;
   object-fit: cover;
   border-radius: 8px;
