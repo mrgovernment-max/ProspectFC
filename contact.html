@@ -36,7 +36,22 @@
     <title>
       Contact Prospect FC | Get in Touch with Our Football Club in Reading
     </title>
-<link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-TXGWE19783"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-TXGWE19783");
+  </script>
   <body>
     <!-- Header & Navigation -->
     <header>
@@ -305,9 +320,11 @@
           <div class="newsletter">
             <h3>NEWSLETTER</h3>
             <p>Subscribe for club updates</p>
-            <form class="newsletter-form" 
-            action="https://backendroutes-lcpt.onrender.com/newsletter_subscribers"
-             method="post">
+            <form
+              class="newsletter-form"
+              action="https://backendroutes-lcpt.onrender.com/newsletter_subscribers"
+              method="post"
+            >
               <input
                 name="email"
                 type="email"
