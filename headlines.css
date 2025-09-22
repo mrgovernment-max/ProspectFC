@@ -297,6 +297,7 @@ h1 {
   box-shadow: 0 4px 8px var(--shadow);
   overflow: hidden;
   width: 320px;
+  height: auto;
   max-width: 100%;
   display: flex;
   flex-direction: column;
