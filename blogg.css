@@ -633,7 +633,7 @@ footer {
     width: 100%;
   }
   .container {
-    padding: 0 0.6rem;
+    padding: 0 0.2rem;
   }
 }
 
@@ -737,12 +737,14 @@ footer {
 }
 
 .report-text {
+  width: 100%;
   flex: 1;
   min-width: 280px;
 }
 
 .report-img {
   flex: 1;
+  width: 100%;
   min-width: 280px;
 }
 
