@@ -366,7 +366,8 @@
 
       // Check URL on page load
       function checkUrl() {
-        if (window.location.hash) {
+        if (window.href) {
+          console.log(window.href);
           const postId = parseInt(window.location.hash.replace("#post-", ""));
           if (postId) {
             showBlogDetail(postId);
@@ -375,6 +376,8 @@
         }
         showBlogList();
       }
+
+      checkUrl();
 
       // Initialize the page
       document.addEventListener("DOMContentLoaded", () => {
