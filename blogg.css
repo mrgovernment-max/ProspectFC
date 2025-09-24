@@ -709,7 +709,50 @@ footer {
   }
 }
 
-/*BLOG*/
+/*Blog 1*/
+.match-report {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.report-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.report-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.report-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.report-img {
+  flex: 1;
+  min-width: 280px;
+}
+
+.report-img img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.report-video video {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+/*BLOG 2*/
 .blog-container {
   display: flex;
   flex-direction: column;
