@@ -616,6 +616,9 @@ footer {
   .detail-title {
     font-size: 1.8rem;
   }
+  #blog-detail {
+    width: 100%;
+  }
 
   .share-buttons {
     flex-direction: column;
@@ -628,6 +631,9 @@ footer {
 
   .detail-content img {
     width: 100%;
+  }
+  .container {
+    padding: 0 0.6rem;
   }
 }
 
