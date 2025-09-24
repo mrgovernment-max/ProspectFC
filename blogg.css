@@ -360,7 +360,7 @@ h1 {
 
 .detail-image {
   width: 100%;
-  max-width:1200px;
+  max-width: 1200px;
   max-height: 400px;
   object-fit: cover;
   border-radius: 8px;
@@ -707,4 +707,60 @@ footer {
     content: "▼";
     font-size: 0.7rem;
   }
+}
+
+/*BLOG*/
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.blog-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.blog-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.blog-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.blog-img {
+  flex: 1;
+  min-width: 280px;
+}
+
+.blog-img img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.ticket-link {
+  display: inline-block;
+  background: #0077ff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.ticket-link:hover {
+  background: #005fc7;
 }
