@@ -321,18 +321,17 @@
             <h3>NEWSLETTER</h3>
             <p>Subscribe for club updates</p>
             <form
+              onsubmit="newsLetter(event)"
               class="newsletter-form"
-              action="https://backendroutes-lcpt.onrender.com/newsletter_subscribers"
-              method="post"
+              id="newsletter-form"
             >
               <input
-                name="email"
                 type="email"
-                class="newsletter-input"
-                placeholder="Your email"
+                id="email"
+                placeholder="Your Email Address"
                 required
               />
-              <button type="submit" class="newsletter-btn">Subscribe</button>
+              <button type="submit" class="btn">Subscribe</button>
             </form>
           </div>
         </div>
@@ -384,6 +383,51 @@
           // You can add form validation here if needed
           console.log("Form submitted");
         });
+      }
+
+      async function newsLetter(event) {
+        event.preventDefault();
+
+        const mail = document.getElementById("email").value;
+
+        try {
+          const res = await fetch(
+            "https://backendroutes-lcpt.onrender.com/newsletter_subscribers",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email: mail }),
+            }
+          );
+
+          let data;
+          try {
+            data = await res.json();
+          } catch {
+            console.error("Response was not JSON");
+            window.location.href = "news_failed.html";
+            return;
+          }
+
+          const message = data.message || "";
+
+          switch (message) {
+            case "This email is already subscribed.":
+              window.location.href = "news_mailexist.html";
+              break;
+
+            case "Subscribed to Prospect FC!":
+              window.location.href = "news_success.html";
+              break;
+
+            default:
+              window.location.href = "news_failed.html";
+              break;
+          }
+        } catch (err) {
+          console.error("Fetch error:", err);
+          window.location.href = "news_failed.html";
+        }
       }
     </script>
   </body>

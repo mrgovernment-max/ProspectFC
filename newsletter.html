@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscribe to Prospect FC Newsletter</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+      alt="prospectfc"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-blue: #1a4b8c;
+        --secondary-blue: #74c0fc;
+        --light-blue: #e8f4ff;
+        --dark-text: #333;
+        --light-text: #fff;
+        --background: #f8f9fa;
+        --card-bg: #ffffff;
+        --border-radius: 12px;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--background);
+        color: var(--dark-text);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: var(--primary-blue);
+        padding: 1rem 5%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .logo img {
+        width: 80px;
+        height: 80px;
+        transition: var(--transition);
+      }
+
+      .logo img:hover {
+        transform: scale(1.05);
+      }
+
+      .back-home {
+        color: var(--light-text);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+      }
+
+      .back-home:hover {
+        color: var(--secondary-blue);
+      }
+
+      /* Main Content */
+      main {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 5%;
+      }
+
+      .subscription-container {
+        background-color: var(--card-bg);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        padding: 3rem;
+
+        width: 100%;
+        text-align: center;
+        transition: var(--transition);
+      }
+
+      .subscription-container:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .subscription-icon {
+        font-size: 4rem;
+        color: var(--primary-blue);
+        margin-bottom: 1.5rem;
+      }
+
+      .subscription-title {
+        font-size: 2.2rem;
+        color: var(--primary-blue);
+        margin-bottom: 1rem;
+      }
+
+      .subscription-description {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        color: #555;
+      }
+
+      .benefits-list {
+        text-align: left;
+        margin: 2rem 0;
+        background-color: var(--light-blue);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+      }
+
+      .benefits-list h3 {
+        color: var(--primary-blue);
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .benefits-list ul {
+        list-style-type: none;
+      }
+
+      .benefits-list li {
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .benefits-list i {
+        color: var(--secondary-blue);
+        margin-top: 0.2rem;
+      }
+
+      /* Form Styles */
+      .newsletter-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+      }
+
+      .form-group label {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--primary-blue);
+      }
+
+      .newsletter-form input {
+        padding: 1rem;
+        border: 2px solid #ddd;
+        border-radius: var(--border-radius);
+        font-size: 1rem;
+        transition: var(--transition);
+      }
+
+      .newsletter-form input:focus {
+        border-color: var(--secondary-blue);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(116, 192, 252, 0.3);
+      }
+
+      .btn {
+        padding: 1rem 2rem;
+        background-color: var(--primary-blue);
+        color: var(--light-text);
+        border: none;
+        border-radius: var(--border-radius);
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .btn:hover {
+        background-color: var(--secondary-blue);
+        transform: translateY(-2px);
+      }
+
+      .btn:active {
+        transform: translateY(0);
+      }
+
+      .btn:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .loading-spinner {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: var(--light-text);
+        animation: spin 1s ease-in-out infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Footer Styles */
+      footer {
+        background-color: var(--primary-blue);
+        color: var(--light-text);
+        padding: 2rem 5%;
+        text-align: center;
+        margin-top: auto;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      footer p {
+        margin-bottom: 1rem;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        font-size: 1.5rem;
+        transition: var(--transition);
+      }
+
+      .social-links a:hover {
+        transform: translateY(-3px);
+        color: var(--secondary-blue);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .subscription-container {
+          padding: 2rem;
+        }
+
+        .subscription-title {
+          font-size: 1.8rem;
+        }
+
+        .benefits-list {
+          padding: 1rem;
+        }
+
+        .newsletter-form {
+          gap: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .header-content {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .subscription-container {
+          padding: 1.5rem;
+        }
+
+        .subscription-title {
+          font-size: 1.6rem;
+        }
+
+        .subscription-icon {
+          font-size: 3rem;
+        }
+
+        .btn {
+          padding: 0.8rem 1.5rem;
+        }
+      }
+
+      /* Success/Error Messages */
+      .message {
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        margin: 1rem 0;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      .success-message {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+
+      .error-message {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+              alt="Prospect FC"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="subscription-container">
+        <div class="subscription-icon">
+          <i class="fas fa-newspaper"></i>
+        </div>
+        <h1 class="subscription-title">Stay Updated with Prospect FC</h1>
+        <p class="subscription-description">
+          Subscribe to our newsletter and never miss an update about matches,
+          team news, events, and exclusive content.
+        </p>
+
+        <div class="benefits-list">
+          <h3>What you'll receive:</h3>
+          <ul>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <span>Weekly match previews and results</span>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <span>Exclusive player interviews and news</span>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <span>Upcoming events and ticket information</span>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <span>Special offers for subscribers</span>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <span>Youth team updates and academy news</span>
+            </li>
+          </ul>
+        </div>
+
+        <form
+          onsubmit="newsLetter(event)"
+          class="newsletter-form"
+          id="newsletter-form"
+        >
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="your.email@example.com"
+              required
+            />
+          </div>
+          <button type="submit" class="btn" id="submit-btn">
+            <span id="btn-text">Subscribe Now</span>
+            <div
+              id="btn-loading"
+              class="loading-spinner"
+              style="display: none"
+            ></div>
+          </button>
+        </form>
+
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #666">
+          We respect your privacy. You can unsubscribe at any time.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 PROSPECT FC. All rights reserved.</p>
+        <div class="social-links">
+          <a
+            target="_blank"
+            href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            target="_blank"
+            href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a
+            target="_blank"
+            href="https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
+          >
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      async function newsLetter(event) {
+        event.preventDefault();
+
+        const emailInput = document.getElementById("email");
+        const submitBtn = document.getElementById("submit-btn");
+        const btnText = document.getElementById("btn-text");
+        const btnLoading = document.getElementById("btn-loading");
+        const form = document.getElementById("newsletter-form");
+
+        const email = emailInput.value.trim();
+
+        // Validate email format
+        if (!validateEmail(email)) {
+          showMessage("Please enter a valid email address.", "error");
+          return;
+        }
+
+        // Disable form and show loading state
+        submitBtn.disabled = true;
+        btnText.textContent = "Subscribing...";
+        btnLoading.style.display = "inline-block";
+        emailInput.disabled = true;
+
+        try {
+          const res = await fetch(
+            "https://backendroutes-lcpt.onrender.com/newsletter_subscribers",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email: email }),
+            }
+          );
+
+          let data;
+          try {
+            data = await res.json();
+          } catch {
+            console.error("Response was not JSON");
+            showMessage("Subscription failed. Please try again.", "error");
+            resetForm();
+            return;
+          }
+
+          const message = data.message || "";
+
+          switch (message) {
+            case "This email is already subscribed.":
+              showMessage(
+                "This email is already subscribed to our newsletter.",
+                "error"
+              );
+              break;
+
+            case "Subscribed to Prospect FC!":
+              showMessage(
+                "Success! You have been subscribed to our newsletter.",
+                "success"
+              );
+              form.reset();
+              break;
+
+            default:
+              showMessage("Subscription failed. Please try again.", "error");
+              break;
+          }
+        } catch (err) {
+          console.error("Fetch error:", err);
+          showMessage(
+            "Network error. Please check your connection and try again.",
+            "error"
+          );
+        } finally {
+          resetForm();
+        }
+      }
+
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+
+      function showMessage(text, type) {
+        // Remove any existing messages
+        const existingMessage = document.querySelector(".message");
+        if (existingMessage) {
+          existingMessage.remove();
+        }
+
+        // Create new message
+        const message = document.createElement("div");
+        message.className = `message ${type}-message`;
+        message.textContent = text;
+
+        // Insert after the form
+        const form = document.getElementById("newsletter-form");
+        form.parentNode.insertBefore(message, form.nextSibling);
+
+        // Auto-remove after 5 seconds
+        setTimeout(() => {
+          if (message.parentNode) {
+            message.remove();
+          }
+        }, 5000);
+      }
+
+      function resetForm() {
+        const submitBtn = document.getElementById("submit-btn");
+        const btnText = document.getElementById("btn-text");
+        const btnLoading = document.getElementById("btn-loading");
+        const emailInput = document.getElementById("email");
+
+        submitBtn.disabled = false;
+        btnText.textContent = "Subscribe Now";
+        btnLoading.style.display = "none";
+        emailInput.disabled = false;
+      }
+    </script>
+  </body>
+</html>
