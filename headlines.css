@@ -272,7 +272,8 @@ h1 {
 #signings {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  text-align: center;
+  justify-content: space-evenly;
   gap: 1.7rem;
   padding: 1.5rem;
   width: 100%;
@@ -292,13 +293,12 @@ h1 {
 #new,
 #matchday,
 #highlight {
-  background-color: var(--gray);
-  border-radius: 12px;
-  box-shadow: 0 4px 8px var(--shadow);
+  background-color: transparent;
   overflow: hidden;
   width: 320px;
   height: auto;
   max-width: 100%;
+  padding: 20px;
   display: flex;
   flex-direction: column;
 }

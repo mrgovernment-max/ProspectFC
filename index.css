@@ -241,7 +241,8 @@ header {
 /* Hero Section */
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("images/mob.jpg") no-repeat center center/cover;
+    url("https://res.cloudinary.com/dazhskqcc/image/upload/v1758931677/4ff3452a-da31-4241-a481-b3fe70af98b8_tfrnlt.jpg")
+      no-repeat center center/cover;
   height: 80vh;
   display: flex;
   align-items: center;
