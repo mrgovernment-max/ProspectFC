@@ -1,0 +1,266 @@
+:root {
+  --primary: #1a472a;
+  --secondary: #f0c808;
+  --accent: #e63946;
+  --dark: #0d1b2a;
+  --light: #f8f9fa;
+  --gray: #8d99ae;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, var(--dark), #1a2a3a);
+  color: var(--light);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: rgba(13, 27, 42, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid var(--secondary);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-container img {
+  height: 70px;
+}
+
+.logo-text {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--light);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.logo-text span {
+  color: var(--secondary);
+}
+
+/* Main Content */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.icon-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 3rem;
+}
+
+.success .icon-container {
+  background: rgba(26, 71, 42, 0.3);
+  color: var(--secondary);
+  border: 3px solid var(--secondary);
+}
+
+.warning .icon-container {
+  background: rgba(240, 200, 8, 0.2);
+  color: var(--secondary);
+  border: 3px solid var(--secondary);
+}
+
+.error .icon-container {
+  background: rgba(230, 57, 70, 0.2);
+  color: var(--accent);
+  border: 3px solid var(--accent);
+}
+
+.result-card h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--light);
+}
+
+.result-card p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--gray);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--secondary);
+  color: var(--dark);
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+  border: 2px solid var(--secondary);
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(240, 200, 8, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+}
+
+.btn-outline:hover {
+  background: var(--secondary);
+  color: var(--dark);
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* Footer */
+footer {
+  background: rgba(13, 27, 42, 0.9);
+  padding: 2rem;
+  text-align: center;
+  margin-top: auto;
+  border-top: 1px solid rgba(240, 200, 8, 0.2);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-links a {
+  color: var(--light);
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  color: var(--secondary);
+  transform: translateY(-3px);
+}
+
+.footer-text {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+  .result-card {
+    padding: 2rem;
+  }
+
+  .result-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+
+  .logo-container img {
+    height: 50px;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .result-card {
+    padding: 1.5rem;
+  }
+
+  .icon-container {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+}
