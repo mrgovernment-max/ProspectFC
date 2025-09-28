@@ -123,6 +123,8 @@
         <button class="filter-btn" data-filter="completed">Results</button>
         <button class="filter-btn" data-filter="home">Home Games</button>
         <button class="filter-btn" data-filter="away">Away Games</button>
+        <button class="filter-btn" data-filter="cup">Cup Games</button>
+        <button class="filter-btn" data-filter="league">League Games</button>
       </div>
 
       <h2 style="margin: 3% 0">
@@ -225,7 +227,7 @@
             fixtures += `
               <div class="fixture-card" data-status="${status.toLowerCase()}" data-location="${
               isHomeGame ? "home" : "away"
-            }">
+            }" data-competition = "${element.game_type.toLowerCase()}">
                 <div class="teams">
                   <div class="team">
                     <img src="${element.home_team_img}" alt="${
@@ -258,13 +260,13 @@
                 ? '<i class="fas fa-home" style="color: var(--primary-blue); margin-left: 5px;"></i>'
                 : '<i class="fas fa-bus" style="color: var(--primary-blue); margin-left: 5px;"></i>'
             }</p>
+            <p><strong>Competition:</strong> ${element.game_type}</p>
                   <div class="buttons">
-                    <button><a target="_blank" href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"> <i class="fab fa-youtube"></i> Highlights</a></button>
-                    <button><a target="_blank" href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="> <i class="fab fa-instagram"></i> Photos</a></button>
                     ${
                       status === "Upcoming"
                         ? `<button><a href="#" class="add-to-calendar" data-date="${element.match_date}" data-time="${element.match_time}" data-title="${element.home_team_name} vs ${element.away_team_name}"> <i class="far fa-calendar-plus"></i> Remind Me</a></button>`
-                        : ""
+                        : `   <button class="highlight"><a target="_blank" href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"> <i class="fab fa-youtube"></i> Highlights</a></button>
+                    <button class="highlight"><a target="_blank" href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="> <i class="fab fa-instagram"></i> Photos</a></button>`
                     }
                   </div>
                 </div>
@@ -301,13 +303,16 @@
             fixtureCards.forEach((card) => {
               const status = card.getAttribute("data-status");
               const location = card.getAttribute("data-location");
+              const competition = card.getAttribute("data-competition");
 
               if (
                 filter === "all" ||
                 (filter === "upcoming" && status === "upcoming") ||
                 (filter === "completed" && status === "completed") ||
                 (filter === "home" && location === "home") ||
-                (filter === "away" && location === "away")
+                (filter === "away" && location === "away") ||
+                (filter === "league" && competition.includes("league")) ||
+                (filter === "cup" && competition.includes("cup"))
               ) {
                 card.style.display = "block";
               } else {
