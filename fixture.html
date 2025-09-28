@@ -198,11 +198,7 @@
 
           data.forEach((element) => {
             // Determine match status
-            const matchDate = new Date(
-              element.match_date + " " + element.match_time
-            );
-            const currentDate = new Date();
-            let status = "";
+
             let statusClass = "";
 
             if (element.home_score !== null && element.away_score !== null) {
