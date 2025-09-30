@@ -394,8 +394,7 @@ button:hover {
 iframe {
   border: none;
   aspect-ratio: 16 / 9;
-  width: 100%;
-  max-width: 400px;
+  width: auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px var(--shadow);
 }
