@@ -332,8 +332,7 @@ header {
 .involve-card {
   background-color: var(--text-light);
   border-radius: var(--border-radius);
-  height:auto;
-  max-height:500px;
+  overflow:hidden;
   box-shadow: var(--box-shadow);
   transition: var(--transition);
 }
@@ -345,7 +344,7 @@ header {
 
 .involve-card img {
   width: 100%;
-  height: auto;
+  height: 250px;
   object-fit: cover;
 }
 
