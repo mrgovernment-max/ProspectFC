@@ -332,7 +332,6 @@ header {
 .involve-card {
   background-color: var(--text-light);
   border-radius: var(--border-radius);
-  overflow: hidden;
   height:auto;
   max-height:500px;
   box-shadow: var(--box-shadow);
