@@ -217,7 +217,7 @@
         const blogListContainer = document.querySelector(".blog-list");
         const Container = document.getElementById("blog-list-container");
         try {
-          Container.innerHTML = `<div id="loader"> <i id="spin" class="fa-solid fa-arrows-spin"></i> <p>Loading Articles...refresh page after 5 secs  </p> </div>`;
+          Container.innerHTML = `<div id="loader"> <i id="spin" class="fa-solid fa-arrows-spin"></i> <p>Refresh page if loading is delaying  </p> </div>`;
 
           const res = await fetch(url);
           blogPosts = await res.json();
