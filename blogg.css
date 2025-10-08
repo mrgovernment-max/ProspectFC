@@ -718,8 +718,8 @@ footer {
 
 /*Blog 1*/
 .match-report {
-  width: 100%;
-  margin: 0 auto;
+   width:80%;
+  margin:auto;
   padding: 1rem;
   display: flex;
   flex-direction: column;
