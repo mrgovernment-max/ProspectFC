@@ -648,6 +648,20 @@ footer {
     display: flex;
   }
 
+  .detail-content{
+    width:100%
+  }
+    .match-report{
+    width:100%
+  }
+     .blog-section{
+    width:100%
+  }
+
+    .detail-content{
+    width:100%
+  }
+
   .blog-flex {
     justify-content: center;
     gap: 5vh;
