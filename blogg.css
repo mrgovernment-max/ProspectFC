@@ -773,6 +773,8 @@ footer {
 
 .blog-section {
   display: flex;
+   width:80%;
+  margin:auto;
   flex-wrap: wrap;
   gap: 1.5rem;
   align-items: center;
