@@ -414,7 +414,6 @@ h1 {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Optional: make images zoom slightly on hover */
 .detail-content img:hover,
 .detail-content video:hover {
   transform: scale(1.02);
@@ -633,7 +632,7 @@ footer {
     width: 100%;
   }
   .container {
-    width:100%;
+    width: 100%;
     padding: 0 0.7rem;
   }
 }
@@ -648,18 +647,18 @@ footer {
     display: flex;
   }
 
-  .detail-content{
-    width:100%
+  .detail-content {
+    width: 100%;
   }
-    .match-report{
-    width:100%
+  .match-report {
+    width: 100%;
   }
-     .blog-section{
-    width:100%
+  .blog-section {
+    width: 100%;
   }
 
-    .detail-content{
-    width:100%
+  .detail-content {
+    width: 100%;
   }
 
   .blog-flex {
@@ -732,8 +731,8 @@ footer {
 
 /*Blog 1*/
 .match-report {
-   width:80%;
-  margin:auto;
+  width: 100%;
+  margin: auto;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -787,8 +786,8 @@ footer {
 
 .blog-section {
   display: flex;
-   width:80%;
-  margin:auto;
+  width: 100%;
+  margin: auto;
   flex-wrap: wrap;
   gap: 1.5rem;
   align-items: center;
