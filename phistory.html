@@ -261,7 +261,7 @@
       function pingBackend() {
         fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
       }
-      pingBackend(); // call on load
+      pingBackend();
       setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
 
       // GRAB ELEMENTS IN DOM
@@ -272,7 +272,7 @@
       const filterButtons = document.querySelectorAll(".filter-btn");
       const season = document.getElementById("season");
 
-      // ✅ Declare URLs globally so they can be reused everywhere
+      //Declare URLs globally
       let UrlforteamStats =
         "https://backendroutes-lcpt.onrender.com/teamstatss";
       let UrlforName = "https://backendroutes-lcpt.onrender.com/filterbynamee";

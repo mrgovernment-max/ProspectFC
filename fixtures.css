@@ -245,7 +245,7 @@ header {
 
 /* Fixtures Section */
 .fixtures-section {
-  padding: 3rem 5%;
+  padding: 1rem 1%;
   text-align: center;
 }
 
@@ -285,13 +285,17 @@ header {
 }
 
 .fixtures-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 2rem;
   margin-top: 2rem;
 }
 
 .fixture-card {
+  width: 100%;
+  max-width: 350px;
   background-color: var(--card-bg);
   border-radius: var(--border-radius);
   overflow: hidden;
