@@ -265,6 +265,13 @@ header {
   margin-right: auto;
 }
 
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+
 /* About Club Section */
 .about-club {
   padding: 5rem 0;
@@ -332,7 +339,7 @@ header {
 .involve-card {
   background-color: var(--text-light);
   border-radius: var(--border-radius);
-  overflow:hidden;
+  overflow: hidden;
   box-shadow: var(--box-shadow);
   transition: var(--transition);
 }
@@ -355,6 +362,47 @@ header {
 .card-content h3 {
   color: var(--primary-blue);
   margin-bottom: 0.5rem;
+}
+
+.socials {
+  margin-top: 5%;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: #1e90ff;
+  box-shadow: 0 8px 20px rgba(30, 144, 255, 0.35);
+}
+
+.socials a:hover .fa-facebook-f {
+  color: #fff;
+}
+.socials a:hover .fa-instagram {
+  color: #fff;
+}
+.socials a:hover .fa-youtube {
+  color: #fff;
+}
+.socials a:hover .fa-tiktok {
+  color: #fff;
 }
 
 /* News Section */
