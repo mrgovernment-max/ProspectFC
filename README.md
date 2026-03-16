@@ -55,7 +55,7 @@ https://github.com/mrgovernment-max/ProspectFC.git
 2. Navigate into the project:
 
 ```bash
-cd Prospect-fc
+cd ProspectFc
 ```
 
 3. Install dependencies:
