@@ -49,13 +49,13 @@ Built as a full-stack project, it demonstrates the ability to connect a responsi
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/prospect-fc.git
+https://github.com/mrgovernment-max/ProspectFC.git
 ```
 
 2. Navigate into the project:
 
 ```bash
-cd prospect-fc
+cd Prospect-fc
 ```
 
 3. Install dependencies:
@@ -64,18 +64,7 @@ cd prospect-fc
 npm install
 ```
 
-4. Configure your database:
-
-* Create your SQL database
-* Update your database connection details in the project
-
-5. Run the server:
-
-```bash
-node server.js
-```
-
-6. Open in your browser:
+4. Open in your browser:
 
 ```
 http://localhost:3000
