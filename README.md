@@ -75,9 +75,7 @@ http://localhost:3000
 ## 📂 Project Structure
 ```
 /public        → Frontend (HTML, CSS, JS)
-/routes        → API routes
-/models        → Database logic
-/server.js     → Main server file
+/images        → Media files
 ```
 
 ---
