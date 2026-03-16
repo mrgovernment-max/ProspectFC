@@ -17,8 +17,10 @@ Built as a full-stack project, it demonstrates the ability to connect a responsi
 *  Modern, responsive homepage
 *  Team & player profiles
 *  Fixtures and match information
-*  Merchandise section *(if applicable)*
-*  User authentication *(if implemented)*
+*  Merchandise section 
+*  Team stats
+*  Newsletter
+*  Article and blogs about matchdays
 *  Dynamic content powered by backend + database
 
 ---
