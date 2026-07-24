@@ -19,9 +19,11 @@
       content="Fc Prospect News Prospect Footabll England Club Reading "
     />
     <link rel="stylesheet" href="headlines.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
     <title>HEADLINES | PROSPECT FC | NEWS | EBFL LEAGUE</title>
-  </head>
-  <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
   <script
     async
     src="https://www.googletagmanager.com/gtag/js?id=G-TXGWE19783"
@@ -35,6 +37,7 @@
 
     gtag("config", "G-TXGWE19783");
   </script>
+  </head>
   <body>
     <!-- Header & Navigation -->
     <header>
@@ -98,17 +101,28 @@
       </div>
     </header>
 
-    <h1>HEADLINES</h1>
+    <main>
+      <section class="news-hero" aria-labelledby="page-title">
+        <p class="eyebrow">PROSPECT FC · CLUB NEWS</p>
+        <h1 id="page-title">Latest from the club</h1>
+        <p>Match reports, team updates and every moment that matters.</p>
+      </section>
 
-    <div id="news">
+    <section class="content-section news-section" aria-labelledby="news-title">
+      <div class="section-heading">
+        <p class="eyebrow">FROM THE TOUCHLINE</p>
+        <h2 id="news-title">Club headlines</h2>
+      </div>
+      <div id="news">
       <!--NEWS-->
 
-      <div id="new">
+      <article class="news-card featured-news-card">
         <img loading="lazy"
           src="https://res.cloudinary.com/dazhskqcc/image/upload/v1758992546/shwocase_game_header_from_corner_pic_jri2qz.jpg"
           alt="Prospect FC Goal Celebration"
         />
-        <p>
+        <div class="news-card-content"><p>
+          <span class="card-kicker">MATCH REPORT</span>
           <strong>
             Prospect FC Show Grit in 2-2 Thriller Against Gryf
           </strong>
@@ -119,37 +133,36 @@
           <br />
           
           <br />
-          <a href="https://prospectfc.com/blog.html#post-8">
-            <button>Full Match Report</button></a>
-        </p>
-      </div>
+          <a class="card-link" href="https://prospectfc.com/blog.html#post-8">Full Match Report <span aria-hidden="true">→</span></a>
+        </p></div>
+      </article>
       
 
-      <div id="new">
+      <article class="news-card">
         <img loading="lazy"
           src="images/hwaks.jpg"
           alt="prospect fc "
         />
-        <p>
+        <div class="news-card-content"><p>
+          <span class="card-kicker">VIDEO</span>
           <strong>
            MATCHDAY RESULTS
           </strong>
           <br />
           Highlights available from yesterdays 4:2 defeat. <br />
-          <a href="https://youtu.be/TNX06N7O5f8?si=WZCIBKnYq8yKQ8sg">
-            <button>Match Highlights</button></a
-          >
+          <a class="card-link" href="https://youtu.be/TNX06N7O5f8?si=WZCIBKnYq8yKQ8sg">Match Highlights <span aria-hidden="true">→</span></a>
           <br />
      
-        </p>
-      </div>
+        </p></div>
+      </article>
 
-      <div id="new">
+      <article class="news-card">
         <img loading="lazy"
           src="https://res.cloudinary.com/dazhskqcc/image/upload/v1757940662/freeckick_micki_ocecvb.jpg"
           alt="Mikołaj Watroba Free Kick"
         />
-        <p>
+        <div class="news-card-content"><p>
+          <span class="card-kicker">MATCHDAY</span>
           <strong>
             Mikołaj Watroba Stuns Crowd with Spectacular Free Kick in Season
             Opener
@@ -161,22 +174,19 @@
           on their feet and showcased his technical ability under pressure. With
           confidence high, Prospect fans will be hoping to see more magic from
           their midfield maestro this season. <br />
-          <a href="https://youtu.be/mztNFn7qxIU?si=hKAmFXL2msUWAiTw">
-            <button>Match Highlights</button></a
-          >
+          <a class="card-link" href="https://youtu.be/mztNFn7qxIU?si=hKAmFXL2msUWAiTw">Match Highlights <span aria-hidden="true">→</span></a>
           <br />
-          <a href="https://prospectfc.com/blog.html#post-3">
-            <button>Match News</button></a
-          >
-        </p>
-      </div>
+          <a class="card-link" href="https://prospectfc.com/blog.html#post-3">Match News <span aria-hidden="true">→</span></a>
+        </p></div>
+      </article>
 
-      <div id="new">
+      <article class="news-card">
         <img loading="lazy"
           src="https://res.cloudinary.com/dazhskqcc/image/upload/v1757462469/oldwindsor_nf5ijb.jpg"
           alt="fc prospect matchday"
         />
-        <p>
+        <div class="news-card-content"><p>
+          <span class="card-kicker">FIXTURES</span>
           <strong> WE ARE BACK IN LEAGUE ACTION THIS WEEKEND </strong> <br />
           The wait is over, this weekend marks the start of our East Berkshire
           Football League campaign as we take on new side Old Windsor A in
@@ -192,12 +202,13 @@
           Matchday 1 <br />
 
          
-        </p>
-      </div>
+        </p></div>
+      </article>
 
-      <div id="new">
+      <article class="news-card">
         <img loading="lazy" src="images/matchday.jpeg" alt="fc prospect matchday" />
-        <p>
+        <div class="news-card-content"><p>
+          <span class="card-kicker">MATCHDAY</span>
           <strong> Matchday </strong> <br />
           After a late team dropout, we’re pleased to confirm we’ve secured new
           opposition for tomorrow’s pre-season friendly. ⚽ Cookham Dean vs
@@ -207,13 +218,14 @@
           the switch to the Thames Valley Premier League for the upcoming
           campaign. This will be our 6th pre-season friendly, with just 3 weeks
           remaining until our league opener away at Old Windsor.
-        </p>
-      </div>
+        </p></div>
+      </article>
 
-      <div id="new">
+      <article class="news-card">
         <img loading="lazy" src="images/cupdraw.jpeg" alt="fc prospect matchday" />
 
-        <p style="overflow: hidden; line-height: 30px">
+        <div class="news-card-content"><p class="cup-draw">
+          <span class="card-kicker">CUP COMPETITIONS</span>
           <strong>
             The draw is complete and the match-ups are set. Here are the Round 1
             fixtures for each cup </strong
@@ -234,17 +246,21 @@
           🏆Ascot & District Cup 🆚Britwell 📆1st November <br /><br />
 
           🏆Berks & Bucks FA Junior Trophy 🆚Harchester Hawks 📆20th September
-        </p>
-      </div>
+        </p></div>
+      </article>
 
-    
-    </div>
+      </div>
+    </section>
 
       <!--NEW SIGNINGS-->
-      <h1>NEW SIGNINGS 👕</h1>
+    <section class="content-section signings-section" aria-labelledby="signings-title">
+      <div class="section-heading">
+        <p class="eyebrow">THE SQUAD</p>
+        <h2 id="signings-title">New signings</h2>
+      </div>
 
       <div id="signings">
-        <div id="signing">
+        <article class="signing-card">
           <img loading="lazy"
             src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754908487/image3_2_ay2x5n.png"
             alt="prospect players "
@@ -258,9 +274,9 @@
               </p>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div id="signing">
+        <article class="signing-card">
           <img loading="lazy"
             src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754908598/image2_3_bdys0n.png"
             alt="prospect players "
@@ -276,9 +292,9 @@
               </p>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div id="signing">
+        <article class="signing-card">
           <img loading="lazy"
             src="https://res.cloudinary.com/dazhskqcc/image/upload/v1753982566/henry_p_jwqkzo.jpg"
             alt="prospect players "
@@ -293,9 +309,9 @@
               </p>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div id="signing">
+        <article class="signing-card">
           <img loading="lazy"
             src="https://res.cloudinary.com/dazhskqcc/image/upload/v1753982565/amani_p_swnjwk.jpg"
             alt="prospect players "
@@ -311,8 +327,8 @@
               </p>
             </div>
           </div>
-        </div>
-        <div id="signing">
+        </article>
+        <article class="signing-card">
           <img loading="lazy"
             src="https://res.cloudinary.com/dazhskqcc/image/upload/v1753982588/Godwin_p_zug0jq.jpg"
             alt="prospect players "
@@ -327,9 +343,9 @@
               </p>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div id="signing">
+        <article class="signing-card">
           <img loading="lazy"
             src="https://res.cloudinary.com/dazhskqcc/image/upload/v1753982589/neil_p_bpkzsb.jpg"
             alt="prospect players "
@@ -345,18 +361,22 @@
               </p>
             </div>
           </div>
-        </div>
+        </article>
       </div>
+    </section>
 
       <!--MATCHDAY HIGHLIGHTS-->
-      <h1>
-        <a
+    <section class="content-section video-section" aria-labelledby="video-title">
+      <div class="section-heading">
+        <p class="eyebrow">WATCH PROSPECT</p>
+        <h2 id="video-title">
+          <a
           target="_blank" rel="noopener noreferrer"
           href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
           style="text-decoration: none"
-          >Matchday Highlights ↗️</a
-        >
-      </h1>
+          >Matchday highlights <span aria-hidden="true">↗</span></a>
+        </h2>
+      </div>
       <div id="matchdays">
         <div id="matchday">
           <iframe loading="lazy"
@@ -397,11 +417,15 @@
           ></iframe>
         </div>
       </div>
-    </div>
+    </section>
 
     <!--TRAINING VIDS-->
-    <h1>BEHIND SCENES</h1>
-    <div id="highlights">
+    <section class="content-section behind-section" aria-labelledby="behind-title">
+      <div class="section-heading">
+        <p class="eyebrow">INSIDE THE CLUB</p>
+        <h2 id="behind-title">Behind the scenes</h2>
+      </div>
+      <div id="highlights">
       <div id="highlight">
         <video
           autoplay
@@ -432,6 +456,8 @@
         ></video>
       </div>
     </div>
+    </section>
+    </main>
 
     <!-- Footer -->
     <footer>
