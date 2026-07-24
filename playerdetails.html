@@ -118,7 +118,17 @@
         </div>
 
         <div class="player-info fade-in">
-          <h1 id="player-name" class="player-name"></h1>
+          <div class="player-name-row">
+            <h1 id="player-name" class="player-name"></h1>
+            <label class="season-picker" for="season-select">
+              <span>Season</span>
+              <select id="season-select">
+                <option value="2024/25">2024/25</option>
+                <option value="2025/26">2025/26</option>
+                <option value="2026/27">2026/27</option>
+              </select>
+            </label>
+          </div>
           <p id="player-age" class="player-age"></p>
 
           <div class="player-stats-grid">
@@ -271,16 +281,50 @@
       const MOTM = JSON.parse(localStorage.getItem("MOTM") || "0");
       const POTM = JSON.parse(localStorage.getItem("POTM") || "0");
 
+      const seasonSelect = document.getElementById("season-select");
+      const seasonStats = {
+        "2024/25": {
+          apps: Number(Papps) || 0,
+          goals: Number(Pgoals) || 0,
+          assists: Number(Passists) || 0,
+          motm: Number(MOTM) || 0,
+          potm: Number(POTM) || 0,
+        },
+        "2025/26": {
+          apps: Number(Papps) || 0,
+          goals: Number(Pgoals) || 0,
+          assists: Number(Passists) || 0,
+          motm: Number(MOTM) || 0,
+          potm: Number(POTM) || 0,
+        },
+        "2026/27": {
+          apps: Number(Papps) || 0,
+          goals: Number(Pgoals) || 0,
+          assists: Number(Passists) || 0,
+          motm: Number(MOTM) || 0,
+          potm: Number(POTM) || 0,
+        },
+      };
+
+      function updateSeasonStats() {
+        const selectedSeason = seasonSelect.value;
+        const selectedStats = seasonStats[selectedSeason] || seasonStats["2024/25"];
+
+        document.getElementById("player-apps").textContent = selectedStats.apps;
+        document.getElementById("player-goals").textContent = selectedStats.goals;
+        document.getElementById("player-assists").textContent = selectedStats.assists;
+        document.getElementById("player-motm").textContent = selectedStats.motm;
+        document.getElementById("player-potm").textContent = selectedStats.potm;
+      }
+
       // Set data into HTML elements
       document.getElementById("player-name").textContent = Pname;
       document.getElementById("player-jersey").textContent = Pnumber;
       document.getElementById("player-age").textContent = `Age: ${Page}`;
       document.getElementById("player-main-img").src = Pimg;
-      document.getElementById("player-apps").textContent = Papps;
-      document.getElementById("player-goals").textContent = Pgoals;
-      document.getElementById("player-assists").textContent = Passists;
-      document.getElementById("player-motm").textContent = MOTM;
-      document.getElementById("player-potm").textContent = POTM;
+
+      seasonSelect.addEventListener("change", updateSeasonStats);
+      updateSeasonStats();
 
       // Set background image with fallback
       const playerDetailsSection = document.getElementById(
