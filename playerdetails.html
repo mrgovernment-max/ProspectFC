@@ -244,95 +244,96 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      // Initialize AOS
-      AOS.init({
-        offset: 120,
-        delay: 200,
-        duration: 1000,
-        easing: "ease-in-out",
-        once: true,
-      });
+ <script>
+  // Initialize AOS
+  AOS.init({
+    offset: 120,
+    delay: 200,
+    duration: 1000,
+    easing: "ease-in-out",
+    once: true,
+  });
 
-      // Mobile menu toggle
-      const menuToggle = document.getElementById("menu-toggle");
-      const navMenu = document.getElementById("nav-menu");
+  // Mobile menu toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
 
-      menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        menuToggle.classList.toggle("active");
-      });
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    menuToggle.classList.toggle("active");
+  });
 
-      // Backend ping function
-      function pingBackend() {
-        fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
-      }
-      pingBackend(); // call on load
-      setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
+  // Backend ping function
+  function pingBackend() {
+    fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+  }
 
-      // Get data from localStorage
-      const Pname = JSON.parse(localStorage.getItem("Pname") || '""');
-      const Pimg = JSON.parse(localStorage.getItem("Pimg") || '""');
-      const Pnumber = JSON.parse(localStorage.getItem("Pnumber") || "0");
-      const Page = JSON.parse(localStorage.getItem("Page") || "0");
-      const Papps = JSON.parse(localStorage.getItem("Papps") || "0");
-      const Pgoals = JSON.parse(localStorage.getItem("Pgoals") || "0");
-      const Passists = JSON.parse(localStorage.getItem("Passists") || "0");
-      const MOTM = JSON.parse(localStorage.getItem("MOTM") || "0");
-      const POTM = JSON.parse(localStorage.getItem("POTM") || "0");
+  pingBackend();
+  setInterval(pingBackend, 1 * 60 * 1000);
 
-      const seasonSelect = document.getElementById("season-select");
-      const seasonStats = {
-        "2024/25": {
-          apps: Number(Papps) || 0,
-          goals: Number(Pgoals) || 0,
-          assists: Number(Passists) || 0,
-          motm: Number(MOTM) || 0,
-          potm: Number(POTM) || 0,
-        },
-        "2025/26": {
-          apps: Number(Papps) || 0,
-          goals: Number(Pgoals) || 0,
-          assists: Number(Passists) || 0,
-          motm: Number(MOTM) || 0,
-          potm: Number(POTM) || 0,
-        },
-        "2026/27": {
-          apps: Number(Papps) || 0,
-          goals: Number(Pgoals) || 0,
-          assists: Number(Passists) || 0,
-          motm: Number(MOTM) || 0,
-          potm: Number(POTM) || 0,
-        },
-      };
+  // Get data from localStorage
+  const Pname = JSON.parse(localStorage.getItem("Pname") || '""');
+  const Pimg = JSON.parse(localStorage.getItem("Pimg") || '""');
+  const Pnumber = JSON.parse(localStorage.getItem("Pnumber") || "0");
+  const Page = JSON.parse(localStorage.getItem("Page") || "0");
 
-      function updateSeasonStats() {
-        const selectedSeason = seasonSelect.value;
-        const selectedStats = seasonStats[selectedSeason] || seasonStats["2024/25"];
+  const seasonSelect = document.getElementById("season-select");
+  const API_BASE =
+    window.location.hostname === "localhost"
+      ? "http://localhost:3000"
+      : "https://backendroutes-lcpt.onrender.com";
 
-        document.getElementById("player-apps").textContent = selectedStats.apps;
-        document.getElementById("player-goals").textContent = selectedStats.goals;
-        document.getElementById("player-assists").textContent = selectedStats.assists;
-        document.getElementById("player-motm").textContent = selectedStats.motm;
-        document.getElementById("player-potm").textContent = selectedStats.potm;
-      }
+  async function loadSeasonStats() {
+    const selectedSeason = seasonSelect.value;
+    const playerName = Pname?.trim();
 
-      // Set data into HTML elements
-      document.getElementById("player-name").textContent = Pname;
-      document.getElementById("player-jersey").textContent = Pnumber;
-      document.getElementById("player-age").textContent = `Age: ${Page}`;
-      document.getElementById("player-main-img").src = Pimg;
+    if (!playerName) return;
 
-      seasonSelect.addEventListener("change", updateSeasonStats);
-      updateSeasonStats();
-
-      // Set background image with fallback
-      const playerDetailsSection = document.getElementById(
-        "player-details-section"
+    try {
+      const response = await fetch(
+        `${API_BASE}/player-stats?name=${encodeURIComponent(playerName)}&season=${encodeURIComponent(selectedSeason)}`
       );
-      if (Pimg) {
-        playerDetailsSection.style.setProperty("--player-bg", `url(${Pimg})`);
+
+      if (!response.ok) {
+        throw new Error("Failed to load stats");
       }
-    </script>
+
+      const data = await response.json();
+
+      document.getElementById("player-apps").textContent =
+        data.games_played ?? "N/A";
+      document.getElementById("player-goals").textContent =
+        data.goals ?? "N/A";
+      document.getElementById("player-assists").textContent =
+        data.assists ?? "N/A";
+      document.getElementById("player-motm").textContent =
+        data.motm ?? "N/A";
+      document.getElementById("player-potm").textContent =
+        data.potm ?? "N/A";
+    } catch (error) {
+      console.error("Player stats error:", error);
+      document.getElementById("player-apps").textContent = "N/A";
+      document.getElementById("player-goals").textContent = "N/A";
+      document.getElementById("player-assists").textContent = "N/A";
+      document.getElementById("player-motm").textContent = "N/A";
+      document.getElementById("player-potm").textContent = "N/A";
+    }
+  }
+
+  // Set data into HTML elements
+  document.getElementById("player-name").textContent = Pname;
+  document.getElementById("player-jersey").textContent = Pnumber;
+  document.getElementById("player-age").textContent = `Age: ${Page}`;
+  document.getElementById("player-main-img").src = Pimg;
+
+  seasonSelect.addEventListener("change", loadSeasonStats);
+  loadSeasonStats();
+
+  // Set background image with fallback
+  const playerDetailsSection = document.getElementById("player-details-section");
+  if (Pimg) {
+    playerDetailsSection.style.setProperty("--player-bg", `url(${Pimg})`);
+  }
+</script>
   </body>
 </html>
