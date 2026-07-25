@@ -51,6 +51,29 @@
     gtag("config", "G-TXGWE19783");
   </script>
   <body>
+    <!-- Site Reveal / Intro Animation -->
+    <div id="site-reveal" class="site-reveal">
+      <div class="site-reveal-inner">
+        <div class="site-reveal-logo">
+          <img
+            src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
+            alt="Prospect FC logo"
+          />
+        </div>
+        <div class="site-reveal-bar"><span></span></div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        if (sessionStorage.getItem("pfcReveal")) {
+          var el = document.getElementById("site-reveal");
+          if (el) el.remove();
+        } else {
+          sessionStorage.setItem("pfcReveal", "1");
+        }
+      })();
+    </script>
+
     <!-- Header & Navigation -->
     <header>
       <div class="container header-container">
@@ -461,6 +484,20 @@
         easing: "ease-in-out",
         once: true,
       });
+
+      // Site reveal cleanup
+      const siteReveal = document.getElementById("site-reveal");
+      if (siteReveal) {
+        document.body.classList.add("reveal-lock");
+        const clearReveal = () => {
+          document.body.classList.remove("reveal-lock");
+          siteReveal.remove();
+        };
+        siteReveal.addEventListener("animationend", (e) => {
+          if (e.animationName === "reveal-exit") clearReveal();
+        });
+        setTimeout(clearReveal, 4000);
+      }
 
       // Mobile menu toggle
       const menuToggle = document.getElementById("menu-toggle");
