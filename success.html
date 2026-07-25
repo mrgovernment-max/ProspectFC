@@ -5,7 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png" alt="propectfc">
     <title>Payment Successful</title>
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      :root {
+        --gradient-dark: linear-gradient(180deg, #0d1526 0%, #070b14 100%);
+        --gradient-primary: linear-gradient(135deg, #1668e0 0%, #0043a8 55%, #00204f 100%);
+        --gradient-gold: linear-gradient(135deg, #ffe27a 0%, #f4c430 55%, #cc9900 100%);
+        --glass-bg: rgba(13, 21, 38, 0.6);
+        --glass-border: rgba(255, 255, 255, 0.09);
+        --glow-gold: 0 8px 24px rgba(244, 196, 48, 0.35);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: var(--gradient-dark);
+        color: #fff;
+        padding: 1.5rem;
+      }
+      .container {
+        max-width: 460px;
+        width: 100%;
+        text-align: center;
+        background: var(--glass-bg);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid var(--glass-border);
+        border-radius: 14px;
+        padding: 3rem 2rem;
+        box-shadow: var(--glow-gold);
+      }
+      .success {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #ffffff 20%, #ffe27a 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .container p {
+        color: #97a3b8;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+      button {
+        display: inline-block;
+        padding: 0.85rem 2rem;
+        background: var(--gradient-primary);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 6px 18px rgba(0, 45, 107, 0.35);
+      }
+      button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(22, 104, 224, 0.4);
+      }
+    </style>
   </head>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXGWE19783"></script>

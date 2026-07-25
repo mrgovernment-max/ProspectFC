@@ -8,16 +8,26 @@
     <title>Privacy Policy | Prospect FC</title>
     <style>
       /* Global styles */
+      :root {
+        --primary-blue: #0055c8;
+        --accent-gold: #f4c430;
+        --accent-gold-light: #ffe27a;
+        --dark-bg: #070b14;
+        --light-bg: #f5f7fb;
+        --text-muted-invert: #97a3b8;
+        --gradient-dark: linear-gradient(180deg, #0d1526 0%, #070b14 100%);
+        --box-shadow: 0 10px 30px rgba(3, 9, 22, 0.12);
+      }
       body {
         font-family: "Segoe UI", Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f5f5f5;
-        color: #111;
+        background-color: var(--light-bg);
+        color: #171b26;
         line-height: 1.6;
       }
       a {
-        color: #1d4ed8;
+        color: var(--primary-blue);
         text-decoration: none;
       }
       a:hover {
@@ -26,38 +36,48 @@
 
       /* Header */
       header {
-        background-color: #000; /* Prospect FC black */
+        background: var(--gradient-dark);
         color: #fff;
         text-align: center;
-        padding: 2rem 1rem;
+        padding: 3rem 1rem;
+        border-bottom: 3px solid transparent;
+        border-image: linear-gradient(135deg, #ffe27a 0%, #f4c430 55%, #cc9900 100%) 1;
       }
       header img {
-        max-width: 120px;
-        margin-bottom: 0.5rem;
+        max-width: 100px;
+        margin-bottom: 0.75rem;
+        filter: drop-shadow(0 4px 12px rgba(244, 196, 48, 0.25));
       }
       header h1 {
         margin: 0.2rem 0;
-        font-size: 2rem;
+        font-size: 2.1rem;
+        letter-spacing: 1px;
+        background: linear-gradient(135deg, #ffffff 30%, var(--accent-gold-light) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
       }
       header p {
         margin: 0;
         font-size: 1rem;
-        color: #ccc;
+        color: var(--text-muted-invert);
       }
 
       /* Main content */
       main {
         max-width: 800px;
-        margin: 2rem auto;
-        padding: 2rem;
+        margin: 2.5rem auto;
+        padding: 2.5rem;
         background-color: #fff;
-        border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 45, 107, 0.08);
+        border-radius: 14px;
+        box-shadow: var(--box-shadow);
       }
       h2 {
-        color: #000;
+        color: var(--primary-blue);
         margin-top: 1.5rem;
-        border-bottom: 2px solid #e5e7eb;
+        border-bottom: 2px solid #eef1f8;
         padding-bottom: 0.3rem;
       }
       p,
@@ -72,8 +92,8 @@
       footer {
         text-align: center;
         padding: 1.5rem;
-        background-color: #000;
-        color: #ccc;
+        background: var(--gradient-dark);
+        color: var(--text-muted-invert);
         font-size: 0.875rem;
       }
     </style>

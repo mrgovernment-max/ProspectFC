@@ -1,11 +1,38 @@
 :root {
-  --primary: #1a472a;
-  --secondary: #f0c808;
-  --accent: #e63946;
-  --dark: #0d1b2a;
-  --light: #f8f9fa;
-  --gray: #8d99ae;
-  --transition: all 0.3s ease;
+  --primary-blue: #0055c8;
+  --primary-blue-light: #3d8bff;
+  --secondary-blue: #002d6b;
+  --accent-gold: #f4c430;
+  --accent-gold-light: #ffe27a;
+  --accent-gold-dark: #caa000;
+
+  --dark-bg: #070b14;
+  --dark-bg-alt: #0d1526;
+  --light-bg: #f5f7fb;
+  --text-light: #ffffff;
+  --text-dark: #171b26;
+  --text-muted: #66707f;
+  --text-muted-invert: #97a3b8;
+
+  --gradient-primary: linear-gradient(135deg, #1668e0 0%, #0043a8 55%, #00204f 100%);
+  --gradient-gold: linear-gradient(135deg, #ffe27a 0%, #f4c430 55%, #cc9900 100%);
+  --gradient-dark: linear-gradient(180deg, #0d1526 0%, #070b14 100%);
+
+  --glass-bg: rgba(13, 21, 38, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.09);
+
+  --border-radius: 14px;
+  --border-radius-sm: 8px;
+  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --box-shadow: 0 10px 30px rgba(3, 9, 22, 0.12);
+  --box-shadow-hover: 0 20px 45px rgba(3, 9, 22, 0.22);
+  --glow-blue: 0 0 0 1px rgba(61, 139, 255, 0.25), 0 12px 30px rgba(22, 104, 224, 0.35);
+  --glow-gold: 0 8px 24px rgba(244, 196, 48, 0.35);
+  --glow-crimson: 0 8px 24px rgba(179, 62, 79, 0.35);
+
+  --accent-crimson: #b3434f;
+  --accent-crimson-light: #e0899a;
 }
 
 * {
@@ -16,8 +43,8 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom, var(--dark), #1a2a3a);
-  color: var(--light);
+  background: var(--gradient-dark);
+  color: var(--text-light);
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
@@ -26,11 +53,12 @@ body {
 
 /* Header */
 header {
-  background: rgba(13, 27, 42, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(7, 11, 20, 0.85);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
   padding: 1.5rem 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  border-bottom: 2px solid var(--secondary);
+  box-shadow: 0 4px 12px rgba(3, 9, 22, 0.3);
+  border-bottom: 2px solid var(--accent-gold);
 }
 
 .logo-container {
@@ -49,12 +77,12 @@ header {
 .logo-text {
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--light);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: var(--text-light);
+  text-shadow: 2px 2px 4px rgba(3, 9, 22, 0.5);
 }
 
 .logo-text span {
-  color: var(--secondary);
+  color: var(--accent-gold);
 }
 
 /* Main Content */
@@ -70,13 +98,14 @@ header {
 }
 
 .result-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: var(--border-radius);
   padding: 3rem;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--box-shadow-hover);
+  border: 1px solid var(--glass-border);
   max-width: 600px;
   width: 100%;
   margin-bottom: 2rem;
@@ -106,65 +135,71 @@ header {
 }
 
 .success .icon-container {
-  background: rgba(26, 71, 42, 0.3);
-  color: var(--secondary);
-  border: 3px solid var(--secondary);
+  background: rgba(244, 196, 48, 0.15);
+  color: var(--accent-gold);
+  border: 3px solid var(--accent-gold);
+  box-shadow: var(--glow-gold);
 }
 
 .warning .icon-container {
-  background: rgba(240, 200, 8, 0.2);
-  color: var(--secondary);
-  border: 3px solid var(--secondary);
+  background: rgba(244, 196, 48, 0.1);
+  color: var(--accent-gold-light);
+  border: 3px solid var(--accent-gold-light);
+  box-shadow: 0 8px 20px rgba(244, 196, 48, 0.25);
 }
 
 .error .icon-container {
-  background: rgba(230, 57, 70, 0.2);
-  color: var(--accent);
-  border: 3px solid var(--accent);
+  background: rgba(179, 62, 79, 0.18);
+  color: var(--accent-crimson-light);
+  border: 3px solid var(--accent-crimson);
+  box-shadow: var(--glow-crimson);
 }
 
 .result-card h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
-  color: var(--light);
+  color: var(--text-light);
 }
 
 .result-card p {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
-  color: var(--gray);
+  color: var(--text-muted-invert);
 }
 
 .btn {
   display: inline-block;
-  background: var(--secondary);
-  color: var(--dark);
-  padding: 0.8rem 1.8rem;
-  border-radius: 50px;
+  padding: 0.85rem 2rem;
+  background: var(--gradient-primary);
+  color: var(--text-light);
+  border-radius: var(--border-radius-sm);
   text-decoration: none;
   font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
   font-size: 1rem;
   transition: var(--transition);
-  border: 2px solid var(--secondary);
+  border: none;
+  box-shadow: 0 6px 18px rgba(0, 45, 107, 0.25);
   margin-top: 1rem;
 }
 
 .btn:hover {
-  background: transparent;
-  color: var(--secondary);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(240, 200, 8, 0.3);
+  box-shadow: var(--glow-blue);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--secondary);
-  border: 2px solid var(--secondary);
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+  box-shadow: none;
 }
 
 .btn-outline:hover {
-  background: var(--secondary);
-  color: var(--dark);
+  background: var(--primary-blue);
+  color: var(--text-light);
+  box-shadow: var(--glow-blue);
 }
 
 .btn-group {
@@ -177,11 +212,11 @@ header {
 
 /* Footer */
 footer {
-  background: rgba(13, 27, 42, 0.9);
+  background: var(--dark-bg-alt);
   padding: 2rem;
   text-align: center;
   margin-top: auto;
-  border-top: 1px solid rgba(240, 200, 8, 0.2);
+  border-top: 1px solid rgba(244, 196, 48, 0.2);
 }
 
 .social-links {
@@ -192,18 +227,18 @@ footer {
 }
 
 .social-links a {
-  color: var(--light);
+  color: var(--text-light);
   font-size: 1.5rem;
   transition: var(--transition);
 }
 
 .social-links a:hover {
-  color: var(--secondary);
+  color: var(--accent-gold);
   transform: translateY(-3px);
 }
 
 .footer-text {
-  color: var(--gray);
+  color: var(--text-muted-invert);
   font-size: 0.9rem;
 }
 
