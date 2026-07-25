@@ -117,6 +117,14 @@
         Stay updated with all Prospect FC matches
       </h2>
 
+      <div class="season-select-wrapper">
+        <label for="season-select">Season</label>
+        <select id="season-select" class="season-select">
+          <option value="2025-26" selected>2025/26</option>
+          <option value="2026-27">2026/27</option>
+        </select>
+      </div>
+
       <div class="filter-container">
         <button class="filter-btn active" data-filter="all">All Matches</button>
         <button class="filter-btn" data-filter="upcoming">Upcoming</button>
@@ -170,7 +178,16 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script>
       // --- DISPLAY FIXTURES FROM DB
+      const SEASON_ENDPOINTS = {
+        "2025-26": "https://backendroutes-lcpt.onrender.com/fixtures",
+        "2026-27": "https://backendroutes-lcpt.onrender.com/fixtures2627",
+      };
+
       async function FetchMatches() {
+        const seasonSelect = document.getElementById("season-select");
+        const season = seasonSelect ? seasonSelect.value : "2025-26";
+        const endpoint = SEASON_ENDPOINTS[season] || SEASON_ENDPOINTS["2025-26"];
+
         let fixtures_container = document.querySelector(".fixtures-container");
         fixtures_container.innerHTML = `
           <div style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
@@ -179,10 +196,9 @@
           </div>`;
 
         try {
-          const res = await fetch(
-            "https://backendroutes-lcpt.onrender.com/fixtures"
-          );
+          const res = await fetch(endpoint);
           const data = await res.json();
+          console.log("Fetched fixtures data:", data);
 
           fixtures_container.innerHTML = "";
 
@@ -351,6 +367,10 @@
           });
         });
       }
+
+      document
+        .getElementById("season-select")
+        .addEventListener("change", FetchMatches);
 
       window.onload = function () {
         FetchMatches();
