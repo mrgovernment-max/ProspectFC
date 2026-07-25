@@ -137,7 +137,7 @@ h6 {
 
 /* Header & Navigation */
 header {
-  background: rgba(7, 11, 20, 0.75);
+  background: #000000;
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   padding: 0.85rem 0;
@@ -176,7 +176,7 @@ header {
 }
 
 .nav-menu a {
-  color: var(--text-muted-invert);
+  color: var(--text-light);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
@@ -301,7 +301,7 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 60%, var(--light-bg) 100%);
+  background: linear-gradient(180deg, transparent 90%, var(--light-bg) 100%);
   pointer-events: none;
 }
 
