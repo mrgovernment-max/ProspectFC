@@ -270,6 +270,11 @@ header {
   color: var(--text-light);
   font-size: 1.5rem;
   cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
 }
 
 /* Headlines — page-specific base elements */
@@ -897,7 +902,8 @@ footer {
 
   .menu-toggle {
     display: flex;
-    gap: 20vh;
+    align-items: center;
+    justify-content: center;
     z-index: 1000;
   }
 
