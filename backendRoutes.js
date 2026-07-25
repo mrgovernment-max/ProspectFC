@@ -1278,9 +1278,17 @@ app.get("/filterbyassistssalltime", (req, res) => {
   );
 });
 
-// Fixtures
+// Fixtures 2025/26
 app.get("/fixtures", (req, res) => {
   pool.query("SELECT * FROM fixtures ORDER BY id DESC", (err, results) => {
+    if (err) return res.status(500).send("DB error");
+    res.json(results);
+  });
+});
+
+// Fixtures 2026/27
+app.get("/fixtures2627", (req, res) => {
+  pool.query("SELECT * FROM fixtures_26_27 ORDER BY id DESC", (err, results) => {
     if (err) return res.status(500).send("DB error");
     res.json(results);
   });
