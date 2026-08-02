@@ -802,7 +802,7 @@
 
         try {
           const res = await fetch(
-            "https://backendroutes-lcpt.onrender.com/newsletter_subscribers",
+            "https://qf50kyyu94.execute-api.eu-west-2.amazonaws.com/default/prospect-test-api",
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -816,31 +816,25 @@
           } catch {
             console.error("Response was not JSON");
             showMessage("Subscription failed. Please try again.", "error");
-            resetForm();
             return;
           }
 
-          const message = data.message || "";
-
-          switch (message) {
-            case "This email is already subscribed.":
-              showMessage(
-                "This email is already subscribed to our newsletter.",
-                "error"
-              );
-              break;
-
-            case "Subscribed to Prospect FC!":
-              showMessage(
-                "Success! You have been subscribed to our newsletter.",
-                "success"
-              );
-              form.reset();
-              break;
-
-            default:
-              showMessage("Subscription failed. Please try again.", "error");
-              break;
+          if (res.status === 201) {
+            showMessage(
+              data.message || "You have successfully subscribed!",
+              "success"
+            );
+            emailInput.value = "";
+          } else if (res.status === 409) {
+            showMessage(
+              data.message || "This email is already subscribed.",
+              "error"
+            );
+          } else {
+            showMessage(
+              data.message || "Subscription failed. Please try again.",
+              "error"
+            );
           }
         } catch (err) {
           console.error("Fetch error:", err);

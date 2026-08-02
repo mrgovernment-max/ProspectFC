@@ -188,7 +188,7 @@
               placeholder="Your Email Address"
               required
             />
-            <button type="submit" class="btn">Subscribe</button>
+            <button type="submit" class="btn" id="submit-btn">Subscribe</button>
           </form>
         </div>
       </div>
@@ -421,11 +421,15 @@
       async function newsLetter(event) {
         event.preventDefault();
 
-        const mail = document.getElementById("email").value;
+        const emailInput = document.getElementById("email");
+        const submitBtn = document.getElementById("submit-btn");
+        const mail = emailInput.value.trim();
+
+        submitBtn.disabled = true;
 
         try {
           const res = await fetch(
-            "https://backendroutes-lcpt.onrender.com/newsletter_subscribers",
+            "https://qf50kyyu94.execute-api.eu-west-2.amazonaws.com/default/prospect-test-api",
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -442,24 +446,19 @@
             return;
           }
 
-          const message = data.message || "";
-
-          switch (message) {
-            case "This email is already subscribed.":
-              window.location.href = "news_mailexist.html";
-              break;
-
-            case "Subscribed to Prospect FC!":
-              window.location.href = "news_success.html";
-              break;
-
-            default:
-              window.location.href = "news_failed.html";
-              break;
+          if (res.status === 201) {
+            emailInput.value = "";
+            window.location.href = "news_success.html";
+          } else if (res.status === 409) {
+            window.location.href = "news_mailexist.html";
+          } else {
+            window.location.href = "news_failed.html";
           }
         } catch (err) {
           console.error("Fetch error:", err);
           window.location.href = "news_failed.html";
+        } finally {
+          submitBtn.disabled = false;
         }
       }
     </script>
