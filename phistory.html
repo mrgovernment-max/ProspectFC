@@ -125,7 +125,8 @@
       <div class="container">
         <div class="filter-container">
           <select name="season" id="season">
-            <option value="season2">2025/26</option>
+            <option value="season3">2026/27</option>
+            <option value="season2" selected>2025/26</option>
             <option value="season1">2024/25</option>
             <option value="alltime">ALL TIME</option>
           </select>
@@ -304,6 +305,17 @@
             "https://backendroutes-lcpt.onrender.com/filterbygoalss";
           UrlforAssists =
             "https://backendroutes-lcpt.onrender.com/filterbyassistss";
+        } else if (filterSeason === "season3") {
+          UrlforteamStats =
+            "https://backendroutes-lcpt.onrender.com/teamstats2627";
+          UrlforName =
+            "https://backendroutes-lcpt.onrender.com/filterbyname2627";
+          UrlforGames =
+            "https://backendroutes-lcpt.onrender.com/filterbygames2627";
+          UrlforGoals =
+            "https://backendroutes-lcpt.onrender.com/filterbygoals2627";
+          UrlforAssists =
+            "https://backendroutes-lcpt.onrender.com/filterbyassists2627";
         } else if (filterSeason === "alltime") {
           UrlforteamStats =
             "https://backendroutes-lcpt.onrender.com/teamstatssalltime";
