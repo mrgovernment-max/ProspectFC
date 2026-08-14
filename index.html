@@ -530,7 +530,7 @@
 
       // Backend ping function
       function pingBackend() {
-        fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+        fetch("https://api.fenteng.dev/ping").catch(() => {});
       }
       pingBackend();
       setInterval(pingBackend, 1 * 60 * 1000);

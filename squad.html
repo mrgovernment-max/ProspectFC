@@ -265,7 +265,7 @@
 
       // Backend ping function
       function pingBackend() {
-        fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+        fetch("https://api.fenteng.dev/ping").catch(() => {});
       }
       pingBackend(); // call on load
       setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
@@ -295,7 +295,7 @@
       // Global variables
       let allPlayers = [];
       let filteredPlayers = [];
-      let baseUrl = "https://backendroutes-lcpt.onrender.com/players";
+      let baseUrl = "https://api.fenteng.dev/players";
 
       // Fetch and display players from the backend
       async function fetchAndDisplayPlayers() {
