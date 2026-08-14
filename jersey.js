@@ -1,5 +1,5 @@
 function pingBackend() {
-  fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+  fetch("https://api.fenteng.dev/ping").catch(() => {});
 }
 pingBackend(); // call on load
 setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
@@ -61,7 +61,7 @@ async function PayForJersey() {
 
     try {
       const response = await fetch(
-        "https://backendroutes-lcpt.onrender.com/Fcprospect",
+        "https://api.fenteng.dev/Fcprospect",
         {
           method: "POST",
           headers: {
@@ -103,7 +103,7 @@ async function Discounts() {
 
   try {
     const res = await fetch(
-      "https://backendroutes-lcpt.onrender.com/discount_codes",
+      "https://api.fenteng.dev/discount_codes",
       {
         method: "POST",
         headers: {

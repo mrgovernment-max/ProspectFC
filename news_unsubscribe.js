@@ -12,7 +12,7 @@ async function unsubscribeUser(event) {
 
   try {
     const res = await fetch(
-      "https://backendroutes-lcpt.onrender.com/newsletter_unsubscribe",
+      "https://api.fenteng.dev/newsletter_unsubscribe",
       {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },

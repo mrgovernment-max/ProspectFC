@@ -179,8 +179,8 @@
     <script>
       // --- DISPLAY FIXTURES FROM DB
       const SEASON_ENDPOINTS = {
-        "2025-26": "https://backendroutes-lcpt.onrender.com/fixtures",
-        "2026-27": "https://backendroutes-lcpt.onrender.com/fixtures2627",
+        "2025-26": "https://api.fenteng.dev/fixtures",
+        "2026-27": "https://api.fenteng.dev/fixtures2627",
       };
 
       async function FetchMatches() {
@@ -385,7 +385,7 @@
       };
 
       function pingBackend() {
-        fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+        fetch("https://api.fenteng.dev/ping").catch(() => {});
       }
 
       pingBackend(); // call on load

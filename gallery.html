@@ -827,7 +827,7 @@
 
       // Ping backend periodically
       function pingBackend() {
-        fetch("https://backendroutes-lcpt.onrender.com/ping").catch(() => {});
+        fetch("https://api.fenteng.dev/ping").catch(() => {});
       }
       pingBackend();
       setInterval(pingBackend, 60 * 1000);
