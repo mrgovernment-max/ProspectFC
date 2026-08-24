@@ -36,9 +36,9 @@ async function PayForJersey() {
     alert("Fill All  * Forms");
   } else {
     const img =
-      kit === "Official Home Kit 2025"
-        ? "https://res.cloudinary.com/dazhskqcc/image/upload/v1754065745/homejersy_am4o5k.jpg"
-        : "https://res.cloudinary.com/dazhskqcc/image/upload/v1754061296/mobile_hero_dufkug.jpg";
+      kit === "Official Home Kit 2026/27"
+        ? "https://prospectfc.com/images/2026_27_home_kit.jpeg"
+        : "https://prospectfc.com/images/2026_27_away_kit.jpeg";
     const order = [
       {
         size,
@@ -118,7 +118,7 @@ async function Discounts() {
     if (res.ok) {
       //calculate discount
       discountVal = +data.discountPercent;
-      const discount = 25 * (data.discountPercent / 100);
+      const discount = 30 * (data.discountPercent / 100);
 
       disMsg.innerHTML = `<span style="color: green">${data.message} <br>  ${data.discountPercent}% was Discounted <br> You will now pay the price MINUS £${discount} </span> <br> <span  style="color: red"> DO NOT REFRESH OR LEAVE PAGE </span>`; // Code is valid and applied
     } else {
