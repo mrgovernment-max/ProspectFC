@@ -1,3 +1,17 @@
+/* PFC: prevent sideways scroll from off-canvas/oversized elements.
+   `clip` (unlike `hidden`) does not create a scroll container, so it
+   leaves smooth scrolling and position:sticky intact. */
+html,
+body {
+  overflow-x: hidden;
+}
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
 /* ============================================
    PROSPECT FC — "Modern Dark Sports" design system
    ============================================ */
@@ -543,7 +557,8 @@ footer {
   .nav-menu {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
     height: 100vh;
     width: 70%;
     background: var(--gradient-dark);
@@ -565,7 +580,7 @@ footer {
   }
 
   .nav-menu.active {
-    right: 0;
+    transform: translateX(0);
   }
 
   .menu-toggle {

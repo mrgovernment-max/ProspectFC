@@ -1,9 +1,3 @@
-function pingBackend() {
-  fetch("https://api.fenteng.dev/ping").catch(() => {});
-}
-pingBackend(); // call on load
-setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
-
 // --- pay for jerseys
 
 async function PayForJersey() {

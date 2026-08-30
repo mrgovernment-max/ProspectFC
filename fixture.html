@@ -22,10 +22,7 @@
       src="https://kit.fontawesome.com/a47fc389f5.js"
       crossorigin="anonymous"
     ></script>
-    <title>
-      Prospect FC Fixtures | Match Schedule & Results Reading, Berkshire Ebfl
-      Fixtures
-    </title>
+    <title>Prospect FC Fixtures | Match Schedule & Results | EBFL</title>
     <meta
       name="description"
       content="Check out the latest Prospect FC fixtures, results, and upcoming matches in the East Berkshire Football League. Stay updated on matchdays, kick-off times, and past results."
@@ -34,6 +31,22 @@
       name="keywords"
       content="Prospect FC fixtures, Prospect FC schedule, Prospect Football Club match results, EBFL fixtures, Prospect Reading matchday, East Berkshire Football League fixtures, Prospect FC next match, Reading football club schedule, local football team fixtures, Berkshire football results, football fixtures Reading, EBFL results, FC Prospect match list, Prospect FC matchday updates Local Team Fixtures "
     />
+  
+    <!-- Social share cards (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prospect FC" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://prospectfc.com/fixture.html" />
+    <meta property="og:title" content="Prospect FC Fixtures | Match Schedule &amp; Results | EBFL" />
+    <meta property="og:description" content="Check out the latest Prospect FC fixtures, results, and upcoming matches in the East Berkshire Football League. Stay updated on matchdays, kick-off times, and past results." />
+    <meta property="og:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Prospect FC players on the pitch" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Prospect FC Fixtures | Match Schedule &amp; Results | EBFL" />
+    <meta name="twitter:description" content="Check out the latest Prospect FC fixtures, results, and upcoming matches in the East Berkshire Football League. Stay updated on matchdays, kick-off times, and past results." />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -149,7 +162,7 @@
     </section>
 
     <footer>
-      <p>&copy; 2025 PROSPECT FC ©</p>
+      <p>&copy; <span class="js-year">2026</span> PROSPECT FC. All rights reserved.</p>
       <div>
         <a
           target="blank"
@@ -175,13 +188,113 @@
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script>
       // --- DISPLAY FIXTURES FROM DB
       const SEASON_ENDPOINTS = {
         "2025-26": "https://api.fenteng.dev/fixtures",
         "2026-27": "https://api.fenteng.dev/fixtures2627",
       };
+
+      // The two season feeds disagree on shape. 2025-26 sends ISO dates
+      // ("2026-05-16") and real times ("14:00:00"); 2026-27 sends day/month
+      // with no year ("22/08") and "KO TBC" in place of a time. Everything
+      // below normalises both into one presentation.
+      const SEASON_START_YEAR = { "2025-26": 2025, "2026-27": 2026 };
+
+      // Neutral shield for opponents the feed has no crest for (it sends null
+      // for "Opponent TBC", which used to render as a broken <img src="null">).
+      const CREST_FALLBACK =
+        "data:image/svg+xml;charset=UTF-8," +
+        encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">' +
+            '<circle cx="32" cy="32" r="32" fill="#0a1128"/>' +
+            '<path d="M32 15l13 4.6v13c0 9.4-5.6 14-13 16.8-7.4-2.8-13-7.4-13-16.8v-13z" ' +
+            'fill="none" stroke="#e8b923" stroke-width="3" stroke-linejoin="round"/>' +
+          "</svg>"
+        );
+
+      function crestFor(url) {
+        return url && url !== "null" ? url : CREST_FALLBACK;
+      }
+
+      function crestFallback(img) {
+        img.onerror = null;
+        img.src = CREST_FALLBACK;
+      }
+
+      function parseMatchDate(raw, season) {
+        if (!raw) return null;
+        const text = String(raw).trim();
+
+        let m = text.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+        if (m) return new Date(+m[1], +m[2] - 1, +m[3]);
+
+        m = text.match(/^(\d{1,2})\/(\d{1,2})$/); // "22/08" — day/month, year implied
+        if (m) {
+          const startYear =
+            SEASON_START_YEAR[season] || new Date().getFullYear();
+          const month = +m[2];
+          // An EBFL season runs Aug-May, so Jan-Jul falls in the next calendar year.
+          return new Date(month >= 8 ? startYear : startYear + 1, month - 1, +m[1]);
+        }
+
+        const d = new Date(text);
+        return isNaN(d.getTime()) ? null : d;
+      }
+
+      function formatMatchDate(raw, season) {
+        const d = parseMatchDate(raw, season);
+        if (!d) return raw || "TBC";
+        return d.toLocaleDateString("en-GB", {
+          weekday: "short",
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        });
+      }
+
+      function formatMatchTime(raw) {
+        if (!raw) return "TBC";
+        const m = String(raw).match(/^(\d{1,2}):(\d{2})/);
+        if (!m) return String(raw); // e.g. "KO TBC" — show it as written
+        const hours = +m[1];
+        const suffix = hours >= 12 ? "pm" : "am";
+        const hour12 = hours % 12 === 0 ? 12 : hours % 12;
+        return hour12 + ":" + m[2] + suffix;
+      }
+
+      // The feed spells our own club five ways ("Prospect Football Club",
+      // "FC PROSPECT", "Prospect Fc"...). Show one name.
+      function displayTeamName(name) {
+        if (!name) return "TBC";
+        return /prospect/i.test(name) ? "Prospect FC" : name;
+      }
+
+      function isOurClub(name) {
+        return /prospect/i.test(name || "");
+      }
+
+      function matchStatus(element, season) {
+        const kickoff = parseMatchDate(element.match_date, season);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        // The 2026-27 feed stores 0 rather than null for unplayed matches, so a
+        // future kick-off date has to outrank whatever is in the score columns.
+        if (kickoff && kickoff.getTime() > today.getTime()) return "Upcoming";
+        if (element.home_score === null || element.away_score === null)
+          return "Upcoming";
+        return "Completed";
+      }
+
+      // ISO timestamp for the "Remind Me" Google Calendar link. Returns "" when
+      // the feed has no usable date, so the button can be left off entirely.
+      function calendarStamp(element, season) {
+        const d = parseMatchDate(element.match_date, season);
+        if (!d) return "";
+        const t = String(element.match_time || "").match(/^(\d{1,2}):(\d{2})/);
+        d.setHours(t ? +t[1] : 14, t ? +t[2] : 0, 0, 0); // default 2pm kick-off
+        return d.toISOString();
+      }
 
       async function FetchMatches() {
         const seasonSelect = document.getElementById("season-select");
@@ -212,29 +325,35 @@
 
           let fixtures = "";
 
-          data.forEach((element) => {
-            // Determine match status
+          // The feed comes back unsorted. Show what is coming next first
+          // (soonest at the top), then results, most recent first.
+          const ordered = data.slice().sort((a, b) => {
+            const aUp = matchStatus(a, season) === "Upcoming";
+            const bUp = matchStatus(b, season) === "Upcoming";
+            if (aUp !== bUp) return aUp ? -1 : 1;
+            const aT = (parseMatchDate(a.match_date, season) || 0) &&
+              parseMatchDate(a.match_date, season).getTime();
+            const bT = (parseMatchDate(b.match_date, season) || 0) &&
+              parseMatchDate(b.match_date, season).getTime();
+            return aUp ? aT - bT : bT - aT;
+          });
 
-            let statusClass = "";
+          ordered.forEach((element) => {
+            const status = matchStatus(element, season);
+            const statusClass =
+              status === "Upcoming" ? "status-upcoming" : "status-completed";
 
-            if (element.home_score !== null && element.away_score !== null) {
-              status = "Completed";
-              statusClass = "status-completed";
-            } else if (
-              element.home_score == null ||
-              element.away_score == null
-            ) {
-              status = "Upcoming";
-              statusClass = "status-upcoming";
-            } else {
-              status = "Live";
-              statusClass = "status-live";
-            }
+            // An unplayed match has no score to show, whether the feed sent
+            // null or a placeholder 0.
+            const homeScore = status === "Upcoming" ? "-" : element.home_score;
+            const awayScore = status === "Upcoming" ? "-" : element.away_score;
+
+            const homeName = displayTeamName(element.home_team_name);
+            const awayName = displayTeamName(element.away_team_name);
+            const calendarISO = calendarStamp(element, season);
 
             // Check if it's a home or away game
-            const isHomeGame = element.home_team_name
-              .toLowerCase()
-              .includes("prospect");
+            const isHomeGame = isOurClub(element.home_team_name);
 
             fixtures += `
               <div class="fixture-card" data-status="${status.toLowerCase()}" data-location="${
@@ -242,31 +361,32 @@
             }" data-competition = "${element.game_type.toLowerCase()}">
                 <div class="teams">
                   <div class="team">
-                    <img src="${element.home_team_img}" alt="${
-              element.home_team_name
-            } logo" />
-                    <p>${element.home_team_name}</p>
-                    <div id="score">${
-                      element.home_score !== null ? element.home_score : "-"
-                    }</div>
+                    <img src="${crestFor(element.home_team_img)}" alt="${
+              homeName
+            } crest" onerror="crestFallback(this)" width="60" height="60" loading="lazy" />
+                    <p>${homeName}</p>
+                    <div class="score">${homeScore}</div>
                   </div>
                   <span class="vs">VS</span>
                   <div class="team">
-                    <img src="${element.away_team_img}" alt="${
-              element.away_team_name
-            } logo" />
-                    <p>${element.away_team_name}</p>
-                    <div id="score">${
-                      element.away_score !== null ? element.away_score : "-"
-                    }</div>
+                    <img src="${crestFor(element.away_team_img)}" alt="${
+              awayName
+            } crest" onerror="crestFallback(this)" width="60" height="60" loading="lazy" />
+                    <p>${awayName}</p>
+                    <div class="score">${awayScore}</div>
                   </div>
                 </div>
                 <div class="fixture-details">
                   <p>
-                    <strong>Date:</strong> ${element.match_date}
+                    <strong>Date:</strong> ${formatMatchDate(
+                      element.match_date,
+                      season
+                    )}
                     <span class="match-status ${statusClass}">${status}</span>
                   </p>
-                  <p><strong>Time:</strong> ${element.match_time}</p>
+                  <p><strong>Time:</strong> ${formatMatchTime(
+                    element.match_time
+                  )}</p>
                   <p><strong>Location:</strong> ${element.location} ${
               isHomeGame
                 ? '<i class="fas fa-home" style="color: var(--primary-blue); margin-left: 5px;"></i>'
@@ -276,7 +396,9 @@
                   <div class="buttons">
                     ${
                       status === "Upcoming"
-                        ? `<button><a href="#" class="add-to-calendar" data-date="${element.match_date}" data-time="${element.match_time}" data-title="${element.home_team_name} vs ${element.away_team_name}"> <i class="far fa-calendar-plus"></i> Remind Me</a></button>`
+                        ? calendarISO
+                          ? `<button><a href="#" class="add-to-calendar" data-start="${calendarISO}" data-title="${homeName} vs ${awayName}"> <i class="far fa-calendar-plus"></i> Remind Me</a></button>`
+                          : ""
                         : `   <button class="highlight"><a target="_blank" href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"> <i class="fab fa-youtube"></i> Highlights</a></button>
                     <button class="highlight"><a target="_blank" href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="> <i class="fab fa-instagram"></i> Photos</a></button>`
                     }
@@ -323,7 +445,12 @@
                 (filter === "completed" && status === "completed") ||
                 (filter === "home" && location === "home") ||
                 (filter === "away" && location === "away") ||
-                (filter === "league" && competition.includes("league")) ||
+                // "League" has to cover the 2026-27 naming too ("Division One
+                // (GW1)"), and a League Cup tie is a cup game, not a league one.
+                (filter === "league" &&
+                  (competition.includes("league") ||
+                    competition.includes("division")) &&
+                  !competition.includes("cup")) ||
                 (filter === "cup" && competition.includes("cup"))
               ) {
                 card.style.display = "block";
@@ -341,12 +468,13 @@
         calendarButtons.forEach((button) => {
           button.addEventListener("click", function (e) {
             e.preventDefault();
-            const date = this.getAttribute("data-date");
-            const time = this.getAttribute("data-time");
             const title = this.getAttribute("data-title");
 
-            // Create calendar event
-            const startDateTime = new Date(date + " " + time);
+            // data-start is a real ISO timestamp built by calendarStamp(); the
+            // old code did new Date("22/08" + " " + "KO TBC"), which was always
+            // an Invalid Date for the current season.
+            const startDateTime = new Date(this.getAttribute("data-start"));
+            if (isNaN(startDateTime.getTime())) return;
             const endDateTime = new Date(
               startDateTime.getTime() + 90 * 60 * 1000
             ); // 90 minutes later
@@ -384,12 +512,6 @@
         });
       };
 
-      function pingBackend() {
-        fetch("https://api.fenteng.dev/ping").catch(() => {});
-      }
-
-      pingBackend(); // call on load
-      setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
       // Mobile menu toggle
       const menuToggle = document.getElementById("menu-toggle");
       const navMenu = document.getElementById("nav-menu");
@@ -397,6 +519,11 @@
       menuToggle.addEventListener("click", () => {
         navMenu.classList.toggle("active");
         menuToggle.classList.toggle("active");
+      });
+    </script>
+    <script data-id="js-year-script">
+      document.querySelectorAll(".js-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
       });
     </script>
   </body>

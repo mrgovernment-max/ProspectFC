@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <meta name="robots" content="noindex, follow" />
     <link rel="canonical" href="https://prospectfc.com/jersey" />
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -13,11 +14,20 @@
       href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
       alt="propectfc"
     />
-    <title>
-      Buy a Jersey Prospect Fc | Prospect Jersey | Prospect Sales Buy Prospect
-      FC Jerseys & Merchandise | Official Club Store | Reading
-    </title>
+    <title>Buy Prospect FC Jerseys | Official Club Store</title>
     <style>
+      /* PFC: prevent sideways scroll from off-canvas/oversized elements. */
+      html,
+      body {
+        overflow-x: hidden;
+      }
+      @supports (overflow: clip) {
+        html,
+        body {
+          overflow-x: clip;
+        }
+      }
+
       /* CSS Reset & Variables */
       :root {
         --primary-blue: #0051ba;
@@ -444,7 +454,8 @@
         .nav-menu {
           position: fixed;
           top: 0;
-          right: -100%;
+          right: 0;
+          transform: translateX(100%);
           height: 100vh;
           width: 80%;
           background-color: var(--dark-bg);
@@ -461,7 +472,7 @@
         }
 
         .nav-menu.active {
-          right: 0;
+          transform: translateX(0);
         }
 
         .menu-toggle {
@@ -489,6 +500,23 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://js.stripe.com/v3/"></script>
+      <meta name="description" content="Buy the official Prospect FC jersey. Home and away kits for the 2026/27 season, available in sizes S to XXXL with secure online checkout." />
+
+    <!-- Social share cards (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prospect FC" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://prospectfc.com/jersey.html" />
+    <meta property="og:title" content="Buy Prospect FC Jerseys | Official Club Store" />
+    <meta property="og:description" content="Buy the official Prospect FC jersey. Home and away kits for the 2026/27 season, available in sizes S to XXXL with secure online checkout." />
+    <meta property="og:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Prospect FC players on the pitch" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Buy Prospect FC Jerseys | Official Club Store" />
+    <meta name="twitter:description" content="Buy the official Prospect FC jersey. Home and away kits for the 2026/27 season, available in sizes S to XXXL with secure online checkout." />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -573,44 +601,37 @@
           <div class="swiper-slide">
             <img
               src="images/2026_27_home_kit.jpeg"
-              alt="Prospect FC Home Kit 2026/27"
-            />
+              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" />
           </div>
           <div class="swiper-slide">
             <img
               src="images/2026_27_home_kit.jpeg"
-              alt="Prospect FC Home Kit 2026/27"
-            />
+              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" />
           </div>
           <div class="swiper-slide">
             <img
               src="images/2026_27_home_kit.jpeg"
-              alt="Prospect FC Home Kit 2026/27"
-            />
+              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" />
           </div>
           <div class="swiper-slide">
             <img
               src="images/2026_27_home_kit.jpeg"
-              alt="Prospect FC Home Kit 2026/27"
-            />
+              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" />
           </div>
           <div class="swiper-slide">
             <img
               src="images/2026_27_home_kit.jpeg"
-              alt="Prospect FC Home Kit 2026/27"
-            />
+              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" />
           </div>
           <div class="swiper-slide">
             <img
               src="images/2026_27_home_kit.jpeg"
-              alt="Prospect FC Home Kit 2026/27"
-            />
+              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" />
           </div>
           <div class="swiper-slide">
             <img
               src="images/2026_27_home_kit.jpeg"
-              alt="Prospect FC Home Kit 2026/27"
-            />
+              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" />
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -749,7 +770,7 @@
     </div>
 
     <footer>
-      <p>&copy; 2025 PROSPECT FC ©</p>
+      <p>&copy; <span class="js-year">2026</span> PROSPECT FC ©</p>
       <a
         target="_blank"
         href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
@@ -767,11 +788,6 @@
     </footer>
 
     <script>
-      function pingBackend() {
-        fetch("https://api.fenteng.dev/ping").catch(() => {});
-      }
-      pingBackend(); // call on load
-      setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
 
       // Form validation before payment
       function validateForm() {
@@ -942,17 +958,34 @@
 
         //get img urls from local storage
         keys.forEach((key, index) => {
-          jerseyPassed[index] = JSON.parse(localStorage.getItem(key));
+          try {
+            jerseyPassed[index] = JSON.parse(localStorage.getItem(key));
+          } catch (e) {
+            jerseyPassed[index] = null;
+          }
         });
 
-        //pass urls to img on jersey page respectively from the jerseyPassed object
-        document.getElementsByTagName("img")[1].src = jerseyPassed[0];
-        document.getElementsByTagName("img")[2].src = jerseyPassed[1];
-        document.getElementsByTagName("img")[3].src = jerseyPassed[2];
-        document.getElementsByTagName("img")[4].src = jerseyPassed[3];
-        document.getElementsByTagName("img")[5].src = jerseyPassed[4];
-        document.getElementsByTagName("img")[6].src = jerseyPassed[5];
-        document.getElementsByTagName("img")[7].src = jerseyPassed[6];
+        //This page only ever has content when a kit was chosen on kit.html.
+        //Reached any other way (search result, shared link, cleared storage)
+        //there is nothing to show, so send the visitor to the store instead of
+        //rendering an empty product page.
+        if (!jerseyPassed[0]) {
+          window.location.replace("kit.html");
+          return;
+        }
+
+        //pass urls to img on jersey page respectively from the jerseyPassed object.
+        //Opened directly rather than from the kit page there is nothing stored, and
+        //`.src = null` requests "/null" and shows a broken image.
+        const jerseyImgs = document.getElementsByTagName("img");
+        for (let i = 0; i < 7; i++) {
+          const url = jerseyPassed[i];
+          if (url && jerseyImgs[i + 1]) {
+            jerseyImgs[i + 1].src = url;
+          } else if (jerseyImgs[i + 1]) {
+            jerseyImgs[i + 1].removeAttribute("src");
+          }
+        }
 
         const kitType = jerseyPassed[7] || "Official Home Kit 2026/27";
         document.getElementById("jersey-type").innerHTML = kitType;
@@ -1004,6 +1037,11 @@
           menuToggle.classList.toggle("active");
         });
       };
+    </script>
+    <script data-id="js-year-script">
+      document.querySelectorAll(".js-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
     </script>
   </body>
 </html>

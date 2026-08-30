@@ -25,17 +25,31 @@
 
     <meta
       name="description"
-      content="Explore Prospect FC's 2024/25 season history — complete player rosters, team stats, match highlights, and season performance in the East Berkshire Football League."
+      content="Prospect FC season statistics — player appearances, goals, assists and team records across the 2024/25, 2025/26 and 2026/27 East Berkshire Football League seasons."
     />
     <meta
       name="keywords"
-      content="Prospect FC 2024/25 season, Prospect FC players 2024, Prospect FC team history, EBFL 2024 season, Prospect FC squad 2024/25, East Berkshire Football League stats, football team records Reading, Prospect FC player stats, Prospect FC match history, local football club seasons, Berkshire football history, football league stats 2024"
+      content="Prospect FC stats, Prospect FC player stats, Prospect FC team stats, Prospect FC season history, Prospect FC 2025/26, Prospect FC 2026/27, EBFL stats, East Berkshire Football League stats, football team records Reading, Prospect FC squad records, Berkshire football stats"
     />
 
-    <title>
-      Prospect FC Stats | 2024/25 Season History | Players & Team Stats
-    </title>
+    <title>Prospect FC Stats | Player & Team Records by Season</title>
     <link rel="stylesheet" href="phistory.css" />
+  
+    <!-- Social share cards (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prospect FC" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://prospectfc.com/phistory.html" />
+    <meta property="og:title" content="Prospect FC Stats | Player &amp; Team Records by Season" />
+    <meta property="og:description" content="Prospect FC season statistics — player appearances, goals, assists and team records across the 2024/25, 2025/26 and 2026/27 East Berkshire Football League seasons." />
+    <meta property="og:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Prospect FC players on the pitch" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Prospect FC Stats | Player &amp; Team Records by Season" />
+    <meta name="twitter:description" content="Prospect FC season statistics — player appearances, goals, assists and team records across the 2024/25, 2025/26 and 2026/27 East Berkshire Football League seasons." />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -228,7 +242,7 @@
 
       <div class="copyright">
         <p>
-          &copy; 2025 PROSPECT FC. All rights reserved. | Website by
+          &copy; <span class="js-year">2026</span> PROSPECT FC. All rights reserved. | Website by
           <a
             href="https://www.instagram.com/_idonmindit?igsh=cGRsYWtscnhnNTNs&utm_source=qr"
             target="_blank"
@@ -238,7 +252,6 @@
       </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       // Initialize AOS
       AOS.init({
@@ -258,12 +271,6 @@
         menuToggle.classList.toggle("active");
       });
 
-      // Backend ping function
-      function pingBackend() {
-        fetch("https://api.fenteng.dev/ping").catch(() => {});
-      }
-      pingBackend();
-      setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
 
       // GRAB ELEMENTS IN DOM
       const match = document.getElementById("match");
@@ -452,6 +459,11 @@
 
       // Run function on page load
       window.onload = loadTeamStats;
+    </script>
+    <script data-id="js-year-script">
+      document.querySelectorAll(".js-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
     </script>
   </body>
 </html>
