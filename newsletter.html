@@ -15,6 +15,18 @@
       rel="stylesheet"
     />
     <style>
+      /* PFC: prevent sideways scroll from off-canvas/oversized elements. */
+      html,
+      body {
+        overflow-x: hidden;
+      }
+      @supports (overflow: clip) {
+        html,
+        body {
+          overflow-x: clip;
+        }
+      }
+
       :root {
         --primary-blue: #0055c8;
         --primary-blue-light: #3d8bff;
@@ -468,7 +480,8 @@
         .nav-menu {
           position: fixed;
           top: 0;
-          right: -100%;
+          right: 0;
+          transform: translateX(100%);
           height: 100vh;
           width: 80%;
           background: var(--gradient-dark);
@@ -490,7 +503,7 @@
         }
 
         .nav-menu.active {
-          right: 0;
+          transform: translateX(0);
         }
 
         .menu-toggle {
@@ -566,6 +579,24 @@
         border: 1px solid #f5c2c4;
       }
     </style>
+      <meta name="description" content="Subscribe to the Prospect FC newsletter for fixtures, results, matchday highlights and club news from our East Berkshire Football League side in Reading." />
+    <link rel="canonical" href="https://prospectfc.com/newsletter.html" />
+
+    <!-- Social share cards (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prospect FC" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://prospectfc.com/newsletter.html" />
+    <meta property="og:title" content="Subscribe to Prospect FC Newsletter" />
+    <meta property="og:description" content="Subscribe to the Prospect FC newsletter for fixtures, results, matchday highlights and club news from our East Berkshire Football League side in Reading." />
+    <meta property="og:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Prospect FC players on the pitch" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Subscribe to Prospect FC Newsletter" />
+    <meta name="twitter:description" content="Subscribe to the Prospect FC newsletter for fixtures, results, matchday highlights and club news from our East Berkshire Football League side in Reading." />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -767,7 +798,7 @@
 
       <div class="copyright">
         <p>
-          &copy; 2025 PROSPECT FC. All rights reserved. | Website by
+          &copy; <span class="js-year">2026</span> PROSPECT FC. All rights reserved. | Website by
           <a
             href="https://www.instagram.com/_idonmindit?igsh=cGRsYWtscnhnNTNs&utm_source=qr"
             target="_blank"
@@ -895,6 +926,11 @@
       menuToggle.addEventListener("click", () => {
         navMenu.classList.toggle("active");
         menuToggle.classList.toggle("active");
+      });
+    </script>
+    <script data-id="js-year-script">
+      document.querySelectorAll(".js-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
       });
     </script>
   </body>

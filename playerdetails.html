@@ -27,6 +27,23 @@
       Player Details | Prospect FC Player Profiles | Reading, Berkshire
     </title>
     <link rel="stylesheet" href="playerdetails.css" />
+      <meta name="description" content="Player profile for Prospect FC — appearances, goals, assists and season statistics for our East Berkshire Football League squad in Reading, Berkshire." />
+
+    <!-- Social share cards (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prospect FC" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://prospectfc.com/playerdetails.html" />
+    <meta property="og:title" content="Player Details | Prospect FC Player Profiles | Reading, Berkshire" />
+    <meta property="og:description" content="Player profile for Prospect FC — appearances, goals, assists and season statistics for our East Berkshire Football League squad in Reading, Berkshire." />
+    <meta property="og:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Prospect FC players on the pitch" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Player Details | Prospect FC Player Profiles | Reading, Berkshire" />
+    <meta name="twitter:description" content="Player profile for Prospect FC — appearances, goals, assists and season statistics for our East Berkshire Football League squad in Reading, Berkshire." />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -233,7 +250,7 @@
 
       <div class="copyright">
         <p>
-          &copy; 2025 PROSPECT FC. All rights reserved. | Website by
+          &copy; <span class="js-year">2026</span> PROSPECT FC. All rights reserved. | Website by
           <a
             href="https://www.instagram.com/_idonmindit?igsh=cGRsYWtscnhnNTNs&utm_source=qr"
             target="_blank"
@@ -243,7 +260,6 @@
       </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
  <script>
   // Initialize AOS
   AOS.init({
@@ -263,13 +279,6 @@
     menuToggle.classList.toggle("active");
   });
 
-  // Backend ping function
-  function pingBackend() {
-    fetch("https://api.fenteng.dev/ping").catch(() => {});
-  }
-
-  pingBackend();
-  setInterval(pingBackend, 1 * 60 * 1000);
 
   // Get data from localStorage
   const Pname = JSON.parse(localStorage.getItem("Pname") || '""');
@@ -324,7 +333,15 @@
   document.getElementById("player-name").textContent = Pname;
   document.getElementById("player-jersey").textContent = Pnumber;
   document.getElementById("player-age").textContent = `Age: ${Page}`;
-  document.getElementById("player-main-img").src = Pimg;
+  // Reached directly (no player picked in the squad list) there is nothing in
+  // localStorage, and `.src = ""` resolves to the page URL — a broken image.
+  const playerImg = document.getElementById("player-main-img");
+  if (Pimg) {
+    playerImg.src = Pimg;
+  } else {
+    playerImg.removeAttribute("src");
+    playerImg.alt = "No player selected";
+  }
 
   seasonSelect.addEventListener("change", loadSeasonStats);
   loadSeasonStats();
@@ -335,5 +352,10 @@
     playerDetailsSection.style.setProperty("--player-bg", `url(${Pimg})`);
   }
 </script>
+    <script data-id="js-year-script">
+      document.querySelectorAll(".js-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
+    </script>
   </body>
 </html>

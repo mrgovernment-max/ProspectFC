@@ -1,3 +1,17 @@
+/* PFC: prevent sideways scroll from off-canvas/oversized elements.
+   `clip` (unlike `hidden`) does not create a scroll container, so it
+   leaves smooth scrolling and position:sticky intact. */
+html,
+body {
+  overflow-x: hidden;
+}
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
 :root {
   --primary-blue: #0055c8;
   --primary-blue-light: #3d8bff;

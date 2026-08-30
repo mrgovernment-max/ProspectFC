@@ -36,6 +36,22 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="sponsor.css" />
+  
+    <!-- Social share cards (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prospect FC" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://prospectfc.com/sponsor.html" />
+    <meta property="og:title" content="Prospect FC Sponsors | Official Club Partners &amp; Sponsorship Opportunities" />
+    <meta property="og:description" content="Meet the official sponsors and partners of Prospect FC, supporting our club and community in Reading, Berkshire. Learn how to become a sponsor and support grassroots football at Prospect Football Club." />
+    <meta property="og:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Prospect FC players on the pitch" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Prospect FC Sponsors | Official Club Partners &amp; Sponsorship Opportunities" />
+    <meta name="twitter:description" content="Meet the official sponsors and partners of Prospect FC, supporting our club and community in Reading, Berkshire. Learn how to become a sponsor and support grassroots football at Prospect Football Club." />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -135,8 +151,7 @@
             <img
               src="images/maks.jpg"
               alt="MAKS Vehicle Centre Logo"
-              class="sponsor-image"
-            />
+              class="sponsor-image" loading="lazy" decoding="async" />
             <h3 class="sponsor-name">MAKS Vehicle Centre</h3>
             <div class="sponsor-links">
               <a
@@ -167,8 +182,7 @@
             <img
               src="images/sponor.jpg"
               alt="Fit Cookie Logo"
-              class="sponsor-image"
-            />
+              class="sponsor-image" loading="lazy" decoding="async" />
             <h3 class="sponsor-name">Fit Cookie</h3>
             <div class="sponsor-links">
               <a
@@ -200,8 +214,7 @@
             <img
               src="images/maclee.jpg"
               alt="MacLee Designs Logo"
-              class="sponsor-image"
-            />
+              class="sponsor-image" loading="lazy" decoding="async" />
             <h3 class="sponsor-name">MacLee Designs</h3>
             <div class="sponsor-links">
               <a
@@ -239,8 +252,7 @@
             <img
               src="images/libro.jpg"
               alt="Libro Tax Logo"
-              class="sponsor-image"
-            />
+              class="sponsor-image" loading="lazy" decoding="async" />
             <h3 class="sponsor-name">Libro Tax</h3>
             <div class="sponsor-links">
               <a
@@ -271,8 +283,7 @@
             <img
               src="images/agnes.jpg"
               alt="Agnes Logo"
-              class="sponsor-image"
-            />
+              class="sponsor-image" loading="lazy" decoding="async" />
             <h3 class="sponsor-name">Agnes</h3>
             <div class="sponsor-links">
               <a href="tel:7427674581" class="sponsor-link">
@@ -283,7 +294,7 @@
 
           <!-- JM -->
           <div class="sponsor-card" data-aos="fade-left">
-            <img src="images/jm.jpg" alt="JM Logo" class="sponsor-image" />
+            <img src="images/jm.jpg" alt="JM Logo" class="sponsor-image" loading="lazy" decoding="async" />
             <h3 class="sponsor-name">JM</h3>
           </div>
         </div>
@@ -359,7 +370,7 @@
 
       <div class="copyright">
         <p>
-          &copy; 2025 PROSPECT FC. All rights reserved. | Website by
+          &copy; <span class="js-year">2026</span> PROSPECT FC. All rights reserved. | Website by
           <a
             href="https://www.instagram.com/_idonmindit?igsh=cGRsYWtscnhnNTNs&utm_source=qr"
             target="_blank"
@@ -389,12 +400,11 @@
         menuToggle.classList.toggle("active");
       });
 
-      // Backend ping function
-      function pingBackend() {
-        fetch("https://api.fenteng.dev/ping").catch(() => {});
-      }
-      pingBackend(); // call on load
-      setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
+    </script>
+    <script data-id="js-year-script">
+      document.querySelectorAll(".js-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
     </script>
   </body>
 </html>

@@ -34,6 +34,22 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="squad.css" />
+  
+    <!-- Social share cards (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prospect FC" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://prospectfc.com/squad.html" />
+    <meta property="og:title" content="Prospect FC Squad | Official Player Profiles" />
+    <meta property="og:description" content="Meet the Prospect FC squad - talented players competing in the East Berkshire Football League. View player profiles, stats, and positions." />
+    <meta property="og:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Prospect FC players on the pitch" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Prospect FC Squad | Official Player Profiles" />
+    <meta name="twitter:description" content="Meet the Prospect FC squad - talented players competing in the East Berkshire Football League. View player profiles, stats, and positions." />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -233,7 +249,7 @@
 
       <div class="copyright">
         <p>
-          &copy; 2025 PROSPECT FC. All rights reserved. | Website by
+          &copy; <span class="js-year">2026</span> PROSPECT FC. All rights reserved. | Website by
           <a
             href="https://www.instagram.com/_idonmindit?igsh=cGRsYWtscnhnNTNs&utm_source=qr"
             target="_blank"
@@ -263,12 +279,6 @@
         menuToggle.classList.toggle("active");
       });
 
-      // Backend ping function
-      function pingBackend() {
-        fetch("https://api.fenteng.dev/ping").catch(() => {});
-      }
-      pingBackend(); // call on load
-      setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
 
       // Function to handle player details
       function CheckPlayerDetails(...args) {
@@ -447,6 +457,11 @@
       fetchAndDisplayPlayers();
 
       function searchPlayer() {}
+    </script>
+    <script data-id="js-year-script">
+      document.querySelectorAll(".js-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
     </script>
   </body>
 </html>

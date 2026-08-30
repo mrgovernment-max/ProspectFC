@@ -97,6 +97,23 @@
         font-size: 0.875rem;
       }
     </style>
+      <meta name="description" content="How Prospect FC collects, uses and protects your personal data, including newsletter subscriptions and contact form enquiries." />
+
+    <!-- Social share cards (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prospect FC" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://prospectfc.com/privacy.html" />
+    <meta property="og:title" content="Privacy Policy | Prospect FC" />
+    <meta property="og:description" content="How Prospect FC collects, uses and protects your personal data, including newsletter subscriptions and contact form enquiries." />
+    <meta property="og:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Prospect FC players on the pitch" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Privacy Policy | Prospect FC" />
+    <meta name="twitter:description" content="How Prospect FC collects, uses and protects your personal data, including newsletter subscriptions and contact form enquiries." />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -208,14 +225,14 @@
       </section>
     </main>
 
-    <footer>&copy; 2025 Prospect FC. All rights reserved.</footer>
+    <footer>&copy; <span class="js-year">2026</span> Prospect FC. All rights reserved.</footer>
+    <script data-id="js-year-script">
+      document.querySelectorAll(".js-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
+    </script>
   </body>
 
   <script>
-    function pingBackend() {
-      fetch("https://api.fenteng.dev/ping").catch(() => {});
-    }
-    pingBackend(); // call on load
-    setInterval(pingBackend, 1 * 60 * 1000); // every 1 mins
   </script>
 </html>

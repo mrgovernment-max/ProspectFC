@@ -35,6 +35,22 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="index.css" />
+  
+    <!-- Social share cards (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prospect FC" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://prospectfc.com/" />
+    <meta property="og:title" content="Prospect FC | Official Football Club in Reading | EBFL Team" />
+    <meta property="og:description" content="Official website of Prospect FC, a competitive East Berkshire Football League club based in Reading, Berkshire. Discover our squad, player stats, fixtures &amp; results, club news, youth academy &amp; trials at Prospect Park." />
+    <meta property="og:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Prospect FC players on the pitch" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Prospect FC | Official Football Club in Reading | EBFL Team" />
+    <meta name="twitter:description" content="Official website of Prospect FC, a competitive East Berkshire Football League club based in Reading, Berkshire. Discover our squad, player stats, fixtures &amp; results, club news, youth academy &amp; trials at Prospect Park." />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -201,7 +217,7 @@
           <div class="club-info-card">
             <h3>Professional Training</h3>
             <p>
-              We have two training sessions a week — Mondays and Thursdays at
+              We have two training sessions a week — Tuesdays and Thursdays at
               7:00 PM, with structured, high-quality sessions at Prospect Park.
             </p>
           </div>
@@ -229,7 +245,7 @@
 
         <div class="involve-cards">
           <div class="involve-card" data-aos="fade-up" data-aos-delay="100">
-            <img src="images/mobile hero.jpg" alt="Prospect FC Kit" />
+            <img src="images/mobile hero.jpg" alt="Prospect FC Kit" loading="lazy" decoding="async" />
             <div class="card-content">
               <h3>OFFICIAL CLUB KIT</h3>
               <p>
@@ -245,7 +261,7 @@
           <!--Socials-->
 
           <div class="involve-card" data-aos="fade-up" data-aos-delay="100">
-            <img src="images/P1860343.jpeg" alt="Prospect FC Kit" />
+            <img src="images/P1860343.jpeg" alt="Prospect FC Kit" loading="lazy" decoding="async" />
             <div class="card-content">
               <h3>FOLLOW OUR SOCIALS</h3>
               <p>
@@ -281,7 +297,7 @@
           <!--Join Team-->
 
           <div class="involve-card" data-aos="fade-up" data-aos-delay="200">
-            <img src="images/mmmmo.jpg" alt="Join Prospect FC" />
+            <img src="images/mmmmo.jpg" alt="Join Prospect FC" loading="lazy" decoding="async" />
             <div class="card-content">
               <h3>JOIN OUR TEAM</h3>
               <p>
@@ -344,7 +360,7 @@
           </div>
 
           <div class="news-item" data-aos="fade-right" data-aos-delay="100">
-            <img src="images/matchday.jpeg" alt="Friendly match" />
+            <img src="images/matchday.jpeg" alt="Friendly match" loading="lazy" decoding="async" />
             <div class="news-content">
               <h3>Pre-Season Friendly</h3>
               <p>
@@ -372,7 +388,7 @@
           </div>
 
           <div class="news-item" data-aos="fade-right" data-aos-delay="300">
-            <img src="images/newplayers.jpg" alt="New players" />
+            <img src="images/newplayers.jpg" alt="New players" loading="lazy" decoding="async" />
             <div class="news-content">
               <h3>New Signings</h3>
               <p>
@@ -465,7 +481,7 @@
 
       <div class="copyright">
         <p>
-          &copy; 2025 PROSPECT FC. All rights reserved. | Website by
+          &copy; <span class="js-year">2026</span> PROSPECT FC. All rights reserved. | Website by
           <a
             href="https://www.instagram.com/_idonmindit?igsh=cGRsYWtscnhnNTNs&utm_source=qr"
             target="_blank"
@@ -528,12 +544,6 @@
         });
       });
 
-      // Backend ping function
-      function pingBackend() {
-        fetch("https://api.fenteng.dev/ping").catch(() => {});
-      }
-      pingBackend();
-      setInterval(pingBackend, 1 * 60 * 1000);
 
       async function newsLetter(event) {
         event.preventDefault();
@@ -578,6 +588,11 @@
           submitBtn.disabled = false;
         }
       }
+    </script>
+    <script data-id="js-year-script">
+      document.querySelectorAll(".js-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
     </script>
   </body>
 </html>
