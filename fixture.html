@@ -10,14 +10,11 @@
       type="image/png"
       href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
       alt="propectfc"
-    />
+/>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="fixtures.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css"
-    />
     <script
       src="https://kit.fontawesome.com/a47fc389f5.js"
       crossorigin="anonymous"
@@ -26,11 +23,11 @@
     <meta
       name="description"
       content="Check out the latest Prospect FC fixtures, results, and upcoming matches in the East Berkshire Football League. Stay updated on matchdays, kick-off times, and past results."
-    />
+/>
     <meta
       name="keywords"
       content="Prospect FC fixtures, Prospect FC schedule, Prospect Football Club match results, EBFL fixtures, Prospect Reading matchday, East Berkshire Football League fixtures, Prospect FC next match, Reading football club schedule, local football team fixtures, Berkshire football results, football fixtures Reading, EBFL results, FC Prospect match list, Prospect FC matchday updates Local Team Fixtures "
-    />
+/>
   
     <!-- Social share cards (Open Graph / Twitter) -->
     <meta property="og:type" content="website" />
@@ -47,6 +44,12 @@
     <meta name="twitter:title" content="Prospect FC Fixtures | Match Schedule &amp; Results | EBFL" />
     <meta name="twitter:description" content="Check out the latest Prospect FC fixtures, results, and upcoming matches in the East Berkshire Football League. Stay updated on matchdays, kick-off times, and past results." />
     <meta name="twitter:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+/>
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -71,33 +74,53 @@
             <img
               src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
               alt="Prospect FC logo"
-            />
+/>
           </a>
         </div>
 
-        <div class="menu-toggle" id="menu-toggle">
-          <i class="fas fa-bars"></i>
-        </div>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Toggle menu"
+        >
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
 
         <ul class="nav-menu" id="nav-menu">
           <li><a href="index.html">Home</a></li>
-          <li id="headlines">
-            <a href="headlines.html">Headlines</a>
-            <div id="dropdown" class="dropdown">
+          <li><a href="fixture.html">Fixtures</a></li>
+          <li class="has-dropdown">
+            <a href="squad.html">Team</a>
+            <div class="dropdown">
               <ul>
-                <li><a href="blog.html">Articles</a></li>
+                <li><a href="squad.html">Squad</a></li>
+                <li><a href="phistory.html">Team Stats</a></li>
               </ul>
             </div>
           </li>
-          <li class="mobile-blog"><a href="blog.html">Articles</a></li>
-          <li><a href="squad.html">Squad</a></li>
-          <li><a href="phistory.html">Team Stats</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="fixture.html">Fixtures</a></li>
-          <li><a href="sponsor.html">Sponsors</a></li>
+          <li class="has-dropdown">
+            <a href="headlines.html">News</a>
+            <div class="dropdown">
+              <ul>
+                <li><a href="headlines.html">Headlines</a></li>
+                <li><a href="blog.html">Articles</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+              </ul>
+            </div>
+          </li>
           <li><a href="kit.html">Kits</a></li>
+          <li class="has-dropdown">
+            <a href="sponsor.html">Club</a>
+            <div class="dropdown">
+              <ul>
+                <li><a href="sponsor.html">Sponsors</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+              </ul>
+            </div>
+          </li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="newsletter.html">Newsletter</a></li>
         </ul>
 
         <div class="social-icons">
@@ -188,113 +211,9 @@
       </div>
     </footer>
 
+    <script src="fixtures-data.js"></script>
     <script>
       // --- DISPLAY FIXTURES FROM DB
-      const SEASON_ENDPOINTS = {
-        "2025-26": "https://api.fenteng.dev/fixtures",
-        "2026-27": "https://api.fenteng.dev/fixtures2627",
-      };
-
-      // The two season feeds disagree on shape. 2025-26 sends ISO dates
-      // ("2026-05-16") and real times ("14:00:00"); 2026-27 sends day/month
-      // with no year ("22/08") and "KO TBC" in place of a time. Everything
-      // below normalises both into one presentation.
-      const SEASON_START_YEAR = { "2025-26": 2025, "2026-27": 2026 };
-
-      // Neutral shield for opponents the feed has no crest for (it sends null
-      // for "Opponent TBC", which used to render as a broken <img src="null">).
-      const CREST_FALLBACK =
-        "data:image/svg+xml;charset=UTF-8," +
-        encodeURIComponent(
-          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">' +
-            '<circle cx="32" cy="32" r="32" fill="#0a1128"/>' +
-            '<path d="M32 15l13 4.6v13c0 9.4-5.6 14-13 16.8-7.4-2.8-13-7.4-13-16.8v-13z" ' +
-            'fill="none" stroke="#e8b923" stroke-width="3" stroke-linejoin="round"/>' +
-          "</svg>"
-        );
-
-      function crestFor(url) {
-        return url && url !== "null" ? url : CREST_FALLBACK;
-      }
-
-      function crestFallback(img) {
-        img.onerror = null;
-        img.src = CREST_FALLBACK;
-      }
-
-      function parseMatchDate(raw, season) {
-        if (!raw) return null;
-        const text = String(raw).trim();
-
-        let m = text.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
-        if (m) return new Date(+m[1], +m[2] - 1, +m[3]);
-
-        m = text.match(/^(\d{1,2})\/(\d{1,2})$/); // "22/08" — day/month, year implied
-        if (m) {
-          const startYear =
-            SEASON_START_YEAR[season] || new Date().getFullYear();
-          const month = +m[2];
-          // An EBFL season runs Aug-May, so Jan-Jul falls in the next calendar year.
-          return new Date(month >= 8 ? startYear : startYear + 1, month - 1, +m[1]);
-        }
-
-        const d = new Date(text);
-        return isNaN(d.getTime()) ? null : d;
-      }
-
-      function formatMatchDate(raw, season) {
-        const d = parseMatchDate(raw, season);
-        if (!d) return raw || "TBC";
-        return d.toLocaleDateString("en-GB", {
-          weekday: "short",
-          day: "numeric",
-          month: "short",
-          year: "numeric",
-        });
-      }
-
-      function formatMatchTime(raw) {
-        if (!raw) return "TBC";
-        const m = String(raw).match(/^(\d{1,2}):(\d{2})/);
-        if (!m) return String(raw); // e.g. "KO TBC" — show it as written
-        const hours = +m[1];
-        const suffix = hours >= 12 ? "pm" : "am";
-        const hour12 = hours % 12 === 0 ? 12 : hours % 12;
-        return hour12 + ":" + m[2] + suffix;
-      }
-
-      // The feed spells our own club five ways ("Prospect Football Club",
-      // "FC PROSPECT", "Prospect Fc"...). Show one name.
-      function displayTeamName(name) {
-        if (!name) return "TBC";
-        return /prospect/i.test(name) ? "Prospect FC" : name;
-      }
-
-      function isOurClub(name) {
-        return /prospect/i.test(name || "");
-      }
-
-      function matchStatus(element, season) {
-        const kickoff = parseMatchDate(element.match_date, season);
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        // The 2026-27 feed stores 0 rather than null for unplayed matches, so a
-        // future kick-off date has to outrank whatever is in the score columns.
-        if (kickoff && kickoff.getTime() > today.getTime()) return "Upcoming";
-        if (element.home_score === null || element.away_score === null)
-          return "Upcoming";
-        return "Completed";
-      }
-
-      // ISO timestamp for the "Remind Me" Google Calendar link. Returns "" when
-      // the feed has no usable date, so the button can be left off entirely.
-      function calendarStamp(element, season) {
-        const d = parseMatchDate(element.match_date, season);
-        if (!d) return "";
-        const t = String(element.match_time || "").match(/^(\d{1,2}):(\d{2})/);
-        d.setHours(t ? +t[1] : 14, t ? +t[2] : 0, 0, 0); // default 2pm kick-off
-        return d.toISOString();
-      }
 
       async function FetchMatches() {
         const seasonSelect = document.getElementById("season-select");
@@ -305,7 +224,7 @@
         fixtures_container.innerHTML = `
           <div style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
             <div class="loading-spinner"></div>
-            <p style="font-size: 1.2rem; color: var(--primary-blue);">Loading Fixtures...</p>
+            <p style="font-size: var(--fs-md); color: var(--primary-blue);">Loading Fixtures...</p>
           </div>`;
 
         try {
@@ -318,7 +237,7 @@
           if (data.length === 0) {
             fixtures_container.innerHTML = `
               <div style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
-                <p style="font-size: 1.2rem; color: var(--primary-blue);">No fixtures available at the moment. Please check back later.</p>
+                <p style="font-size: var(--fs-md); color: var(--primary-blue);">No fixtures available at the moment. Please check back later.</p>
               </div>`;
             return;
           }
@@ -415,8 +334,8 @@
           console.error("Error fetching fixtures:", error);
           fixtures_container.innerHTML = `
             <div style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
-              <p style="font-size: 1.2rem; color: #e63946;">Failed to load fixtures. Please try again later.</p>
-              <button onclick="FetchMatches()" style="margin-top: 1rem; padding: 0.5rem 1.5rem; background-color: var(--primary-blue); color: white; border: none; border-radius: 4px; cursor: pointer;">Retry</button>
+              <p style="font-size: var(--fs-md); color: #e63946;">Failed to load fixtures. Please try again later.</p>
+              <button onclick="FetchMatches()" style="margin-top: 1rem; padding: 0.5rem 1.5rem; background-color: var(--primary-blue); color: white; border: none; border-radius: var(--radius-xs); cursor: pointer;">Retry</button>
             </div>`;
         }
       }
@@ -517,6 +436,8 @@
       const navMenu = document.getElementById("nav-menu");
 
       menuToggle.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
         navMenu.classList.toggle("active");
         menuToggle.classList.toggle("active");
       });

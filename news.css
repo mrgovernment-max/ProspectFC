@@ -28,20 +28,31 @@ body {
   --text-muted: #66707f;
   --text-muted-invert: #97a3b8;
 
-  --gradient-primary: linear-gradient(135deg, #1668e0 0%, #0043a8 55%, #00204f 100%);
-  --gradient-gold: linear-gradient(135deg, #ffe27a 0%, #f4c430 55%, #cc9900 100%);
+  --gradient-primary: linear-gradient(
+    135deg,
+    #1668e0 0%,
+    #0043a8 55%,
+    #00204f 100%
+  );
+  --gradient-gold: linear-gradient(
+    135deg,
+    #ffe27a 0%,
+    #f4c430 55%,
+    #cc9900 100%
+  );
   --gradient-dark: linear-gradient(180deg, #0d1526 0%, #070b14 100%);
 
   --glass-bg: rgba(13, 21, 38, 0.6);
   --glass-border: rgba(255, 255, 255, 0.09);
 
-  --border-radius: 14px;
+  --border-radius: var(--radius-md);
   --border-radius-sm: 8px;
   --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
   --box-shadow: 0 10px 30px rgba(3, 9, 22, 0.12);
   --box-shadow-hover: 0 20px 45px rgba(3, 9, 22, 0.22);
-  --glow-blue: 0 0 0 1px rgba(61, 139, 255, 0.25), 0 12px 30px rgba(22, 104, 224, 0.35);
+  --glow-blue:
+    0 0 0 1px rgba(61, 139, 255, 0.25), 0 12px 30px rgba(22, 104, 224, 0.35);
   --glow-gold: 0 8px 24px rgba(244, 196, 48, 0.35);
   --glow-crimson: 0 8px 24px rgba(179, 62, 79, 0.35);
 
@@ -56,7 +67,7 @@ body {
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Montserrat", sans-serif;
   background: var(--gradient-dark);
   color: var(--text-light);
   line-height: 1.6;
@@ -89,7 +100,7 @@ header {
 }
 
 .logo-text {
-  font-size: 2.2rem;
+  font-size: var(--fs-3xl);
   font-weight: 700;
   color: var(--text-light);
   text-shadow: 2px 2px 4px rgba(3, 9, 22, 0.5);
@@ -140,12 +151,12 @@ header {
 .icon-container {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  border-radius: var(--radius-circle);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
-  font-size: 3rem;
+  font-size: var(--fs-4xl);
 }
 
 .success .icon-container {
@@ -170,13 +181,13 @@ header {
 }
 
 .result-card h2 {
-  font-size: 2.2rem;
+  font-size: var(--fs-3xl);
   margin-bottom: 1rem;
   color: var(--text-light);
 }
 
 .result-card p {
-  font-size: 1.1rem;
+  font-size: var(--fs-md);
   margin-bottom: 1.5rem;
   color: var(--text-muted-invert);
 }
@@ -191,7 +202,7 @@ header {
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: var(--fs-base);
   transition: var(--transition);
   border: none;
   box-shadow: 0 6px 18px rgba(0, 45, 107, 0.25);
@@ -242,7 +253,7 @@ footer {
 
 .social-links a {
   color: var(--text-light);
-  font-size: 1.5rem;
+  font-size: var(--fs-xl);
   transition: var(--transition);
 }
 
@@ -253,7 +264,7 @@ footer {
 
 .footer-text {
   color: var(--text-muted-invert);
-  font-size: 0.9rem;
+  font-size: var(--fs-xs);
 }
 
 /* Responsive */
@@ -264,7 +275,7 @@ footer {
   }
 
   .logo-text {
-    font-size: 1.8rem;
+    font-size: var(--fs-2xl);
   }
 
   .result-card {
@@ -272,7 +283,7 @@ footer {
   }
 
   .result-card h2 {
-    font-size: 1.8rem;
+    font-size: var(--fs-2xl);
   }
 
   .btn-group {
@@ -296,7 +307,7 @@ footer {
   }
 
   .logo-text {
-    font-size: 1.5rem;
+    font-size: var(--fs-xl);
   }
 
   .container {
@@ -310,6 +321,6 @@ footer {
   .icon-container {
     width: 80px;
     height: 80px;
-    font-size: 2.5rem;
+    font-size: var(--fs-3xl);
   }
 }
