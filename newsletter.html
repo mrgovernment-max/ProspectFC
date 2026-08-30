@@ -9,11 +9,11 @@
       type="image/png"
       href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
       alt="prospectfc"
-    />
+/>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
-    />
+/>
     <style>
       /* PFC: prevent sideways scroll from off-canvas/oversized elements. */
       html,
@@ -51,7 +51,7 @@
         --card-bg: #ffffff;
         --light-blue: #eaf1ff;
 
-        --border-radius: 14px;
+        --border-radius: var(--radius-md);
         --border-radius-sm: 8px;
         --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -174,7 +174,7 @@
         color: var(--text-light);
         text-decoration: none;
         font-weight: 500;
-        font-size: 0.95rem;
+        font-size: var(--fs-sm);
         padding: 0.55rem 1rem;
         border-radius: var(--border-radius-sm);
         transition: var(--transition);
@@ -189,14 +189,11 @@
         left: 1rem;
         right: 1rem;
         height: 2px;
-        border-radius: 2px;
+        border-radius: var(--radius-xs);
         background: var(--gradient-gold);
         transition: 0.3s ease-in-out;
       }
-      #headlines {
-        position: relative;
-        z-index: 999;
-      }
+      
 
       .dropdown {
         display: none;
@@ -212,27 +209,14 @@
         border: 1px solid var(--glass-border);
         box-shadow: var(--box-shadow-hover);
         z-index: 90;
-        border-radius: 0 0 20px 20px;
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
       }
 
-      .dropdown::before,
-      .dropdown::after {
-        content: "";
-        position: absolute;
-        top: 24px;
-        width: 6px;
-        height: 60px;
-        background: var(--gradient-gold);
-        border-radius: 4px;
-      }
+      
 
-      .dropdown::before {
-        left: 22px;
-      }
+      
 
-      .dropdown::after {
-        right: 22px;
-      }
+      
 
       .dropdown ul {
         list-style: none;
@@ -243,9 +227,7 @@
         font-weight: 500;
       }
 
-      #headlines:hover .dropdown {
-        display: flex;
-      }
+      
       .nav-menu a:hover::after {
         width: calc(100% - 2rem);
       }
@@ -262,7 +244,7 @@
 
       .social-icons a {
         color: var(--text-muted-invert);
-        font-size: 1.05rem;
+        font-size: var(--fs-base);
         transition: var(--transition);
       }
 
@@ -274,7 +256,7 @@
       .menu-toggle {
         display: none;
         color: var(--text-light);
-        font-size: 1.5rem;
+        font-size: var(--fs-xl);
         cursor: pointer;
       }
 
@@ -305,19 +287,19 @@
       }
 
       .subscription-icon {
-        font-size: 4rem;
+        font-size: var(--fs-4xl);
         color: var(--primary-blue);
         margin-bottom: 1.5rem;
       }
 
       .subscription-title {
-        font-size: 2.2rem;
+        font-size: var(--fs-3xl);
         color: var(--secondary-blue);
         margin-bottom: 1rem;
       }
 
       .subscription-description {
-        font-size: 1.1rem;
+        font-size: var(--fs-md);
         margin-bottom: 2rem;
         color: var(--text-muted);
       }
@@ -376,7 +358,7 @@
         padding: 1rem;
         border: 1px solid #dde3ee;
         border-radius: var(--border-radius-sm);
-        font-size: 1rem;
+        font-size: var(--fs-base);
         transition: var(--transition);
       }
 
@@ -398,7 +380,7 @@
         width: 20px;
         height: 20px;
         border: 3px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
+        border-radius: var(--radius-circle);
         border-top-color: var(--text-light);
         animation: spin 1s ease-in-out infinite;
       }
@@ -428,7 +410,7 @@
         margin-bottom: 1.5rem;
         position: relative;
         padding-bottom: 0.6rem;
-        font-size: 1.15rem;
+        font-size: var(--fs-md);
         letter-spacing: 1px;
       }
 
@@ -439,7 +421,7 @@
         left: 0;
         width: 40px;
         height: 3px;
-        border-radius: 3px;
+        border-radius: var(--radius-xs);
         background: var(--gradient-gold);
       }
 
@@ -495,12 +477,8 @@
           z-index: 999;
           border-left: 1px solid var(--glass-border);
         }
-        .mobile-blog {
-          display: flex;
-        }
-        #headlines:hover .dropdown {
-          display: none;
-        }
+        
+        
 
         .nav-menu.active {
           transform: translateX(0);
@@ -523,7 +501,7 @@
         }
 
         .subscription-title {
-          font-size: 1.8rem;
+          font-size: var(--fs-2xl);
         }
 
         .benefits-list {
@@ -546,11 +524,11 @@
         }
 
         .subscription-title {
-          font-size: 1.6rem;
+          font-size: var(--fs-xl);
         }
 
         .subscription-icon {
-          font-size: 3rem;
+          font-size: var(--fs-4xl);
         }
 
         .btn {
@@ -597,6 +575,12 @@
     <meta name="twitter:title" content="Subscribe to Prospect FC Newsletter" />
     <meta name="twitter:description" content="Subscribe to the Prospect FC newsletter for fixtures, results, matchday highlights and club news from our East Berkshire Football League side in Reading." />
     <meta name="twitter:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+/>
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -621,32 +605,52 @@
             <img
               src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
               alt="Prospect FC logo"
-            />
+/>
           </a>
         </div>
 
-        <div class="menu-toggle" id="menu-toggle">
-          <i class="fas fa-bars"></i>
-        </div>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Toggle menu"
+        >
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
         <ul class="nav-menu" id="nav-menu">
           <li><a href="index.html">Home</a></li>
-          <li id="headlines">
-            <a href="headlines.html">Headlines</a>
-            <div id="dropdown" class="dropdown">
+          <li><a href="fixture.html">Fixtures</a></li>
+          <li class="has-dropdown">
+            <a href="squad.html">Team</a>
+            <div class="dropdown">
               <ul>
-                <li><a href="blog.html">Articles</a></li>
+                <li><a href="squad.html">Squad</a></li>
+                <li><a href="phistory.html">Team Stats</a></li>
               </ul>
             </div>
           </li>
-          <li class="mobile-blog"><a href="blog.html">Articles</a></li>
-          <li><a href="squad.html">Squad</a></li>
-          <li><a href="phistory.html">Team Stats</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="fixture.html">Fixtures</a></li>
-          <li><a href="sponsor.html">Sponsors</a></li>
+          <li class="has-dropdown">
+            <a href="headlines.html">News</a>
+            <div class="dropdown">
+              <ul>
+                <li><a href="headlines.html">Headlines</a></li>
+                <li><a href="blog.html">Articles</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+              </ul>
+            </div>
+          </li>
           <li><a href="kit.html">Kits</a></li>
+          <li class="has-dropdown">
+            <a href="sponsor.html">Club</a>
+            <div class="dropdown">
+              <ul>
+                <li><a href="sponsor.html">Sponsors</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+              </ul>
+            </div>
+          </li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="newsletter.html">Newsletter</a></li>
         </ul>
 
         <div class="social-icons">
@@ -731,7 +735,7 @@
           </button>
         </form>
 
-        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #666">
+        <p style="margin-top: 1.5rem; font-size: var(--fs-xs); color: #666">
           We respect your privacy. You can unsubscribe at any time.
         </p>
       </div>
@@ -924,6 +928,8 @@
       const navMenu = document.getElementById("nav-menu");
 
       menuToggle.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
         navMenu.classList.toggle("active");
         menuToggle.classList.toggle("active");
       });

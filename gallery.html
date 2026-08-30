@@ -10,7 +10,7 @@
       type="image/png"
       href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
       alt="prospectfc"
-    />
+/>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script
@@ -20,14 +20,15 @@
     <meta
       name="description"
       content="Explore the official Prospect FC photo gallery featuring matchday action, team moments, player highlights, and behind-the-scenes photos from the East Berkshire Football League. Prospect FC (also known as Prospect Football Club or FC Prospect) is a competitive EBFL football team based in Reading. Stay updated with our fixtures, results, and club news."
-    />
+/>
     <meta
       name="keywords"
       content="Prospect FC gallery, Prospect Football Club photos, Prospect FC images, EBFL matchday photos, Reading football club pictures, Berkshire football gallery, Prospect FC match highlights, team photos Prospect FC, East Berkshire Football League pictures, football club images Reading, Prospect FC photo album, local football club pictures, matchday photography EBFL"
-    />
+/>
     <title>
       Prospect FC Gallery | Matchday Pictures | Team Photos | England Local Team
     </title>
+    <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="gallery.css" />
   
     <!-- Social share cards (Open Graph / Twitter) -->
@@ -45,6 +46,12 @@
     <meta name="twitter:title" content="Prospect FC Gallery | Matchday Pictures | Team Photos | England Local Team" />
     <meta name="twitter:description" content="Explore the official Prospect FC photo gallery featuring matchday action, team moments, player highlights, and behind-the-scenes photos from the East Berkshire Football League. Prospect FC (also known as Prospect Football Club or FC Prospect) is a competitive EBFL football team based in Reading. Stay updated with our fixtures, results, and club news." />
     <meta name="twitter:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+/>
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -69,33 +76,53 @@
             <img
               src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
               alt="Prospect FC logo"
-            />
+/>
           </a>
         </div>
 
-        <div class="menu-toggle" id="menu-toggle">
-          <i class="fas fa-bars"></i>
-        </div>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Toggle menu"
+        >
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
 
         <ul class="nav-menu" id="nav-menu">
           <li><a href="index.html">Home</a></li>
-          <li id="headlines">
-            <a href="headlines.html">Headlines</a>
-            <div id="dropdown" class="dropdown">
+          <li><a href="fixture.html">Fixtures</a></li>
+          <li class="has-dropdown">
+            <a href="squad.html">Team</a>
+            <div class="dropdown">
               <ul>
-                <li><a href="blog.html">Articles</a></li>
+                <li><a href="squad.html">Squad</a></li>
+                <li><a href="phistory.html">Team Stats</a></li>
               </ul>
             </div>
           </li>
-          <li class="mobile-blog"><a href="blog.html">Articles</a></li>
-          <li><a href="squad.html">Squad</a></li>
-          <li><a href="phistory.html">Team Stats</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="fixture.html">Fixtures</a></li>
-          <li><a href="sponsor.html">Sponsors</a></li>
+          <li class="has-dropdown">
+            <a href="headlines.html">News</a>
+            <div class="dropdown">
+              <ul>
+                <li><a href="headlines.html">Headlines</a></li>
+                <li><a href="blog.html">Articles</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+              </ul>
+            </div>
+          </li>
           <li><a href="kit.html">Kits</a></li>
+          <li class="has-dropdown">
+            <a href="sponsor.html">Club</a>
+            <div class="dropdown">
+              <ul>
+                <li><a href="sponsor.html">Sponsors</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+              </ul>
+            </div>
+          </li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="newsletter.html">Newsletter</a></li>
         </ul>
 
         <div class="social-icons">
@@ -129,101 +156,101 @@
       </select>
 
       <!-- Gallery Sections -->
-      <div class="gallery-item" data-category="TRIALS" style="display: flex">
+      <div class="gallery-item" data-category="TRIALS" style="display: grid">
         <h2>TRIALS</h2>
         <img
           src="images/thumbs/WhatsApp Image 2025-08-05 at 17.32.31_e9bb7419.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/WhatsApp Image 2025-08-05 at 17.32.31_e9bb7419.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/WhatsApp Image 2025-08-05 at 17.32.30_9eebe0ad.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/WhatsApp Image 2025-08-05 at 17.32.30_9eebe0ad.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
 
         <img
           src="images/thumbs/WhatsApp Image 2025-08-05 at 17.32.30_dd871f24.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/WhatsApp Image 2025-08-05 at 17.32.30_dd871f24.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/WhatsApp Image 2025-08-05 at 17.32.31_28cb1bc6.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/WhatsApp Image 2025-08-05 at 17.32.31_28cb1bc6.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
 
         <img
           src="images/thumbs/WhatsApp Image 2025-08-05 at 17.32.31_b384662f.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/WhatsApp Image 2025-08-05 at 17.32.31_b384662f.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/WhatsApp Image 2025-08-05 at 17.32.31_c40e5364.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/WhatsApp Image 2025-08-05 at 17.32.31_c40e5364.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/WhatsApp Image 2025-08-05 at 17.32.31_85531d26.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/WhatsApp Image 2025-08-05 at 17.32.31_85531d26.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/WhatsApp Image 2025-08-05 at 17.32.32_c557d06a.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/WhatsApp Image 2025-08-05 at 17.32.32_c557d06a.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/WhatsApp Image 2025-08-05 at 17.32.32_48296e00.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/WhatsApp Image 2025-08-05 at 17.32.32_48296e00.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
 
         <img
           src="images/thumbs/WhatsApp Image 2025-08-05 at 17.32.32_1d7cdbbf.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/WhatsApp Image 2025-08-05 at 17.32.32_1d7cdbbf.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
       </div>
 
       <div class="gallery-item" data-category="ETON-WICK" style="display: none">
@@ -231,147 +258,147 @@
         <img
           src="images/thumbs/et1.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et1.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et2.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et2.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et3.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et3.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et4.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et4.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et5.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et5.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et6.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et6.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et7.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et7.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et8.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et8.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et9.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et9.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et10.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et10.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et11.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et11.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et12.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et12.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et13.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et13.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et14.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et14.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et15.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et15.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/et16.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/et16.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
       </div>
 
       <div class="gallery-item" data-category="FINCHAMPS" style="display: none">
@@ -379,165 +406,165 @@
         <img
           src="images/thumbs/fin1.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin1.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin2.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin2.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin3.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin3.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin4.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin4.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin5.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin5.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin6.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin6.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin7.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin7.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin8.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin8.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin9.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin9.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin10.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin10.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin11.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin11.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin12.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin12.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin13.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin13.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin14.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin14.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin15.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin15.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin16.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin16.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin17.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin17.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/fin18.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/fin18.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
       </div>
 
       <div
@@ -549,129 +576,129 @@
         <img
           src="images/thumbs/vet1.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/vet1.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/vet2.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/vet2.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/vet3.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/vet3.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/vet4.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/vet4.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/vet5.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/vet5.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/vet6.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/vet6.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/vet7.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/vet7.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/vet8.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/vet8.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/vet9.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/vet9.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/vet10.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/vet10.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/vet11.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/vet11.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/vet12.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/vet12.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/vet13.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/vet13.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/vet14.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/vet14.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
       </div>
 
       <div class="gallery-item" data-category="WESTWOOD" style="display: none">
@@ -679,228 +706,228 @@
         <img
           src="images/thumbs/image0.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image0.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image1.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image1.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image2.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image2.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image3.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image3.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image4.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image4.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image5.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image5.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image6.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image6.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image7.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image7.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image8.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image8.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image9.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image9.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image10.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image10.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image11.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image11.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image12.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image12.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image13.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image13.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image14.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="335"
           data-full="images/image14.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image15.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image15.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image16.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image16.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image17.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image17.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image11.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image11.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image18.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image18.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image19.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image19.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image20.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image20.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image21.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image21.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image22.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image22.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/image23.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/image23.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
       </div>
 
       <div class="gallery-item" data-category="SHOWCASE" style="display: none">
@@ -908,230 +935,299 @@
         <img
           src="images/thumbs/showacse_game_player_pic.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="425"
+          height="500"
           data-full="images/showacse_game_player_pic.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/showcase_game_goal_celebration_cold.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="400"
+          height="500"
           data-full="images/showcase_game_goal_celebration_cold.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/showcase_fans picture.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="468"
           data-full="images/showcase_fans picture.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/showcase_game_captain.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="424"
+          height="500"
           data-full="images/showcase_game_captain.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/shwocase_game_header_from_corner_pic.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="427"
+          height="500"
           data-full="images/shwocase_game_header_from_corner_pic.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/jef.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/jef.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/jeff.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="400"
+          height="500"
           data-full="images/jeff.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/P1860211.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="375"
+          height="500"
           data-full="images/P1860211.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/emmanjefneilhenry.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="333"
           data-full="images/emmanjefneilhenry.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/micki.jpg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="375"
+          height="500"
           data-full="images/micki.jpg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/P1850602.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="375"
+          height="500"
           data-full="images/P1850602.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/P1850646.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="375"
           data-full="images/P1850646.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/P1850947.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="375"
           data-full="images/P1850947.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/P1860054.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="375"
+          height="500"
           data-full="images/P1860054.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/P1860260.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="375"
           data-full="images/P1860260.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/P1860346.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="375"
+          height="500"
           data-full="images/P1860346.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/P1860248.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="375"
+          height="500"
           data-full="images/P1860248.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/P1860282.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="375"
           data-full="images/P1860282.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/DSC06296.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="333"
+          height="500"
           data-full="images/DSC06296.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/DSC06332.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="342"
+          height="500"
           data-full="images/DSC06332.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/P1850602.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="375"
+          height="500"
           data-full="images/P1850602.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/P1860282.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="375"
           data-full="images/P1860282.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/P1850832.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="375"
+          height="500"
           data-full="images/P1850832.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/P1850618.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="375"
           data-full="images/P1850618.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
         <img
           src="images/thumbs/P1850520.jpeg"
           alt="Prospect FC player Pictures "
-          width="200"
+          width="500"
+          height="375"
           data-full="images/P1850520.jpeg"
           loading="lazy"
           decoding="async"
-          onclick="showModal(this.dataset.full)"
-        />
+          onclick="showModal(this.dataset.full)" />
       </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-container">
+        <div class="footer-col">
+          <h3>PROSPECT FC</h3>
+          <p>
+            Prospect Football Club is a grassroots 11-aside team situated in
+            Reading, England. We compete in Division One of the East Berkshire
+            Football League (EBFL).
+          </p>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/share/16ngpSmCGs/?mibextid=wwXIfr"
+              target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/prospect.fc?utm_source=ig_web_button_share_sheet&igsh=MXFkZzdrY2h3Mm5qcQ=="
+              target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://youtube.com/@prospectfc?si=2Iwkjya99ywVvibE"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="https://www.tiktok.com/@prospect.fc?is_from_webapp=1&sender_device=pc"
+              target="_blank"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>QUICK LINKS</h3>
+          <ul>
+            <li><a href="headlines.html">Headlines</a></li>
+            <li><a href="squad.html">Squad</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="sponsor.html">Sponsors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>CLUB INFO</h3>
+          <ul>
+            <li>Training Days: Tues & Thurs</li>
+            <li>Training Time: 7:00pm</li>
+            <li>Location: Reading</li>
+            <li>Mail: prospectfc24@gmail.com</li>
+            <li>Contact: 07537883680</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>
+          &copy; <span class="js-year">2026</span> PROSPECT FC. All rights reserved. | Website by
+          <a
+            href="https://www.instagram.com/_idonmindit?igsh=cGRsYWtscnhnNTNs&utm_source=qr"
+            target="_blank"
+            >Emman</a
+          >
+        </p>
+      </div>
+    </footer>
 
     <!-- Modal -->
     <div id="modal" onclick="hideModal()">
@@ -1154,6 +1250,8 @@
       const menuToggle = document.getElementById("menu-toggle");
       const navMenu = document.getElementById("nav-menu");
       menuToggle.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
         navMenu.classList.toggle("active");
         menuToggle.classList.toggle("active");
       });
@@ -1163,7 +1261,7 @@
       gallerySelect.addEventListener("change", function () {
         const value = this.value;
         document.querySelectorAll(".gallery-item").forEach((el) => {
-          el.style.display = el.dataset.category === value ? "flex" : "none";
+          el.style.display = el.dataset.category === value ? "grid" : "none";
         });
       });
 

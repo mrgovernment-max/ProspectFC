@@ -14,25 +14,19 @@
       type="image/png"
       href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
       alt="Prospect FC logo"
-    />
+/>
     <meta
       name="description"
       content="Shop official Prospect FC jerseys, training kits, and club merchandise. Get your football gear and represent Prospect FC | available in all sizes for fans and players. Shipping across Berkshire and the UK."
-    />
+/>
     <meta
       name="keywords"
       content="Prospect FC jersey, Prospect Football Club kit, buy Prospect FC shirt, official Prospect FC merchandise, Prospect FC training wear, Reading football club merch, EBFL team kits, football shirts Berkshire, Prospect FC store, football jersey shop Reading, buy local club shirts, East Berkshire Football League merchandise, support Prospect FC"
-    />
+/>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
     <title>Prospect FC Store | Official Jerseys & Merchandise</title>
+    <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="kit.css" />
   
     <!-- Social share cards (Open Graph / Twitter) -->
@@ -50,6 +44,12 @@
     <meta name="twitter:title" content="Prospect FC Store | Official Jerseys &amp; Merchandise" />
     <meta name="twitter:description" content="Shop official Prospect FC jerseys, training kits, and club merchandise. Get your football gear and represent Prospect FC | available in all sizes for fans and players. Shipping across Berkshire and the UK." />
     <meta name="twitter:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+/>
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -74,33 +74,53 @@
             <img
               src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
               alt="Prospect FC logo"
-            />
+/>
           </a>
         </div>
 
-        <div class="menu-toggle" id="menu-toggle">
-          <i class="fas fa-bars"></i>
-        </div>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Toggle menu"
+        >
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
 
         <ul class="nav-menu" id="nav-menu">
           <li><a href="index.html">Home</a></li>
-          <li id="headlines">
-            <a href="headlines.html">Headlines</a>
-            <div id="dropdown" class="dropdown">
+          <li><a href="fixture.html">Fixtures</a></li>
+          <li class="has-dropdown">
+            <a href="squad.html">Team</a>
+            <div class="dropdown">
               <ul>
-                <li><a href="blog.html">Articles</a></li>
+                <li><a href="squad.html">Squad</a></li>
+                <li><a href="phistory.html">Team Stats</a></li>
               </ul>
             </div>
           </li>
-          <li class="mobile-blog"><a href="blog.html">Articles</a></li>
-          <li><a href="squad.html">Squad</a></li>
-          <li><a href="phistory.html">Team Stats</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="fixture.html">Fixtures</a></li>
-          <li><a href="sponsor.html">Sponsors</a></li>
+          <li class="has-dropdown">
+            <a href="headlines.html">News</a>
+            <div class="dropdown">
+              <ul>
+                <li><a href="headlines.html">Headlines</a></li>
+                <li><a href="blog.html">Articles</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+              </ul>
+            </div>
+          </li>
           <li><a href="kit.html">Kits</a></li>
+          <li class="has-dropdown">
+            <a href="sponsor.html">Club</a>
+            <div class="dropdown">
+              <ul>
+                <li><a href="sponsor.html">Sponsors</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+              </ul>
+            </div>
+          </li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="newsletter.html">Newsletter</a></li>
         </ul>
 
         <div class="social-icons">
@@ -178,7 +198,7 @@
               <img
                 src="images/2026_27_away_kit.jpeg"
                 alt="Prospect FC Away Kit 2026/27"
-                class="kit-image" loading="lazy" decoding="async" />
+                class="kit-image" loading="lazy" decoding="async" width="1091" height="1442" />
             </div>
             <div class="kit-info">
               <span class="kit-tag">Away</span>
@@ -207,7 +227,7 @@
               <img
                 src="images/2026_27_home_kit.jpeg"
                 alt="Prospect FC Home Kit 2026/27"
-                class="kit-image" loading="lazy" decoding="async" />
+                class="kit-image" loading="lazy" decoding="async" width="1092" height="1440" />
             </div>
             <div class="kit-info">
               <span class="kit-tag">Home</span>
@@ -324,6 +344,8 @@
       const navMenu = document.getElementById("nav-menu");
 
       menuToggle.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
         navMenu.classList.toggle("active");
         menuToggle.classList.toggle("active");
       });

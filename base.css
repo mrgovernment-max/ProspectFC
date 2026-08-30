@@ -1,0 +1,488 @@
+/* =====================================================================
+   PROSPECT FC — base.css
+
+   Design tokens plus the chrome every page shares: reset, typography,
+   container, header/nav/dropdown, buttons, section titles and footer.
+
+   Load this BEFORE the page stylesheet. A page sheet that redeclares a
+   rule from here is overriding it deliberately, and wins on source order.
+   ===================================================================== */
+
+:root {
+  --primary-blue: #0055c8;
+  --primary-blue-light: #3d8bff;
+  --secondary-blue: #002d6b;
+  --accent-gold: #f4c430;
+  --accent-gold-light: #ffe27a;
+  --accent-gold-dark: #caa000;
+  /* --accent-gold is 1.53:1 on --light-bg. Use this on light surfaces (4.59:1). */
+  --accent-gold-on-light: #8a6d00;
+
+  --dark-bg: #070b14;
+  --dark-bg-alt: #0d1526;
+  --light-bg: #f5f7fb;
+  --text-light: #ffffff;
+  --text-dark: #171b26;
+  --text-muted: #66707f;
+  --text-muted-invert: #97a3b8;
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #1668e0 0%,
+    #0043a8 55%,
+    #00204f 100%
+  );
+  --gradient-gold: linear-gradient(
+    135deg,
+    #ffe27a 0%,
+    #f4c430 55%,
+    #cc9900 100%
+  );
+  --gradient-dark: linear-gradient(180deg, #0d1526 0%, #070b14 100%);
+  --gradient-mesh:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(61, 139, 255, 0.16),
+      transparent 45%
+    ),
+    radial-gradient(circle at 85% 0%, rgba(244, 196, 48, 0.1), transparent 40%),
+    var(--gradient-dark);
+
+  --glass-bg: rgba(13, 21, 38, 0.6);
+  --glass-bg-light: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.09);
+
+  --border-radius: var(--radius-md);
+  --border-radius-sm: 8px;
+  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --box-shadow: 0 10px 30px rgba(3, 9, 22, 0.12);
+  --box-shadow-hover: 0 20px 45px rgba(3, 9, 22, 0.22);
+  --glow-blue:
+    0 0 0 1px rgba(61, 139, 255, 0.25), 0 12px 30px rgba(22, 104, 224, 0.35);
+  --glow-gold: 0 8px 24px rgba(244, 196, 48, 0.35);
+
+  /* ---- Type scale ----------------------------------------------------
+     Every font-size on the site maps onto one of these steps. Reaching
+     for a new in-between value is how 35 near-identical sizes built up
+     before; use the nearest step instead. */
+  --fs-3xs: 0.7rem;
+  --fs-2xs: 0.8rem;
+  --fs-xs: 0.875rem;
+  --fs-sm: 0.95rem;
+  --fs-base: 1rem;
+  --fs-md: 1.15rem;
+  --fs-lg: 1.35rem;
+  --fs-xl: 1.6rem;
+  --fs-2xl: 1.9rem;
+  --fs-3xl: 2.25rem;
+  --fs-4xl: 2.75rem;
+  --fs-hero: clamp(2.2rem, 4vw, 3.25rem);
+  --fs-display: clamp(3.4rem, 8vw, 6.7rem);
+
+  /* ---- Radius --------------------------------------------------------
+     --border-radius / --border-radius-sm stay as aliases so existing
+     rules keep working. */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* ---- Vertical rhythm ------------------------------------------------ */
+  --space-section: 5rem;
+  --space-section-sm: 3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-dark);
+  background-color: var(--light-bg);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 1.2rem;
+  font-size: var(--fs-3xl);
+  letter-spacing: 1px;
+}
+
+.section-title:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  border-radius: var(--radius-xs);
+  background: var(--gradient-gold);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  background: var(--gradient-primary);
+  color: var(--text-light);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 6px 18px rgba(0, 45, 107, 0.25);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--glow-blue);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: var(--primary-blue);
+  color: var(--text-light);
+  box-shadow: var(--glow-blue);
+}
+
+header {
+  background: #000000;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  padding: 0.85rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 68px;
+  height: 68px;
+  filter: drop-shadow(0 4px 12px rgba(244, 196, 48, 0.25));
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.menu-toggle {
+  display: none;
+  color: var(--text-light);
+  font-size: var(--fs-xl);
+  cursor: pointer;
+  /* it is a <button> on every page, so clear the UA chrome */
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  line-height: 1;
+}
+
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-menu li {
+  margin: 0 0.15rem;
+}
+
+.nav-menu a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--fs-sm);
+  padding: 0.55rem 1rem;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  width: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  border-radius: var(--radius-xs);
+  background: var(--gradient-gold);
+  transition: 0.3s ease-in-out;
+}
+
+.nav-menu a:hover::after {
+  width: calc(100% - 2rem);
+}
+
+.nav-menu a:hover {
+  color: var(--text-light);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* --- Dropdown menus ---------------------------------------------------
+   Any nav item can carry a submenu, not just Headlines. Opens on hover and
+   on :focus-within so it is reachable by keyboard. */
+.has-dropdown {
+  position: relative;
+}
+
+.has-dropdown > a::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.35rem;
+  vertical-align: 0.15em;
+  border: 0.28rem solid transparent;
+  border-top-color: currentColor;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 190px;
+  padding: 0.35rem 0;
+  background: var(--dark-bg-alt);
+  border: 1px solid var(--glass-border);
+  border-top: 2px solid var(--accent-gold);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  box-shadow: var(--box-shadow-hover);
+  z-index: 90;
+}
+
+.has-dropdown:hover > .dropdown,
+.has-dropdown:focus-within > .dropdown {
+  display: block;
+}
+
+.dropdown ul {
+  list-style: none;
+}
+
+.dropdown ul li a {
+  display: block;
+  padding: 0.55rem 1.1rem;
+  color: var(--text-light);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.dropdown ul li a:hover {
+  background: var(--glass-bg-light);
+  color: var(--accent-gold);
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.85rem;
+}
+
+.social-icons a {
+  color: var(--text-muted-invert);
+  font-size: var(--fs-base);
+  transition: var(--transition);
+}
+
+.social-icons a:hover {
+  color: var(--accent-gold);
+  transform: translateY(-3px);
+}
+
+footer {
+  background: var(--gradient-dark);
+  color: var(--text-muted-invert);
+  padding: 4.5rem 0 2rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.footer-col h3 {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+  font-size: var(--fs-md);
+  letter-spacing: 1px;
+}
+
+.footer-col h3:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  border-radius: var(--radius-xs);
+  background: var(--gradient-gold);
+}
+
+.footer-col p,
+.footer-col li {
+  margin-bottom: 0.8rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col a {
+  color: var(--text-muted-invert);
+  text-decoration: none;
+  transition: var(--transition);
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-col a:hover {
+  color: var(--accent-gold);
+  padding-left: 5px;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted-invert);
+}
+
+.copyright a {
+  color: var(--accent-gold);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile: the nav collapses into an off-canvas drawer. */
+@media (max-width: 992px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    height: 100vh;
+    width: 70%;
+    background: var(--gradient-dark);
+    backdrop-filter: blur(20px);
+    display: flex;
+    gap: 4vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+    z-index: 999;
+    border-left: 1px solid var(--glass-border);
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+  .menu-toggle {
+    display: block;
+    z-index: 1000;
+  }
+  .social-icons {
+    display: none;
+  }
+
+  /* In the drawer there is no hover, so submenus sit open inline. */
+  .has-dropdown {
+    width: 100%;
+    text-align: center;
+  }
+
+  .has-dropdown > a::after {
+    display: none;
+  }
+
+  .dropdown {
+    display: block;
+    position: static;
+    transform: none;
+    min-width: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+
+  .dropdown ul li a {
+    padding: 0.3rem 0;
+    font-size: var(--fs-xs);
+    color: var(--text-muted-invert);
+  }
+}

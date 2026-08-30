@@ -13,7 +13,7 @@
       type="image/png"
       href="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
       alt="propectfc"
-    />
+/>
     <title>Buy Prospect FC Jerseys | Official Club Store</title>
     <style>
       /* PFC: prevent sideways scroll from off-canvas/oversized elements. */
@@ -39,7 +39,7 @@
         --text-dark: #333333;
         --text-muted: #6c757d;
         --transition: all 0.3s ease;
-        --border-radius: 8px;
+        --border-radius: var(--radius-sm);
         --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
       }
@@ -48,7 +48,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
+        font-family: "Montserrat", sans-serif;
       }
 
       body {
@@ -133,7 +133,7 @@
 
       .social-icons a {
         color: var(--text-light);
-        font-size: 1.2rem;
+        font-size: var(--fs-md);
         transition: var(--transition);
       }
 
@@ -145,14 +145,11 @@
       .menu-toggle {
         display: none;
         color: var(--text-light);
-        font-size: 1.5rem;
+        font-size: var(--fs-xl);
         cursor: pointer;
       }
 
-      #headlines {
-        position: relative;
-        z-index: 999;
-      }
+      
 
       .dropdown {
         display: none;
@@ -172,34 +169,18 @@
         border-bottom-right-radius: 90px;
       }
 
-      .dropdown::before,
-      .dropdown::after {
-        content: "";
-        position: absolute;
-        top: 30px;
-        width: 50px;
-        height: 80px;
-        background-color: var(--accent-gold);
-      }
+      
 
-      .dropdown::before {
-        left: -40px;
-        border-radius: 20px 0 0 20px; /* left sleeve */
-      }
+      
 
-      .dropdown::after {
-        right: -40px;
-        border-radius: 0 20px 20px 0; /* right sleeve */
-      }
+      
 
       .dropdown ul li {
         list-style: disc;
         color: var(--text-light);
       }
 
-      #headlines:hover .dropdown {
-        display: flex;
-      }
+      
 
       /* Jersey Card Styles */
       .jersey-card {
@@ -207,7 +188,7 @@
         padding: 30px;
         margin: 5% auto;
         display: flex;
-        border-radius: 15px;
+        border-radius: var(--radius-md);
         box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
         width: 90%;
         gap: 5%;
@@ -216,7 +197,7 @@
 
       .jersey-card img {
         width: 100%;
-        border-radius: 10px;
+        border-radius: var(--radius-sm);
         transition: transform 0.3s ease;
       }
 
@@ -240,13 +221,13 @@
         background: #07215a;
         color: white;
         padding: 5px 10px;
-        border-radius: 20px;
-        font-size: 0.8rem;
+        border-radius: var(--radius-lg);
+        font-size: var(--fs-2xs);
         margin-bottom: 10px;
       }
 
       .jersey-info h2 {
-        font-size: 28px;
+        font-size: var(--fs-xl);
         color: #07215a;
         margin-bottom: 10px;
       }
@@ -276,9 +257,9 @@
         width: 100%;
         padding: 12px 15px;
         margin-bottom: 5px;
-        border-radius: 8px;
+        border-radius: var(--radius-sm);
         border: 1px solid #ddd;
-        font-size: 14px;
+        font-size: var(--fs-xs);
         transition: all 0.3s ease;
       }
 
@@ -309,11 +290,11 @@
         padding: 15px;
         width: 100%;
         border: none;
-        border-radius: 8px;
+        border-radius: var(--radius-sm);
         font-weight: bold;
         cursor: pointer;
         transition: 0.3s ease;
-        font-size: 1rem;
+        font-size: var(--fs-base);
         margin-top: 10px;
       }
 
@@ -351,7 +332,7 @@
 
       footer i {
         margin: 0 10px;
-        font-size: 1.5rem;
+        font-size: var(--fs-xl);
         transition: all 0.3s ease;
       }
 
@@ -380,7 +361,7 @@
       .price-container {
         background: #f8f9fa;
         padding: 15px;
-        border-radius: 8px;
+        border-radius: var(--radius-sm);
         margin: 20px 0;
         text-align: center;
       }
@@ -388,12 +369,12 @@
       .original-price {
         color: #999;
         text-decoration: line-through;
-        font-size: 1.2rem;
+        font-size: var(--fs-md);
       }
 
       .sale-price {
         color: #006400;
-        font-size: 1.8rem;
+        font-size: var(--fs-2xl);
         font-weight: bold;
       }
 
@@ -402,14 +383,14 @@
         background: #ff4757;
         color: white;
         padding: 3px 8px;
-        border-radius: 4px;
-        font-size: 0.9rem;
+        border-radius: var(--radius-xs);
+        font-size: var(--fs-xs);
         margin-left: 10px;
       }
 
       .discount-message {
         padding: 10px;
-        border-radius: 8px;
+        border-radius: var(--radius-sm);
         margin: 10px 0;
         text-align: center;
       }
@@ -425,9 +406,7 @@
         color: #009975;
         border: 1px solid #009975;
       }
-      .mobile-blog {
-        display: none;
-      }
+      
 
       @media (max-width: 900px) {
         .jersey-card {
@@ -467,9 +446,7 @@
           transition: var(--transition);
           z-index: 999;
         }
-        .mobile-blog {
-          display: flex;
-        }
+        
 
         .nav-menu.active {
           transform: translateX(0);
@@ -487,13 +464,9 @@
       }
     </style>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script
       src="https://kit.fontawesome.com/a47fc389f5.js"
@@ -517,6 +490,12 @@
     <meta name="twitter:title" content="Buy Prospect FC Jerseys | Official Club Store" />
     <meta name="twitter:description" content="Buy the official Prospect FC jersey. Home and away kits for the 2026/27 season, available in sizes S to XXXL with secure online checkout." />
     <meta name="twitter:image" content="https://res.cloudinary.com/dazhskqcc/image/upload/c_fill,g_auto,w_1200,h_630/v1758992545/showcase_game_captain_c4hokv.jpg" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+/>
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -541,33 +520,53 @@
             <img
               src="https://res.cloudinary.com/dazhskqcc/image/upload/v1754336732/image0_1_sdm2cz.png"
               alt="Prospect FC logo"
-            />
+/>
           </a>
         </div>
 
-        <div class="menu-toggle" id="menu-toggle">
-          <i class="fas fa-bars"></i>
-        </div>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Toggle menu"
+        >
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
 
         <ul class="nav-menu" id="nav-menu">
           <li><a href="index.html">Home</a></li>
-          <li id="headlines">
-            <a href="headlines.html">Headlines</a>
-            <div id="dropdown" class="dropdown">
+          <li><a href="fixture.html">Fixtures</a></li>
+          <li class="has-dropdown">
+            <a href="squad.html">Team</a>
+            <div class="dropdown">
               <ul>
-                <li><a href="blog.html">Articles</a></li>
+                <li><a href="squad.html">Squad</a></li>
+                <li><a href="phistory.html">Team Stats</a></li>
               </ul>
             </div>
           </li>
-          <li class="mobile-blog"><a href="blog.html">Articles</a></li>
-          <li><a href="squad.html">Squad</a></li>
-          <li><a href="phistory.html">Team Stats</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="fixture.html">Fixtures</a></li>
-          <li><a href="sponsor.html">Sponsors</a></li>
+          <li class="has-dropdown">
+            <a href="headlines.html">News</a>
+            <div class="dropdown">
+              <ul>
+                <li><a href="headlines.html">Headlines</a></li>
+                <li><a href="blog.html">Articles</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+              </ul>
+            </div>
+          </li>
           <li><a href="kit.html">Kits</a></li>
+          <li class="has-dropdown">
+            <a href="sponsor.html">Club</a>
+            <div class="dropdown">
+              <ul>
+                <li><a href="sponsor.html">Sponsors</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+              </ul>
+            </div>
+          </li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="newsletter.html">Newsletter</a></li>
         </ul>
 
         <div class="social-icons">
@@ -601,37 +600,37 @@
           <div class="swiper-slide">
             <img
               src="images/2026_27_home_kit.jpeg"
-              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" />
+              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" width="1092" height="1440" />
           </div>
           <div class="swiper-slide">
             <img
               src="images/2026_27_home_kit.jpeg"
-              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" />
+              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" width="1092" height="1440" />
           </div>
           <div class="swiper-slide">
             <img
               src="images/2026_27_home_kit.jpeg"
-              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" />
+              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" width="1092" height="1440" />
           </div>
           <div class="swiper-slide">
             <img
               src="images/2026_27_home_kit.jpeg"
-              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" />
+              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" width="1092" height="1440" />
           </div>
           <div class="swiper-slide">
             <img
               src="images/2026_27_home_kit.jpeg"
-              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" />
+              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" width="1092" height="1440" />
           </div>
           <div class="swiper-slide">
             <img
               src="images/2026_27_home_kit.jpeg"
-              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" />
+              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" width="1092" height="1440" />
           </div>
           <div class="swiper-slide">
             <img
               src="images/2026_27_home_kit.jpeg"
-              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" />
+              alt="Prospect FC Home Kit 2026/27" loading="lazy" decoding="async" width="1092" height="1440" />
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -677,7 +676,7 @@
             type="email"
             id="mail"
             placeholder="example@gmail.com"
-          />
+/>
         </div>
 
         <div class="form-group">
@@ -687,7 +686,7 @@
             type="tel"
             id="contact"
             placeholder="e.g.  +44 000 0000 000"
-          />
+/>
         </div>
 
         <div class="form-group">
@@ -700,7 +699,7 @@
               placeholder="House Number or Name"
               required
               class="full-width"
-            />
+/>
             <input
               type="text"
               name="street"
@@ -708,13 +707,13 @@
               placeholder="Street Name"
               required
               class="full-width"
-            />
+/>
             <input
               type="text"
               id="locality"
               name="locality"
               placeholder="Area / Locality (optional)"
-            />
+/>
             <input
               type="text"
               name="city"
@@ -727,7 +726,7 @@
               name="county"
               id="county"
               placeholder="County (optional)"
-            />
+/>
             <input
               type="text"
               name="postcode"
@@ -1033,6 +1032,8 @@
         const navMenu = document.getElementById("nav-menu");
 
         menuToggle.addEventListener("click", () => {
+          const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+          menuToggle.setAttribute("aria-expanded", String(!expanded));
           navMenu.classList.toggle("active");
           menuToggle.classList.toggle("active");
         });
