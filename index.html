@@ -30,6 +30,7 @@
 />
     <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="goal-of-the-month.css" />
   
     <!-- Social share cards (Open Graph / Twitter) -->
     <meta property="og:type" content="website" />
@@ -131,6 +132,7 @@
                 <li><a href="headlines.html">Headlines</a></li>
                 <li><a href="blog.html">Articles</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="goal-of-the-month.html">Goal of the Month</a></li>
               </ul>
             </div>
           </li>
@@ -195,6 +197,30 @@
           <article class="matchday-card" id="last-result"></article>
         </div>
         <a href="fixture.html" class="matchday-all">All fixtures &amp; results</a>
+      </div>
+    </section>
+
+    <!-- Goal of the Month campaign teaser -->
+    <section class="gotm-section" aria-labelledby="gotm-home-title">
+      <div class="container">
+        <div class="gotm-heading">
+          <span class="gotm-kicker">GOAL OF THE MONTH</span>
+          <h2 id="gotm-home-title" class="gotm-title">
+            3 PROSPECT GOALS.<br />ONE GOAL OF THE MONTH.
+          </h2>
+          <p class="gotm-subtitle">
+            Three Prospect FC goals have been nominated. Watch the nominees
+            and back your favourite in the official vote.
+          </p>
+          <p class="gotm-tagline">Three goals. Three nominations. One club.</p>
+        </div>
+
+        <div id="gotm-teaser" class="gotm-teaser-grid"></div>
+
+        <div class="gotm-cta-row">
+          <a href="goal-of-the-month.html" class="btn">WATCH THE PROSPECT THREE →</a>
+          <a class="btn btn-outline gotm-vote-cta">CAST YOUR OFFICIAL VOTE →</a>
+        </div>
       </div>
     </section>
 
@@ -704,5 +730,6 @@
         el.textContent = new Date().getFullYear();
       });
     </script>
+  <script src="goal-of-the-month.js" defer></script>
   </body>
 </html>
