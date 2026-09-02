@@ -42,10 +42,13 @@ const GOTM_PHOTO_FALLBACK =
 // Player names and official EBFL poll goal numbers are confirmed. Match
 // opponent/date, goal description and video are not yet supplied — those
 // stay null (rendered as "coming soon") rather than being guessed.
-// Video URLs use Cloudinary's on-the-fly "vc_h264" transformation. The
-// supplied originals are HEVC, which a large share of non-Apple browsers
-// cannot decode at all (verified: blank/0x0 in Chromium); the h264
-// transcode plays correctly everywhere and is served from the same asset.
+// Video files are served locally from images/. The originals supplied were
+// .mov containers — already H.264 (no HEVC re-encode needed this time),
+// but Chromium's canPlayType('video/quicktime') came back empty even
+// though a bare <video src> happened to play them, an inconsistent signal
+// not worth trusting in production. Each was losslessly remuxed
+// (ffmpeg -c copy, no re-encode, identical quality) into a plain .mp4
+// alongside the untouched original — see images/Dawid.mov etc.
 const GOAL_OF_MONTH_NOMINEES = [
   {
     number: "01",
@@ -57,7 +60,7 @@ const GOAL_OF_MONTH_NOMINEES = [
     matchDate: null,
     competition: null,
     description: null,
-    videoUrl: "https://res.cloudinary.com/dazhskqcc/video/upload/vc_h264/v1788383266/ScreenRecording_09-02-2026_22-01-17_1_glkvvx.mp4",
+    videoUrl: "images/Dawid.mp4",
   },
   {
     number: "02",
@@ -69,7 +72,7 @@ const GOAL_OF_MONTH_NOMINEES = [
     matchDate: null,
     competition: null,
     description: null,
-    videoUrl: "https://res.cloudinary.com/dazhskqcc/video/upload/vc_h264/v1788383058/ScreenRecording_09-02-2026_22-00-46_1_lhiubn.mp4",
+    videoUrl: "images/Sek.mp4",
   },
   {
     number: "03",
@@ -81,7 +84,7 @@ const GOAL_OF_MONTH_NOMINEES = [
     matchDate: null,
     competition: null,
     description: null,
-    videoUrl: "https://res.cloudinary.com/dazhskqcc/video/upload/vc_h264/v1788382983/ScreenRecording_09-02-2026_22-00-02_1_jdqlms.mp4",
+    videoUrl: "images/Lucas.mp4",
   },
 ];
 
