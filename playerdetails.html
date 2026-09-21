@@ -102,7 +102,6 @@
                 <li><a href="headlines.html">Headlines</a></li>
                 <li><a href="blog.html">Articles</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="goal-of-the-month.html">Goal of the Month</a></li>
               </ul>
             </div>
           </li>
@@ -184,6 +183,11 @@
             <div class="stat-card">
               <div id="player-assists" class="stat-value">0</div>
               <div class="stat-label">Assists</div>
+            </div>
+
+            <div class="stat-card">
+              <div id="player-motm" class="stat-value">0</div>
+              <div class="stat-label">Man of the Match</div>
             </div>
 
             <div class="stat-card">
@@ -334,6 +338,8 @@
         data.goals ?? "N/A";
       document.getElementById("player-assists").textContent =
         data.assists ?? "N/A";
+      document.getElementById("player-motm").textContent =
+        data.motm ?? "N/A";
       document.getElementById("player-potm").textContent =
         data.potm ?? "N/A";
     } catch (error) {
@@ -341,6 +347,7 @@
       document.getElementById("player-apps").textContent = "N/A";
       document.getElementById("player-goals").textContent = "N/A";
       document.getElementById("player-assists").textContent = "N/A";
+      document.getElementById("player-motm").textContent = "N/A";
       document.getElementById("player-potm").textContent = "N/A";
     }
   }
@@ -373,6 +380,5 @@
         el.textContent = new Date().getFullYear();
       });
     </script>
-  <script src="goal-of-the-month.js" defer></script>
   </body>
 </html>
