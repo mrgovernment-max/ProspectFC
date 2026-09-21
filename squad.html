@@ -108,7 +108,6 @@
                 <li><a href="headlines.html">Headlines</a></li>
                 <li><a href="blog.html">Articles</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="goal-of-the-month.html">Goal of the Month</a></li>
               </ul>
             </div>
           </li>
@@ -314,6 +313,7 @@
           "Papps",
           "Pgoals",
           "Passists",
+          "MOTM",
           "POTM",
         ];
 
@@ -388,7 +388,7 @@
           // Set onclick for the entire card
           playerCard.setAttribute(
             "onclick",
-            `CheckPlayerDetails('${player.name}', '${player.bg_img}', ${player.p_number}, ${player.age}, ${player.appearances}, ${player.goals}, ${player.assists}, ${player.POTM})`
+            `CheckPlayerDetails('${player.name}', '${player.bg_img}', ${player.p_number}, ${player.age}, ${player.appearances}, ${player.goals}, ${player.assists}, ${player.MOTM}, ${player.POTM})`
           );
 
           playerCard.innerHTML = `
@@ -486,6 +486,5 @@
         el.textContent = new Date().getFullYear();
       });
     </script>
-  <script src="goal-of-the-month.js" defer></script>
   </body>
 </html>
