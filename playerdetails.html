@@ -187,11 +187,6 @@
             </div>
 
             <div class="stat-card">
-              <div id="player-motm" class="stat-value">0</div>
-              <div class="stat-label">Man of the Match</div>
-            </div>
-
-            <div class="stat-card">
               <div id="player-potm" class="stat-value">0</div>
               <div class="stat-label">Player of the Month</div>
             </div>
@@ -339,8 +334,6 @@
         data.goals ?? "N/A";
       document.getElementById("player-assists").textContent =
         data.assists ?? "N/A";
-      document.getElementById("player-motm").textContent =
-        data.motm ?? "N/A";
       document.getElementById("player-potm").textContent =
         data.potm ?? "N/A";
     } catch (error) {
@@ -348,7 +341,6 @@
       document.getElementById("player-apps").textContent = "N/A";
       document.getElementById("player-goals").textContent = "N/A";
       document.getElementById("player-assists").textContent = "N/A";
-      document.getElementById("player-motm").textContent = "N/A";
       document.getElementById("player-potm").textContent = "N/A";
     }
   }
