@@ -1,0 +1,23 @@
+.momentum-sponsor {
+  display: inline-block;
+  width: 132px;
+  margin-left: 0.45rem;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.momentum-sponsor:focus-visible {
+  outline: 3px solid var(--accent-gold, #f4c430);
+  outline-offset: 3px;
+}
+
+.momentum-sponsor img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.momentum-standalone-footer {
+  color: #97a3b8;
+  text-align: center;
+}
