@@ -87,6 +87,12 @@
   box-shadow: var(--box-shadow);
 }
 
+.momentum-sponsor-logo {
+  object-fit: cover;
+  object-position: left center;
+  background-color: #000000;
+}
+
 .sponsor-name {
   font-size: var(--fs-lg);
   color: var(--primary-blue);

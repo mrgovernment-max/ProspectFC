@@ -25,6 +25,8 @@
       body {
         min-height: 100vh;
         display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
         align-items: center;
         justify-content: center;
         font-family: "Montserrat", sans-serif;
@@ -98,6 +100,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap"
       rel="stylesheet"
 />
+    <link rel="stylesheet" href="momentum-sponsor.css" />
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -122,5 +125,10 @@
       </p>
       <button onclick="window.location.href='buyjersey.html'">Try Again</button>
     </div>
+    <footer class="momentum-standalone-footer">
+      &copy; <span class="js-year">2026</span> PROSPECT FC. All rights reserved.
+      <a class="momentum-sponsor" href="https://www.instagram.com/momentum.task?jplx=aWI2eGFoN2lhdTVp&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Momentum sponsor — visit Momentum on Instagram"><img src="images/momentum-sponsor-transparent.png" alt="Momentum" /></a>
+    </footer>
+    <script>document.querySelectorAll(".js-year").forEach(function (el) { el.textContent = new Date().getFullYear(); });</script>
   </body>
 </html>
