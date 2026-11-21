@@ -246,27 +246,29 @@
           let fixtures = "";
 
           // The feed comes back unsorted. Show what is coming next first
-          // (soonest at the top), then results, most recent first.
+          // (soonest at the top), then postponed matches (no date yet), then
+          // results, most recent first.
+          const GROUP = { Upcoming: 0, Postponed: 1, Completed: 2 };
           const ordered = data.slice().sort((a, b) => {
-            const aUp = matchStatus(a, season) === "Upcoming";
-            const bUp = matchStatus(b, season) === "Upcoming";
-            if (aUp !== bUp) return aUp ? -1 : 1;
-            const aT = (parseMatchDate(a.match_date, season) || 0) &&
-              parseMatchDate(a.match_date, season).getTime();
-            const bT = (parseMatchDate(b.match_date, season) || 0) &&
-              parseMatchDate(b.match_date, season).getTime();
-            return aUp ? aT - bT : bT - aT;
+            const aStatus = matchStatus(a, season);
+            const bStatus = matchStatus(b, season);
+            if (aStatus !== bStatus) return GROUP[aStatus] - GROUP[bStatus];
+            const aDate = parseMatchDate(a.match_date, season);
+            const bDate = parseMatchDate(b.match_date, season);
+            const aT = aDate ? aDate.getTime() : 0;
+            const bT = bDate ? bDate.getTime() : 0;
+            return aStatus === "Upcoming" ? aT - bT : bT - aT;
           });
 
           ordered.forEach((element) => {
             const status = matchStatus(element, season);
-            const statusClass =
-              status === "Upcoming" ? "status-upcoming" : "status-completed";
+            const statusClass = "status-" + status.toLowerCase();
+            const unplayed = status !== "Completed";
 
             // An unplayed match has no score to show, whether the feed sent
             // null or a placeholder 0.
-            const homeScore = status === "Upcoming" ? "-" : element.home_score;
-            const awayScore = status === "Upcoming" ? "-" : element.away_score;
+            const homeScore = unplayed ? "-" : element.home_score;
+            const awayScore = unplayed ? "-" : element.away_score;
 
             const homeName = displayTeamName(element.home_team_name);
             const awayName = displayTeamName(element.away_team_name);
@@ -315,7 +317,7 @@
             <p><strong>Competition:</strong> ${element.game_type}</p>
                   <div class="buttons">
                     ${
-                      status === "Upcoming"
+                      unplayed
                         ? calendarISO
                           ? `<button><a href="#" class="add-to-calendar" data-start="${calendarISO}" data-title="${homeName} vs ${awayName}"> <i class="far fa-calendar-plus"></i> Remind Me</a></button>`
                           : ""
@@ -361,7 +363,8 @@
 
               if (
                 filter === "all" ||
-                (filter === "upcoming" && status === "upcoming") ||
+                (filter === "upcoming" &&
+                  (status === "upcoming" || status === "postponed")) ||
                 (filter === "completed" && status === "completed") ||
                 (filter === "home" && location === "home") ||
                 (filter === "away" && location === "away") ||

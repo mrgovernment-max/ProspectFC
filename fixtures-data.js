@@ -39,8 +39,14 @@ function crestFallback(img) {
   img.src = CREST_FALLBACK;
 }
 
+// A postponed fixture is stored with match_date = 'TBC' (any case, any
+// surrounding whitespace) and NULL scores until it is rescheduled.
+function isDateTBC(raw) {
+  return typeof raw === "string" && raw.trim().toUpperCase() === "TBC";
+}
+
 function parseMatchDate(raw, season) {
-  if (!raw) return null;
+  if (!raw || isDateTBC(raw)) return null;
   const text = String(raw).trim();
 
   let m = text.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
@@ -59,6 +65,7 @@ function parseMatchDate(raw, season) {
 }
 
 function formatMatchDate(raw, season) {
+  if (isDateTBC(raw)) return "Date TBC";
   const d = parseMatchDate(raw, season);
   if (!d) return raw || "TBC";
   return d.toLocaleDateString("en-GB", {
@@ -91,6 +98,9 @@ function isOurClub(name) {
 }
 
 function matchStatus(element, season) {
+  // Checked first: a postponed match has no date to compare against, and
+  // the 2026-27 feed's placeholder 0s would otherwise read as a 0-0.
+  if (isDateTBC(element.match_date)) return "Postponed";
   const kickoff = parseMatchDate(element.match_date, season);
   const today = new Date();
   today.setHours(0, 0, 0, 0);

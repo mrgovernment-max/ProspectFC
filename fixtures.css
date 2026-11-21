@@ -190,6 +190,13 @@
   color: var(--text-light);
 }
 
+.status-postponed {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px dashed currentColor;
+  padding: calc(0.3rem - 1px) calc(0.8rem - 1px);
+}
+
 @keyframes pulse {
   0% {
     opacity: 1;
